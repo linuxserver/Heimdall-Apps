@@ -3,7 +3,7 @@
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
-class Deluge extends SupportedApps implements EnhancedApps {
+class Deluge extends \SupportedApps implements \EnhancedApps {
 
     //public function test()
     //public function execute()
