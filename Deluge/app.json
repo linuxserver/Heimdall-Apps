@@ -4,5 +4,6 @@
     "license": "GNU GPL v3",
     "description": "Deluge is a BitTorrent client written in Python. Deluge is cross-platform, using a front and back end architecture where libtorrent, a software library written in C++ which provides the application's networking logic, is connected to one of various front ends through the project's own Python bindings",
     "icon": "deluge.png",
+    "tile_background": "dark",
     "enhanced": true
   }
