@@ -1,9 +1,9 @@
-<?php namespace App\SupportedApps;
+<?php namespace App\SupportedApps\Deluge;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 
-class Deluge extends \SupportedApps implements \EnhancedApps {
+class Deluge extends \App\SupportedApps implements \App\EnhancedApps {
 
     //public function test()
     //public function execute()
