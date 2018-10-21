@@ -1,32 +1,26 @@
 <?php namespace App\SupportedApps\Nzbget;
 
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Client;
-
 class Nzbget extends \App\SupportedApps implements \App\EnhancedApps {
 
-    //public function test()
-    //public function execute()
-
-
+    public $config;
+   
     public function livestats()
     {
         $status = 'inactive';
         $res = parent::execute($this->apiUrl('status'));
-        $data = json_decode($res->getBody());
+        $details = json_decode($res->getBody());
 
-        if($data) {
-            $size = $data->result->RemainingSizeMB;
-            $rate = $data->result->DownloadRate;
-            $queue_size = format_bytes($size*1000*1000, false, ' <span>', '</span>');
-            $current_speed = format_bytes($rate, false, ' <span>');
+        if($details) {
+            $size = $details->result->RemainingSizeMB;
+            $rate = $details->result->DownloadRate;
+            $data['queue_size'] = format_bytes($size*1000*1000, false, ' <span>', '</span>');
+            $data['current_speed'] = format_bytes($rate, false, ' <span>');
             $status = ($size > 0 || $rate > 0) ? 'active' : 'inactive';
         }
 
-        return parent::livestats($status, $data);
+        return parent::getLiveStats($status, $data);
         
     }
-
 
     public function apiUrl($endpoint)
     {

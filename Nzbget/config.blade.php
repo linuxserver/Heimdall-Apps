@@ -1,7 +1,7 @@
 <h2>{{ __('app.apps.config') }} ({{ __('app.optional') }})</h2>
 <div class="items">
     <input type="hidden" name="config[enabled]" value="1" />
-    <input type="hidden" data-config="type" class="config-item" name="config[type]" value="\App\SupportedApps\Deluge" />
+    <input type="hidden" data-config="type" class="config-item" name="config[type]" value="\App\SupportedApps\Nzbget\Nzbget" />
     <div class="input">
         <label>{{ strtoupper(__('app.url')) }}</label>
         {!! Form::text('config[override_url]', null, array('placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control')) !!}
