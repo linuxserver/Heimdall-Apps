@@ -1,0 +1,9 @@
+{
+    "name": "NZBGet",
+    "website": "https://nzbget.net/",
+    "license": "GNU General Public License v2.0",
+    "description": "NZBGet is a binary downloader, which downloads files from Usenet based on information given in nzb-files. NZBGet is written in C++ and is known for its extraordinary performance and efficiency.",
+    "icon": "nzbget.png",
+    "tile_background": "dark",
+    "enhanced": true
+  }
