@@ -3,6 +3,11 @@
 class Nzbget extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
+
+    public function test()
+    {
+        return parent::appTest($this->apiUrl('status'));
+    }
    
     public function livestats()
     {
