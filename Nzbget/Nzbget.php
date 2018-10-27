@@ -6,14 +6,16 @@ class Nzbget extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        return parent::appTest($this->apiUrl('status'));
+        return parent::appTest($this->url('status'));
     }
    
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->apiUrl('status'));
+        $res = parent::execute($this->url('status'));
         $details = json_decode($res->getBody());
+
+        $data = [];
 
         if($details) {
             $size = $details->result->RemainingSizeMB;
@@ -27,7 +29,7 @@ class Nzbget extends \App\SupportedApps implements \App\EnhancedApps {
         
     }
 
-    public function apiUrl($endpoint)
+    public function url($endpoint)
     {
         $config = $this->config;
         $url = $config->url;
