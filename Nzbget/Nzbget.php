@@ -6,7 +6,8 @@ class Nzbget extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        return parent::appTest($this->url('status'));
+        $test = parent::appTest($this->url('status'));
+        echo $test->status;
     }
    
     public function livestats()
