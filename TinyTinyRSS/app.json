@@ -1,0 +1,10 @@
+{
+    "appid": "9a83dce0e30910276872015367d926660780e6d8",
+    "name": "Tiny Tiny RSS",
+    "website": "https://tt-rss.org/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "https://tt-rss.org/",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "tinytinyrss.png"
+}
