@@ -3,23 +3,19 @@
 class Transmission extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
-    public $attrs;
+    public $attrs = [];
     public $vars;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
-    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
+    protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
     function __construct() {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
-        if ($this->config->username != '' || $this->config->password != '') {
-            $this->attrs = ['auth'=> [$this->config->username, $this->config->password, 'Basic']];
-        }
         $body["method"] = "torrent-get";
         $body["arguments"] = array("fields" => ["percentDone","status","rateDownload","rateUpload"]);
         $this->vars = [
             'http_errors' => false,
-            'timeout' => 15, 
-            'connect_timeout' => 15,
+            'timeout' => 5, 
             'body' => json_encode($body)
         ];
 
@@ -51,7 +47,7 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps {
 
         $data = [];
 
-        $torrents = $data->arguments->torrents;
+        $torrents = $details->arguments->torrents;
         $torrentCount = count($torrents);
         $rateDownload = $rateUpload = $completedTorrents = 0;
         foreach ($torrents as $thisTorrent) {
@@ -63,7 +59,7 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps {
         }
         $leech = $torrentCount - $completedTorrents;
         if ($leech > 0) {
-            $active = 'active';
+            $status = 'active';
         }
 
         $data['download_rate'] = format_bytes($rateDownload, false, ' <span>', '/s</span>');
@@ -100,8 +96,14 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps {
 
     private function setClientOptions()
     {
+        if ($this->config->username != '' || $this->config->password != '') {
+            $this->attrs = ['auth'=> [$this->config->username, $this->config->password, 'Basic']];
+        }
+        $res = parent::execute($this->url('transmission/rpc'), $this->attrs, $this->vars);
+
         try{
-            $res = parent::execute($this->url('transmission/rpc'), $this->attrs, $this->vars, 'HEAD');
+            
+            //print_r($res);
             $xtId = $res->getHeaderLine('X-Transmission-Session-Id');
             if ($xtId != null) {
                 $this->attrs['headers'] = ['X-Transmission-Session-Id' => $xtId];
