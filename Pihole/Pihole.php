@@ -37,8 +37,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps {
     }
     public function url($endpoint)
     {
-        $url = rtrim($this->config->url, '/');
-        $api_url = $url.$endpoint;
+        $api_url = parent::normaliseurl($this->config->url).$endpoint;
         return $api_url;
     }
 }

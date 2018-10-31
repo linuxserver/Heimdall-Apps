@@ -66,12 +66,8 @@ class Deluge extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-        $config = $this->config;
-        $url = $config->url;
-        $password = $config->password;
-        $url = rtrim($url, '/');
-        $api_url = $url.'/'.$endpoint;
-        return $api_url; 
+        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        return $api_url;
     }
 
 }

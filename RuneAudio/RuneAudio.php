@@ -43,7 +43,7 @@ class RuneAudio extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-        $api_url = rtrim($this->config->url, '/').'/command/?cmd='.$endpoint;
+        $api_url = parent::normaliseurl($this->config->url).'command/?cmd='.$endpoint;
         return $api_url;
     }
 }

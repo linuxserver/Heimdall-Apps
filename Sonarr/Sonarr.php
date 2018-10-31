@@ -38,10 +38,7 @@ class Sonarr extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-
-        $url = rtrim($this->config->url, '/');
-        $api_url = $url.'/api/'.$endpoint.'?apikey='.$this->config->apikey;
-
+        $api_url = parent::normaliseurl($this->config->url).'api/'.$endpoint.'?apikey='.$this->config->apikey;
         return $api_url;
     }
 }
