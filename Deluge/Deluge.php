@@ -57,7 +57,7 @@ class Deluge extends \App\SupportedApps implements \App\EnhancedApps {
             $data['upload_rate'] = format_bytes($upload_rate, false, ' <span>', '/s</span>');
             $data['seed_count'] = $details->result->filters->state[2][1] ?? 0;
             $data['leech_count'] = $details->result->filters->state[1][1] ?? 0;  
-            $status = ($download_rate > 50000 || $upload_rate > 50000) ? 'active' : 'inactive';  
+            $status = ($data['leech_count'] > 0) ? 'active' : 'inactive';  
         }
 
         return parent::getLiveStats($status, $data);
