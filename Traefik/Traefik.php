@@ -25,9 +25,9 @@ class Traefik extends \App\SupportedApps implements \App\EnhancedApps {
 
         $data = [];
 
-        $avg_response_time = $data->average_response_time_sec ?? 0;
+        $avg_response_time = $details->average_response_time_sec ?? 0;
         $time = $avg_response_time*1000;
-        $data['time_output'] = ($time > 0) ? number_format($time, 2) : 'Unknown';
+        $data['time_output'] = ($time > 0) ? number_format($time, 2).'<span>ms</span>' : 'Unknown';
 
         return parent::getLiveStats($status, $data);
         
