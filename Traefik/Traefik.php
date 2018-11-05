@@ -20,7 +20,7 @@ class Traefik extends \App\SupportedApps implements \App\EnhancedApps {
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('status'));
+        $res = parent::execute($this->url('health'));
         $details = json_decode($res->getBody());
 
         $data = [];
