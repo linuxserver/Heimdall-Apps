@@ -30,7 +30,7 @@ class Tautulli extends \App\SupportedApps implements \App\EnhancedApps {
         $res = parent::execute($this->url('get_activity'));
         $details = json_decode($res->getBody());
 
-        $data['stream_count'] = $details->response->data->stream_count ?? 0;
+        $data['stream_count'] = $details->stream_count ?? 0;
 
         return parent::getLiveStats($status, $data);
         
