@@ -3,8 +3,8 @@
     "name": "Slack",
     "website": "https://slack.com",
     "license": "GNU General Public License v3.0 or later",
-    "description": "Slack is a cloud-based set of proprietary team collaboration tools and services.\r\n\r\n(No idea about the licence)",
+    "description": "Slack is a cloud-based set of proprietary team collaboration tools and services.",
     "enhanced": false,
-    "tile_background": "light",
+    "tile_background": "dark",
     "icon": "slack.png"
 }
