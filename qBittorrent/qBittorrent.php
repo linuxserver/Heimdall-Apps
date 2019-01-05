@@ -8,19 +8,39 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps {
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
     function __construct() {
-        //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
+        $this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
     public function test()
     {
+        $test = $this->login();
+        if($test->getStatusCode() === 200) {
+            echo $test->getStatusCode();
+        }
         $test = parent::appTest($this->url('version/api'));
         echo $test->status;
+    }
+
+    public function login()
+    {
+        $username = $this->config->username;
+        $password = $this->config->password;
+        $attrs = [
+            'body' => 'username='.$username.'&password='.$password,
+            'cookies' => $this->jar,
+            'headers' => ['content-type' => 'application/x-www-form-urlencoded']
+        ];
+        return parent::execute($this->url('login'), $attrs, false, 'POST');
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('query/torrents'));
+        $this->login();
+        $attrs = [
+                'cookies' => $this->jar
+        ];
+        $res = parent::execute($this->url('query/torrents'), $attrs);
         $details = json_decode($res->getBody());
 
         $data = [];
