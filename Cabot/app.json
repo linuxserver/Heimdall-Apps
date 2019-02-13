@@ -4,7 +4,7 @@
     "website": "https://cabotapp.com",
     "license": "MIT License",
     "description": "Self-hosted watchdog for your websites and infrastructure.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "cabot.png"
 }
