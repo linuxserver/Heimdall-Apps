@@ -13,23 +13,33 @@ class Mylar extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('status'));
+        $test = parent::appTest($this->url('getVersion'));
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('status'));
-        $details = json_decode($res->getBody());
+        $data = [];
+
+        $missing = json_decode(parent::execute($this->url('getWanted'))->getBody());
+        $upcoming = json_decode(parent::execute($this->url('getUpcoming'))->getBody());
 
         $data = [];
+
+        if($missing || $upcoming) {
+            $data['missing'] = count($missing) ?? 0;
+            $data['upcoming'] = count($upcoming) ?? 0;
+        }
+
         return parent::getLiveStats($status, $data);
         
     }
+    
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url).'api?apikey='.$this->config->apikey.'&cmd='.$endpoint;
         return $api_url;
     }
+
 }
