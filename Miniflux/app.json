@@ -4,7 +4,7 @@
     "website": "https://miniflux.app/",
     "license": "Apache License 2.0",
     "description": "Miniflux is a lightweight RSS feed reader app.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "miniflux.png"
 }
