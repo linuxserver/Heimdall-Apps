@@ -6,5 +6,5 @@
     "description": "XigmaNAS is an Open Source Storage NAS (Network-Attached Storage) distribution based on FreeBSD.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "xigmanas.jpeg"
+    "icon": "xigmanas.png"
 }
