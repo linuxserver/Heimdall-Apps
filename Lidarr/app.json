@@ -4,7 +4,7 @@
     "website": "https://lidarr.audio/",
     "license": "GNU General Public License v3.0 only",
     "description": "Lidarr is a music collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new tracks from your favorite artists and will grab, sort and rename them.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "lidarr.png"
 }
