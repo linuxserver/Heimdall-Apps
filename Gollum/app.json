@@ -1,0 +1,10 @@
+{
+    "appid": "c40751a93d5149845e204c0e7522490bd15619bc",
+    "name": "Gollum",
+    "website": "https://github.com/gollum/gollum",
+    "license": "MIT License",
+    "description": "A simple, Git-powered wiki with a sweet API and local frontend. Originally developed and still in use by GitHub.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "gollum.jpeg"
+}
