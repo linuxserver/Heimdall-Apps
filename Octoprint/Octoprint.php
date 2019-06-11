@@ -30,7 +30,7 @@ class Octoprint extends \App\SupportedApps implements \App\EnhancedApps {
 
         $progress = $details->progress->completion;
 
-        $data['progress'] = @round($progress*100) ?? 0;
+        $data['progress'] = @round($progress) ?? 0;
         $seconds = $details->progress->printTimeLeft;
         if($seconds === null) {
             $data['estimated'] = 'N/A';
