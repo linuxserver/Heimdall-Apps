@@ -1,0 +1,10 @@
+{
+    "appid": "fd37cc0f60f5654682bdc272adb420052001c7d2",
+    "name": "TeamCity",
+    "website": "https://www.jetbrains.com/teamcity",
+    "license": "Commercial",
+    "description": "TeamCity is a Java-based build management and continuous integration server from JetBrains.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "teamcity.png"
+}
