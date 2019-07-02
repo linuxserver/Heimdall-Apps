@@ -1,0 +1,10 @@
+{
+    "appid": "c2c369c9e498b1ecfb102707c472799832235dc0",
+    "name": "DevOps",
+    "website": "https://azure.microsoft.com/en-us/services/devops/",
+    "license": "Commercial",
+    "description": "Plan smarter, collaborate better and ship faster with a set of modern dev services.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "devops.png"
+}
