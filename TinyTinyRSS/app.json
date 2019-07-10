@@ -3,8 +3,8 @@
     "name": "Tiny Tiny RSS",
     "website": "https://tt-rss.org/",
     "license": "GNU General Public License v3.0 only",
-    "description": "https://tt-rss.org/",
+    "description": "Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader and aggregator",
     "enhanced": false,
-    "tile_background": "dark",
+    "tile_background": "light",
     "icon": "tinytinyrss.png"
 }
