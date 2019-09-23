@@ -13,7 +13,10 @@ class Sonarr extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('system/status'));
+        $attrs = [
+            'headers'  => ['Accept' => 'application/json']
+        ];
+        $test = parent::appTest($this->url('system/status'), $attrs);
         echo $test->status;
     }
 
@@ -21,9 +24,13 @@ class Sonarr extends \App\SupportedApps implements \App\EnhancedApps {
     {
         $status = 'inactive';
         $data = [];
-
-        $missing = json_decode(parent::execute($this->url('wanted/missing'))->getBody());
-        $queue = json_decode(parent::execute($this->url('queue'))->getBody());
+        $attrs = [
+            'headers'  => ['Accept' => 'application/json']
+        ];
+        
+        
+        $missing = json_decode(parent::execute($this->url('wanted/missing'), $attrs)->getBody());
+        $queue = json_decode(parent::execute($this->url('queue'), $attrs)->getBody());
 
         $data = [];
 
