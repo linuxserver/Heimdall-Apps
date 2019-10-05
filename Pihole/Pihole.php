@@ -26,10 +26,8 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps {
         $data = [];
 
         if($details) {
-            $domains_being_blocked = $details->domains_being_blocked;
-            $ads_blocked_today = $details->ads_blocked_today;
-            $data['domains_being_blocked'] = $domains_being_blocked;
-            $data['ads_blocked_today'] = $ads_blocked_today;
+            $data['ads_blocked_today'] = number_format($details->ads_blocked_today);
+            $data['ads_percentage_today'] = number_format($details->ads_percentage_today,1);
         }
 
         return parent::getLiveStats($status, $data);

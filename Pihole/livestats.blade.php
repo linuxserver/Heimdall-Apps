@@ -1,10 +1,10 @@
 <ul class="livestats">
     <li>
-        <span class="title">Domains <br />Blocked</span>
-        <strong>{!! $domains_being_blocked !!}</strong>
+        <span class="title">Queries<br />Blocked</span>
+        <strong>{!! $ads_blocked_today !!}</strong>
     </li>
     <li>
-        <span class="title">Blocked <br />Today</span>
-        <strong>{!! $ads_blocked_today !!}</strong>
+        <span class="title">Percent<br /> Blocked</span>
+        <strong>{!! $ads_percentage_today !!}</strong>
     </li>
 </ul>

@@ -34,13 +34,13 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps {
         $status = 'inactive';
         $res = $this->sendRequest();
         if ($res == null) {
-            Log::debug('Transmission connection failed');
+            //Log::debug('Transmission connection failed');
             return '';
         }
 
         $details = json_decode($res->getBody());
         if (!isset($details->arguments)) {
-            Log::debug('Failed to fetch data from Transmission');
+            //Log::debug('Failed to fetch data from Transmission');
             return '';
         }
 
@@ -108,11 +108,11 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps {
             if ($xtId != null) {
                 $this->attrs['headers'] = ['X-Transmission-Session-Id' => $xtId];
             } else {
-                Log::error("Unable to get Transmission session information");
-                Log::debug("Status Code: ".$res->getStatusCode());
+                //Log::error("Unable to get Transmission session information");
+                //Log::debug("Status Code: ".$res->getStatusCode());
             }
         } catch(\GuzzleHttp\Exception\ConnectException $e){
-            Log::error("Failed connection to Transmission");
+            //Log::error("Failed connection to Transmission");
             return false;
         }
         return true;
