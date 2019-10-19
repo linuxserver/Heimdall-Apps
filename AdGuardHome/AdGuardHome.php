@@ -25,8 +25,14 @@ class AdGuardHome extends \App\SupportedApps implements \App\EnhancedApps {
 
         $data = [];
         if($details) {
-            $data['dns_queries'] = number_format($details->dns_queries);
-            $data['blocked_filtering'] = number_format($details->blocked_filtering);
+            // format has been changed in AdguardHome v0.99.0
+            if (is_array($details->dns_queries)) {
+                $data['dns_queries'] = number_format(array_sum($details->dns_queries));
+                $data['blocked_filtering'] = number_format(array_sum($details->blocked_filtering));
+            } else {
+                $data['dns_queries'] = number_format($details->dns_queries);
+                $data['blocked_filtering'] = number_format($details->blocked_filtering);
+            }
         }
 
         return parent::getLiveStats($status, $data);
