@@ -4,7 +4,7 @@
     "website": "https://github.com/Novik/ruTorrent",
     "license": "GNU General Public License v3.0 or later",
     "description": "ruTorrent is a front-end for the popular Bittorrent client rtorrent.",
-    "enhanced": false,
-    "tile_background": "dark",
+    "enhanced": true,
+    "tile_background": "#004",
     "icon": "rutorrent.png"
 }
