@@ -1,0 +1,10 @@
+{
+    "appid": "2d62ef7fb857e868c544e3e16fccd51842ace4a9",
+    "name": "Service Fabric",
+    "website": "https://azure.microsoft.com/en-in/services/service-fabric/",
+    "license": "Commercial",
+    "description": "Rapidly develop and update microservice-based applications with Azure Service Fabric which lets developers build features without additional infrastructure.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "servicefabric.png"
+}
