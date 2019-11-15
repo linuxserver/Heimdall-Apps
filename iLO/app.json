@@ -3,7 +3,7 @@
     "name": "iLO",
     "website": "https://www.hpe.com/us/en/servers/integrated-lights-out-ilo.html",
     "license": "Proprietary",
-    "description": "iLO, is an embedded server management technology by Hewlett-Packard ",
+    "description": "HP Integrated Lights-Out, is an embedded server management technology by Hewlett-Packard ",
     "enhanced": false,
     "tile_background": "light",
     "icon": "ilo.png"
