@@ -83,6 +83,6 @@ class ruTorrent extends \App\SupportedApps implements \App\EnhancedApps {
 
         $bytes /= pow(1024, $pow); 
 
-        return round($bytes, $precision) . ' <span>' . $units[$pow] . '/s</span>';
+        return round($bytes, $precision) . ' ' . $units[$pow] . '/s';
     }
 }
