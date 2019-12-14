@@ -1,5 +1,9 @@
 <?php namespace App\SupportedApps\qBittorrent;
 
+# qBitTorrent v4.2.0 onwards enforces the use of API v2.
+# API Documentation:
+# https://github.com/qbittorrent/qBittorrent/wiki/Web-API-Documentation#authentication
+
 class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
@@ -17,7 +21,8 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps {
         if($test->getStatusCode() === 200) {
             echo $test->getStatusCode();
         }
-        $test = parent::appTest($this->url('version/api'));
+        #$test = parent::appTest($this->url('version/api'));
+        $test = parent::appTest($this->url('api/v2/app/version'));
         echo $test->status;
     }
 
@@ -30,7 +35,8 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps {
             'cookies' => $this->jar,
             'headers' => ['content-type' => 'application/x-www-form-urlencoded']
         ];
-        return parent::execute($this->url('login'), $attrs, false, 'POST');
+        #return parent::execute($this->url('login'), $attrs, false, 'POST');
+        return parent::execute($this->url('/api/v2/auth/login'), $attrs, false, 'POST');
     }
 
     public function livestats()
@@ -40,7 +46,8 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps {
         $attrs = [
                 'cookies' => $this->jar
         ];
-        $res = parent::execute($this->url('query/torrents'), $attrs);
+        #$res = parent::execute($this->url('query/torrents'), $attrs);
+        $res = parent::execute($this->url('api/v2/torrents/info'), $attrs);
         $details = json_decode($res->getBody());
 
         $data = [];
