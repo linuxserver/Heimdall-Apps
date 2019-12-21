@@ -36,7 +36,7 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps {
             'headers' => ['content-type' => 'application/x-www-form-urlencoded']
         ];
         #return parent::execute($this->url('login'), $attrs, false, 'POST');
-        return parent::execute($this->url('/api/v2/auth/login'), $attrs, false, 'POST');
+        return parent::execute($this->url('api/v2/auth/login'), $attrs, false, 'POST');
     }
 
     public function livestats()
