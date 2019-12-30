@@ -13,6 +13,9 @@ class Spotweb extends \App\SupportedApps implements \App\EnhancedApps {
         $username = $this->config->username;
         $password = $this->config->password;
 
+        if (!isset($username) || empty($username) || !isset($password) || empty($password))
+            return;
+
         $attrs = [
             'cookies' => $this->jar
         ];
@@ -34,7 +37,6 @@ class Spotweb extends \App\SupportedApps implements \App\EnhancedApps {
             'headers' => ['content-type' => 'application/x-www-form-urlencoded']
         ];
         $res = parent::execute($this->url('?page=login'), $attrs, false, 'POST');
-        $content = (string) $res->getBody(true);
     }
 
     public function test()
