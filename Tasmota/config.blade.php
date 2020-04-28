@@ -1,4 +1,4 @@
-<h2>{{ __('app.apps.config') }} ({{ __('app.optional') }}) @include('items.enable')</h2>
+<h2>{{ __('app.apps.config') }} - Pull AM2301 Sensor Data @include('items.enable')</h2>
 <div class="items">
     <div class="input">
         <label>{{ strtoupper(__('app.url')) }}</label>
