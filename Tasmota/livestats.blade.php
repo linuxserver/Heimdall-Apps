@@ -1,10 +1,14 @@
 <ul class="livestats">
     <li>
-        <span class="title">Temperature</span>
-        <strong>{!! $temperature !!}</strong>
+        <span class="title">Temp.</span>
+        <strong>{!! $temperature !!}&deg;C</strong>
     </li>
     <li>
-        <span class="title">Humidity</span>
-        <strong>{!! $humidity !!}</strong>
+        <span class="title">Humid.</span>
+        <strong>{!! $humidity !!}&percnt;</strong>
+    </li>
+	<li>
+        <span class="title">Dew.</span>
+        <strong>{!! $dewpoint !!}&deg;C</strong>
     </li>
 </ul>
