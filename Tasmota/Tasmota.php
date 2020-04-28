@@ -13,17 +13,23 @@ class Tasmota extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('status'));
+        $test = parent::appTest($this->url('/cm?cmnd=Status%208'));
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('status'));
+        $res = parent::execute($this->url('/cm?cmnd=Status%208'));
         $details = json_decode($res->getBody());
 
         $data = [];
+		
+		if($details) {
+            $data['Temperature'] = number_format($details->temperature);
+            $data['Humidity'] = number_format($details->humidity,1);
+        }
+		
         return parent::getLiveStats($status, $data);
         
     }
