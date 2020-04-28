@@ -1,10 +1,10 @@
 <ul class="livestats">
     <li>
-        <span class="title">Queue</span>
-        <strong>{!! $queue_size !!}</strong>
+        <span class="title">Temperature</span>
+        <strong>{!! $temperature !!}</strong>
     </li>
     <li>
-        <span class="title">Speed</span>
-        <strong>{!! $current_speed !!}</strong>
+        <span class="title">Humidity</span>
+        <strong>{!! $humidity !!}</strong>
     </li>
 </ul>
