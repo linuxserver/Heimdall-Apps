@@ -5,6 +5,6 @@
     "license": "100 sensors free",
     "description": "Monitor all systems, devices, traffic and applications of your IT infrastructure.",
     "enhanced": true,
-    "tile_background": "dark",
+    "tile_background": "light",
     "icon": "prtg.png"
 }
