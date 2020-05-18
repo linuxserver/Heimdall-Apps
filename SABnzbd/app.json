@@ -9,7 +9,6 @@
     "icon": "sabnzbd.png",
     "config": {
         "type": "apikey",
-        "test": "1",
         "stat1": {
             "name": "Queue",
             "url": ":url:api?output=json&apikey=:apikey:&mode=queue",
