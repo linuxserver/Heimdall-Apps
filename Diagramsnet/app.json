@@ -1,0 +1,10 @@
+{
+    "appid": "4f04c09106ead8fba9b21604d53cad484aa62e4f",
+    "name": "Diagrams.net",
+    "website": "https://www.diagrams.net/",
+    "license": "Apache License 2.0",
+    "description": "Diagram with anyone, anywhere.\r\n\r\ndiagrams.net is open source, online, desktop and container deployable diagramming software",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "diagramsnet.png"
+}
