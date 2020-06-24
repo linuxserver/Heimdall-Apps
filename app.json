@@ -1,0 +1,10 @@
+{
+    "appid": "092b4439f4391f2937b9c122affbce0a10ab52d7",
+    "name": "Cloud9",
+    "website": "http://c9.io",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "Cloud9 IDE is an Online IDE (integrated development environment), published as open source from version 2.0, until version 3.0. It supports multiple programming languages, including C, C++, PHP, Ruby, Perl, Python, JavaScript with Node.js, and Go.\r\n\r\nIt is written almost entirely in JavaScript, and uses Node.js on the back-end. The editor component uses Ace.\r\n\r\nCloud9 had been acquired by Amazon in July 2016. As of March 2018, existing accounts on Cloud9's original website may be used, but new accounts may not be created. Cloud9 is now a part of Amazon Web Services (AWS), and as such, new users must use an AWS account to use the Cloud9 service. On April 2 2019, Cloud9 announced that users would not be able to create new and use old workspaces on c9.io (aka original version, not Amazon Cloud9) after June 30, 2019.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "cloud9.png"
+}
