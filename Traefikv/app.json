@@ -1,0 +1,10 @@
+{
+    "appid": "0004a2fc5e9b0246096848f3571219e360474c06",
+    "name": "Traefik v2",
+    "website": "https://traefik.io/",
+    "license": "MIT License",
+    "description": "Traefik, the cloud native route, new breaking version 2.0",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "traefikv2.png"
+}
