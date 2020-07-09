@@ -5,6 +5,6 @@
     "license": "MIT License",
     "description": "Dozzle is a real-time log viewer for docker containers.",
     "enhanced": false,
-    "tile_background": "light",
+    "tile_background": "dark",
     "icon": "dozzle.png"
 }
