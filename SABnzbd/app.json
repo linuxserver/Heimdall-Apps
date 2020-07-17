@@ -6,5 +6,24 @@
     "description": "SABnzbd is a multi-platform binary newsgroup downloader. The program works in the background and simplifies the downloading verifying and extracting of files from Usenet.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "sabnzbd.png"
+    "icon": "sabnzbd.png",
+    "config": {
+        "type": "apikey",
+        "stat1": {
+            "name": "Queue",
+            "url": ":url:api?output=json&apikey=:apikey:&mode=queue",
+            "key": "queue.sizeleft",
+            "filter": "size",
+            "updateOnChange": "Yes",
+            "suffix": ""
+        },
+        "stat2": {
+            "name": "Speed",
+            "url": ":url:api?output=json&apikey=:apikey:&mode=queue",
+            "key": "queue.speed",
+            "filter": "speed",
+            "updateOnChange": "Yes",
+            "suffix": ""
+        }
+    }
 }
