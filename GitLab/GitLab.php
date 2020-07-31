@@ -13,17 +13,23 @@ class GitLab extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('status'));
+        $test = parent::appTest($this->url('/-/readiness?token='.$this->config->apikey.'&all=1'));
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('status'));
+        $res = parent::execute($this->url('/-/readiness?token='.$this->config->apikey.'&all=1'));
         $details = json_decode($res->getBody());
 
         $data = [];
+        
+        if($details)
+        {
+            $data['status'] = $details['status'];
+        }
+        
         return parent::getLiveStats($status, $data);
         
     }
