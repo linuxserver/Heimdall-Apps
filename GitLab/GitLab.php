@@ -27,7 +27,7 @@ class GitLab extends \App\SupportedApps implements \App\EnhancedApps {
         
         if($details)
         {
-            $data['status'] = $details['status'];
+            $data['status'] = $details->status;
         }
         
         return parent::getLiveStats($status, $data);
