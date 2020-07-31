@@ -13,21 +13,39 @@ class GitLab extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('/-/readiness?token='.$this->config->apikey.'&all=1'));
-        echo $test->status;
+        if(!empty($this->config->health_apikey))
+        {
+            $test = parent::appTest($this->url('/-/readiness?token='.$this->config->health_apikey.'&all=1'));
+            echo $test->status;
+        }
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('/-/readiness?token='.$this->config->apikey.'&all=1'));
-        $details = json_decode($res->getBody());
-
         $data = [];
         
-        if($details)
+        if(!empty($this->config->health_apikey))
         {
-            $data['status'] = $details->status;
+            $res1 = parent::execute($this->url('/-/readiness?token='.$this->config->health_apikey.'&all=1'));
+            $details1 = json_decode($res1->getBody());
+            if($details1)
+            {
+                $data['status'] = $details1->status;
+                $status = $details1->status;
+            }
+        }
+        
+        if(!empty($this->config->private_apikey))
+        {
+            $call_header['headers'] = ['PRIVATE-TOKEN' => $this->config->private_apikey];
+            $res2 = parent::execute($this->url('/api/v4/application/statistics'), $call_header);
+            $details2 = json_decode($res2->getBody());
+            if($details2 && isset($details2->projects) && isset($details2->active_users))
+            {
+                 $data['count_projects'] = $details2->projects;
+                 $data['count_users'] = $details2->active_users;
+            }
         }
         
         return parent::getLiveStats($status, $data);
