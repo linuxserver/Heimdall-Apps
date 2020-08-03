@@ -46,7 +46,7 @@ class FreshRSS extends \App\SupportedApps implements \App\EnhancedApps {
         $res = parent::execute($this->url('api/fever.php?api&unread_item_ids'), $attrs, $this->clientVars, 'POST');
         if($res->getStatusCode() == 200) {
             $body = json_decode($res->getBody());
-			if($data->auth === 1){
+			if($body->auth === 1){
 				$unread = count(explode(",", $body->unread_item_ids));
 				$data['unread'] = $unread ?? 0;
 			}
