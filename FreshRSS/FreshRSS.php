@@ -27,7 +27,7 @@ class FreshRSS extends \App\SupportedApps implements \App\EnhancedApps {
         
         if($res->getStatusCode() == 200) {
             $data = json_decode($res->getBody());
-            if($data->auth == 1){
+            if($data != null && $data->auth === 1){
                 echo "Welcome " . $this->config->username . ", you are connected to API v".$data->api_version;
             }
         }
@@ -46,8 +46,10 @@ class FreshRSS extends \App\SupportedApps implements \App\EnhancedApps {
         $res = parent::execute($this->url('api/fever.php?api&unread_item_ids'), $attrs, $this->clientVars, 'POST');
         if($res->getStatusCode() == 200) {
             $body = json_decode($res->getBody());
-            $unread = count(explode(",", $body->unread_item_ids));
-            $data['unread'] = $unread ?? 0;
+			if($data->auth === 1){
+				$unread = count(explode(",", $body->unread_item_ids));
+				$data['unread'] = $unread ?? 0;
+			}
         }
         
         return parent::getLiveStats($status, $data);
@@ -55,7 +57,7 @@ class FreshRSS extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->override_url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url).$endpoint;
         return $api_url;
     }
     
