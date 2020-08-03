@@ -3,53 +3,53 @@
 class FreshRSS extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
-	
-	function __construct() 
+
+    function __construct() 
     {
        
     }
-	
-	private $clientVars = [
+
+    private $clientVars = [
         'http_errors' => false, 
         'timeout' => 15, 
         'connect_timeout' => 15,
         'verify' => false,
     ];
-	
+
     public function test()
     {
-		$attrs = [
-		    'body' => 'api_key='.$this->getApiKey(),
-			'headers' => ['Content-Type' => 'application/x-www-form-urlencoded']
-		];
-		
-		$res = parent::execute($this->url('api/fever.php?api'), $attrs, $this->clientVars, 'POST');
-		
-		if($res->getStatusCode() == 200) {
+        $attrs = [
+            'body' => 'api_key='.$this->getApiKey(),
+            'headers' => ['Content-Type' => 'application/x-www-form-urlencoded']
+        ];
+        
+        $res = parent::execute($this->url('api/fever.php?api'), $attrs, $this->clientVars, 'POST');
+        
+        if($res->getStatusCode() == 200) {
             $data = json_decode($res->getBody());
             if($data->auth == 1){
-				echo "Welcome " . $this->config->username . ", you are connected to API v".$data->api_version;
-			}
+                echo "Welcome " . $this->config->username . ", you are connected to API v".$data->api_version;
+            }
         }
-	}
+    }
 
     public function livestats()
     {
         $status = 'inactive';
         $data = [];
 
-		$attrs = [
-		    'body' => 'api_key='.$this->getApiKey(),
-			'headers' => ['Content-Type' => 'application/x-www-form-urlencoded']
-		];
-		
-		$res = parent::execute($this->url('api/fever.php?api&unread_item_ids'), $attrs, $this->clientVars, 'POST');
-		if($res->getStatusCode() == 200) {
+        $attrs = [
+            'body' => 'api_key='.$this->getApiKey(),
+            'headers' => ['Content-Type' => 'application/x-www-form-urlencoded']
+        ];
+        
+        $res = parent::execute($this->url('api/fever.php?api&unread_item_ids'), $attrs, $this->clientVars, 'POST');
+        if($res->getStatusCode() == 200) {
             $body = json_decode($res->getBody());
             $unread = count(explode(",", $body->unread_item_ids));
-			$data['unread'] = $unread ?? 0;
+            $data['unread'] = $unread ?? 0;
         }
-		
+        
         return parent::getLiveStats($status, $data);
     }
 
@@ -58,8 +58,8 @@ class FreshRSS extends \App\SupportedApps implements \App\EnhancedApps {
         $api_url = parent::normaliseurl($this->config->override_url).$endpoint;
         return $api_url;
     }
-	
-	public function getApiKey()
+    
+    public function getApiKey()
     {
         return md5($this->config->username.":".$this->config->apikey);
     }
