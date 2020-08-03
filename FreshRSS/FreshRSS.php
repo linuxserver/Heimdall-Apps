@@ -47,8 +47,11 @@ class FreshRSS extends \App\SupportedApps implements \App\EnhancedApps {
         if($res->getStatusCode() == 200) {
             $body = json_decode($res->getBody());
 			if($body->auth === 1){
-				$unread = count(explode(",", $body->unread_item_ids));
-				$data['unread'] = $unread ?? 0;
+				if($body->unread_item_ids != ""){
+					$data['unread'] = count(explode(",", $body->unread_item_ids));
+				} else{
+					$data['unread'] = 0;
+				}
 			}
         }
         
