@@ -28,8 +28,8 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function login()
     {
-        $username = $this->config->username;
-        $password = $this->config->password;
+        $username = urlencode($this->config->username);
+        $password = urlencode($this->config->password);
         $attrs = [
             'body' => 'username='.$username.'&password='.$password,
             'cookies' => $this->jar,

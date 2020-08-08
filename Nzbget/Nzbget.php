@@ -33,8 +33,8 @@ class Nzbget extends \App\SupportedApps implements \App\EnhancedApps {
     public function url($endpoint)
     {
         $api_url = parent::normaliseurl($this->config->url);
-        $username = $this->config->username;
-        $password = $this->config->password;
+        $username = urlencode($this->config->username);
+        $password = urlencode($this->config->password);
         $rebuild_url = str_replace('http://', 'http://'.$username.':'.$password.'@', $api_url);
         $rebuild_url = str_replace('https://', 'https://'.$username.':'.$password.'@', $rebuild_url);
         $rebuild_url = rtrim($rebuild_url, '/');
