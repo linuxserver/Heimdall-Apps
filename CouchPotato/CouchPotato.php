@@ -34,7 +34,7 @@ class CouchPotato extends \App\SupportedApps implements \App\EnhancedApps {
     }
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).'/api/'.$this->config->apikey.'/'.$endpoint;
+        $api_url = parent::normaliseurl($this->config->url).'api/'.$this->config->apikey.'/'.$endpoint;
         return $api_url;
     }
 }
