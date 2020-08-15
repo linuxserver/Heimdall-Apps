@@ -4,7 +4,7 @@
     "website": "https://emby.media/",
     "license": "Proprietary",
     "description": "Emby (formerly Media Browser) is a media server designed to organize, play, and stream audio and video to a variety of devices.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "emby.png"
 }
