@@ -1,6 +1,6 @@
-<?php namespace App\SupportedApps\GlassISCDHCP;
+<?php namespace App\SupportedApps\Glass;
 
-class GlassISCDHCP extends \App\SupportedApps implements \App\EnhancedApps {
+class Glass extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
 
@@ -13,17 +13,23 @@ class GlassISCDHCP extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('status'));
+        $test = parent::appTest($this->url('/get_stats'));
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('status'));
+        $res = parent::execute($this->url('/get_stats'));
         $details = json_decode($res->getBody());
 
         $data = [];
+
+        if($details) {
+            $data['leases_used'] = number_format($details->leases_used);
+            $data['cpu_utilization'] = number_format($details->cpu_utilization,1);
+        }
+
         return parent::getLiveStats($status, $data);
         
     }
