@@ -1,0 +1,10 @@
+{
+    "appid": "c3fdfdc6801bd71a615317cf54a113b3b0bc0bf4",
+    "name": "Element",
+    "website": "https://element.io/",
+    "license": "Apache License 2.0",
+    "description": "A glossy Matrix collaboration client for the web.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "element.svg"
+}
