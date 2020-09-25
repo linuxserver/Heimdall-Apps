@@ -5,6 +5,6 @@
     "license": "Apache License 2.0",
     "description": "A glossy Matrix collaboration client for the web.",
     "enhanced": false,
-    "tile_background": "light",
+    "tile_background": "dark",
     "icon": "element.svg"
 }
