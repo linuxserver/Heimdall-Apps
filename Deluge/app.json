@@ -43,7 +43,7 @@
             "updateOnChange": "Yes",
             "suffix": ""
         }
-    }
+    },
     "tile_background": "dark",
     "icon": "deluge.png"
 }
