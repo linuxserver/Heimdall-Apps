@@ -1,0 +1,10 @@
+{
+    "appid": "f9348b8e7a8ec417b6bd3313537c5af11add7496",
+    "name": "FHEM",
+    "website": "https://fhem.de",
+    "license": "GNU General Public License v2.0 only",
+    "description": "FHEM (TM) is a GPL'd perl server for house automation. It is used to automate some common tasks in the household like switching lamps / shutters / heating / etc. and to log events like temperature / humidity / power consumption.\r\n\r\nThe program runs as a server, you can control it via web or smartphone frontends, telnet or TCP/IP directly.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "fhem.png"
+}
