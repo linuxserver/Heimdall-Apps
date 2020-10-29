@@ -4,7 +4,7 @@
     "website": "https://freshrss.org/",
     "license": "GNU Affero General Public License v3.0",
     "description": "FreshRSS is a self-hosted RSS feed aggregator. It is lightweight, easy to work with, powerful and customizable.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "freshrss.png"
 }
