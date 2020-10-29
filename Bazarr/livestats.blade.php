@@ -4,7 +4,7 @@
         <strong>{!! $movies !!} Movies</strong>
     </li>
     <li>
-        <span class="title"> </span>
+        <span class="title">&nbsp;</span>
         <strong>{!! $series !!} TV</strong>
     </li>
 </ul>
