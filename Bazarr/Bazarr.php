@@ -34,7 +34,7 @@ class Bazarr extends \App\SupportedApps implements \App\EnhancedApps {
 
         $data = [];
 
-        if($missing || $queue) {
+        if($movies || $series) {
             $data['movies'] = $movies->missing_movies ?? 0;
             $data['series'] = $series->missing_episodes ?? 0;
         }
