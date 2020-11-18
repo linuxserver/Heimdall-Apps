@@ -20,7 +20,7 @@ class HDHomeRun extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function livestats()
     {
-        $status = 'active';
+        $status = 'inactive';
         $res = parent::execute($this->url('lineup.json?show=found'));
         $details = json_decode($res->getBody());
 
@@ -29,27 +29,29 @@ class HDHomeRun extends \App\SupportedApps implements \App\EnhancedApps {
         if($details) {
              $channel_count = count($details);
              $data['number_of_channels'] = number_format($channel_count);
-        } else {
-            $data['number_of_channels'] = number_format(-1);
+             $status = 'active';
         }
 
         $res = parent::execute($this->url('tuners.html'));
         $tunersBody = $res->getBody();
-        $exp = "/<tr>\\s*<td>([^<]+)<\/td>\\s*<td>([^<]+)<\/td><\/tr>/mi";
-        preg_match_all($exp, $tunersBody, $matches, PREG_SET_ORDER, 0);;
-        $inUse = 0;
-        $totalTuners = 0;
-        $match_count = count($matches);
-        for ($i = 0; $i < $match_count; $i++) {
-            if (count($matches[$i]) >= 2) {
-                if ($matches[$i][2] != "none" && $matches[$i][2] != "not in use") {
-                    $inUse++;
+        if($tunersBody) {
+            $exp = "/<tr>\\s*<td>([^<]+)<\/td>\\s*<td>([^<]+)<\/td><\/tr>/mi";
+            preg_match_all($exp, $tunersBody, $matches, PREG_SET_ORDER, 0);;
+            $inUse = 0;
+            $totalTuners = 0;
+            $match_count = count($matches);
+            for ($i = 0; $i < $match_count; $i++) {
+                if (count($matches[$i]) >= 2) {
+                    if ($matches[$i][2] != "none" && $matches[$i][2] != "not in use") {
+                        $inUse++;
+                    }
                 }
+                $totalTuners++;
             }
-            $totalTuners++;
+            $data['tuners_in_use'] = number_format($inUse);
+            $data['tuners_total'] = number_format($totalTuners);
+            $status = 'active';
         }
-        $data['tuners_in_use'] = number_format($inUse);
-        $data['tuners_total'] = number_format($totalTuners);
         return parent::getLiveStats($status, $data);
 
     }
