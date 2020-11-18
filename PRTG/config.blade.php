@@ -9,7 +9,7 @@
         {!! Form::text('config[username]', (isset($item) ? $item->getconfig()->username : null), array('placeholder' => __('app.apps.username'), 'data-config' => 'username', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
-        <label title="You need a passhash not a password, you can find this on the User Account page in PRTG.">Passhash</label>
+        <label title="You need a passhash not a password, you can find this on the User Account page in PRTG.">Passhash (help?)</label>
         {!! Form::text('config[passhash]', (isset($item) ? $item->getconfig()->passhash : null), array('placeholder' => __('Passhash'), 'data-config' => 'passhash', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
