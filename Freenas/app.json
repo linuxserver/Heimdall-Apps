@@ -4,7 +4,7 @@
     "website": "https://www.freenas.org/",
     "license": "BSD-2-Clause",
     "description": "FreeNAS is an embedded open source network-attached storage (NAS) operating system based on FreeBSD.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "freenas.png"
 }
