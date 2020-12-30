@@ -4,7 +4,7 @@
     "website": "https://www.bookstackapp.com/",
     "license": "MIT License",
     "description": "BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "bookstack.png"
 }
