@@ -35,11 +35,6 @@ class PRTG extends \App\SupportedApps implements \App\EnhancedApps {
             if (empty($details->WarnSens)) {$data['warnings'] = 0;} else {$data['warnings'] = number_format($details->WarnSens);}
 			if (empty($details->UnusualSens)) {$data['unusuals'] = 0;} else {$data['unusuals'] = number_format($details->UnusualSens);}	
 			if (empty($details->UpSens)) {$data['ups'] = 0;} else {$data['ups'] = number_format($details->UpSens);}
-			$data['imgurlalarms'] = $this->url('help/led_red_big.png');
-			$data['imgurlalarmsack'] = $this->url('help/led_redok_big.png');
-			$data['imgurlwarnings'] = $this->url('help/led_yellow_big.png');
-			$data['imgurlunusuals'] = $this->url('help/led_orange_big.png');
-			$data['imgurlups'] = $this->url('help/led_green_big.png');
         }
 		
         return parent::getLiveStats($status, $data);
