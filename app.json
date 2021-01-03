@@ -1,10 +1,10 @@
 {
-    "appid": "18bd5c19b49acc0a5030708e664fb1ed249a8fa5",
-    "name": "Teedy",
-    "website": "https://teedy.io/",
-    "license": "GNU General Public License v2.0 only",
-    "description": "Teedy is a lightweight document management system packed with all the features you can expect from big expensive solutions but still easy to use.",
-    "enhanced": false,
+    "appid": "0680196c9ecb05c60ff8f8e757deff6fc7260754",
+    "name": "Supermicro IPMI",
+    "website": "https://www.supermicro.com/en/solutions/management-software/ipmi-utilities",
+    "license": "Commercial",
+    "description": "IPMI is a hardware solution for controlling and managing your servers. It has significant differences and benefits compared to system diagnosis software. For example, IPMI gives you the ability to manage servers in remote physical locations regardless of the installed operating system.",
+    "enhanced": true,
     "tile_background": "dark",
-    "icon": "teedy.png"
+    "icon": "supermicroipmi.png"
 }
