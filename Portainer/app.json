@@ -4,7 +4,7 @@
     "website": "https://portainer.io/",
     "license": "zlib License",
     "description": "Portainer is a simple management solution for Docker. Easily manage your Docker hosts and Docker Swarm clusters via Portainer web user interface.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "portainer.png"
 }
