@@ -7,7 +7,7 @@
     "enhanced": true,
     "config": {
         "auth_payload": {
-            "method": 'auth.login',
+            "method": "auth.login",
             "id": 1,
             "params": [":password:"]
          },
