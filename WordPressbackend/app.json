@@ -1,0 +1,10 @@
+{
+    "appid": "63d4e322973baf44126cd1ccaa365394292ba08c",
+    "name": "WordPress backend",
+    "website": "wordpress.org",
+    "license": "GNU General Public License v2.0 or later",
+    "description": "Log in to admin backend\r\nThe most important thing is the *multiply blog login ability",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "wordpressbackend.png"
+}
