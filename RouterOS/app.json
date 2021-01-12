@@ -1,0 +1,10 @@
+{
+    "appid": "4ed24a3e035feeb09e9d2515fc491577842306c3",
+    "name": "RouterOS",
+    "website": "https://mikrotik.com/",
+    "license": "Commercial",
+    "description": "Mikrotik RouterOS routerboard management via web",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "routeros.png"
+}
