@@ -1,0 +1,10 @@
+{
+    "appid": "770248a12d451140cd5076102da9860ceed37cc6",
+    "name": "UNMS",
+    "website": "unms.com",
+    "license": "Commercial",
+    "description": "Ubiquiti network management system",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "unms.png"
+}
