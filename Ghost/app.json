@@ -4,7 +4,7 @@
     "website": "https://github.com/tryghost/ghost",
     "license": "MIT License",
     "description": "Fiercely independent, professional publishing. A fully open source, powerful platform for building and running modern publications, we power serious blogs, magazines and journalism from DuckDuckGo to OpenAI & Sky News.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "ghost.png"
 }
