@@ -4,7 +4,7 @@
     "website": "https://github.com/sct/overseerr",
     "license": "MIT License",
     "description": "Overseerr is a free and open source software application for managing requests for your media library. It integrates with your existing services such as Sonarr, Radarr and Plex!",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "overseerr.png"
 }
