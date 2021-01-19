@@ -5,6 +5,6 @@
     "license": "MIT License",
     "description": "Wekan is an open source, collaborative kanban board application.",
     "enhanced": false,
-    "tile_background": "light",
+    "tile_background": "dark",
     "icon": "wekan.png"
 }
