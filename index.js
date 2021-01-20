@@ -3,6 +3,7 @@ const glob = require('glob');
 const { hashElement } = require('folder-hash');
 
 glob("**/app.json", async function (err, files) {
+
   if(err) {
     console.log("cannot read the folder, something goes wrong with glob", err)
   }
