@@ -12,13 +12,13 @@ glob("**/app.json", async function (err, files) {
   let apps = []
   let promises = [];
 
+  const options = {
+    algho: 'sha1',
+    encoding: 'hex'
+  }
+
   for (const file of files) {
   //files.forEach(async function(file) {
-    
-    const options = {
-      algho: 'sha1',
-      encoding: 'hex'
-    };
 
     let folder = file.replace('/app.json', '')
 
