@@ -2,7 +2,7 @@ const fs = require('fs');
 const glob = require('glob');
 const { hashElement } = require('folder-hash');
 
-glob("**/*.json", {"ignore":['list.json']}, function (err, files) {
+glob("**/app.json", async function (err, files) {
   if(err) {
     console.log("cannot read the folder, something goes wrong with glob", err)
   }
@@ -11,7 +11,8 @@ glob("**/*.json", {"ignore":['list.json']}, function (err, files) {
   let apps = []
   let promises = [];
 
-  files.forEach(function(file) {
+  for (const file of files) {
+  //files.forEach(async function(file) {
     
     const options = {
       algho: 'sha1',
@@ -20,41 +21,28 @@ glob("**/*.json", {"ignore":['list.json']}, function (err, files) {
 
     let folder = file.replace('/app.json', '')
 
-    promises.push(
-      hashElement(folder, options)
-      .then(hash => {
-        //console.log(hash.toString())
-        fs.readFile(file, 'utf8', function(err, filedata) {
-          if(err) {
-            console.log("cannot read file", err)
-          }
-          let parsed = JSON.parse(filedata)
-          parsed.sha = hash.hash
-          apps.push(parsed)
+    let hash = await hashElement(folder, options)
+    let filedata = fs.readFileSync(file)
+
+    let parsed = JSON.parse(filedata)
+    parsed.sha = hash.hash
+    //console.log(parsed)
+    apps.push(parsed)
+
+  }
+
+  let json = {
+    appcount: apptotal,
+    apps: apps
+  }
+
+  let data = JSON.stringify(json);
+
+  var dir = './dist';
   
-        }) 
-      })
-      .catch(error => {
-        return console.error('hashing failed:', error);
-      })
-    )
-  })
-
-  Promise.all(promises).then(() => {
-    let json = {
-      appcount: apptotal,
-      apps: apps
-    }
-
-    let data = JSON.stringify(json);
-
-    var dir = './dist';
-    
-    if (!fs.existsSync(dir)){
-      fs.mkdirSync(dir);
-    }
-    fs.writeFileSync(dir+'/list.json', data);
-  });
-
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+  fs.writeFileSync(dir+'/list.json', data);
 
 })
