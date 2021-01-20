@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Generate
-        uses: actions/heimdall-apps@v1.1
+        uses: node index.js
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
