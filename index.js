@@ -37,13 +37,14 @@ glob("**/app.json", async function (err, files) {
     apps: apps
   }
 
-  let data = JSON.stringify(json);
+  let data = JSON.stringify(json)
 
-  var dir = './dist';
+  var dir = './dist'
   
   if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir);
+    fs.mkdirSync(dir)
   }
-  fs.writeFileSync(dir+'/list.json', data);
+  fs.writeFileSync(dir+'/list.json', data)
+  fs.createReadStream('CNAME').pipe(fs.createWriteStream(dir+'CNAME'))
 
 })
