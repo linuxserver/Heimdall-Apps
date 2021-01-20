@@ -1,0 +1,24 @@
+{
+  "name": "Heimdall-Apps",
+  "version": "1.0.0",
+  "description": "Fullfilling a foundation app request",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linuxserver/Heimdall-Apps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linuxserver/Heimdall-Apps/issues"
+  },
+  "homepage": "https://github.com/linuxserver/Heimdall-Apps#readme",
+  "dependencies": {
+    "folder-hash": "^4.0.0",
+    "glob": "^7.1.6"
+  }
+}

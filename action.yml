@@ -1,0 +1,8 @@
+name: 'Generate app list'
+description: 'Generates the Heimdall Apps list'
+outputs:
+  list: # id of output
+    description: 'the apps list'
+runs:
+  using: 'node12'
+  main: 'index.js'
