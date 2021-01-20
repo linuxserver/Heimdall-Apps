@@ -45,6 +45,6 @@ glob("**/app.json", async function (err, files) {
     fs.mkdirSync(dir)
   }
   fs.writeFileSync(dir+'/list.json', data)
-  fs.createReadStream('CNAME').pipe(fs.createWriteStream(dir+'CNAME'))
+  fs.createReadStream('CNAME').pipe(fs.createWriteStream(dir+'/CNAME'))
 
 })
