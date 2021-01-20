@@ -4,5 +4,5 @@ outputs:
   list: # id of output
     description: 'the apps list'
 runs:
-  using: 'node12'
+  using: 'node14'
   main: 'index.js'
