@@ -6,5 +6,5 @@
     "description": "Plume is a federated blogging engine based on ActivityPub. It is written in Rust, with the Rocket framework, and Diesel to interact with the database. The front-end uses Ructe templates, WASM and SCSS.",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "plume.svg"
+    "icon": "plume.png"
 }

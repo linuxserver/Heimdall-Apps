@@ -6,5 +6,5 @@
     "description": "Instant alerts when your cron jobs fail silently.",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "healthchecks.svg"
+    "icon": "healthchecks.png"
 }
