@@ -23,7 +23,7 @@ glob("**/*.json", {"ignore":['list.json']}, function (err, files) {
     promises.push(
       hashElement(folder, options)
       .then(hash => {
-        console.log(hash.toString())
+        //console.log(hash.toString())
         fs.readFile(file, 'utf8', function(err, filedata) {
           if(err) {
             console.log("cannot read file", err)
@@ -47,7 +47,13 @@ glob("**/*.json", {"ignore":['list.json']}, function (err, files) {
     }
 
     let data = JSON.stringify(json);
-    fs.writeFileSync('list.json', data);
+
+    var dir = './dist';
+    
+    if (!fs.existsSync(dir)){
+      fs.mkdirSync(dir);
+    }
+    fs.writeFileSync(dir+'/list.json', data);
   });
 
 
