@@ -13,8 +13,8 @@ class Overseerr extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $this->attrs['headers'] = ['accept' => 'application/json'];
-        $test = parent::appTest($this->url('api/v1/status'), $this->attrs);
+        $this->attrs['headers'] = ['accept' => 'application/json','X-Api-Key' => $this->config->apikey];
+        $test = parent::appTest($this->url('api/v1/auth/me'), $this->attrs);
         echo $test->status;
     }
 
