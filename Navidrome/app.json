@@ -4,7 +4,7 @@
     "website": "https://www.navidrome.org",
     "license": "GNU General Public License v3.0 only",
     "description": "Navidrome is a self-hosted, open source music server and streamer. It gives you freedom to listen to your music collection from any browser or mobile device.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "navidrome.png"
 }
