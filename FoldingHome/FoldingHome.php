@@ -24,8 +24,8 @@ class FoldingHome extends \App\SupportedApps implements \App\EnhancedApps {
         $res = parent::execute($this->url($this->updateURI()));
         $details = json_decode($res->getBody(), true);
 	$status = $details[1][1][0]["status"];
-	$progress = $details[1][1][0]["percentdone"];
-	$eta = $details[1][1][0]["eta"];
+	$progress = isset($details[1][1][0]["percentdone"]) ? $details[1][1][0]["percentdone"] : "N/A";
+	$eta = isset($details[1][1][0]["eta"]) ? $details[1][1][0]["eta"] : "N/A";
 
         $data = [
 		"status" => $status,
@@ -33,8 +33,8 @@ class FoldingHome extends \App\SupportedApps implements \App\EnhancedApps {
 		"eta" => $eta
 	];
         return parent::getLiveStats($status, $data);
-        
     }
+
     public function url($endpoint)
     {
         $api_url = parent::normaliseurl($this->config->url).$endpoint;
@@ -43,9 +43,10 @@ class FoldingHome extends \App\SupportedApps implements \App\EnhancedApps {
     public function setSID()
     {
 	if (empty($this->sid)) {
-		$res = parent::execute($this->url('js/main.js')); 
-        	preg_match("/sid = \'(?P<sid>\w+)\'\;/", $res->getBody(), $matches);
-        	$this->sid =  $matches['sid'];
+                $rand = mt_rand() / mt_getrandmax();
+                $res = parent::execute($this->url('api/session?_='.$rand), [], [], 'PUT');
+                $this->sid = (string) $res->getBody();
+
 		$query_data = [
 			'sid' => $this->sid,
 			'update_id' => 0,
@@ -76,19 +77,5 @@ class FoldingHome extends \App\SupportedApps implements \App\EnhancedApps {
 	$query_url .= '&_=';
 	$query_url .= time();
 	return $query_url;
-    }
-    public function sanitizeJSON($str)
-    {
-	// Sanitize the JSON string
-	for ($i = 0; $i <= 31; ++$i)
-	{ 
-		$str = str_replace(chr($i), "", $str); 
-	}
-	$str = str_replace(chr(127), "", $str);
-	if (0 === strpos(bin2hex($str), 'efbbbf'))
-	{
-		$str = substr($str, 3);
-	}
-        return $str;
     }
 }
