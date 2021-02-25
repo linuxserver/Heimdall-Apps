@@ -4,7 +4,7 @@
         <strong>{!! $pending !!}</strong>
     </li>
     <li>
-        <span class="title">Approved</span>
-        <strong>{!! $approved !!}</strong>
+        <span class="title">Processing</span>
+        <strong>{!! $processing !!}</strong>
     </li>
 </ul>

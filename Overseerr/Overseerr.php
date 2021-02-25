@@ -1,6 +1,7 @@
 <?php namespace App\SupportedApps\Overseerr;
 
-class Overseerr extends \App\SupportedApps implements \App\EnhancedApps {
+class Overseerr extends \App\SupportedApps implements \App\EnhancedApps
+{
 
     public $config;
 
