@@ -2,6 +2,7 @@
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use Illuminate\Support\Arr;
 
 class Deluge extends \App\SupportedApps implements \App\EnhancedApps {
 
@@ -51,13 +52,14 @@ class Deluge extends \App\SupportedApps implements \App\EnhancedApps {
         $data = [];
 
         if($details) {
+            $states = $details->result->filters->state;
             $download_rate = $details->result->stats->download_rate ?? 0;
             $upload_rate = $details->result->stats->upload_rate ?? 0;
             $data['download_rate'] = format_bytes($download_rate, false, ' <span>', '/s</span>');
             $data['upload_rate'] = format_bytes($upload_rate, false, ' <span>', '/s</span>');
-            $data['seed_count'] = $details->result->filters->state[2][1] ?? 0;
-            $data['leech_count'] = $details->result->filters->state[1][1] ?? 0;  
-            $status = ($data['leech_count'] > 0) ? 'active' : 'inactive';  
+            $data['seed_count'] = self::getState($states, 'Seeding');
+            $data['leech_count'] = self::getState($states, 'Downloading');
+            $status = (self::getState($states, 'Active') > 0) ? 'active' : 'inactive';
         }
 
         return parent::getLiveStats($status, $data);
@@ -70,4 +72,11 @@ class Deluge extends \App\SupportedApps implements \App\EnhancedApps {
         return $api_url;
     }
 
+    protected static function getState(array $states, string $wantedState, int $default = 0): int {
+        $state = Arr::first($states, function (array $state) use ($wantedState) {
+            return $state[0] == $wantedState;
+        });
+
+        return Arr::get($state, 1, $default);
+    }
 }
