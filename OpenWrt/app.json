@@ -5,6 +5,6 @@
     "license": "GNU General Public License v2.0 or later",
     "description": "OpenWrt is an open source project based on Linux, primarily used on devices to route network traffic\r\n\r\n#please use tile background color #578",
     "enhanced": false,
-    "tile_background": "white",
+    "tile_background": "light",
     "icon": "openwrt.png"
 }
