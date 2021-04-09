@@ -21,9 +21,9 @@
             "suffix": ""
         },
         "stat2": {
-            "name": "Free",
+            "name": "Used",
             "url": ":url:ocs/v1.php/cloud/users/:username:?format=json",
-            "key": "ocs.data.quota.free",
+            "key": "ocs.data.quota.used",
             "filter": "size",
             "updateOnChange": "No",
             "suffix": ""
