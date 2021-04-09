@@ -10,7 +10,7 @@
     "config": {
         "type": "apikey",
         "stat1": {
-            "name": "Movies",
+            "name": "Missing",
             "url": ":url:api/v3/movie?apikey=:apikey:",
             "key": "",
             "filter": "filter",
