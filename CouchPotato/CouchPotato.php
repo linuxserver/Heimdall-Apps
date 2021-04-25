@@ -23,15 +23,15 @@ class CouchPotato extends \App\SupportedApps implements \App\EnhancedApps {
         $data = [];
 
         $movies = json_decode(parent::execute($this->url('movie.list'))->getBody());
-        $collect = collect($movies);
-        $missing = $collect->whereNot('status', 'done');
+        $collect = collect($movies->movies);
+        $missing = $collect->where('status', '!=', 'done');
         if($missing) {
           $data['missing'] = $missing->count() ?? 0;
         }
 
         return parent::getLiveStats($status, $data);
-        
     }
+
     public function url($endpoint)
     {
         $api_url = parent::normaliseurl($this->config->url).'api/'.$this->config->apikey.'/'.$endpoint;
