@@ -16,7 +16,7 @@ class Jellyfin extends \App\SupportedApps implements \App\EnhancedApps {
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('/emby/Items/Counts'), $this->getAttrs());
+        $res = parent::execute($this->url('emby/Items/Counts'), $this->getAttrs());
         $result = json_decode($res->getBody());
         $details = ['visiblestats'=>[]];
         foreach($this->config->availablestats as $stat) {
