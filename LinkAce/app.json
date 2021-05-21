@@ -1,0 +1,10 @@
+{
+    "appid": "c7eef6a399bb48a066d4e11fc577e896bc142cf3",
+    "name": "LinkAce",
+    "website": "https://www.linkace.org/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "LinkAce is a self-hosted archive to collect links of your favorite websites. Save articles to read them later, tools to use them in your next project, or historic content to archive it for the long term. LinkAce comes with a lot of features while keeping a clean and minimal interface.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "linkace.png"
+}
