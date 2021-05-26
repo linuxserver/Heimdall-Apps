@@ -13,7 +13,7 @@
             "name": "Queue",
             "url": ":url:api?output=json&apikey=:apikey:&mode=queue",
             "key": "queue.sizeleft",
-            "filter": "size",
+            "filter": "none",
             "updateOnChange": "Yes",
             "suffix": ""
         },
