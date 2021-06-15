@@ -1,0 +1,10 @@
+{
+    "appid": "44fb3ee60816316d3c253e7454f5e0ab5f46680a",
+    "name": "Tar1090",
+    "website": "https://github.com/wiedehopf/tar1090",
+    "license": "GNU General Public License v2.0 only",
+    "description": "Provides an improved webinterface for use with ADS-B decoders readsb / dump1090-fa",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "tar1090.png"
+}
