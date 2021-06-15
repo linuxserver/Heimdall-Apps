@@ -1,0 +1,10 @@
+{
+    "appid": "ec9dab93c7d9cba1c5171ed468dfee950b933c94",
+    "name": "Photonix",
+    "website": "https://photonix.org/",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "This is a photo management application based on web technologies. Run it on your home server and it will let you find what you want from your photo collection using any device. Smart filtering is made possible automatically by object recognition, location awareness, color analysis and other algorithms.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "photonix.png"
+}
