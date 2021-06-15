@@ -40,13 +40,16 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps {
         }
 
         return parent::getLiveStats($status, $data);
-        
+
     }
     public function url($endpoint)
     {
         $url = parse_url(parent::normaliseurl($this->config->url));
+        $scheme = $url['scheme'];
         $domain = $url['host'];
-        $api_url = "http://".$domain.":32400".$endpoint."?X-Plex-Token=".$this->config->token;
+        $port = isset($url['port']) ? $url['port'] : '32400';
+        $api_url = $scheme."://".$domain.":".$port.$endpoint."?X-Plex-Token=".$this->config->token;
         return $api_url;
+
     }
 }
