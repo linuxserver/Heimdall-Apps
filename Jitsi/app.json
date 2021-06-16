@@ -1,0 +1,10 @@
+{
+    "appid": "5640232c98c04a627fbdcc1cb26cd34a4a0088bc",
+    "name": "Jitsi",
+    "website": "https://jitsi.org/",
+    "license": "Apache License 2.0",
+    "description": "Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "jitsi.png"
+}
