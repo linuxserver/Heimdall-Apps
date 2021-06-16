@@ -4,7 +4,7 @@
     "website": "https://www.monicahq.com/",
     "license": "GNU Affero General Public License v3.0 only",
     "description": "Monica is an open-source web application to organize the interactions with your loved ones. We call it a PRM, or Personal Relationship Management. Think of it as a CRM for your friends or family.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "monica.png"
 }

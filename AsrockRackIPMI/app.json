@@ -1,0 +1,10 @@
+{
+    "appid": "fa8a2fb9dfd946ec30d5e6b2ee69e24f8a252c5b",
+    "name": "Asrock Rack IPMI",
+    "website": "https://www.asrockrack.com/support/faq.de.asp?id=28",
+    "license": "Commercial",
+    "description": "Asrock Rack IPMI is an embedded server management technology by Asrock Rack.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "asrockrackipmi.png"
+}
