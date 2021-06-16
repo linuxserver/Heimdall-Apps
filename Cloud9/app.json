@@ -1,0 +1,10 @@
+{
+    "appid": "",
+    "name": "Cloud9",
+    "website": "https://www.cloud9.gg/",
+    "license": "NON-COMMERCIAL LICENSE",
+    "description": "Cloud9 IDE is an Online IDE, published as open source from version 2.0, until version 3.0. It supports multiple programming languages, including C, C++, PHP, Ruby, Perl, Python, JavaScript with Node.js, and Go. It is written almost entirely in JavaScript, and uses Node.js on the back-end.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "cloud9.png"
+}

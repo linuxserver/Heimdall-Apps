@@ -1,0 +1,10 @@
+{
+    "appid": "d1d0f952ebdcb6b8918bdd7ddbf55793dca5fa93",
+    "name": "Xen-Orchestra",
+    "website": "https://xen-orchestra.com/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "XO is a web interface to visualize and administer your XenServer (or XAPI enabled) hosts.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "xenorchestra.png"
+}

@@ -1,6 +1,6 @@
-<?php namespace App\SupportedApps\CouchPotato;
+<?php namespace App\SupportedApps\Tar;
 
-class CouchPotato extends \App\SupportedApps implements \App\EnhancedApps {
+class Tar extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
 
@@ -13,28 +13,29 @@ class CouchPotato extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('app.available'));
+        $test = parent::appTest($this->url('data/stats.json'));
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
+        $res = parent::execute($this->url('data/stats.json'));
+        $details = json_decode($res->getBody());
+
         $data = [];
 
-        $movies = json_decode(parent::execute($this->url('movie.list'))->getBody());
-        $collect = collect($movies->movies);
-        $missing = $collect->where('status', '!=', 'done');
-        if($missing) {
-          $data['missing'] = $missing->count() ?? 0;
+        if($details) {
+            $data['aircaft_with_pos'] = number_format($details->aircaft_with_pos);
+            $data['aircraft_without_pos'] = number_format($details->aircraft_without_pos);
         }
 
         return parent::getLiveStats($status, $data);
+        
     }
-
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).'api/'.$this->config->apikey.'/'.$endpoint;
+        $api_url = parent::normaliseurl($this->config->url).$endpoint;
         return $api_url;
     }
 }

@@ -1,0 +1,10 @@
+{
+    "appid": "b69a8d8e93fa412531b8ef117c50ce520d71cd5a",
+    "name": "n8n",
+    "website": "https://n8n.io",
+    "license": "Apache License 2.0",
+    "description": "n8n is an extendable workflow automation tool. With a fair-code distribution model, n8n will always have visible source code, be available to self-host, and allow you to add your own custom functions, logic and apps. n8n's node-based approach makes it highly versatile, enabling you to connect anything to everything.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "n8n.png"
+}

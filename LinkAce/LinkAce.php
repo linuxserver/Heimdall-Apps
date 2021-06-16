@@ -1,6 +1,6 @@
-<?php namespace App\SupportedApps\Monica;
+<?php namespace App\SupportedApps\LinkAce;
 
-class Monica extends \App\SupportedApps implements \App\EnhancedApps {
+class LinkAce extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
 
@@ -13,25 +13,32 @@ class Monica extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('api/contacts'));
+        $test = parent::appTest($this->url('api/v1/links'));
         echo $test->status;
     }
 
     public function livestats()
     {
-      $status = 'inactive';
-      $res = parent::execute($this->url('api/contacts'), $this->attrs());
-      $details = json_decode($res->getBody(), True);
+        $status = 'inactive';
 
-      $data = [];
+        $res_links = parent::execute($this->url('api/v1/links'), $this->attrs());
+        $links = json_decode($res_links->getBody(), True);
 
-      if($details) {
-        $data['contacts'] = $details['meta']['total'] ?? 0;
-      }
+        $res_tags = parent::execute($this->url('api/v1/tags'), $this->attrs());
+        $tags = json_decode($res_tags->getBody(), True);
 
-      return parent::getLiveStats($status, $data);
+        $data = [];
+
+        if($links) {
+          $data['links'] = $links['total'] ?? 0;
+        }
+
+        if($tags) {
+          $data['tags'] = $tags['total'] ?? 0;
+        }
+
+        return parent::getLiveStats($status, $data);
     }
-
     public function url($endpoint)
     {
         $api_url = parent::normaliseurl($this->config->url).$endpoint;

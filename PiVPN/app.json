@@ -1,0 +1,10 @@
+{
+    "appid": "c0f951b12d14c47e4e488294584808ff31747eea",
+    "name": "PiVPN",
+    "website": "https://www.pivpn.io",
+    "license": "MIT License",
+    "description": "The simplest way to setup and manage a VPN, designed for Raspberry Pi.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "pivpn.png"
+}

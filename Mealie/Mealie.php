@@ -1,5 +1,6 @@
 <?php namespace App\SupportedApps\Mealie;
 
+
 class Mealie extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
@@ -33,3 +34,5 @@ class Mealie extends \App\SupportedApps implements \App\EnhancedApps {
         return $api_url;
     }
 }
+
+

@@ -1,0 +1,10 @@
+{
+    "appid": "0619bf7cc62aeb10ccbf7566912d4d44bb42e7a5",
+    "name": "Focalboard",
+    "website": "https://www.focalboard.com/",
+    "license": "Apache License 2.0",
+    "description": "Focalboard is an open source, self-hosted alternative to Trello, Notion, and Asana.\r\nIt's a project management tool that helps define, organize, track and manage work across teams, using a familiar kanban board view.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "focalboard.svg"
+}
