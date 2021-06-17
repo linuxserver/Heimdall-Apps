@@ -1,0 +1,10 @@
+{
+    "appid": "3561ed8ae1660eadbe92128eedcff5e6f8e9280e",
+    "name": "Dillinger",
+    "website": "https://dillinger.io",
+    "license": "MIT License",
+    "description": "Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,\r\nAngularJS-powered HTML5 Markdown editor.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "dillinger.png"
+}
