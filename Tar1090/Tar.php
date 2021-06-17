@@ -1,6 +1,6 @@
 <?php namespace App\SupportedApps\Tar;
 
-class Tar extends \App\SupportedApps implements \App\EnhancedApps {
+class Tar1090 extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
 
