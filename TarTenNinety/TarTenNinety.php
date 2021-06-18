@@ -1,6 +1,6 @@
-<?php namespace App\SupportedApps\Tar;
+<?php namespace App\SupportedApps\TarTenNinety;
 
-class Tar1090 extends \App\SupportedApps implements \App\EnhancedApps {
+class TarTenNinety extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
 
