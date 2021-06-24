@@ -1,0 +1,10 @@
+{
+    "appid": "36211c66ecd5984827673c89373ae184f06c000f",
+    "name": "Fronius",
+    "website": "https://www.fronius.com",
+    "license": "MIT License",
+    "description": "This app allows to monitor the electrical production of the photovoltaic panels connected to a Fronius inverter.\r\n\r\nThe enhanced app connects to the inverter API and shows the current production of the system, as well as the daily production.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "fronius.png"
+}
