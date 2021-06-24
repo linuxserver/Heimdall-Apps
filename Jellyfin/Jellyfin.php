@@ -9,14 +9,14 @@ class Jellyfin extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('System/Info'), $this->getAttrs());
+        $test = parent::appTest($this->url('System/Info/Public'), $this->getAttrs());
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('emby/Items/Counts'), $this->getAttrs());
+        $res = parent::execute($this->url('Items/Counts'), $this->getAttrs());
         $result = json_decode($res->getBody());
         $details = ['visiblestats'=>[]];
         foreach($this->config->availablestats as $stat) {
