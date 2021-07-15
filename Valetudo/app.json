@@ -1,0 +1,10 @@
+{
+    "appid": "998d84b49df198a35d23f332e998fd371a94ade5",
+    "name": "Valetudo",
+    "website": "https://valetudo.cloud/",
+    "license": "Apache License 2.0",
+    "description": "Valetudo aims to be a vendor-agnostic abstraction and cloud replacement for vacuum robots which started as a standalone binary on rooted roborock vacuums.\r\n\r\nSince then, support for more vendors has been added and will also be added in the future.\r\n\r\nThe main goal of Valetudo is to disable all cloud connectivity and instead provide controls via a mobile-friendly webinterface as well as MQTT connectivity which also supports Home Assistant Autodiscovery.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "valetudo.svg"
+}
