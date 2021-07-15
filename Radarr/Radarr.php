@@ -23,7 +23,7 @@ class Radarr extends \App\SupportedApps implements \App\EnhancedApps {
         $data = [];
 
         $movies = json_decode(parent::execute($this->url('movie'))->getBody());
-        $queue = json_decode(parent::execute($this->url('queue'))->getBody(), true);
+        $queue = json_decode(parent::execute($this->url('queue'))->getBody());
 
         $collect = collect($movies);
         $missing = $collect->where('hasFile', false);
@@ -31,7 +31,7 @@ class Radarr extends \App\SupportedApps implements \App\EnhancedApps {
         $data = [];
         if($missing || $queue) {
             $data['missing'] = $missing->count() ?? 0;
-            $data['queue'] = count($queue['records']) ?? 0;
+            $data['queue'] = count($queue->records) ?? 0;
         }
 
         return parent::getLiveStats($status, $data);
