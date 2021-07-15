@@ -1,0 +1,10 @@
+{
+    "appid": "4e3bc51d7fcb068f2ef8a68a332b1b56ed9040ac",
+    "name": "Glass ISC DHCP",
+    "website": "https://github.com/Akkadius/glass-isc-dhcp",
+    "license": "European Union Public License 1.2",
+    "description": "Glass - ISC DHCP Server Interface",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "glassiscdhcp.png"
+}
