@@ -23,7 +23,7 @@ class Radarr extends \App\SupportedApps implements \App\EnhancedApps {
         $data = [];
 
         $movies = json_decode(parent::execute($this->url('movie'))->getBody());
-        $queue = json_decode(parent::execute($this->url('queue'))->getBody());
+        $queue = json_decode(parent::execute($this->url('queue'))->getBody(), true);
 
         $collect = collect($movies);
         $missing = $collect->where('hasFile', false);
@@ -31,7 +31,7 @@ class Radarr extends \App\SupportedApps implements \App\EnhancedApps {
         $data = [];
         if($missing || $queue) {
             $data['missing'] = $missing->count() ?? 0;
-            $data['queue'] = count($queue) ?? 0;
+            $data['queue'] = count($queue['records']) ?? 0;
         }
 
         return parent::getLiveStats($status, $data);
@@ -40,7 +40,7 @@ class Radarr extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).'api/'.$endpoint.'?apikey='.$this->config->apikey;
+        $api_url = parent::normaliseurl($this->config->url).'api/v3/'.$endpoint.'?apikey='.$this->config->apikey;
         return $api_url;
     }
 }
