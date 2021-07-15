@@ -1,0 +1,10 @@
+{
+    "appid": "17f90cf81eef712f5738fb3720e86980d1fdb6dc",
+    "name": "Blue Iris",
+    "website": "https://blueirissoftware.com/",
+    "license": "Proprietary",
+    "description": "A great DIY Home Security Program with a Web GUI",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "blueiris.png"
+}
