@@ -4,7 +4,7 @@
     "website": "https://www.jeedom.com/site/fr/",
     "license": "Open Source",
     "description": "Open source Home Automation System",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "jeedom.png"
 }
