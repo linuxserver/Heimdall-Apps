@@ -4,7 +4,15 @@
     "website": "http://synology.com",
     "license": "commercial",
     "description": "Synology is a popular NAS appliance",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "synology.png"
+	"config": {
+        "auth_payload": {
+            "method": "auth.login",
+            "id": 1,
+            "params": [":password:",":username:"]
+         },
+		 "type": "apikey"       
+	}
 }
