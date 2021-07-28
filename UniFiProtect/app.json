@@ -1,0 +1,10 @@
+{
+    "appid": "a831f55ecba8054c0534210efcbb5cb9a3ea9b61",
+    "name": "UniFi Protect",
+    "website": "https://unifi-protect.ui.com",
+    "license": "Commercial",
+    "description": "Ubiquiti's simply scalable building video security.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "unifiprotect.png"
+}
