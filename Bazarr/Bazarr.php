@@ -28,15 +28,13 @@ class Bazarr extends \App\SupportedApps implements \App\EnhancedApps {
             'headers'  => ['Accept' => 'application/json']
         ];
         
-        
-        $movies = json_decode(parent::execute($this->url('badges_movies'), $attrs)->getBody());
-        $series = json_decode(parent::execute($this->url('badges_series'), $attrs)->getBody());
+        $badges = json_decode(parent::execute($this->url('badges'), $attrs)->getBody());
 
         $data = [];
 
-        if($movies || $series) {
-            $data['movies'] = $movies->missing_movies ?? 0;
-            $data['series'] = $series->missing_episodes ?? 0;
+        if($badges) {
+            $data['movies'] = $badges->movies ?? 0;
+            $data['series'] = $badges->episodes ?? 0;
         }
 
         return parent::getLiveStats($status, $data);
