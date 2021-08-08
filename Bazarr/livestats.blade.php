@@ -1,10 +1,10 @@
 <ul class="livestats">
     <li>
-        <span class="title">Movies</span>
-        <strong>{!! $movies !!}</strong>
+        <span class="title">Missing</span>
+        <strong>{!! $movies !!} Movies</strong>
     </li>
     <li>
-        <span class="title">Episodes</span>
-        <strong>{!! $series !!}</strong>
+        <span class="title">&nbsp;</span>
+        <strong>{!! $series !!} TV</strong>
     </li>
 </ul>
