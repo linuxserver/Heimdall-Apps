@@ -1,0 +1,10 @@
+{
+    "appid": "311aa8b0218a2cac6b81d9ed1bb7814531fbeb03",
+    "name": "Duet Web Control",
+    "website": "www.duet3d.com",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Duet3D is a manufacturer and maintainer of 3D and CNC control boards and firmware (RepRap Firmware). Their boards can be controlled via a lightweight web UI called Duet Web Control (DWC).",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "duetwebcontrol.png"
+}
