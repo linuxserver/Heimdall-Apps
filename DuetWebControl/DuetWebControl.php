@@ -53,7 +53,7 @@ class DuetWebControl extends \App\SupportedApps implements \App\EnhancedApps
 
 
         $data['printer_status'] = $printer_status ?? 'Off';
-        $data['job_progress'] = $job_progress ?? 'Off';
+        $data['job_progress'] = $job_progress . '%' ?? 'Off';
 
 
         return parent::getLiveStats($status, $data);
