@@ -1,0 +1,10 @@
+{
+    "appid": "e0e4952bfa0738457dac26ef15f46ba9cd49f4c3",
+    "name": "Machinaris",
+    "website": "https://github.com/guydavis/machinaris",
+    "license": "Apache License 2.0",
+    "description": "A Docker image for plotting and farming the Chia™ cryptocurrency on one computer or across many. Now with official Pool support!",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "machinaris.png"
+}
