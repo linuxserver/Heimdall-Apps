@@ -13,6 +13,10 @@
         {!! Form::input('password', 'config[password]', (isset($item) && isset($item->getconfig()->password) ? $item->getconfig()->password : null), array('placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
+        <label>{{ strtoupper(__('app.apps.endpoint')) }}</label>
+        {!! Form::text('config[endpoint]', (isset($item) && isset($item->getconfig()->endpoint) ? $item->getconfig()->endpoint : null), array('placeholder' => __('app.apps.endpoint'), 'id' => 'endpoint', 'class' => 'form-control')) !!}
+    </div>
+    <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
     </div>
 </div>
