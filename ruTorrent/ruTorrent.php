@@ -15,7 +15,7 @@ class ruTorrent extends \App\SupportedApps implements \App\EnhancedApps {
         $data = $this->getXMLRPCData('throttle.global_down.rate');
         if( !isset($data) || $data == 'Err' || $data == null || !is_object($data))
         {
-           echo 'There is an issue connecting to "' . $this->url('RPC2') . '". Please respect URL format "http(s)://IP:PORT". ' . $data;
+           echo 'There is an issue connecting to "' . $this->url($this->config->endpoint ?? 'RPC2') . '". Please respect URL format "http(s)://IP:PORT". ' . $data;
         }
         else
         {
@@ -55,7 +55,7 @@ class ruTorrent extends \App\SupportedApps implements \App\EnhancedApps {
         }
 
         try{
-            $res = parent::execute($this->url('RPC2'), $this->attrs, $this->vars);
+            $res = parent::execute($this->url($this->config->endpoint ?? 'RPC2'), $this->attrs, $this->vars);
         } catch(\GuzzleHttp\Exception\RequestException $e){
             return ''; // Connection failed, display default response
         }
