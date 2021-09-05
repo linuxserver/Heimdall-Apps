@@ -24,6 +24,7 @@ class Octoprint extends \App\SupportedApps implements \App\EnhancedApps {
         $status = 'inactive';
         $attrs['headers'] = ['X-Api-Key' => $this->config->apikey];
         $res = parent::execute($this->url('api/job'), $attrs);
+        if(!$res) return parent::getLiveStats($status, ['progress' => 0, 'estimated' => 'ERR']);
         $details = json_decode($res->getBody());
 
         $data = [];
