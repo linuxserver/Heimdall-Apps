@@ -26,9 +26,7 @@ class Radarr extends \App\SupportedApps implements \App\EnhancedApps {
         $queue = json_decode(parent::execute($this->url('queue'))->getBody());
 
         $collect = collect($movies);
-        $missing = $collect->filter(function ($item) {
-            return $item->hasFile == false && $item->monitored == true;
-        });
+        $missing = $collect->where('hasFile', false);
 
         $data = [];
         if($missing || $queue) {
