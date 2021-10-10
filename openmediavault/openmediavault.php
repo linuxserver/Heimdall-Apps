@@ -68,6 +68,7 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps {
         $info = $this->request('system', 'getInformation');
         $data['CPU'] = sprintf('%.1f%%', $info->cpuUsage );
         $data['RAM'] = sprintf('%.1f%%', $info->memUsed / $info->memTotal * 100 );
+        $data['Pkgs'] = $this->symbol( ! $info->pkgUpdatesAvailable );
 
         $services = $this->request('services', 'getStatus');
         foreach ($services->data as $service) {
@@ -94,6 +95,7 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps {
             'RSync' => 'RSync',
             'SMB/CIFS' => 'SMB/CIFS',
             'SSH' => 'SSH',
+            'Pkgs' => 'Pkgs',
         ];
     }
 }
