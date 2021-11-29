@@ -1,0 +1,10 @@
+{
+    "appid": "6fa9fbc43445818b1964e88cee7590c20252b8d5",
+    "name": "Phoscon App",
+    "website": "https://phoscon.de/en/conbee2/",
+    "license": "Proprietary",
+    "description": "The Phoscon App can be used to integrate and control many popular Zigbee devices and to setup automations and rules with the ConBee II universal\r\nZigbee USB gateway.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "phosconapp.svg"
+}
