@@ -44,6 +44,8 @@ class Portainer extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function livestats() {
         $status = 'inactive';
+        $running = 0;
+        $stopped = 0;
 
         $token = $this->auth();
         $headers = [
@@ -64,17 +66,25 @@ class Portainer extends \App\SupportedApps implements \App\EnhancedApps {
             throw new Exception("No endpoints");
         }
 
-        $endpoint = $response[0];
-        if (count($endpoint->Snapshots) === 0) {
-            throw new Exception("No snapshots");
+        foreach ($response as $endpoint) {
+            if (count($endpoint->Snapshots) === 0) {
+                throw new Exception("No snapshots");
+            }
+
+            $snapshot = $endpoint->Snapshots[0];
+            $data = [
+                $running += $snapshot->RunningContainerCount,
+                $stopped += $snapshot->StoppedContainerCount
+            ];
         }
 
-        $snapshot = $endpoint->Snapshots[0];
         $data = [
-            'running' => $snapshot->RunningContainerCount,
-            'stopped' => $snapshot->StoppedContainerCount
+            'running' => $running,
+            'stopped' => $stopped
         ];
-        $status = 'active';
+        if ($running || $stopped) {
+            $status = 'active';
+        }
         return parent::getLiveStats($status, $data);
 
     }
