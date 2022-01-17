@@ -30,8 +30,6 @@ class FortinetFortiMonitor extends \App\SupportedApps implements \App\EnhancedAp
         if($instancesList || $outagesList) {
             $data['instances'] = count($instancesList->server_list) ?? 0;
             $data['outages'] = count($outagesList->outage_list) ?? 0;
-            //$data['instances'] = 10;
-            //$data['outages'] = 10;
         }
         return parent::getLiveStats($status, $data);
         
