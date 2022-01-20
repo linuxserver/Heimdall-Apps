@@ -1,0 +1,10 @@
+{
+    "appid": "be9aa2b1dde5514cf96565e87b36f4255da45549",
+    "name": "3CX Phone System",
+    "website": "https://www.3cx.com/",
+    "license": "Proprietary",
+    "description": "The 3CX Phone System is the software-based private branch exchange (PBX) Phone system developed and marketed by the company, 3CX. The 3CX Phone System is based on the SIP (Session Initiation Protocol) standard and enables extensions to make calls via the public switched telephone network (PSTN) or via Voice over Internet Protocol (VoIP) services on premises, in the cloud, or via a cloud service owned and operated by the 3CX company. The 3CX Phone System is available for Windows, Linux, Raspberry Pi[1] and supports standard SIP soft/hard phones, VoIP services, faxing, voice and web meetings, as well as traditional PSTN phone lines.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "3cxphonesystem.png"
+}
