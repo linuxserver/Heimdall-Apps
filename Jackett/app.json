@@ -4,7 +4,7 @@
     "website": "https://github.com/Jackett/Jackett",
     "license": "GNU General Public License v2.0 only",
     "description": "Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, DuckieTV, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "jackett.png"
 }
