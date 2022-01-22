@@ -1,0 +1,10 @@
+{
+    "appid": "a3440558df5c42ea2fdaf402aa9624d5ee586515",
+    "name": "FileFlows",
+    "website": "https://fileflows.com",
+    "license": "Freemium",
+    "description": "Application that processes files using Flow based rules.  Primarily designed to convert video files to specific formats automatically",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "fileflows.png"
+}
