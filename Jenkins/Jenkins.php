@@ -3,14 +3,8 @@
 class Jenkins extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
-
-    //protected $login_first = true; // Uncomment if api requests need to be authed first
-    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
-
-    //  computer/api/xml?tree=computer[executors[currentExecutable[url]]]&xpath=//url&wrapper=builds
 	
     function __construct() {
-        //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
     public function test()
