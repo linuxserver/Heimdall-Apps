@@ -1,6 +1,6 @@
-<?php namespace App\SupportedApps\NginxProxyManager;
+<?php namespace App\SupportedApps\SpeedtestTracker;
 
-class NginxProxyManager extends \App\SupportedApps implements \App\EnhancedApps {
+class SpeedtestTracker extends \App\SupportedApps implements \App\EnhancedApps {
 
     public $config;
 
