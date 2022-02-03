@@ -51,7 +51,7 @@ class Bookstack extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = (rtrim(parent::normaliseurl($this->config->url),'/')).'/'.(ltrim($endpoint,'/'));
         return $api_url;
     }
 
@@ -60,6 +60,7 @@ class Bookstack extends \App\SupportedApps implements \App\EnhancedApps {
             'shelves'=>'Shelves',
             'books'=>'Books',
             'chapters'=>'Chapters',
+            'pages'=>'Pages',
         ];
     }
 }
