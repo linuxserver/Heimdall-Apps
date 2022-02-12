@@ -5,14 +5,6 @@
         {!! Form::text('config[override_url]', isset($item) ? ($item->getConfig()->override_url ?? null) : null, array('placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control')) !!}
     </div>
     <div class="input">
-        <label>{{ __('app.apps.username') }}</label>
-        {!! Form::text('config[username]', isset($item) ? ($item->getConfig()->username ?? null) : null, array('placeholder' => __('app.apps.username'), 'data-config' => 'username', 'class' => 'form-control config-item')) !!}
-    </div>
-    <div class="input">
-        <label>{{ __('app.apps.password') }}</label>
-        {!! Form::text('config[password]', null, array('placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item')) !!}
-    </div>
-    <div class="input">
         <label>Stats to show</label>
         {!! Form::select('config[availablestats][]', App\SupportedApps\SpeedtestTracker\SpeedtestTracker::getAvailableStats(), isset($item) ? ($item->getConfig()->availablestats ?? null) : null, array('multiple'=>'multiple')) !!}
     </div>
