@@ -4,7 +4,7 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps {
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
-    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
+    protected $method = 'POST';
 
     function __construct() {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
@@ -12,7 +12,11 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('api'));
+        $attrs = [
+            'headers'  => ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$this->config->token]
+        ];
+
+        $test = parent::appTest($this->url('api/'), $attrs);
         echo $test->status;
     }
 
@@ -23,7 +27,7 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps {
         $first_stat_label = isset($this->config->first_stat_label) ? $this->config->first_stat_label : 'Total lights';
         $first_stat_template = isset($this->config->first_stat_template) ? $this->config->first_stat_template : '{{ states.light | count}}';
         $second_stat_label = isset($this->config->second_stat_label) ? $this->config->second_stat_label : 'Total lights On';
-        $second_stat_template = isset($this->config->second_stat_template) ? $this->config->second_stat_template : '{{ states.switch | selectattr('state','equalto','on') | list | count }}';
+        $second_stat_template = isset($this->config->second_stat_template) ? $this->config->second_stat_template : '{{ states.light | selectattr(\'state\',\'equalto\',\'on\') | list | count }}';
 
         $first_attrs = [
             'headers'  => ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$this->config->token],
