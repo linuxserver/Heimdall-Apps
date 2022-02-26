@@ -33,14 +33,14 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps {
             'headers'  => ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$this->config->token],
             'body' => json_encode(['template' => $first_stat_template])
         ];
-        $first_res = parent::execute($this->url('api/template'), $first_attrs, 'POST');
+        $first_res = parent::execute($this->url('api/template'), $first_attrs, false, 'POST');
         $first_value = $first_res->getBody();
 
         $second_attrs = [
             'headers'  => ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$this->config->token],
             'body' => json_encode(['template' => $second_stat_template])
         ];
-        $second_res = parent::execute($this->url('api/template'), $second_attrs, 'POST');
+        $second_res = parent::execute($this->url('api/template'), $second_attrs, false, 'POST');
         $second_value = $second_res->getBody();
 
         return parent::getLiveStats($status, [
