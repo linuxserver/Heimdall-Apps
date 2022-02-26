@@ -4,7 +4,7 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps {
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
-    protected $method = 'POST';
+    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
     function __construct() {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
@@ -33,14 +33,14 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps {
             'headers'  => ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$this->config->token],
             'body' => json_encode(['template' => $first_stat_template])
         ];
-        $first_res = parent::execute($this->url('api/template'), $first_attrs);
+        $first_res = parent::execute($this->url('api/template'), $first_attrs, 'POST');
         $first_value = $first_res->getBody();
 
         $second_attrs = [
             'headers'  => ['Accept' => 'application/json', 'Authorization' => 'Bearer '.$this->config->token],
             'body' => json_encode(['template' => $second_stat_template])
         ];
-        $second_res = parent::execute($this->url('api/template'), $second_attrs);
+        $second_res = parent::execute($this->url('api/template'), $second_attrs, 'POST');
         $second_value = $second_res->getBody();
 
         return parent::getLiveStats($status, [
