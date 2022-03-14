@@ -1,0 +1,10 @@
+{
+    "appid": "fe2d0a7a5b34951b6ec3c46184f1ed3eae19459d",
+    "name": "Nagios",
+    "website": "https://www.nagios.com/products/nagios-core/",
+    "license": "GNU General Public License v2.0 only",
+    "description": "The open source industry standard in IT infrastructure monitoring and alerting.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "nagios.png"
+}

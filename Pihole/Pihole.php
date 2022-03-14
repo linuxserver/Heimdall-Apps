@@ -13,14 +13,14 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('/api.php'));
+        $test = parent::appTest($this->url('api.php'));
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('/api.php'));
+        $res = parent::execute($this->url('api.php'));
         $details = json_decode($res->getBody());
 
         $data = [];
