@@ -21,7 +21,7 @@ class Bookstack extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $test = parent::appTest($this->url('/api/shelves?count=0'), $this->getHeaders());
+        $test = parent::appTest($this->url('api/shelves?count=0'), $this->getHeaders());
         echo $test->status;
     }
 
@@ -36,7 +36,7 @@ class Bookstack extends \App\SupportedApps implements \App\EnhancedApps {
         foreach($this->config->availablestats as $stat) {
             if (!isset(self::getAvailableStats()[$stat])) continue;
 
-            $res = parent::execute($this->url('/api/'.$stat.'?count=0'), $attrs);
+            $res = parent::execute($this->url('api/'.$stat.'?count=0'), $attrs);
             $details = json_decode($res->getBody());
 
             $newstat = new \stdClass();
