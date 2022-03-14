@@ -5,7 +5,7 @@
     "license": "GNU General Public License v3.0 only",
     "description": "Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.\r\n\r\nThe project was inspired by other Usenet/BitTorrent movie downloaders such as CouchPotato.",
     "enhanced": true,
-    "tile_background": "dark",
+    "tile_background": "light",
     "icon": "radarr.png",
     "config": {
         "type": "apikey",
