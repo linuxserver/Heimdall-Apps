@@ -5,6 +5,10 @@ const { hashElement } = require('folder-hash');
 
 var dir = './dist'
 
+if (!fs.existsSync(dir)){
+  fs.mkdirSync(dir)
+}
+
 glob("**/app.json", async function (err, files) {
 
   if(err) {
@@ -56,9 +60,6 @@ glob("**/app.json", async function (err, files) {
   let data = JSON.stringify(json)
 
   
-  if (!fs.existsSync(dir)){
-    fs.mkdirSync(dir)
-  }
   fs.writeFileSync(dir+'/list.json', data)
   fs.createReadStream('CNAME').pipe(fs.createWriteStream(dir+'/CNAME'))
 
