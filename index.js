@@ -1,6 +1,9 @@
 const fs = require('fs');
 const glob = require('glob');
+const JSZip = require("jszip");
 const { hashElement } = require('folder-hash');
+
+var dir = './dist'
 
 glob("**/app.json", async function (err, files) {
 
@@ -30,6 +33,19 @@ glob("**/app.json", async function (err, files) {
     //console.log(parsed)
     apps.push(parsed)
 
+    var zip = new JSZip();
+    fs.readdirSync(folder).forEach(file => {
+      let filedata = fs.readFileSync(folder + '/' + file)
+      zip.file(folder + '/' + file, filedata);
+    });
+    zip
+    .generateNodeStream({type:'nodebuffer',streamFiles:true})
+    .pipe(fs.createWriteStream(dir + '/' + parsed.sha + '.zip'))
+    .on('finish', function () {
+        // JSZip generates a readable stream with a "end" event,
+        // but is piped here in a writable stream which emits a "finish" event.
+        console.log(parsed.sha + ".zip written.");
+    });
   }
 
   let json = {
@@ -39,7 +55,6 @@ glob("**/app.json", async function (err, files) {
 
   let data = JSON.stringify(json)
 
-  var dir = './dist'
   
   if (!fs.existsSync(dir)){
     fs.mkdirSync(dir)
