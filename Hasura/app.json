@@ -6,5 +6,5 @@
     "description": "Instantly make your data accessible over GraphQL.",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "hasura.png"
+    "icon": "hasura.svg"
 }
