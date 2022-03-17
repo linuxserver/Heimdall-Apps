@@ -1,0 +1,10 @@
+{
+    "appid": "b914d6bc6d5e2eb2cb5c4722489521a6d949d8e3",
+    "name": "Snapdrop",
+    "website": "https://snapdrop.net",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Snapdrop - The easiest way to transfer files across devices. Local file sharing in your browser. Inspired by Apple's Airdrop.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "snapdrop.png"
+}
