@@ -6,5 +6,5 @@
     "description": "Gitea is a community managed fork of Gogs, lightweight code hosting solution written in Go and published under the MIT license.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "gitea.png"
+    "icon": "gitea.svg"
 }
