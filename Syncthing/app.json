@@ -6,5 +6,5 @@
     "description": "Syncthing is a free, open-source peer-to-peer file synchronization application. It can sync files between devices on a local network, or between remote devices over the Internet.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "syncthing.png"
+    "icon": "syncthing.svg"
 }
