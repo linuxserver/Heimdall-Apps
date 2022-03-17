@@ -1,7 +1,7 @@
 {
     "appid": "fe8ca35ebcfc6fa1fc949fbcac58e083a19f6381",
     "name": "Technitium DNS",
-    "website": "https://technitium.com/dns/",
+    "website": "https://technitium.com/dns",
     "license": "GNU General Public License v3.0 only",
     "description": "Technitium DNS Server is an open source authoritative as well as recursive DNS server that can be used for self hosting a DNS server for privacy & security. It works out-of-the-box with no or minimal configuration and provides a user friendly web console accessible using any modern web browser.",
     "enhanced": false,

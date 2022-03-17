@@ -1,7 +1,7 @@
 {
     "appid": "756e9d172c05c14d07ff2428e6a75d5885bf5ae0",
     "name": "Munin",
-    "website": "http://munin-monitoring.org/",
+    "website": "http://munin-monitoring.org",
     "license": "GNU General Public License v2.0 only",
     "description": "Munin is a networked resource monitoring tool that can help analyze resource trends and \"what just happened to kill our performance?\" problems. It is designed to be very plug and play. A default installation provides a lot of graphs with almost no work.",
     "enhanced": false,

@@ -1,7 +1,7 @@
 {
     "appid": "060b3b99f88e96085b4a68e095bc9e3d1d91e1bc",
     "name": "Gitea",
-    "website": "https://gitea.io/",
+    "website": "https://gitea.io",
     "license": "MIT License",
     "description": "Gitea is a community managed fork of Gogs, lightweight code hosting solution written in Go and published under the MIT license.",
     "enhanced": false,

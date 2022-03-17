@@ -1,7 +1,7 @@
 {
     "appid": "aeddfb31b642e8e30591a99b3b3c30b8a765be32",
     "name": "Omada SDN Controller",
-    "website": "https://www.tp-link.com/us/omada-sdn/",
+    "website": "https://www.tp-link.com/us/omada-sdn",
     "license": "No Limit Public License",
     "description": "Omada’s Software Defined Networking (SDN) platform integrates network devices, including access points, switches and gateways, providing 100% centralized cloud management. Omada creates a highly scalable network—all controlled from a single interface. Seamless wireless and wired connections are provided, ideal for use in hospitality, education, retail, offices, and more.",
     "enhanced": false,

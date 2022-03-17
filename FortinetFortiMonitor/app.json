@@ -1,7 +1,7 @@
 {
     "appid": "4179f0ec44f292021561f0ef872892aaf604f670",
     "name": "Fortinet FortiMonitor",
-    "website": "https://fortimonitor.forticloud.com/",
+    "website": "https://fortimonitor.forticloud.com",
     "license": "Commercial",
     "description": "FortiMonitor helps organizations modernize their performance-monitoring tools into a comprehensive digital experience monitoring platform to gain end-to-end visibility into the overall user experience. It doesn’t matter where the user resides or where the application is hosted.",
     "enhanced": true,
