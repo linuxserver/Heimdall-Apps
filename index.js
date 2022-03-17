@@ -8,6 +8,12 @@ var dir = './dist'
 if (!fs.existsSync(dir)){
   fs.mkdirSync(dir)
 }
+if (!fs.existsSync(dir + '/icons')){
+  fs.mkdirSync(dir + '/icons')
+}
+if (!fs.existsSync(dir + '/files')){
+  fs.mkdirSync(dir + '/files')
+}
 
 glob("**/app.json", async function (err, files) {
 
@@ -37,14 +43,18 @@ glob("**/app.json", async function (err, files) {
     //console.log(parsed)
     apps.push(parsed)
 
+    let imagedata = fs.readFileSync(folder + '/' + parsed.icon)
+    fs.writeFileSync(dir + '/icons/' +parsed.icon , imagedata)
+
     var zip = new JSZip();
     fs.readdirSync(folder).forEach(file => {
+      if(file === parsed.icon) return;
       let filedata = fs.readFileSync(folder + '/' + file)
       zip.file(folder + '/' + file, filedata);
     });
     zip
     .generateNodeStream({type:'nodebuffer',streamFiles:true})
-    .pipe(fs.createWriteStream(dir + '/' + parsed.sha + '.zip'))
+    .pipe(fs.createWriteStream(dir + '/files/' + parsed.sha + '.zip'))
     .on('finish', function () {
         // JSZip generates a readable stream with a "end" event,
         // but is piped here in a writable stream which emits a "finish" event.
