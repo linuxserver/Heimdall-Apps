@@ -6,5 +6,5 @@
     "description": "Finally, all your log data available and accessible in one central location. Graylog is an open source log management platform.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "graylog.png"
+    "icon": "graylog.svg"
 }
