@@ -6,5 +6,5 @@
     "description": "Network-attached storage (NAS) is a file-level computer data storage server connected to a computer network providing data access to a heterogeneous group of clients. NAS is specialized for serving files either by its hardware, software, or configuration.",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "nas.png"
+    "icon": "nas.svg"
 }
