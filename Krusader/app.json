@@ -6,5 +6,5 @@
     "description": "Krusader is an advanced twin panel (commander style) file manager for KDE Plasma and other desktops in the *nix world, similar to Midnight or Total Commander.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "krusader.png"
+    "icon": "krusader.svg"
 }

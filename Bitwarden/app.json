@@ -6,5 +6,5 @@
     "description": "Open source password management solutions for individuals, teams, and business organizations.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "bitwarden.png"
+    "icon": "bitwarden.svg"
 }

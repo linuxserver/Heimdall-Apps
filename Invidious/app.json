@@ -6,5 +6,5 @@
     "description": "Self-hosted, Open Source YouTube Alternative",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "invidious.png"
+    "icon": "invidious.svg"
 }

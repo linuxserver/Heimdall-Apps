@@ -6,7 +6,7 @@
     "description": "Radarr is an independent fork of Sonarr reworked for automatically downloading movies via Usenet and BitTorrent.\r\n\r\nThe project was inspired by other Usenet/BitTorrent movie downloaders such as CouchPotato.",
     "enhanced": true,
     "tile_background": "light",
-    "icon": "radarr.png",
+    "icon": "radarr.svg",
     "config": {
         "type": "apikey",
         "stat1": {
