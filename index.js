@@ -43,9 +43,13 @@ glob("**/app.json", async function (err, files) {
     //console.log(parsed)
     apps.push(parsed)
 
-    let imagedata = fs.readFileSync(folder + '/' + parsed.icon)
-    fs.writeFileSync(dir + '/icons/' +parsed.icon , imagedata)
-
+    if (fs.existsSync(folder + '/' + parsed.icon)) {
+      let imagedata = fs.readFileSync(folder + '/' + parsed.icon)
+      fs.writeFileSync(dir + '/icons/' +parsed.icon , imagedata)
+    } else {
+      console.error('missing file: '.folder + '/' + parsed.icon) 
+    }
+    
     var zip = new JSZip();
     fs.readdirSync(folder).forEach(file => {
       if(file !== parsed.icon) {
