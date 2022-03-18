@@ -48,9 +48,10 @@ glob("**/app.json", async function (err, files) {
 
     var zip = new JSZip();
     fs.readdirSync(folder).forEach(file => {
-      if(file === parsed.icon) return;
-      let filedata = fs.readFileSync(folder + '/' + file)
-      zip.file(folder + '/' + file, filedata);
+      if(file !== parsed.icon) {
+        let filedata = fs.readFileSync(folder + '/' + file)
+        zip.file(folder + '/' + file, filedata);
+      }
     });
     zip
     .generateNodeStream({type:'nodebuffer',streamFiles:true})
