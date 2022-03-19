@@ -6,5 +6,5 @@
     "description": "RedisInsight is a visual tool that provides capabilities to design, develop and optimize your Redis application. Query, analyse and interact with your Redis data.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "redisinsight.png"
+    "icon": "redisinsight.svg"
 }
