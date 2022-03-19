@@ -6,5 +6,5 @@
     "description": "YOURLS is a set of PHP scripts that will allow you to run Your Own URL Shortener, on your server. You'll have full control over your data, detailed stats, analytics, plugins, and more. It's free and open-source.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "yourls.png"
+    "icon": "yourls.svg"
 }
