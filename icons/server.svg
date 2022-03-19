@@ -1,1 +1,47 @@
-<svg width="18" height="22" xmlns="http://www.w3.org/2000/svg"><path d="M1 0h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M6 4h1V2H6v2m0 8h1v-2H6v2m0 8h1v-2H6v2M2 2v2h2V2H2m0 8v2h2v-2H2m0 8v2h2v-2z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="204.54544"
+   height="249.99998"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="server.svg"
+   viewBox="0 0 204.54544 249.99998"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     width="19px"
+     scale-x="1"
+     inkscape:zoom="37.409091"
+     inkscape:cx="8.9951397"
+     inkscape:cy="11.013366"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="g15"
+     transform="scale(11.363636)">
+    <path
+       d="m 1,0 h 16 a 1,1 0 0 1 1,1 V 5 A 1,1 0 0 1 17,6 H 1 A 1,1 0 0 1 0,5 V 1 A 1,1 0 0 1 1,0 m 0,8 h 16 a 1,1 0 0 1 1,1 v 4 a 1,1 0 0 1 -1,1 H 1 A 1,1 0 0 1 0,13 V 9 A 1,1 0 0 1 1,8 m 0,8 h 16 a 1,1 0 0 1 1,1 v 4 a 1,1 0 0 1 -1,1 H 1 A 1,1 0 0 1 0,21 V 17 A 1,1 0 0 1 1,16 M 6,4 H 7 V 2 H 6 v 2 m 0,8 H 7 V 10 H 6 v 2 m 0,8 H 7 V 18 H 6 v 2 M 2,2 V 4 H 4 V 2 H 2 m 0,8 v 2 H 4 V 10 H 2 m 0,8 v 2 h 2 v -2 z"
+       id="path2" />
+  </g>
+</svg>
