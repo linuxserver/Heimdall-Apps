@@ -1,0 +1,10 @@
+{
+    "appid": "fd3e5a20d3595a90e1b6d0243ab6e78ff18d68b4",
+    "name": "RedisInsight",
+    "website": "https://redis.com/redis-enterprise/redis-insight/",
+    "license": "Commercial",
+    "description": "RedisInsight is a visual tool that provides capabilities to design, develop and optimize your Redis application. Query, analyse and interact with your Redis data.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "redisinsight.svg"
+}
