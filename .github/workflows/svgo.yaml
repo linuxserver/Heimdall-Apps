@@ -2,12 +2,9 @@
 name: Optimize SVG Files
 on:
   pull_request:
-    paths:
-    - "**.svg"
+
   push:
     branches: [ master ]
-    paths:
-    - "**.svg"
 
 jobs:
   svgs:
@@ -18,4 +15,4 @@ jobs:
     - uses: ericcornelissen/svgo-action@v2
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        svgo-config: svgo-config.js
+        svgo-config: svgo.config.js
