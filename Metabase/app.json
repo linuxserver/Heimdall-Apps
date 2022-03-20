@@ -1,0 +1,10 @@
+{
+    "appid": "4a0a491219ae93bc0848b0d05efbe250ace4049c",
+    "name": "Metabase",
+    "website": "https://www.metabase.com/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "The simplest, fastest way to get business intelligence and analytics to everyone in your company 😋",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "metabase.svg"
+}
