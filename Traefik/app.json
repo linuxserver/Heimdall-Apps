@@ -6,5 +6,5 @@
     "description": "Træfik is a modern HTTP reverse proxy and load balancer that makes deploying microservices easy. Træfik integrates with your existing infrastructure components and configures itself automatically and dynamically.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "traefik.png"
+    "icon": "traefik.svg"
 }
