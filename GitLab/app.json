@@ -6,5 +6,5 @@
     "description": "From project planning and source code management to CI/CD and monitoring, GitLab is a single application for the entire DevOps lifecycle.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "gitlab.png"
+    "icon": "gitlab.svg"
 }
