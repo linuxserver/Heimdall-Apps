@@ -6,5 +6,5 @@
     "description": "Download movies automatically, easily and in the best quality as soon as they are released, via usenet or torrents.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "couchpotato.png"
+    "icon": "couchpotato.svg"
 }
