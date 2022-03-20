@@ -6,5 +6,5 @@
     "description": "openmediavault is the next generation network attached storage (NAS) solution based on Debian Linux.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "openmediavault.png"
+    "icon": "openmediavault.svg"
 }
