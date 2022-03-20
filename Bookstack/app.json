@@ -6,5 +6,5 @@
     "description": "BookStack is a simple, self-hosted, easy-to-use platform for organising and storing information.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "bookstack.png"
+    "icon": "bookstack.svg"
 }
