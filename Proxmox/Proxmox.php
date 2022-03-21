@@ -75,7 +75,7 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps {
             'container_running' => $container_running,
             'container_total' => $container_total,
             'cpu_percent' => $cpu_percent_sum/count($nodes) * 100,
-            'memory_percent' => $memory_used/$memory_total,
+            'memory_percent' => (100 / $memory_total) * $memory_used,
          ];
         return parent::getLiveStats($status, $data);
 
