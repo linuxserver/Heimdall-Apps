@@ -83,7 +83,7 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps {
     public function url($endpoint)
     {
         $api_stub = 'api2/json/';
-        $api_url = parent::normaliseurl($this->config->url).$api_stub.$endpoint;
+        $api_url = parent::normaliseurl($this->getConfigValue('override_url', $this->config->url)) . $api_stub . $endpoint;
         return $api_url;
     }
 
