@@ -1,0 +1,10 @@
+{
+    "appid": "170b7d7a0634e8d51a768a113f00d7601fa9b182",
+    "name": "Whoogle",
+    "website": "https://github.com/benbusby/whoogle-search",
+    "license": "MIT License",
+    "description": "A self-hosted, ad-free, privacy-respecting metasearch engine. Get Google search results, but without any ads, javascript, AMP links, cookies, or IP address tracking.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "whoogle.png"
+}
