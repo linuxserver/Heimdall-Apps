@@ -1,0 +1,10 @@
+{
+    "appid": "0c0c3373606e00d765583eaf1fc2c1bca6c09df3",
+    "name": "Tartube",
+    "website": "https://github.com/axcore/tartube",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Tartube is a GUI front-end for youtube-dl, yt-dlp and other compatible video downloaders.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "tartube.png"
+}
