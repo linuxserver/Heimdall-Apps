@@ -1,5 +1,5 @@
 <ul class="livestats">
-    @if(isset($time_left))
+    @if (isset($time_left))
         <li>
             <span class="title">Time</span>
             <strong>{{ $time_left }}</strong>
@@ -10,7 +10,7 @@
             <strong></strong>
         </li>
     @endif
-    @if(isset($cards_left))
+    @if (isset($cards_left))
         <li>
             <span class="title">Cards</span>
             <strong>{{ $cards_left }}</strong>
