@@ -1,0 +1,18 @@
+# GitHub Action uses SVGO to Minify and removeDimensions of SVG files
+name: Optimize SVG Files
+on:
+  pull_request:
+
+  push:
+    branches: [ master ]
+
+jobs:
+  svgs:
+    name: SVGs
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ericcornelissen/svgo-action@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        svgo-config: .github/workflows/svgo.config.js

@@ -6,5 +6,5 @@
     "description": "This app allows to monitor the electrical production of the photovoltaic panels connected to a Fronius inverter.\r\n\r\nThe enhanced app connects to the inverter API and shows the current production of the system, as well as the daily production.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "fronius.png"
+    "icon": "fronius.svg"
 }
