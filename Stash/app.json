@@ -6,5 +6,5 @@
     "description": "Stash is a Go app which organizes and serves your porn.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "stash.png"
+    "icon": "stash.svg"
 }

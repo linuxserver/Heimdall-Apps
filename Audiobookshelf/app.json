@@ -1,0 +1,10 @@
+{
+    "appid": "c7ec3e2f2d9be6a4d313d2451184b08ade93ce47",
+    "name": "Audiobookshelf",
+    "website": "https://audiobookshelf.org",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Audiobookshelf is a self-hosted audiobook server for managing and playing your audiobooks.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "audiobookshelf.svg"
+}
