@@ -7,7 +7,7 @@
         <span class="title">Humid.</span>
         <strong>{!! $humidity !!}&percnt;</strong>
     </li>
-	<li>
+    <li>
         <span class="title">Dew.</span>
         <strong>{!! $dewpoint !!}&deg;C</strong>
     </li>
