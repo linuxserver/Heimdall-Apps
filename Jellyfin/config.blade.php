@@ -10,7 +10,7 @@
     </div>
     <div class="input">
     <label>Stats to show</label>
-     {!! Form::select('config[availablestats][]', App\SupportedApps\Jellyfin\Jellyfin::getAvailableStats(), isset($item) ? ($item->getConfig()->availablestats ?? null) : null, array('multiple'=>'multiple')) !!}
+        {!! Form::select('config[availablestats][]', App\SupportedApps\Jellyfin\Jellyfin::getAvailableStats(), isset($item) ? ($item->getConfig()->availablestats ?? null) : null, array('multiple'=>'multiple')) !!}
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>

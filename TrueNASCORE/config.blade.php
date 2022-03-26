@@ -5,7 +5,7 @@
         {!! Form::text('config[override_url]', (isset($item) ? $item->getconfig()->override_url : null), array('placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control')) !!}
     </div>
     <div class="input">
-       <label>{{ __('app.apps.apikey') }}</label>
+        <label>{{ __('app.apps.apikey') }}</label>
         {!! Form::input('password', 'config[apikey]', (isset($item) ? $item->getconfig()->apikey : null), array('placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
