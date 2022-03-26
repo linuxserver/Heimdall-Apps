@@ -6,7 +6,7 @@
     </div>
     <div class="input">
         <label>{{ __('app.apps.username') }}</label>
-        {!! Form::text('config[username]', $item->getconfig()->username ?? null, array('placeholder' => __('app.apps.username'), 'data-config' => 'username', 'class' => 'form-control config-item')) !!}
+        {!! Form::text('config[username]', (isset($item) ? $item->getconfig()->username : null), array('placeholder' => __('app.apps.username'), 'data-config' => 'username', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
         <label>{{ __('app.apps.apikey') }}</label>
