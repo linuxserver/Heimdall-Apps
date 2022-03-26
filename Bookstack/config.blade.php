@@ -6,11 +6,11 @@
     </div>
     <div class="input">
         <label>Token ID</label>
-        {!! Form::text('config[api_token]', null, array('placeholder' => 'Token ID', 'data-config' => 'api_token', 'class' => 'form-control config-item')) !!}
+        {!! Form::text('config[api_token]', (isset($item) ? $item->getconfig()->api_token : null), array('placeholder' => 'Token ID', 'data-config' => 'api_token', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
         <label>Token Secret</label>
-        {!! Form::text('config[api_secret]', null, array('placeholder' => 'Token Secret', 'data-config' => 'api_secret', 'class' => 'form-control config-item')) !!}
+        {!! Form::text('config[api_secret]', (isset($item) ? $item->getconfig()->api_secret : null), array('placeholder' => 'Token Secret', 'data-config' => 'api_secret', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
         <label>Stats to show</label>

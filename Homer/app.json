@@ -1,0 +1,10 @@
+{
+    "appid": "8a30fca9ea5b46722cbdad24c7470a442718cac8",
+    "name": "Homer",
+    "website": "https://github.com/bastienwirtz/homer",
+    "license": "Apache License 2.0",
+    "description": "A very simple static homepage for your server.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "homer.png"
+}

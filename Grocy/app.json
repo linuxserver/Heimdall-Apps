@@ -6,5 +6,5 @@
     "description": "grocy is a web-based self-hosted groceries & household management solution for your home.",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "grocy.png"
+    "icon": "grocy.svg"
 }
