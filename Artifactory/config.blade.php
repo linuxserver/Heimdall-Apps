@@ -6,7 +6,7 @@
     </div>
     <div class="input">
         <label>{{ __('app.apps.apikey') }}</label>
-        {!! Form::text('config[apikey]', (isset($item) ? $item->getconfig()->apiKey : null), array('placeholder' => "Api Key", 'data-config' => 'apiKey', 'class' => 'form-control config-item')) !!}
+        {!! Form::text('config[apikey]', (isset($item) ? $item->getconfig()->apikey : null), array('placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item')) !!}
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
