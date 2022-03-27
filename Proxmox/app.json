@@ -6,5 +6,5 @@
     "description": "Proxmox Virtual Environment is an open-source server virtualization environment. It allows deployment and management of virtual machines and containers",
     "enhanced": true,
     "tile_background": "light",
-    "icon": "proxmox.png"
+    "icon": "proxmox.svg"
 }
