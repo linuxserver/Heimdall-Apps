@@ -30,7 +30,7 @@
         {!! Form::text('config[token_id]', isset($item) ? $item->getconfig()->token_id : null, ['placeholder' => 'user@realm!token_name', 'data-config' => 'token_id', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
-        <label>API Token Value</label>
+        <label>{{ __('app.apps.apikey') }}</label>
         {!! Form::input('password', 'config[token_value]', isset($item) ? $item->getconfig()->token_value : null, ['placeholder' => '01234567-89ab-cdef-0123-456789abcdef', 'data-config' => 'token_value', 'class' => 'form-control config-item']) !!}
         <p style="font-size: .8em;">Requires at least <code>Sys.Audit</code> permission for <code>/nodes</code> path (and propagated).</p>
     </div>
