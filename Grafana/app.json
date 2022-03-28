@@ -6,5 +6,5 @@
     "description": "Data visualization & Monitoring with support for Graphite, InfluxDB, Prometheus, Elasticsearch and many more databases.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "grafana.png"
+    "icon": "grafana.svg"
 }

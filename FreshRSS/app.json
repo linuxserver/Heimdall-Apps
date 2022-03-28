@@ -6,5 +6,5 @@
     "description": "FreshRSS is a self-hosted RSS feed aggregator. It is lightweight, easy to work with, powerful and customizable.",
     "enhanced": true,
     "tile_background": "dark",
-    "icon": "freshrss.png"
+    "icon": "freshrss.svg"
 }
