@@ -1,0 +1,10 @@
+{
+    "appid": "0680196c9ecb05c60ff8f8e757deff6fc7260754",
+    "name": "Supermicro IPMI",
+    "website": "https://www.supermicro.com/en/solutions/management-software/ipmi-utilities",
+    "license": "Commercial",
+    "description": "IPMI is a hardware solution for controlling and managing your servers. It has significant differences and benefits compared to system diagnosis software. For example, IPMI gives you the ability to manage servers in remote physical locations regardless of the installed operating system.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "supermicroipmi.png"
+}
