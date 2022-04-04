@@ -15,7 +15,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     - name: Optimize SVGs
-      uses: ericcornelissen/svgo-action@v2
+      uses: ericcornelissen/svgo-action@v3
       id: svgo
       with:
         repo-token: ${{secrets.GITHUB_TOKEN}}
