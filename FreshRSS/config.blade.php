@@ -2,15 +2,15 @@
 <div class="items">
     <div class="input">
         <label>{{ strtoupper(__('app.url')) }}</label>
-        {!! Form::text('config[override_url]', $item->getconfig()->override_url ?? null, array('placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control')) !!}
+        {!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
     </div>
     <div class="input">
         <label>{{ __('app.apps.username') }}</label>
-        {!! Form::text('config[username]', $item->getconfig()->username ?? null, array('placeholder' => __('app.apps.username'), 'data-config' => 'username', 'class' => 'form-control config-item')) !!}
+        {!! Form::text('config[username]', isset($item) ? $item->getconfig()->username : null, ['placeholder' => __('app.apps.username'), 'data-config' => 'username', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
         <label>{{ __('app.apps.apikey') }}</label>
-        {!! Form::text('config[apikey]', $item->getconfig()->apikey ?? null, array('placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item')) !!}
+        {!! Form::text('config[apikey]', isset($item) ? $item->getconfig()->apikey : null, ['placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>

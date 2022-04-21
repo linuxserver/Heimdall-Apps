@@ -1,0 +1,10 @@
+{
+    "appid": "6c87650cad54af69bf838f03b190280f7537c03d",
+    "name": "Your Spotify",
+    "website": "https://github.com/Yooooomi/your_spotify",
+    "license": "MIT License",
+    "description": "Your Spotify is a self-hosted application that tracks what you listen and offers you a dashboard to explore statistics about it! It's composed of a web server which polls the Spotify API every now and then and a web application on which you can explore your statistics.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "yourspotify.svg"
+}
