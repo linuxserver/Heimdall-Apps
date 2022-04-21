@@ -1,7 +1,7 @@
 {
     "appid": "0a5cd6b94160a13583653d188b5083c3fa3cacdf",
     "name": "Pterodactyl",
-    "website": "https://pterodactyl.io/",
+    "website": "https://pterodactyl.io",
     "license": "MIT License",
     "description": "Pterodactyl is an open-source game server management panel built with PHP 7, React, and Go. Designed with security in mind, Pterodactyl runs all game servers in isolated Docker containers while exposing a beautiful and intuitive UI to end-users.",
     "enhanced": false,

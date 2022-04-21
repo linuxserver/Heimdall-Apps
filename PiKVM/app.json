@@ -1,0 +1,10 @@
+{
+    "appid": "3c8ecb5a9c477237e32b3776922fce3fd6e8a514",
+    "name": "PiKVM",
+    "website": "https://pikvm.org/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "A very simple and fully functional Raspberry Pi-based KVM over IP that you can make with your own hands without any soldering!",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "pikvm.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "ba8ed4dc9e438b22c9456a78a2c09652955be42c",
+    "name": "CUPS",
+    "website": "https://www.cups.org",
+    "license": "GNU General Public License v1.0 or later",
+    "description": "The standards-based, open source printing system developed by Apple for iOS®, iPadOS®, and macOS®. CUPS uses IPP Everywhere™ to support printing to local and network printers.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "cups.svg"
+}

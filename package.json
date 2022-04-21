@@ -19,6 +19,7 @@
   "homepage": "https://github.com/linuxserver/Heimdall-Apps#readme",
   "dependencies": {
     "folder-hash": "^4.0.0",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "jszip": "^3.7.1"
   }
 }
