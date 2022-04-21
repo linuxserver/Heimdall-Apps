@@ -1,0 +1,10 @@
+{
+    "appid": "601c9ad5341b0ba351540520eabd0a6cb1526a86",
+    "name": "FileBot",
+    "website": "https://www.filebot.net",
+    "license": "Commercial",
+    "description": "FileBot is the ultimate tool for renaming and organizing your movies, TV shows and Anime. Match and rename media files against online databases, download artwork and cover images, fetch subtitles, write metadata, and more, all at once in matter of seconds. It's smart and just works.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "filebot.svg"
+}

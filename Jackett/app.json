@@ -6,5 +6,5 @@
     "description": "Jackett works as a proxy server: it translates queries from apps (Sonarr, Radarr, SickRage, CouchPotato, Mylar, DuckieTV, etc) into tracker-site-specific http queries, parses the html response, then sends results back to the requesting software.",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "jackett.png"
+    "icon": "jackett.svg"
 }
