@@ -6,5 +6,5 @@
     "description": "FileRun is a self-hosted Google Drive alternative. It is a full featured web based file manager with an easy to use user interface. It is great for managing your photo, movie, audio collection, or sharing files with your family and friends.",
     "enhanced": false,
     "tile_background": "light",
-    "icon": "filerun.png"
+    "icon": "filerun.svg"
 }
