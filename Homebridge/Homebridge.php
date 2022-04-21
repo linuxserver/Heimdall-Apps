@@ -17,36 +17,36 @@ class Homebridge extends \App\SupportedApps implements \App\EnhancedApps {
         echo $test->status;
     }
 
-    public function livestats()  
+    public function livestats()
     {
         $status = 'inactive';
-        $attrs = $this->getAttrs();                                                            
-     
+        $attrs = $this->getAttrs();
+
         $res = parent::execute($this->url('api/status/server-information'), $attrs);
         $serverInfo = json_decode($res->getBody());
         $res = parent::execute($this->url('api/status/cpu'), $attrs);
-        $cpu = json_decode($res->getBody());          
+        $cpu = json_decode($res->getBody());
         $res = parent::execute($this->url('api/status/ram'), $attrs);
         $memory = json_decode($res->getBody());
 
         if ($serverInfo->time->uptime > 0) {
           $status = 'active';
-        }                    
-                                   
-        $data = [
-          'cpu' => intval($cpu->cpuTemperature->main) . ' &deg;C',                  
-          'ram' => format_bytes($memory->mem->used) . ' / ' . format_bytes($memory->mem->total)
-        ];                                                           
-                                            
-        return parent::getLiveStats($status, $data);                 
-    }                                          
+        }
 
-    public function getAttrs()              
-    {                        
+        $data = [
+          'cpu' => intval($cpu->cpuTemperature->main) . ' &deg;C',
+          'ram' => format_bytes($memory->mem->used) . ' / ' . format_bytes($memory->mem->total)
+        ];
+
+        return parent::getLiveStats($status, $data);
+    }
+
+    public function getAttrs()
+    {
         if (strlen($this->config->username) == 0) {
             return [];
-        }        
-        $attrs = [                                                
+        }
+        $attrs = [
           'body' => json_encode(array('username' => $this->config->username, 'password' => $this->config->password)),
           'headers' => ['content-type' => 'application/json']
         ];
@@ -55,11 +55,11 @@ class Homebridge extends \App\SupportedApps implements \App\EnhancedApps {
         return [
           'headers' => ['authorization' => 'Bearer ' . $auth->access_token]
         ];
-    }                                              
-                      
+    }
+
     public function url($endpoint)
-    {             
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;                                               
-        return $api_url;                                     
-    }     
+    {
+        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        return $api_url;
+    }
 }
