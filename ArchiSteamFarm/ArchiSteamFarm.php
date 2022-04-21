@@ -45,6 +45,10 @@ class ArchiSteamFarm extends \App\SupportedApps implements \App\EnhancedApps {
                 $totalSecondsLeft += $matches[2] * 60 * 60; // Hours
                 $totalSecondsLeft += $matches[3] * 60; // Minutes
                 $totalSecondsLeft += $matches[4]; // Seconds
+            }else if(preg_match("@([0-9].*):([0-9]+):([0-9]+)@", $bot->CardsFarmer->TimeRemaining, $matches)) {
+                $totalSecondsLeft += $matches[1] * 60 * 60; // Hours
+                $totalSecondsLeft += $matches[2] * 60; // Minutes
+                $totalSecondsLeft += $matches[3]; // Seconds
             }
         }
 
