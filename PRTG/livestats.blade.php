@@ -7,11 +7,11 @@
         <img style="margin: 0 2px 2px; width:20px; height:20px; border:none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAFFJREFUeNpi/P//PwMFgBGo/+W0UvI0i2d1MzFQBijVz4JHjtfMAcL4fOoAOfq5TLwJ6h9o/w/m8P92ZitF+vEE+2j6GSbhT6l+RgrLP4AAAwB9eCIjar5kTwAAAABJRU5ErkJggg==">
         <p style="margin:0 auto; font-size:12px; font-weight:bold;">{!! $alarmsack !!}</p>
     </li>
-	<li>
+    <li>
         <img style="margin: 0 2px 2px; width:20px; height:20px; border:none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAUBJREFUeNpi+k8ZYGFgYHh/npGBLCBo+J+JgTIw0PpZ4CxGJiFWDjcg4/ePXf//vQMymFkNmVnV//6++ff3eawKUOwHynGrLwciiCIg4BQtAnKBJC4FKPp/fVvB8OczyEk8NlANAk5wEiH+5zNIJVb///1yBqSOWwtEcngwsEuBRNmlQGyYOEQNdv2/3u8CeZtTHWQttz3Ca2A2RByiBrv+3193QiwEBhWbSCBcHMgGikCcA1WD3f2/z//7dhOkgSeciQtk29+3m0CKuNSBIkAGUBYSFzjj/+/n00CSQzIfxPn57NMjfyAJF4HI4tP/68NWiIUgp37YBychIhBZvPphsQgE31/3wUnMmMOZfiExBPcqPFDQYg49/cLBj5ezWL5e+/PlCFzk++MGYOJBFkGkemAZMJTzPwvEGWTrBwgwAAmf0TPW0C5TAAAAAElFTkSuQmCC">
         <p style="margin:0 auto; font-size:12px; font-weight:bold;">{!! $warnings !!}</p>
     </li>
-	<li>
+    <li>
         <img style="margin: 0 2px 2px; width:20px; height:20px; border:none;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKtJREFUeNpi/P//PwMFgAWI389kJU+zYPpvJgbKAKX6WTCF+H33Qxhfjzf+eXMAqwg+/UxSNlAGGz8uEaq5f1Q/KeDv54ck6Gdk4wXFsIgDkv4LhNPPvzeXmUR0gQwuhwkcb5OZhHXh4kS5/+vBIoafH0Esdn5QymEHp5mfH0HixKRfYAr9tNaFUz2MWdIS6uznx7/fXIXpeOz6If78cubCSEg/jBSWfwABBgAbjD9+mVhlXQAAAABJRU5ErkJggg==">
         <p style="margin:0 auto; font-size:12px; font-weight:bold;">{!! $unusuals !!}</p>
     </li>

@@ -36,7 +36,7 @@ class Sonarr extends \App\SupportedApps implements \App\EnhancedApps {
 
         if($missing || $queue) {
             $data['missing'] = $missing->totalRecords ?? 0;
-            $data['queue'] = count($queue) ?? 0;
+            $data['queue'] = $queue->totalRecords ?? 0;
         }
 
         return parent::getLiveStats($status, $data);
@@ -45,7 +45,7 @@ class Sonarr extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).'api/'.$endpoint.'?apikey='.$this->config->apikey;
+        $api_url = parent::normaliseurl($this->config->url).'api/v3/'.$endpoint.'?sortKey=series.title&apikey='.$this->config->apikey;
         return $api_url;
     }
 }

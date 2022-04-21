@@ -26,6 +26,7 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps {
             'cookies' => $this->cookie,
         ];
 
+        // @see \App\SupportedApps\execute($url, $attrs = [], $overridevars=false, $overridemethod=false)
         $result = parent::execute($this->url(false), $attrs, false, 'POST');
         if (null === $result) {
             throw new Exception("OMV error: Could not connect");
@@ -68,6 +69,7 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps {
         $info = $this->request('system', 'getInformation');
         $data['CPU'] = sprintf('%.1f%%', $info->cpuUsage );
         $data['RAM'] = sprintf('%.1f%%', $info->memUsed / $info->memTotal * 100 );
+        $data['Pkgs'] = $this->symbol( ! $info->pkgUpdatesAvailable );
 
         $services = $this->request('services', 'getStatus');
         foreach ($services->data as $service) {
@@ -94,6 +96,7 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps {
             'RSync' => 'RSync',
             'SMB/CIFS' => 'SMB/CIFS',
             'SSH' => 'SSH',
+            'Pkgs' => 'Pkgs',
         ];
     }
 }

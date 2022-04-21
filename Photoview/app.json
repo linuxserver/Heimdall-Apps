@@ -1,0 +1,10 @@
+{
+    "appid": "d9946b11ca2139e9299705b734b94e3d3066d4ec",
+    "name": "Photoview",
+    "website": "https://photoview.github.io",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "Photoview is a simple and user-friendly photo gallery that's made for photographers and aims to provide an easy and fast way to navigate directories, with thousands of high-resolution photos.\r\n\r\nYou configure Photoview to look for photos and videos within a directory on your file system. The scanner automatically picks up your media and start to generate thumbnail images to make browsing super fast.\r\n\r\nWhen your media has been scanned they show up on the website, organised in the same way as on the filesystem.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "photoview.svg"
+}

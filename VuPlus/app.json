@@ -1,0 +1,10 @@
+{
+    "appid": "095afe286edc44dd8241e7a33138bc6d",
+    "name": "VuPlus",
+    "website": "http://vuplus.com",
+    "license": "commercial",
+    "description": "The Vu+ (pronounced VuPlus), is a series of Linux-powered DVB satellite, terrestrial digital television receivers (set-top box)",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "vuplus.png"
+}

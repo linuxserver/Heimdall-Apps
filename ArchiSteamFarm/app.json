@@ -1,0 +1,10 @@
+{
+    "appid": "7779bfb41003301f1b395c0691002423773d68c1",
+    "name": "ArchiSteamFarm",
+    "website": "https://github.com/JustArchiNET/ArchiSteamFarm",
+    "license": "Apache License 2.0",
+    "description": "ASF is a C# application with primary purpose of idling Steam cards from multiple accounts simultaneously.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "archisteamfarm.png"
+}

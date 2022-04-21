@@ -1,0 +1,10 @@
+{
+    "appid": "f23460c5b2dba5711733151081cd82ecc9106964",
+    "name": "YOURLS",
+    "website": "https://yourls.org",
+    "license": "MIT License",
+    "description": "YOURLS is a set of PHP scripts that will allow you to run Your Own URL Shortener, on your server. You'll have full control over your data, detailed stats, analytics, plugins, and more. It's free and open-source.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "yourls.svg"
+}

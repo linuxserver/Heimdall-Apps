@@ -1,0 +1,10 @@
+{
+    "appid": "1de00f5662a5c44f3d23b50f9e13232cdd64f667",
+    "name": "Tachidesk",
+    "website": "https://github.com/Suwayomi/Tachidesk-Server",
+    "license": "Mozilla Public License 2.0",
+    "description": "A free and open source manga reader server that runs extensions built for Tachiyomi.\r\nTachidesk is an independent Tachiyomi compatible software and is not a Fork of Tachiyomi.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "tachidesk.png"
+}
