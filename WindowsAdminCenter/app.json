@@ -1,0 +1,10 @@
+{
+    "appid": "9d3283ea8d3bb69f327af06870657a63ab3bbf6d",
+    "name": "Windows Admin Center",
+    "website": "https://www.microsoft.com/en-us/windows-server/windows-admin-center",
+    "license": "Proprietary",
+    "description": "Windows Admin Center is a locally deployed, browser-based app for managing Windows servers, clusters, hyper-converged infrastructure, as well as Windows 10 PCs. It is a free product and is ready to use in production.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "windowsadmincenter.png"
+}
