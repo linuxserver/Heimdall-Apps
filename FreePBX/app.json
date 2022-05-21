@@ -1,0 +1,10 @@
+{
+    "appid": "370f94c68bf709289a0193e0a5c83c6fbd1ac06e",
+    "name": "FreePBX",
+    "website": "https://www.freepbx.org/",
+    "license": "GNU General Public License v1.0 or later",
+    "description": "FreePBX is an open source community\r\nCompletely free to download and use, the power of FreePBX comes from a global community of developers who ensure it remains a high compatibility and customizable platform with all the key features needed to build a scalable business phone system on any budget.\r\n\r\nWith millions of installations worldwide and a very active development base, the FreePBX community continues to out-perform the telecom industry’s commercial efforts.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "freepbx.png"
+}
