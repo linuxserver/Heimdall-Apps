@@ -1,0 +1,10 @@
+{
+    "appid": "3d6a86d0b53584491e13b12173441f0b945307d2",
+    "name": "crowdsec",
+    "website": "https://crowdsec.net/",
+    "license": "MIT License",
+    "description": "CrowdSec is a free, modern & collaborative behavior detection engine, coupled with a global IP reputation network. It stacks on fail2ban's philosophy but is IPV6 compatible and 60x faster (Go vs Python), uses Grok patterns to parse logs and YAML scenario to identify behaviors. CrowdSec is engineered for modern Cloud / Containers / VM based infrastructures (by decoupling detection and remediation). Once detected you can remedy threats with various bouncers (firewall block, nginx http 403, Captchas, etc.) while the aggressive IP can be sent to CrowdSec for curation before being shared among all users to further improve everyone's security.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "crowdsec.png"
+}
