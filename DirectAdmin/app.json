@@ -1,0 +1,10 @@
+{
+    "appid": "d8f39246e8c87704876f107fc4ca01c962abf53d",
+    "name": "DirectAdmin",
+    "website": "https://www.directadmin.com/",
+    "license": "Proprietary",
+    "description": "DirectAdmin is a graphical web-based web hosting control panel allowing administration of websites through a web browser. The software is configurable to enable standalone, reseller, and shared web hosting from a single instance. DirectAdmin also permits management of server tasks and upgrades to package software (such as Apache HTTP Server, PHP, and MySQL ) from within the control panel - simplifying server and hosting configuration.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "directadmin.svg"
+}
