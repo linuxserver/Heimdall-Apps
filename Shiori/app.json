@@ -1,10 +1,10 @@
 {
-    "appid": "f758b0b8b86303210695bf561763bf1d3aadfbb5",
-    "name": "Shiori",
-    "website": "https://github.com/go-shiori/shiori",
-    "license": "MIT License",
-    "description": "Shiori is a simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket. You can use it as a command line application or as a web application.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "shiori.svg"
+  "appid": "f758b0b8b86303210695bf561763bf1d3aadfbb5",
+  "name": "Shiori",
+  "website": "https://github.com/go-shiori/shiori",
+  "license": "MIT License",
+  "description": "Shiori is a simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket. You can use it as a command line application or as a web application.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "shiori.svg"
 }

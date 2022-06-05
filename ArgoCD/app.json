@@ -1,10 +1,10 @@
 {
-    "appid": "88dc19bddba6e23ec39f978777b5adc5784ca27a",
-    "name": "Argo CD",
-    "website": "https://argoproj.github.io/cd/",
-    "license": "Apache License 2.0",
-    "description": "Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "argocd.svg"
+  "appid": "88dc19bddba6e23ec39f978777b5adc5784ca27a",
+  "name": "Argo CD",
+  "website": "https://argoproj.github.io/cd/",
+  "license": "Apache License 2.0",
+  "description": "Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "argocd.svg"
 }

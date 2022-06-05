@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   generate_apps_list:

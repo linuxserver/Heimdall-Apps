@@ -1,10 +1,10 @@
 {
-    "appid": "13121fb95b2b5da427d75de170f479bc8e53ef09",
-    "name": "Netgear Orbi",
-    "website": "https://www.netgear.com/de/home/wifi/mesh/orbi/",
-    "license": "Commercial",
-    "description": "Netgear ORBI Dashboard",
-    "enhanced": false,
-    "tile_background": "light",
-    "icon": "netgearorbi.png"
+  "appid": "13121fb95b2b5da427d75de170f479bc8e53ef09",
+  "name": "Netgear Orbi",
+  "website": "https://www.netgear.com/de/home/wifi/mesh/orbi/",
+  "license": "Commercial",
+  "description": "Netgear ORBI Dashboard",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "netgearorbi.png"
 }

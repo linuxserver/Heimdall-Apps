@@ -1,10 +1,10 @@
 {
-    "appid": "1d49c185b74e2b41addce38d2334000daf4c60d9",
-    "name": "Phoscon",
-    "website": "https://phoscon.de/en/app/doc",
-    "license": "BSD 4-Clause \"Original\" or \"Old\" License",
-    "description": "The Phoscon App is a powerful tool to configure and control small and larger smart light installations. Specializing in the popular wireless standard Zigbee, the Phoscon App supports a steadily growing number of lights, sensors and switches from various well-known manufacturers.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "phoscon.svg"
+  "appid": "1d49c185b74e2b41addce38d2334000daf4c60d9",
+  "name": "Phoscon",
+  "website": "https://phoscon.de/en/app/doc",
+  "license": "BSD 4-Clause \"Original\" or \"Old\" License",
+  "description": "The Phoscon App is a powerful tool to configure and control small and larger smart light installations. Specializing in the popular wireless standard Zigbee, the Phoscon App supports a steadily growing number of lights, sensors and switches from various well-known manufacturers.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "phoscon.svg"
 }

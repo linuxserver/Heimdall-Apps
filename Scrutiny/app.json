@@ -1,10 +1,10 @@
 {
-    "appid": "40892c1b428213c21516114ade1eaeb8fe26fc96",
-    "name": "Scrutiny",
-    "website": "https://github.com/AnalogJ/scrutiny",
-    "license": "MIT License",
-    "description": "Scrutiny is a Hard Drive Health Dashboard & Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates.",
-    "enhanced": false,
-    "tile_background": "light",
-    "icon": "scrutiny.png"
+  "appid": "40892c1b428213c21516114ade1eaeb8fe26fc96",
+  "name": "Scrutiny",
+  "website": "https://github.com/AnalogJ/scrutiny",
+  "license": "MIT License",
+  "description": "Scrutiny is a Hard Drive Health Dashboard & Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "scrutiny.png"
 }

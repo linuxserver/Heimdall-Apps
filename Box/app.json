@@ -1,10 +1,10 @@
 {
-    "appid": "c7d8a6d722a1ec9a16fae165177c418d4fd63175",
-    "name": "Box",
-    "website": "https://box.com",
-    "license": "Commercial",
-    "description": "The company focuses on cloud content management and file sharing service for businesses.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "box.png"
+  "appid": "c7d8a6d722a1ec9a16fae165177c418d4fd63175",
+  "name": "Box",
+  "website": "https://box.com",
+  "license": "Commercial",
+  "description": "The company focuses on cloud content management and file sharing service for businesses.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "box.png"
 }

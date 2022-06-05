@@ -1,10 +1,10 @@
 {
-    "appid": "0ffe6c3e1f43f953bcfe3a5adb50759b5938aa36",
-    "name": "Slack",
-    "website": "https://slack.com",
-    "license": "Proprietary",
-    "description": "Slack is a cloud-based set of proprietary team collaboration tools and services.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "slack.svg"
+  "appid": "0ffe6c3e1f43f953bcfe3a5adb50759b5938aa36",
+  "name": "Slack",
+  "website": "https://slack.com",
+  "license": "Proprietary",
+  "description": "Slack is a cloud-based set of proprietary team collaboration tools and services.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "slack.svg"
 }
