@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="53.037319"
+   height="53.037319"
+   viewBox="0 0 53.037319 53.037319"
+   fill="none"
+   version="1.1"
+   id="svg38"
+   sodipodi:docname="tailscale.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs42" />
+  <sodipodi:namedview
+     id="namedview40"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="3.2266667"
+     inkscape:cx="94.059917"
+     inkscape:cy="25.413223"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg38">
+    <inkscape:grid
+       type="xygrid"
+       id="grid165"
+       originx="-39.000039"
+       originy="-34.000039" />
+  </sodipodi:namedview>
+  <g
+     id="g855"
+     transform="translate(-39.00004,-34.00004)">
+    <circle
+       cx="45.6297"
+       cy="60.5186"
+       r="6.6296601"
+       fill="#141414"
+       id="circle2" />
+    <circle
+       cx="65.5186"
+       cy="60.5186"
+       r="6.6296601"
+       fill="#141414"
+       id="circle4" />
+    <circle
+       opacity="0.2"
+       cx="45.6297"
+       cy="80.4077"
+       r="6.6296601"
+       fill="#141414"
+       id="circle6" />
+    <circle
+       opacity="0.2"
+       cx="85.4077"
+       cy="80.4077"
+       r="6.6296601"
+       fill="#141414"
+       id="circle8" />
+    <circle
+       cx="65.5186"
+       cy="80.4077"
+       r="6.6296601"
+       fill="#141414"
+       id="circle10" />
+    <circle
+       cx="85.4077"
+       cy="60.5186"
+       r="6.6296601"
+       fill="#141414"
+       id="circle12" />
+    <circle
+       opacity="0.2"
+       cx="45.6297"
+       cy="40.6297"
+       r="6.6296601"
+       fill="#141414"
+       id="circle14" />
+    <circle
+       opacity="0.2"
+       cx="65.5186"
+       cy="40.6297"
+       r="6.6296601"
+       fill="#141414"
+       id="circle16" />
+    <circle
+       opacity="0.2"
+       cx="85.4077"
+       cy="40.6297"
+       r="6.6296601"
+       fill="#141414"
+       id="circle18" />
+  </g>
+</svg>
