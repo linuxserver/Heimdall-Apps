@@ -6,5 +6,5 @@
     "description": "Cloudflare DNS is an enterprise-grade authoritative DNS service that offers the fastest response time, unparalleled redundancy, and advanced security with built-in DDoS mitigation and DNSSEC.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "cloudflare.png"
+    "icon": "cloudflare.svg"
 }
