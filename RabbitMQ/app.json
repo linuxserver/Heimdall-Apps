@@ -1,10 +1,10 @@
 {
-    "appid": "d37a9628bc10a8816f3b679566d2505ab43b55a0",
-    "name": "RabbitMQ",
-    "website": "https://www.rabbitmq.com/",
-    "license": "Mozilla Public License 2.0",
-    "description": "RabbitMQ is a free, open-source and extensible message queuing solution. It is a message broker that understands AMQP (Advanced Message Queuing Protocol), but is also able to be used with other popular messaging solutions like MQTT. It is highly available, fault tolerant and scalable.",
-    "enhanced": true,
-    "tile_background": "light",
-    "icon": "rabbitmq.svg"
+  "appid": "d37a9628bc10a8816f3b679566d2505ab43b55a0",
+  "name": "RabbitMQ",
+  "website": "https://www.rabbitmq.com/",
+  "license": "Mozilla Public License 2.0",
+  "description": "RabbitMQ is a free, open-source and extensible message queuing solution. It is a message broker that understands AMQP (Advanced Message Queuing Protocol), but is also able to be used with other popular messaging solutions like MQTT. It is highly available, fault tolerant and scalable.",
+  "enhanced": true,
+  "tile_background": "light",
+  "icon": "rabbitmq.svg"
 }

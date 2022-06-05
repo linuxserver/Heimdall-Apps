@@ -1,10 +1,10 @@
 {
-    "appid": "c5490738886244f3795807b7cd537fe34df0c274",
-    "name": "Channels DVR",
-    "website": "https://getchannels.com/dvr/",
-    "license": "Commercial",
-    "description": "Channels DVR Server runs on your computer or NAS device at home. There's no cloud to worry about. Your recordings and shows will always be available. Simply install Channels DVR Server on a device and Channels will magically see it from any TV or device you own.",
-    "enhanced": true,
-    "tile_background": "dark",
-    "icon": "channelsdvr.svg"
+  "appid": "c5490738886244f3795807b7cd537fe34df0c274",
+  "name": "Channels DVR",
+  "website": "https://getchannels.com/dvr/",
+  "license": "Commercial",
+  "description": "Channels DVR Server runs on your computer or NAS device at home. There's no cloud to worry about. Your recordings and shows will always be available. Simply install Channels DVR Server on a device and Channels will magically see it from any TV or device you own.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "channelsdvr.svg"
 }

@@ -1,10 +1,10 @@
 {
-    "appid": "56eb3a3ec734e5a66d4f1746ef58961d266fdabe",
-    "name": "Yacht",
-    "website": "https://github.com/SelfhostedPro/Yacht",
-    "license": "MIT License",
-    "description": "Yacht is a container management UI with a focus on templates and 1-click deployments.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "yacht.svg"
+  "appid": "56eb3a3ec734e5a66d4f1746ef58961d266fdabe",
+  "name": "Yacht",
+  "website": "https://github.com/SelfhostedPro/Yacht",
+  "license": "MIT License",
+  "description": "Yacht is a container management UI with a focus on templates and 1-click deployments.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "yacht.svg"
 }

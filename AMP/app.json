@@ -1,10 +1,10 @@
 {
-    "appid": "65f59ec6b1ecd6170d5044474043cca9560a8071",
-    "name": "AMP",
-    "website": "https://cubecoders.com/AMP",
-    "license": "Proprietary",
-    "description": "AMP is short for Application Management Panel. It's our next-generation server administration software built for both users, and service providers. It supports both Windows and Linux based servers and allows you to manage all your game servers from a single web interface.",
-    "enhanced": false,
-    "tile_background": "light",
-    "icon": "amp.png"
+  "appid": "65f59ec6b1ecd6170d5044474043cca9560a8071",
+  "name": "AMP",
+  "website": "https://cubecoders.com/AMP",
+  "license": "Proprietary",
+  "description": "AMP is short for Application Management Panel. It's our next-generation server administration software built for both users, and service providers. It supports both Windows and Linux based servers and allows you to manage all your game servers from a single web interface.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "amp.png"
 }

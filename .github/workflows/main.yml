@@ -1,6 +1,8 @@
+name: Deploy to GitHub Pages
+
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   generate_apps_list:
@@ -16,7 +18,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Setup node env
-        uses: actions/setup-node@v3.1.1
+        uses: actions/setup-node@v3.2.0
         with:
           node-version: ${{ matrix.node }}
 

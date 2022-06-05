@@ -1,10 +1,10 @@
 {
-    "appid": "366c6646eedab83cc4b349f198424d2291cbfa76",
-    "name": "Uptime Kuma",
-    "website": "https://uptime.kuma.pet",
-    "license": "MIT License",
-    "description": "It is a self-hosted monitoring tool like \"Uptime Robot\".",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "uptimekuma.svg"
+  "appid": "366c6646eedab83cc4b349f198424d2291cbfa76",
+  "name": "Uptime Kuma",
+  "website": "https://uptime.kuma.pet",
+  "license": "MIT License",
+  "description": "It is a self-hosted monitoring tool like \"Uptime Robot\".",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "uptimekuma.svg"
 }
