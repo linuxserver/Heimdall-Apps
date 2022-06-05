@@ -1,10 +1,10 @@
 {
-    "appid": "dc616e4c8950e8347b77334581bb126fdf171a86",
-    "name": "sftpgo",
-    "website": "https://github.com/drakkan/sftpgo",
-    "license": "GNU Affero General Public License v3.0",
-    "description": "Fully featured and highly configurable SFTP server with optional HTTP/S, FTP/S and WebDAV support. Several storage backends are supported: local filesystem, encrypted local filesystem, S3 (compatible) Object Storage, Google Cloud Storage, Azure Blob Storage, SFTP.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "sftpgo.png"
+	"appid": "dc616e4c8950e8347b77334581bb126fdf171a86",
+	"name": "sftpgo",
+	"website": "https://github.com/drakkan/sftpgo",
+	"license": "GNU Affero General Public License v3.0",
+	"description": "Fully featured and highly configurable SFTP server with optional HTTP/S, FTP/S and WebDAV support. Several storage backends are supported: local filesystem, encrypted local filesystem, S3 (compatible) Object Storage, Google Cloud Storage, Azure Blob Storage, SFTP.",
+	"enhanced": false,
+	"tile_background": "dark",
+	"icon": "sftpgo.png"
 }
