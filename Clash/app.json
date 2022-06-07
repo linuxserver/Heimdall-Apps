@@ -1,0 +1,10 @@
+{
+    "appid": "4581fc009cf3e648c61a17a28e5764f5d034976c",
+    "name": "Clash",
+    "website": "https://github.com/Dreamacro/clash",
+    "license": "GNU General Public License v3.0 only",
+    "description": "A rule-based tunnel in Go.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "clash.png"
+}
