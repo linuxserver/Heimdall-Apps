@@ -1,0 +1,10 @@
+{
+    "appid": "ef68db54814be4ea33bbb266852f7cc9a57701f4",
+    "name": "Namer",
+    "website": "https://github.com/theporndatabase/namer",
+    "license": "No Limit Public License",
+    "description": "Namer matches adult content movies that appear in a configured watched directory with metadata from tpdb (metadatapi.net).  Namer will rename and moves files following a configurable pattern, as well as embed all the metadata in mp4s tags if moving mp4s.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "namer.png"
+}
