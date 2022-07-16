@@ -49,16 +49,22 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function attrs()
     {
+        $ignoreTls = $this->getConfigValue('ignore_tls', false);
         $apikey = $this->config->apikey;
-        $attrs = [
-            'headers'  => ['content-type' => 'application/json', 'Authorization' => 'Bearer '.$apikey]
-        ];
+        $attrs['headers']  = [
+          'content-type' => 'application/json', 
+          'Authorization' => 'Bearer '.$apikey];
+
+        if($ignoreTls) {
+            $attrs['verify'] = false;
+        }
+
         return $attrs;
     }
 
     public function uptime($inputSeconds)
     {   
-	// Adapted from https://stackoverflow.com/questions/8273804/convert-seconds-into-days-hours-minutes-and-seconds
+        // Adapted from https://stackoverflow.com/questions/8273804/convert-seconds-into-days-hours-minutes-and-seconds
 
         $res = '';
         $secondsInAMinute = 60;
@@ -92,12 +98,16 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps {
     public function alerts($alert)
     {
         $count = 0;
-	foreach($alert as $key => $value) {
+        foreach($alert as $key => $value) {
            if ($value["dismissed"] == false) $count += 1;
         }
 
          return strval($count);
     }
 
-}
+    public function getConfigValue($key, $default=null)
+    {
+        return (isset($this->config) && isset($this->config->$key)) ? $this->config->$key : $default;
+    }
 
+}
