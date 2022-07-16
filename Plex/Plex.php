@@ -66,7 +66,7 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps {
             $attrs['verify'] = false;
         }
         else {
-            $attrs = []
+            $attrs = [];
         }
 
         return $attrs;
