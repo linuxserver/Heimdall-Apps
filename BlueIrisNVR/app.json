@@ -1,0 +1,10 @@
+{
+  "appid": "2d90dc53a735b852b3dfe664c991d24183b9484c",
+  "name": "BlueIris NVR",
+  "website": "https://blueirissoftware.com/",
+  "license": "Proprietary",
+  "description": "Video Management Software\r\nUse up to 64 cameras (webcams, network IP cams, analog cards, or your Windows PC desktop). Capture JPEG snapshots or movies in standard MP4, AVI, advanced DVR, or Windows Media file formats.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "blueirisnvr.png"
+}
