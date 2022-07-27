@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Synology;
 
-class Synology extends \App\SupportedApps {
-
+class Synology extends \App\SupportedApps
+{
 }

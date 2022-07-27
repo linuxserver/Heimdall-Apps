@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Sourcegraph;
 
-class Sourcegraph extends \App\SupportedApps {
-
+class Sourcegraph extends \App\SupportedApps
+{
 }

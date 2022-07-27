@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Wikijs;
 
-class Wikijs extends \App\SupportedApps {
-
+class Wikijs extends \App\SupportedApps
+{
 }

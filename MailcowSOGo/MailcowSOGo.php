@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\MailcowSOGo;
 
-class MailcowSOGo extends \App\SupportedApps {
-
+class MailcowSOGo extends \App\SupportedApps
+{
 }

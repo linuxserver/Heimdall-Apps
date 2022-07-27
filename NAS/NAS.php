@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\NAS;
 
-class NAS extends \App\SupportedApps {
-
+class NAS extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\VMwarevCenter;
 
-class VMwarevCenter extends \App\SupportedApps {
-
+class VMwarevCenter extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Plume;
 
-class Plume extends \App\SupportedApps {
-
+class Plume extends \App\SupportedApps
+{
 }

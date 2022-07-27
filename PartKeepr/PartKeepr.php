@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\PartKeepr;
 
-class PartKeepr extends \App\SupportedApps {
-
+class PartKeepr extends \App\SupportedApps
+{
 }
