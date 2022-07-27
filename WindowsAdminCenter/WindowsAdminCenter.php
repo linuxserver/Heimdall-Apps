@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\WindowsAdminCenter;
 
-class WindowsAdminCenter extends \App\SupportedApps {
-
+class WindowsAdminCenter extends \App\SupportedApps
+{
 }

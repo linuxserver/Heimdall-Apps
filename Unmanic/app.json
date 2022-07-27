@@ -1,10 +1,10 @@
 {
-    "appid": "c4727509e4ae21f95d5ba4634add6742e8520b2d",
-    "name": "Unmanic",
-    "website": "https://docs.unmanic.app/",
-    "license": "GNU Affero General Public License v3.0 or later",
-    "description": "Unmanic is a simple tool for optimising your file library. You can use it to convert your files into a single, uniform format, manage file movements based on timestamps, or execute custom commands against a file based on its file size.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "unmanic.png"
+  "appid": "c4727509e4ae21f95d5ba4634add6742e8520b2d",
+  "name": "Unmanic",
+  "website": "https://docs.unmanic.app/",
+  "license": "GNU Affero General Public License v3.0 or later",
+  "description": "Unmanic is a simple tool for optimising your file library. You can use it to convert your files into a single, uniform format, manage file movements based on timestamps, or execute custom commands against a file based on its file size.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "unmanic.png"
 }

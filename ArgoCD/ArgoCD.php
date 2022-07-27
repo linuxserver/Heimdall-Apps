@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\ArgoCD;
 
-class ArgoCD extends \App\SupportedApps {
-
+class ArgoCD extends \App\SupportedApps
+{
 }

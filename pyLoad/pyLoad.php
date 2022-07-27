@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\pyLoad;
 
-class pyLoad extends \App\SupportedApps {
-
+class pyLoad extends \App\SupportedApps
+{
 }

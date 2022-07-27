@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\CloudCMD;
 
-class CloudCMD extends \App\SupportedApps {
-
+class CloudCMD extends \App\SupportedApps
+{
 }

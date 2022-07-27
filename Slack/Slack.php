@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Slack;
 
-class Slack extends \App\SupportedApps {
-
+class Slack extends \App\SupportedApps
+{
 }

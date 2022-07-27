@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Zabbix;
 
-class Zabbix extends \App\SupportedApps {
-
+class Zabbix extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Metabase;
 
-class Metabase extends \App\SupportedApps {
-
+class Metabase extends \App\SupportedApps
+{
 }

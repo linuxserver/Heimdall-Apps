@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Huginn;
 
-class Huginn extends \App\SupportedApps {
-
+class Huginn extends \App\SupportedApps
+{
 }

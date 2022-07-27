@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Rspamd;
 
-class Rspamd extends \App\SupportedApps {
-
+class Rspamd extends \App\SupportedApps
+{
 }

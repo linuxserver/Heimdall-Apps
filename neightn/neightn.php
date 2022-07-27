@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\neightn;
 
-class neightn extends \App\SupportedApps {
-
+class neightn extends \App\SupportedApps
+{
 }

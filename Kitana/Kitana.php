@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Kitana;
 
-class Kitana extends \App\SupportedApps {
-
+class Kitana extends \App\SupportedApps
+{
 }

@@ -1,10 +1,10 @@
 {
-    "appid": "15f90b18166400660896d011856a88cd88d68b33",
-    "name": "Tailscale",
-    "website": "https://tailscale.com/",
-    "license": "BSD 3-Clause Clear License",
-    "description": "A secure network that just works\r\nZero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "tailscale.svg"
+  "appid": "15f90b18166400660896d011856a88cd88d68b33",
+  "name": "Tailscale",
+  "website": "https://tailscale.com/",
+  "license": "BSD 3-Clause Clear License",
+  "description": "A secure network that just works\r\nZero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "tailscale.svg"
 }

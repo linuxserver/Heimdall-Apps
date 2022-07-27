@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Privatebin;
 
-class Privatebin extends \App\SupportedApps {
-
+class Privatebin extends \App\SupportedApps
+{
 }

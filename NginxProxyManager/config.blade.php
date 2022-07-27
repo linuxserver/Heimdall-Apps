@@ -2,15 +2,15 @@
 <div class="items">
     <div class="input">
         <label>{{ strtoupper(__('app.url')) }}</label>
-		{!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
+        {!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
     </div>
     <div class="input">
         <label>Email address</label>
-        {!! Form::text('config[email]', (isset($item) ? $item->getconfig()->email : null), array('placeholder' => __('Email address'), 'data-config' => 'email', 'class' => 'form-control config-item')) !!}
+        {!! Form::text('config[email]', isset($item) ? $item->getconfig()->email : null, ['placeholder' => __('Email address'), 'data-config' => 'email', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
         <label>{{ __('app.apps.password') }}</label>
-		{!! Form::password('config[password]', isset($item) ? $item->getconfig()->password : null, ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
+        {!! Form::password('config[password]', isset($item) ? $item->getconfig()->password : null, ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
