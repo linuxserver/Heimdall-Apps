@@ -18,24 +18,26 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps
 		echo $test->status;
 	}
 
+	public function test()
+	{
+		$test = parent::appTest(
+			$this->url("/library/recentlyAdded"),
+			$this->attrs()
+		);
+		echo $test->status;
+	}
+
 	public function livestats()
 	{
 		$status = "inactive";
-		$res = parent::execute($this->url("/library/recentlyAdded"));
-
-		$body = $res->getBody();
-		$xml = simplexml_load_string(
-			$body,
-			"SimpleXMLElement",
-			LIBXML_NOCDATA | LIBXML_NOBLANKS
+		$res = parent::execute(
+			$this->url("/library/recentlyAdded"),
+			$this->attrs()
 		);
-		$data = [];
-		if ($xml) {
-			$data["recently_added"] = $xml["size"];
-			$status = "active";
-		}
 
 		$res = parent::execute($this->url("/library/onDeck"));
+
+		$res = parent::execute($this->url("/library/onDeck"), $this->attrs());
 
 		$body = $res->getBody();
 		$xml = simplexml_load_string(
@@ -66,5 +68,24 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps
 			"?X-Plex-Token=" .
 			$this->config->token;
 		return $api_url;
+	}
+
+	public function getConfigValue($key, $default = null)
+	{
+		return isset($this->config) && isset($this->config->$key)
+			? $this->config->$key
+			: $default;
+	}
+
+	public function attrs()
+	{
+		$ignoreTls = $this->getConfigValue("ignore_tls", false);
+		if ($ignoreTls) {
+			$attrs["verify"] = false;
+		} else {
+			$attrs = [];
+		}
+
+		return $attrs;
 	}
 }
