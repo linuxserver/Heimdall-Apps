@@ -14,12 +14,6 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps
 
 	public function test()
 	{
-		$test = parent::appTest($this->url("/library/recentlyAdded"));
-		echo $test->status;
-	}
-
-	public function test()
-	{
 		$test = parent::appTest(
 			$this->url("/library/recentlyAdded"),
 			$this->attrs()
