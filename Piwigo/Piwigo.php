@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Piwigo;
 
-class Piwigo extends \App\SupportedApps {
-
+class Piwigo extends \App\SupportedApps
+{
 }

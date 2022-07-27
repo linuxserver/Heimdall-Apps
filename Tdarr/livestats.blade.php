@@ -7,7 +7,7 @@
         <span class="title">Proc</span>
         <strong>{!! $processed !!}</strong>
     </li>
-    <?php if ($errored!='') { ?>
+    <?php if ($errored != "") { ?>
     <li>
         <span class="title">Err</span>
         <strong>{!! $errored !!}</strong>

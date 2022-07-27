@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Bitwarden;
 
-class Bitwarden extends \App\SupportedApps {
-
+class Bitwarden extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\CodiMD;
 
-class CodiMD extends \App\SupportedApps {
-
+class CodiMD extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\AVMFritzbox;
 
-class AVMFritzbox extends \App\SupportedApps {
-
+class AVMFritzbox extends \App\SupportedApps
+{
 }

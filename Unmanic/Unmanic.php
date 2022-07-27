@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Unmanic;
 
-class Unmanic extends \App\SupportedApps {
-
+class Unmanic extends \App\SupportedApps
+{
 }

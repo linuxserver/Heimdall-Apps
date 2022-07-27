@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\AMP;
 
-class AMP extends \App\SupportedApps {
-
+class AMP extends \App\SupportedApps
+{
 }

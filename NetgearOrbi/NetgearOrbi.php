@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\NetgearOrbi;
 
-class NetgearOrbi extends \App\SupportedApps {
-
+class NetgearOrbi extends \App\SupportedApps
+{
 }

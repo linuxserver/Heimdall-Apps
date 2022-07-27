@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\OnlyOffice;
 
-class OnlyOffice extends \App\SupportedApps {
-
+class OnlyOffice extends \App\SupportedApps
+{
 }

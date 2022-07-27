@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Photonix;
 
-class Photonix extends \App\SupportedApps {
-
+class Photonix extends \App\SupportedApps
+{
 }
