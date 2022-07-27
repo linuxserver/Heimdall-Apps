@@ -17,7 +17,11 @@
         </div>
         <div class="input">
             <label>First stat template</label>
-            {!! Form::text('config[first_stat_template]', isset($item) ? $item->getconfig()->first_stat_template : null, ['placeholder' => __('Default: @{{ states.light | count }}'), 'data-config' => 'first_stat_template', 'class' => 'form-control config-item']) !!}
+            {!! Form::text('config[first_stat_template]', isset($item) ? $item->getconfig()->first_stat_template : null, [
+                'placeholder' => __('Default: @{{ states.light | count }}'),
+                'data-config' => 'first_stat_template',
+                'class' => 'form-control config-item',
+            ]) !!}
         </div>
     </div>
     <div style="display:flex;flex-direction:row;">
@@ -27,7 +31,11 @@
         </div>
         <div class="input">
             <label>Second stat template</label>
-            {!! Form::text('config[second_stat_template]', isset($item) ? $item->getconfig()->second_stat_template : null, ['placeholder' => __('Default: @{{ states.light | selectattr(\'state\',\'equalto\',\'on\') | list | count }}'), 'data-config' => 'second_stat_template', 'class' => 'form-control config-item']) !!}
+            {!! Form::text('config[second_stat_template]', isset($item) ? $item->getconfig()->second_stat_template : null, [
+                'placeholder' => __('Default: @{{ states.light | selectattr(\'state\',\'equalto\',\'on\') | list | count }}'),
+                'data-config' => 'second_stat_template',
+                'class' => 'form-control config-item',
+            ]) !!}
         </div>
     </div>
     <div class="input">

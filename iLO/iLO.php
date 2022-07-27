@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\iLO;
 
-class iLO extends \App\SupportedApps {
-
+class iLO extends \App\SupportedApps
+{
 }

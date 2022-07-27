@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Printer;
 
-class Printer extends \App\SupportedApps {
-
+class Printer extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Alertmanager;
 
-class Alertmanager extends \App\SupportedApps {
-
+class Alertmanager extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Krusader;
 
-class Krusader extends \App\SupportedApps {
-
+class Krusader extends \App\SupportedApps
+{
 }

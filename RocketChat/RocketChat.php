@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\RocketChat;
 
-class RocketChat extends \App\SupportedApps {
-
+class RocketChat extends \App\SupportedApps
+{
 }

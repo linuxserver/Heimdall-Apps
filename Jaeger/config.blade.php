@@ -20,7 +20,12 @@
     </div>
     <div class="input">
         <label>Lookback</label>
-        {!! Form::select('config[lookback]', ['1h' => 'Last Hour', '2h' => 'Last 2 Hours', '3h' => 'Last 3 Hours', '6h' => 'Last 6 Hours', '12h' => 'Last 12 Hours', '24h' => 'Last 24 Hours', '2d' => 'Last 2 Days'], isset($item) ? $item->getconfig()->lookback : null, ['data-config' => 'lookback', 'class' => 'form-control config-item']) !!}
+        {!! Form::select(
+            'config[lookback]',
+            ['1h' => 'Last Hour', '2h' => 'Last 2 Hours', '3h' => 'Last 3 Hours', '6h' => 'Last 6 Hours', '12h' => 'Last 12 Hours', '24h' => 'Last 24 Hours', '2d' => 'Last 2 Days'],
+            isset($item) ? $item->getconfig()->lookback : null,
+            ['data-config' => 'lookback', 'class' => 'form-control config-item'],
+        ) !!}
     </div>
     <div class="input">
         <label>Limit</label>

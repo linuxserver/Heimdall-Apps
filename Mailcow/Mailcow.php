@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Mailcow;
 
-class Mailcow extends \App\SupportedApps {
-
+class Mailcow extends \App\SupportedApps
+{
 }

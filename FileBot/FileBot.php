@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\FileBot;
 
-class FileBot extends \App\SupportedApps {
-
+class FileBot extends \App\SupportedApps
+{
 }

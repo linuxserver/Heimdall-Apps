@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Chevereto;
 
-class Chevereto extends \App\SupportedApps {
-
+class Chevereto extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\sftpgo;
 
-class sftpgo extends \App\SupportedApps {
-
+class sftpgo extends \App\SupportedApps
+{
 }

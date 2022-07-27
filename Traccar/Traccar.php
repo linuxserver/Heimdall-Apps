@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Traccar;
 
-class Traccar extends \App\SupportedApps {
-
+class Traccar extends \App\SupportedApps
+{
 }

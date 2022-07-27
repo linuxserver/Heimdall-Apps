@@ -1,0 +1,10 @@
+{
+    "appid": "34088ce0402f28fca7286fc2d833c0d68b0d28cf",
+    "name": "authentik",
+    "website": "https://goauthentik.io",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "authentik is an open-source Identity Provider focused on flexibility and versatility. You can use authentik in an existing environment to add support for new protocols, implement sign-up/recovery/etc. in your application so you don't have to deal with it, and many other things.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "authentik.png"
+}
