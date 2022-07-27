@@ -6,7 +6,10 @@
     </div>
     <div class="input">
         <label>Which fields to show</label>
-        {!! Form::select('config[fields]', ['E' => 'Everything', 'H' => 'HTTP only', 'T' => 'TCP only', 'R' => 'Routers', 'S' => 'Services'], isset($item) && isset($item->getconfig()->fields) ? $item->getconfig()->fields : null, ['id' => 'fields', 'class' => 'form-control config-item']) !!}
+        {!! Form::select('config[fields]', ['E' => 'Everything', 'H' => 'HTTP only', 'T' => 'TCP only', 'R' => 'Routers', 'S' => 'Services'], isset($item) && isset($item->getconfig()->fields) ? $item->getconfig()->fields : null, [
+            'id' => 'fields',
+            'class' => 'form-control config-item',
+        ]) !!}
     </div>
     <div class="input">
         <label>Skip TLS verification</label>
@@ -20,8 +23,7 @@
                 }
                 $set_checked = $checked ? ' checked="checked"' : '';
                 ?>
-                <input type="checkbox" class="config-item" data-config="ignore_tls" name="config[ignore_tls]"
-                    value="1" <?php echo $set_checked; ?> />
+                <input type="checkbox" class="config-item" data-config="ignore_tls" name="config[ignore_tls]" value="1" <?php echo $set_checked; ?> />
                 <span class="slider round"></span>
             </label>
         </div>

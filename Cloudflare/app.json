@@ -1,10 +1,10 @@
 {
-    "appid": "f036f579066ad71bd653f5a6418dbede5b500370",
-    "name": "Cloudflare",
-    "website": "https://dash.cloudflare.com/",
-    "license": "Commercial",
-    "description": "Cloudflare DNS is an enterprise-grade authoritative DNS service that offers the fastest response time, unparalleled redundancy, and advanced security with built-in DDoS mitigation and DNSSEC.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "cloudflare.svg"
+  "appid": "f036f579066ad71bd653f5a6418dbede5b500370",
+  "name": "Cloudflare",
+  "website": "https://dash.cloudflare.com/",
+  "license": "Commercial",
+  "description": "Cloudflare DNS is an enterprise-grade authoritative DNS service that offers the fastest response time, unparalleled redundancy, and advanced security with built-in DDoS mitigation and DNSSEC.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "cloudflare.svg"
 }

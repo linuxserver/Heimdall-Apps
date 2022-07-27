@@ -1,0 +1,10 @@
+{
+  "appid": "c8a6ea616b768fefc48e461390de52d11d36cfb4",
+  "name": "oVirt",
+  "website": "https://ovirt.org",
+  "license": "Apache License 2.0",
+  "description": "oVirt is an open-source distributed virtualization solution, designed to manage your entire enterprise infrastructure. oVirt uses the trusted KVM hypervisor and is built upon several other community projects, including libvirt, Gluster, PatternFly, and Ansible.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "ovirt.svg"
+}

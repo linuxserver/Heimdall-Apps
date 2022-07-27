@@ -18,11 +18,14 @@
   },
   "homepage": "https://github.com/linuxserver/Heimdall-Apps#readme",
   "dependencies": {
-    "folder-hash": "^4.0.0",
+    "folder-hash": "^4.0.2",
     "glob": "^7.1.6",
-    "jszip": "^3.7.1"
+    "jszip": "^3.10.0",
+    "ncu": "^0.2.1"
   },
   "devDependencies": {
-    "prettier": "2.6.2"
+    "@prettier/plugin-php": "^0.18.9",
+    "@shufo/prettier-plugin-blade": "^1.4.20",
+    "prettier": "2.7.1"
   }
 }

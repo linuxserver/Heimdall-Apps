@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Icecast;
 
-class Icecast extends \App\SupportedApps {
-
+class Icecast extends \App\SupportedApps
+{
 }

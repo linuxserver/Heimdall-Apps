@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\Invidious;
 
-class Invidious extends \App\SupportedApps {
-
+class Invidious extends \App\SupportedApps
+{
 }

@@ -1,5 +1,5 @@
 <?php namespace App\SupportedApps\FreePBX;
 
-class FreePBX extends \App\SupportedApps {
-
+class FreePBX extends \App\SupportedApps
+{
 }
