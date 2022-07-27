@@ -59,7 +59,6 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
         if($ignoreTls) {
             $attrs['verify'] = false;
         }
-
         return $attrs;
     }
 
@@ -104,16 +103,6 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
 				sprintf("%02d", $seconds);
 		}
 		return $res;
-	}
-
-	public function alerts($alert)
-	{
-		$count = 0;
-		foreach ($alert as $key => $value) {
-			if ($value["dismissed"] == false) {
-				$count += 1;
-			}
-		}
 	}
 
     public function alerts($alert)
