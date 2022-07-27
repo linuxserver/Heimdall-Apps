@@ -48,24 +48,12 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
 		return $api_url;
 	}
 
-	public function attrs()
-	{
-		$apikey = $this->config->apikey;
-		$attrs = [
-			"headers" => [
-				"content-type" => "application/json",
-				"Authorization" => "Bearer " . $apikey,
-			],
-		];
-		return $attrs;
-	}
-
     public function attrs()
     {
         $ignoreTls = $this->getConfigValue('ignore_tls', false);
         $apikey = $this->config->apikey;
         $attrs['headers']  = [
-          'content-type' => 'application/json', 
+          'content-type' => 'application/json',
           'Authorization' => 'Bearer '.$apikey];
 
         if($ignoreTls) {
@@ -76,9 +64,9 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
     }
 
     public function uptime($inputSeconds)
-    {   
+    {
         // Adapted from https://stackoverflow.com/questions/8273804/convert-seconds-into-days-hours-minutes-and-seconds
-        
+
 		$res = "";
 		$secondsInAMinute = 60;
 		$secondsInAnHour = 60 * $secondsInAMinute;
@@ -126,6 +114,7 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
 				$count += 1;
 			}
 		}
+	}
 
     public function alerts($alert)
     {
