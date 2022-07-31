@@ -5,6 +5,6 @@
   "license": "Proprietary",
   "description": "Video Management Software\r\nUse up to 64 cameras (webcams, network IP cams, analog cards, or your Windows PC desktop). Capture JPEG snapshots or movies in standard MP4, AVI, advanced DVR, or Windows Media file formats.",
   "enhanced": true,
-  "tile_background": "dark",
+  "tile_background": "light",
   "icon": "blueirisnvr.png"
 }
