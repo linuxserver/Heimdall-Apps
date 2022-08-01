@@ -1,0 +1,10 @@
+{
+    "appid": "6c6defee55d3919ddcc6ca1985984e305e971cb7",
+    "name": "Asuswrt",
+    "website": "http://router.asus.com/",
+    "license": "MIT License",
+    "description": "Asuswrt is the firmware and web UI included on all Asus routers.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "asuswrt.png"
+}
