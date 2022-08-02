@@ -1,0 +1,10 @@
+{
+    "appid": "4432738a5981dde89b94b751a0179c2fdae7b7cf",
+    "name": "Atlantis",
+    "website": "http://runatlantis.io",
+    "license": "Apache License 2.0",
+    "description": "A self-hosted golang application that listens for Terraform pull request events via webhooks.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "atlantis.png"
+}
