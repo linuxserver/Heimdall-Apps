@@ -5,6 +5,6 @@
   "license": "BSD 3-Clause Clear License",
   "description": "A secure network that just works\r\nZero config VPN. Installs on any device in minutes, manages firewall rules for you, and works from anywhere.",
   "enhanced": false,
-  "tile_background": "dark",
+  "tile_background": "light",
   "icon": "tailscale.svg"
 }

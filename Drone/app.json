@@ -6,5 +6,5 @@
   "description": "Drone is a Continuous Delivery system built on container technology. Drone uses a simple YAML configuration file, a superset of docker-compose, to define and execute Pipelines inside Docker containers.",
   "enhanced": false,
   "tile_background": "light",
-  "icon": "drone.scg"
+  "icon": "drone.svg"
 }

@@ -5,6 +5,6 @@
   "license": "GNU Affero General Public License v3.0",
   "description": "Simple, modern & fast web-based email client",
   "enhanced": false,
-  "tile_background": "dark",
+  "tile_background": "light",
   "icon": "rainloop.png"
 }

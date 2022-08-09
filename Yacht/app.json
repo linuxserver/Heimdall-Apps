@@ -5,6 +5,6 @@
   "license": "MIT License",
   "description": "Yacht is a container management UI with a focus on templates and 1-click deployments.",
   "enhanced": false,
-  "tile_background": "dark",
+  "tile_background": "light",
   "icon": "yacht.svg"
 }
