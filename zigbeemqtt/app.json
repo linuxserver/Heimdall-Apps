@@ -6,5 +6,5 @@
   "description": "Zigbee2MQTT is a nodejs Gateway application that connects Zigbee networks to MQTT networks",
   "enhanced": true,
   "tile_background": "dark",
-  "icon": "zigbee2mqtt.svg"
+  "icon": "zigbee2mqtt.png"
 }
