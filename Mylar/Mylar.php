@@ -32,7 +32,7 @@ class Mylar extends \App\SupportedApps implements \App\EnhancedApps
 
 		$data = [];
 
-		$data["missing"] = count($missing) ?? 0;
+		$data["missing"] = count($missing->issues) ?? 0;
 		$data["upcoming"] = count($upcoming) ?? 0;
 
 		return parent::getLiveStats($status, $data);
