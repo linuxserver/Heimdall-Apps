@@ -1,0 +1,10 @@
+{
+    "appid": "a831f55ecba8054c0534210efcbb5cb9a3ea9b61",
+    "name": "UniFi Protect",
+    "website": "https://ui.com/camera-security",
+    "license": "Proprietary",
+    "description": "UniFi Protect is a security management application that runs on a UniFi OS Console. With it, you can configure your Protect devices, watch live camera streams and recordings, download footage, create recording schedules, customize detection-specific notifications, and much more!",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "unifiprotect.png"
+}
