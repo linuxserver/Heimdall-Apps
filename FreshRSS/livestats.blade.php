@@ -10,7 +10,7 @@
 	<div style="position: fixed;overflow: hidden;">
 		<div style="display: inline-block;background-color: #161b1f;width: 279px;background-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));border-radius: 0px 0px 6px 6px;">
 		@foreach ($feed as $feedEntry)
-		<ul>
+		<ul style="margin-left: -25px;width: 295px;overflow: hidden;">
 			<li style="list-style-type:none;">
 			<a href='{!! $feedEntry["link"] !!}' target="_blank" rel="noopener noreferrer" style="background-color: transparent;text-decoration: none !important;">
 				<span class="title" style="color:orange !important;white-space:nowrap;">{!! $feedEntry["title"] !!} </span>
