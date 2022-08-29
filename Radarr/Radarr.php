@@ -1,51 +1,49 @@
 <?php namespace App\SupportedApps\Radarr;
 
-class Radarr extends \App\SupportedApps implements \App\EnhancedApps
-{
-	public $config;
+class Radarr extends \App\SupportedApps implements \App\EnhancedApps {
 
-	//protected $login_first = true; // Uncomment if api requests need to be authed first
-	//protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
+    public $config;
 
-	function __construct()
-	{
-		//$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
-	}
+    //protected $login_first = true; // Uncomment if api requests need to be authed first
+    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
-	public function test()
-	{
-		$test = parent::appTest($this->url("system/status"));
-		echo $test->status;
-	}
+    function __construct() {
+        //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
+    }
 
-	public function livestats()
-	{
-		$status = "inactive";
-		$data = [];
+    public function test()
+    {
+        $test = parent::appTest($this->url('system/status'));
+        echo $test->status;
+    }
 
-		$movies = json_decode(parent::execute($this->url("movie"))->getBody());
-		$queue = json_decode(parent::execute($this->url("queue"))->getBody());
+    public function livestats()
+    {
+        $status = 'inactive';
+        $data = [];
 
-		$collect = collect($movies);
-		$missing = $collect->where("hasFile", false);
+        $movies = json_decode(parent::execute($this->url('movie?'))->getBody());
+        $missing = collect($movies)->where('hasFile', false)->where('isAvailable', true);
 
-		$data = [];
-		if ($missing || $queue) {
-			$data["missing"] = $missing->count() ?? 0;
-			$data["queue"] = count($queue->records) ?? 0;
-		}
+        $today = date('Y-m-d',mktime(0, 0, 0, date("m"), date("d"), date("Y")));
+        $nextmonth = date('Y-m-d',mktime(0, 0, 0, date("m")+1, date("d"), date("Y")));
+        $queue = json_decode(parent::execute($this->url('calendar?start='.$today.'&end='.$nextmonth.'&'))->getBody());
+        $upcoming = collect($queue)->where('hasFile', false)->where('isAvailable', false)->whereNotNull('digitalRelease');
 
-		return parent::getLiveStats($status, $data);
-	}
 
-	public function url($endpoint)
-	{
-		$api_url =
-			parent::normaliseurl($this->config->url) .
-			"api/v3/" .
-			$endpoint .
-			"?apikey=" .
-			$this->config->apikey;
-		return $api_url;
-	}
+        $data = [];
+        if($missing || $upcoming) {
+            $data['missing'] = $missing->count() ?? 0;
+            $data['upcoming'] = $upcoming->count() ?? 0;
+        }
+
+        return parent::getLiveStats($status, $data);
+        
+    }
+
+    public function url($endpoint)
+    {
+        $api_url = parent::normaliseurl($this->config->url).'api/v3/'.$endpoint.'apikey='.$this->config->apikey;
+        return $api_url;
+    }
 }

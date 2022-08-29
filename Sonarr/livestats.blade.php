@@ -4,7 +4,7 @@
         <strong>{!! $missing !!}</strong>
     </li>
     <li>
-        <span class="title">Queue</span>
-        <strong>{!! $queue !!}</strong>
+        <span class="title">Upcoming</span>
+        <strong>{!! $upcoming !!}</strong>
     </li>
 </ul>
