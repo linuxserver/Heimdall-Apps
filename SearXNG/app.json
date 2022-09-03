@@ -1,0 +1,10 @@
+{
+    "appid": "78db66ac2751c3f83776a8178b61915f36dd49d6",
+    "name": "SearXNG",
+    "website": "https://searxng.org/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "searxng.svg"
+}
