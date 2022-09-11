@@ -1,0 +1,10 @@
+{
+    "appid": "0b0f769acf9c7ff5190df937cf4b57ec4036e56e",
+    "name": "Etherpad",
+    "website": "https://etherpad.org/",
+    "license": "Apache License 2.0",
+    "description": "Etherpad is a highly customizable open source online editor providing collaborative editing in really real-time.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "etherpad.png"
+}
