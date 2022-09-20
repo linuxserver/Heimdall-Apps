@@ -15,6 +15,7 @@ class Syncthing extends \App\SupportedApps implements \App\EnhancedApps
 	function get_request_attrs()
 	{
 		$attrs["headers"] = ["X-API-Key" => $this->config->apikey];
+		$attrs["ignore_tls"] = ["ignore_tls" => $this->config->ignore_tls];
 		return $attrs;
 	}
 
