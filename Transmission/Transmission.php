@@ -48,17 +48,22 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps
 		$data = [];
 
 		$torrents = $details->arguments->torrents;
-		$torrentCount = count($torrents);
-		$rateDownload = $rateUpload = $completedTorrents = 0;
+		$seeding_torrents = 0;
+		$leeching_torrents = 0;
+		$rateDownload = $rateUpload = 0;
+
 		foreach ($torrents as $thisTorrent) {
 			$rateDownload += $thisTorrent->rateDownload;
 			$rateUpload += $thisTorrent->rateUpload;
-			if ($thisTorrent->percentDone == 1) {
-				$completedTorrents += 1;
+			if ($thisTorrent->status == 6) {
+				$seeding_torrents += 1;
+			}
+			if($thisTorrent->status == 4) {
+			    $leeching_torrents += 1;
 			}
 		}
-		$leech = $torrentCount - $completedTorrents;
-		if ($leech > 0) {
+
+		if ($leeching_torrents > 0) {
 			$status = "active";
 		}
 
@@ -74,8 +79,8 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps
 			" <span>",
 			"/s</span>"
 		);
-		$data["seed_count"] = $completedTorrents ?? 0;
-		$data["leech_count"] = $leech ?? 0;
+		$data["seed_count"] = $seeding_torrents;
+		$data["leech_count"] = $leeching_torrents;
 
 		return parent::getLiveStats($status, $data);
 	}
