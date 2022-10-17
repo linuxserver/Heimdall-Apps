@@ -28,6 +28,19 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps
 			$this->url("/library/recentlyAdded"),
 			$this->attrs()
 		);
+		$body = $res->getBody();
+        $xml = simplexml_load_string(
+        	$body,
+			"SimpleXMLElement",
+			LIBXML_NOCDATA | LIBXML_NOBLANKS
+		);
+
+		$data = [];
+
+		if ($xml) {
+			$data["recently_added"] = $xml["size"];
+			$status = "active";
+		}
 
 		$res = parent::execute($this->url("/library/onDeck"));
 
