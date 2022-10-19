@@ -1,0 +1,10 @@
+{
+    "appid": "dd62089241256d5f36415bf5ff40ed4cea29210f",
+    "name": "ISPConfig",
+    "website": "ispconfig.org",
+    "license": "BSD Source Code Attribution",
+    "description": "ISPConfig is an open source hosting control panel for Linux which is capable of managing multiple servers from one control panel. ISPConfig is licensed under the BSD license.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "ispconfig.png"
+}
