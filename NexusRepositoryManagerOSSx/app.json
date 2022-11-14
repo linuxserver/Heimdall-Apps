@@ -1,0 +1,10 @@
+{
+    "appid": "90a7041cfbcecf6d11c2b8dfc599a07116d15ba6",
+    "name": "Nexus Repository Manager OSS 3.x",
+    "website": "https://www.sonatype.com/download-oss-sonatype",
+    "license": "Eclipse Public License 1.0",
+    "description": "The free artifact repository with universal format support.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "nexusrepositorymanageross3x.png"
+}
