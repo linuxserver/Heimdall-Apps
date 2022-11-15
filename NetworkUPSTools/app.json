@@ -1,0 +1,10 @@
+{
+    "appid": "26f4d706681b01c78c47bff7ea009845f9ed57ac",
+    "name": "Network UPS Tools",
+    "website": "https://networkupstools.org/",
+    "license": "GNU General Public License v2.0 or later",
+    "description": "The primary goal of the Network UPS Tools (NUT) project is to provide support for Power Devices, such as Uninterruptible Power Supplies, Power Distribution Units, Automatic Transfer Switches, Power Supply Units and Solar Controllers. NUT provides a common protocol and set of tools to monitor and manage such devices, and to consistently name equivalent features and data points, across a vast range of vendor-specific protocols and connection media types.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "networkupstools.png"
+}
