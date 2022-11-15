@@ -1,0 +1,10 @@
+{
+    "appid": "bee3525621cf0e6eba6a30360edb25c79689d869",
+    "name": "Barcode Buddy",
+    "website": "https://github.com/Forceu/barcodebuddy",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Pass barcodes to Barcode Buddy. If already in the Grocys system, it will consume/add/open the product there.\r\nIf an unknown barcode is passed, the product name will be looked up and a corresponding product can be chosen in the Web UI.\r\nTags can be saved — if a new product contains the tag in the name, the product will be already preselected in the drop-down list.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "barcodebuddy.png"
+}
