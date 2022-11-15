@@ -1,5 +1,5 @@
-<?php namespace App\SupportedApps\TYPO;
+<?php namespace App\SupportedApps\TYPO3;
 
-class TYPO extends \App\SupportedApps
+class TYPO3 extends \App\SupportedApps
 {
 }

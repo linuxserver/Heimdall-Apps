@@ -6,5 +6,5 @@
   "description": "phpIPAM is an open-source web IP address management application. Its goal is to provide light, modern and useful IP address management. It is a php-based application with a MySQL database backend, using jQuery libraries, ajax and HTML5/CSS3 features.",
   "enhanced": false,
   "tile_background": "light",
-  "icon": "phpipam.jpeg"
+  "icon": "phpipam.png"
 }

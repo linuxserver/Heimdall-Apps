@@ -6,5 +6,5 @@
   "description": "The ViMbAdmin project (vim-be-admin) provides a web based virtual mailbox administration system allowing mail administrators to manage domains, mailboxes and aliases.",
   "enhanced": false,
   "tile_background": "light",
-  "icon": "vimbadmin.jpeg"
+  "icon": "vimbadmin.png"
 }
