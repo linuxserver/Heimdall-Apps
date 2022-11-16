@@ -1,0 +1,10 @@
+{
+    "appid": "eb7e7cd624a1170881103b23d78a4d6a9dc5536f",
+    "name": "Robonect",
+    "website": "www.robonect-shop.de",
+    "license": "No Limit Public License",
+    "description": "Robonect® Hx verbindet deinen Gardena / Husqvarna / Flymo / McCulloch Mähroboter mit deinem WLAN und sorgt so dafür, dass Du weltweit auf alle Einstellungen und Funktionen zu jeder Zeit zugreifen kannst - mit und ohne App!",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "robonect.png"
+}
