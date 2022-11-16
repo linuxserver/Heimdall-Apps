@@ -1,5 +1,10 @@
 const { existsSync, readFileSync } = require("fs");
-const { getAppJson, test } = require("./testHelpers");
+const { getAppJson, test, getIconSizePNG } = require("./testHelpers");
+
+const ICON_WIDTH_MIN = 100;
+const ICON_WIDTH_MAX = 275;
+const ICON_HEIGHT_MIN = 100;
+const ICON_HEIGHT_MAX = 275;
 
 const testApp = (appDirectory) => {
 	global.appUnderTest = `${appDirectory}`;
@@ -14,6 +19,36 @@ const testApp = (appDirectory) => {
 
 	test("should have .png or .svg as icon file", () => {
 		return iconName.endsWith(".svg") || iconName.endsWith(".png");
+	});
+
+	test("should have an Icon with max width 275px and max height 275px when PNG", () => {
+		if (iconName.endsWith(".png")) {
+			const iconSize = getIconSizePNG(`${appDirectory}/${iconName}`);
+
+			const isWidthTooBig = iconSize.width > ICON_WIDTH_MAX;
+			const isHeightTooBig = iconSize.height > ICON_HEIGHT_MAX;
+			if (isWidthTooBig || isHeightTooBig) {
+				console.log("Icon is too big:", iconSize);
+			}
+
+			return !isWidthTooBig && !isHeightTooBig;
+		}
+		return true;
+	});
+
+	test("should have an Icon with min width 100px and min height 100px when PNG", () => {
+		if (iconName.endsWith(".png")) {
+			const iconSize = getIconSizePNG(`${appDirectory}/${iconName}`);
+
+			const isWidthTooSmall = iconSize.width < ICON_WIDTH_MIN;
+			const isHeightTooSmall = iconSize.height < ICON_HEIGHT_MIN;
+			if (isWidthTooSmall || isHeightTooSmall) {
+				console.log("Icon is too small:", iconSize);
+			}
+
+			return !isWidthTooSmall && !isHeightTooSmall;
+		}
+		return true;
 	});
 
 	// app.json tests
