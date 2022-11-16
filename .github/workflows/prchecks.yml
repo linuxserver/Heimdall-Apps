@@ -1,11 +1,12 @@
-name: Test all Apps
+name: PR Checks
 
 on:
   pull_request:
     branches: [master]
 
 jobs:
-  run_tests:
+  test_all_apps:
+    name: Test all Apps
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -22,5 +23,5 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Generate
+      - name: Run App Tests
         run: node testRunner.js
