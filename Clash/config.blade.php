@@ -6,8 +6,8 @@
     </div>
     <div class="input">
         <label>{{ __('app.apps.password') }}</label>
-        {!! Form::text('config[password]', isset($item) ? $item->getconfig()->password : null, ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
-    </div>
+		{!! Form::input('password', 'config[password]', '', ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
+	</div>
     <div class="input">
         <label>Selector to Display</label>
         {!! Form::text('config[sel_name]', isset($item) ? $item->getconfig()->sel_name : null, ['placeholder' => 'Proxy', 'data-config' => 'sel_name', 'class' => 'form-control config-item']) !!}
