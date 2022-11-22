@@ -60,6 +60,10 @@ const testApp = (appDirectory) => {
 		return typeof appJson.name === "string" && appJson !== "";
 	});
 
+	test("should have name matching the app directory name normalized", () => {
+		return appJson.name.replaceAll(/[ -.:@]/g, "") === appDirectory;
+	});
+
 	// PHP file
 	test("should have a php file", () => {
 		return existsSync(`${appDirectory}/${appDirectory}.php`);
