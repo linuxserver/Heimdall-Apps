@@ -1,0 +1,10 @@
+{
+    "appid": "e7780295cba962fe2c4a2aa84c82794611b8942b",
+    "name": "Pi.Alert",
+    "website": "https://github.com/jokob-sk/Pi.Alert/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "WIFI / LAN intruder detector.\r\n\r\nScan the devices connected to your WIFI / LAN and alert you the connection of unknown devices. It also warns if a \"always connected\" devices disconnects.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "pialert.png"
+}
