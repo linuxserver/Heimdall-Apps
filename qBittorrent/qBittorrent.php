@@ -42,7 +42,7 @@ class qBittorrent extends \App\SupportedApps implements \App\EnhancedApps
 		return parent::execute(
 			$this->url("api/v2/auth/login"),
 			$attrs,
-			false,
+			null,
 			"POST"
 		);
 	}
