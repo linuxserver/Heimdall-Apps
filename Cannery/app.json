@@ -1,0 +1,10 @@
+{
+    "appid": "c20407dc14e5be5b31ee70f357cec88347e14853",
+    "name": "Cannery",
+    "website": "https://gitea.bubbletea.dev/shibao/cannery",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "The self-hosted firearm tracker website.\r\n\r\nEasy to Use: Cannery lets you easily keep an eye on your ammo levels before and after range day\r\nSecure: Self-host your own instance, or use an instance from someone you trust. Your data stays with you, period\r\nSimple: Access from any internet-capable device",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "cannery.svg"
+}
