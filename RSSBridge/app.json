@@ -1,0 +1,10 @@
+{
+    "appid": "b0fab9d908b0feb45ae719849642031f157d56ae",
+    "name": "RSS-Bridge",
+    "website": "https://rss-bridge.github.io/rss-bridge/",
+    "license": "The Unlicense",
+    "description": "RSS-Bridge is free and open source software for generating Atom or RSS feeds from websites which don’t have one. It is written in PHP and intended to run on a Web server.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "rssbridge.png"
+}
