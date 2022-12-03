@@ -1,0 +1,10 @@
+{
+    "appid": "4bd81355b682b80389770b2d9a4e5a4c5685de34",
+    "name": "RSSHub",
+    "website": "https://github.com/DIYgod/RSSHub",
+    "license": "MIT License",
+    "description": "RSSHub is an open source, easy to use, and extensible RSS feed generator. It's capable of generating RSS feeds from pretty much everything.\r\n\r\nRSSHub delivers millions of contents aggregated from all kinds of sources, our vibrant open source community is ensuring the deliver of RSSHub's new routes, new features and bug fixes.\r\n\r\nRSSHub can be used with browser extension RSSHub Radar and mobile auxiliary app RSSBud (iOS) and RSSAid (Android)",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "rsshub.png"
+}
