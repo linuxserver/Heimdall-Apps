@@ -52,7 +52,7 @@ class Spotweb extends \App\SupportedApps implements \App\EnhancedApps
 		$res = parent::execute(
 			$this->url("?page=login"),
 			$attrs,
-			false,
+			null,
 			"POST"
 		);
 	}

@@ -63,7 +63,7 @@ class Homebridge extends \App\SupportedApps implements \App\EnhancedApps
 		$res = parent::execute(
 			$this->url("api/auth/login"),
 			$attrs,
-			false,
+			null,
 			"POST"
 		);
 		$auth = json_decode($res->getBody());

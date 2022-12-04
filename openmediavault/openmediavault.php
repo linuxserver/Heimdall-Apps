@@ -31,7 +31,7 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps
 		];
 
 		// @see \App\SupportedApps\execute($url, $attrs = [], $overridevars=false, $overridemethod=false)
-		$result = parent::execute($this->url(false), $attrs, false, "POST");
+		$result = parent::execute($this->url(false), $attrs, null, "POST");
 		if (null === $result) {
 			throw new Exception("OMV error: Could not connect");
 		}
