@@ -52,7 +52,7 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps
 		$first_res = parent::execute(
 			$this->url("api/template"),
 			$first_attrs,
-			false,
+			null,
 			"POST"
 		);
 		$first_value = $first_res->getBody();
@@ -67,7 +67,7 @@ class HomeAssistant extends \App\SupportedApps implements \App\EnhancedApps
 		$second_res = parent::execute(
 			$this->url("api/template"),
 			$second_attrs,
-			false,
+			null,
 			"POST"
 		);
 		$second_value = $second_res->getBody();

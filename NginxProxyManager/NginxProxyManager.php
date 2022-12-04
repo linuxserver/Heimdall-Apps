@@ -34,7 +34,7 @@ class NginxProxyManager extends \App\SupportedApps implements \App\EnhancedApps
 		$auth_res = parent::execute(
 			$this->url("api/tokens"),
 			$auth_attrs,
-			false,
+			null,
 			"POST"
 		);
 		$auth_data = json_decode($auth_res->getBody(), true);

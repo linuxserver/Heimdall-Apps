@@ -21,7 +21,7 @@ class WaniKani extends \App\SupportedApps implements \App\EnhancedApps
 		$attrs = [
 			"headers" => ["Authorization" => "Bearer " . $api_token],
 		];
-		return parent::execute($this->url("user"), $attrs, false, "GET");
+		return parent::execute($this->url("user"), $attrs, null, "GET");
 	}
 
 	/**
@@ -49,7 +49,7 @@ class WaniKani extends \App\SupportedApps implements \App\EnhancedApps
 		$attrs = [
 			"headers" => ["Authorization" => "Bearer " . $api_token],
 		];
-		$res = parent::execute($this->url("summary"), $attrs, false, "GET");
+		$res = parent::execute($this->url("summary"), $attrs, null, "GET");
 		$details = json_decode($res->getBody());
 		$data = ["lessons" => 0, "reviews" => 0];
 		foreach ($details->data->lessons as $lesson) {
