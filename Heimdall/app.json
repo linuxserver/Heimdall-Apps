@@ -1,0 +1,10 @@
+{
+  "appid": "b2005b3bb19b3916425998c0edd72b97667ec1fc",
+  "name": "Heimdall",
+  "website": "https://heimdall.site/",
+  "license": "MIT License",
+  "description": "As the name suggests Heimdall Application Dashboard is a dashboard for all your web applications. It doesn't need to be limited to applications though, you can add links to anything you like.\r\nHeimdall is an elegant solution to organise all your web applications. It’s dedicated to this purpose so you won’t lose your links in a sea of bookmarks.\r\nWhy not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "heimdall.png"
+}
