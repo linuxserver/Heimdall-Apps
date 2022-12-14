@@ -4,7 +4,7 @@
   "website": "https://www.duplicati.com",
   "license": "GNU Lesser General Public License v2.1 only",
   "description": "Free backup software to store backups online with strong encryption. Works with FTP, SSH, WebDAV, OneDrive, Amazon S3, Google Drive and many others.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "duplicati.png"
 }
