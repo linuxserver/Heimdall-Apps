@@ -14,7 +14,7 @@ class PaperlessNgx extends \App\SupportedApps implements \App\EnhancedApps
 
 		$attrs["headers"] = [
 			"Accept" => "application/json",
-			"Authorization" => $apikey,
+			"Authorization" => "Token " .  $apikey,
 		];
 
 		return $attrs;
