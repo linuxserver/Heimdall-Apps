@@ -27,8 +27,8 @@ class Tar1090 extends \App\SupportedApps implements \App\EnhancedApps
 		$data = [];
 
 		if ($details) {
-			$data["aircaft_with_pos"] = number_format(
-				$details->aircaft_with_pos
+			$data["aircraft_with_pos"] = number_format(
+				$details->aircraft_with_pos
 			);
 			$data["aircraft_without_pos"] = number_format(
 				$details->aircraft_without_pos
