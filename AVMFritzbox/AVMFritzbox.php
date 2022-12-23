@@ -125,7 +125,7 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
 
 	public function livestats()
 	{
-		$status = "inactive";
+		$status = "active";
 
         $statusInfo = parent::execute(
 			$this->url("statusInfo"),
