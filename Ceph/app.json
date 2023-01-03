@@ -1,0 +1,10 @@
+{
+    "appid": "9cc25b34048c85c37f5fc6be33ac5caebf9e95c1",
+    "name": "Ceph",
+    "website": "https://docs.ceph.com/",
+    "license": "Creative Commons Attribution Share Alike 3.0 Unported",
+    "description": "Ceph uniquely delivers object, block, and file storage in one unified system.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "ceph.png"
+}
