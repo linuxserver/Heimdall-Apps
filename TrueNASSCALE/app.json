@@ -1,0 +1,10 @@
+{
+    "appid": "03eeace210850159a5e9d11ffe1f8923bc2f876b",
+    "name": "TrueNAS SCALE",
+    "website": "https://www.truenas.com/truenas-scale",
+    "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+    "description": "TrueNAS® SCALE is an Open Source Hyperconverged Infrastructure (HCI) solution. Built on TrueNAS CORE, SCALE adds Linux Containers, VMs (KVM), and scale-out ZFS storage capabilities.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "truenasscale.png"
+}
