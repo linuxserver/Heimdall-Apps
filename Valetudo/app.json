@@ -1,0 +1,10 @@
+{
+    "appid": "998d84b49df198a35d23f332e998fd371a94ade5",
+    "name": "Valetudo",
+    "website": "https://valetudo.cloud/",
+    "license": "Apache License 2.0",
+    "description": "Valetudo is the de-facto-standard open-source software solution for cloud-free vacuum robots empowering thousands of users. Since it was started in 2018, it has matured to a reliable fire-and-forget solution that just works.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "valetudo.png"
+}
