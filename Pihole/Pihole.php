@@ -5,7 +5,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 	public $config;
 
 	//protected $login_first = true; // Uncomment if api requests need to be authed first
-	//protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
+	protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
 	function __construct()
 	{
@@ -14,14 +14,31 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 
 	public function test()
 	{
-		$test = parent::appTest($this->url("api.php"));
-		echo $test->status;
+		$attrs = [
+			"body" => "pw=" . $this->config->password,
+			"headers" => [
+				"content-type" => "application/x-www-form-urlencoded"
+			],
+		];
+		$test = parent::appTest($this->url("api.php"), $attrs);
+		$data = json_decode($test->response);
+		if (empty($data)) {
+			echo "Failed: Invalid credentials";
+		} else {
+			echo $test->status;       
+		}
 	}
 
 	public function livestats()
 	{
 		$status = "inactive";
-		$res = parent::execute($this->url("api.php"));
+		$attrs = [
+			"body" => "pw=" . $this->config->password,
+			"headers" => [
+				"content-type" => "application/x-www-form-urlencoded"
+			],
+		];
+		$res = parent::execute($this->url("api.php"), $attrs);
 		$details = json_decode($res->getBody());
 
 		$data = [];
