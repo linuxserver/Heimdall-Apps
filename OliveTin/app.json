@@ -1,0 +1,10 @@
+{
+    "appid": "5835041c77aa9f56cd2c4f97de2af9c41fbf7eb6",
+    "name": "OliveTin",
+    "website": "http://olivetin.app",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "OliveTin gives safe and simple access to predefined shell commands from a web interface.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "olivetin.png"
+}
