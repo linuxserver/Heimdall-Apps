@@ -1,5 +1,7 @@
 <?php namespace App\SupportedApps\Pihole;
 
+use Illuminate\Support\Facades\Log;
+
 class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 {
 	public $config;
@@ -14,14 +16,14 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 
 	public function test()
 	{
-		$test = parent::appTest($this->url("api.php"));
+		$test = parent::appTest($this->url("api.php?summaryRaw"));
 		echo $test->status;
 	}
 
 	public function livestats()
 	{
 		$status = "inactive";
-		$res = parent::execute($this->url("api.php"));
+		$res = parent::execute($this->url("api.php?summaryRaw"));
 		$details = json_decode($res->getBody());
 
 		$data = [];
@@ -40,7 +42,13 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 	}
 	public function url($endpoint)
 	{
+		$apiKey = $this->config->apikey;
 		$api_url = parent::normaliseurl($this->config->url) . $endpoint;
+
+		if($apiKey) {
+			$api_url .= "&auth=" . $apiKey;
+		}
+
 		return $api_url;
 	}
 }
