@@ -1,10 +1,10 @@
 <ul class="livestats">
     <li>
-        <span class="title">Queue</span>
-        <strong>{!! $queue_size !!}</strong>
+        <span class="title">Scenes</span>
+        <strong>{!! $scene_count !!}</strong>
     </li>
     <li>
-        <span class="title">Speed</span>
-        <strong>{!! $current_speed !!}</strong>
+        <span class="title">Scenes size</span>
+        <strong>{!! $scenes_size !!}</strong>
     </li>
 </ul>
