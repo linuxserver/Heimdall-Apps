@@ -5,12 +5,8 @@
         {!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
     </div>
     <div class="input">
-        <label>{{ __('app.apps.username') }}</label>
-        {!! Form::text('config[username]', isset($item) ? $item->getconfig()->username : null, ['placeholder' => __('app.apps.username'), 'data-config' => 'username', 'class' => 'form-control config-item']) !!}
-    </div>
-    <div class="input">
-        <label>{{ __('app.apps.password') }}</label>
-        {!! Form::input('password', 'config[password]', '', ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
+        <label>{{ __('app.apps.apikey') }}</label>
+        {!! Form::text('config[apikey]', isset($item) && property_exists($item->getconfig(), 'apikey') ? $item->getconfig()->apikey : null, ['placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
