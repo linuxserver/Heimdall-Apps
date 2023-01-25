@@ -21,8 +21,6 @@ class Portainer extends \App\SupportedApps implements \App\EnhancedApps
 
 	public function auth()
 	{
-		$attrs = [];
-
 		$body["username"] = $this->config->username;
 		$body["password"] = $this->config->password;
 		$vars = [
@@ -33,7 +31,7 @@ class Portainer extends \App\SupportedApps implements \App\EnhancedApps
 
 		$result = parent::execute(
 			$this->url("api/auth"),
-			$attrs,
+			$this->getAttrs(),
 			$vars,
 			"POST"
 		);
@@ -61,9 +59,10 @@ class Portainer extends \App\SupportedApps implements \App\EnhancedApps
 			"Authorization" => "Bearer " . $token,
 			"Accept" => "application/json",
 		];
-		$attrs = [
-			"headers" => $headers,
-		];
+
+		$attrs = $this->getAttrs();
+
+		$attrs["headers"] = $headers;
 
 		$result = parent::execute(
 			$this->url("api/endpoints?limit=100&start=0"),
@@ -105,5 +104,24 @@ class Portainer extends \App\SupportedApps implements \App\EnhancedApps
 	{
 		$api_url = parent::normaliseurl($this->config->url) . $endpoint;
 		return $api_url;
+	}
+
+	public function getConfigValue($key, $default = null)
+	{
+		return isset($this->config) && isset($this->config->$key)
+			? $this->config->$key
+			: $default;
+	}
+
+	public function getAttrs()
+	{
+		$ignoreTls = $this->getConfigValue("ignore_tls", false);
+		if ($ignoreTls) {
+			$attrs["verify"] = false;
+		} else {
+			$attrs = [];
+		}
+
+		return $attrs;
 	}
 }
