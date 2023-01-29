@@ -1,0 +1,10 @@
+{
+    "appid": "deebb60d4aafd710c8f6a4cfd917b570748f2c0c",
+    "name": "Kavita",
+    "website": "https://www.kavitareader.com/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Kavita is a fast, feature rich, cross platform reading server. Built with a focus for manga and the goal of being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "kavita.svg"
+}
