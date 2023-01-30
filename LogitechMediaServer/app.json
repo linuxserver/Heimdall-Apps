@@ -1,0 +1,10 @@
+{
+    "appid": "f34c3c32978de92e5625bac05c2b7c4fd4704c66",
+    "name": "ogitech Media Server",
+    "website": "https://github.com/Logitech/slimserver",
+    "license": "GNU General Public License v2.0 or later",
+    "description": "Logitech Media Server (formerly SlimServer, SqueezeCenter and Squeezebox Server) is a streaming audio server supported by Logitech (formerly Slim Devices), developed in particular to support their Squeezebox range of digital audio receivers.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "ogitechmediaserver.png"
+}
