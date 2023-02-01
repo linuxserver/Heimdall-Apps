@@ -18,11 +18,13 @@ class GitLab extends \App\SupportedApps implements \App\EnhancedApps
 			$test = parent::appTest(
 				$this->url(
 					"/-/readiness?token=" .
-						$this->config->health_apikey .
-						"&all=1"
+					$this->config->health_apikey .
+					"&all=1"
 				)
 			);
 			echo $test->status;
+		} else {
+			echo "Health API key missing!";
 		}
 	}
 
@@ -35,8 +37,8 @@ class GitLab extends \App\SupportedApps implements \App\EnhancedApps
 			$res1 = parent::execute(
 				$this->url(
 					"/-/readiness?token=" .
-						$this->config->health_apikey .
-						"&all=1"
+					$this->config->health_apikey .
+					"&all=1"
 				)
 			);
 			$details1 = json_decode($res1->getBody());
