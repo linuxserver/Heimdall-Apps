@@ -1,0 +1,10 @@
+{
+    "appid": "dd4ddbba11a293a1c14a5a5148e49dcc94a495c8",
+    "name": "Stirling-PDF",
+    "website": "https://github.com/Frooodle/Stirling-PDF",
+    "license": "Apache License 2.0",
+    "description": "Locally hosted web application that allows you to perform various operations on PDF files, such as splitting, merging, adding images and many more!",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "stirlingpdf.svg"
+}
