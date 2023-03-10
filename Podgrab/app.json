@@ -1,0 +1,10 @@
+{
+    "appid": "c5530bbf743a64309dd5f5530172098f80d62cf3",
+    "name": "Podgrab",
+    "website": "https://github.com/akhilrex/podgrab",
+    "license": "GNU General Public License v3.0 only",
+    "description": "A self-hosted podcast manager/downloader/archiver tool to download podcast episodes as soon as they become live with an integrated player.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "podgrab.png"
+}
