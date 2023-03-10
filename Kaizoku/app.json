@@ -1,0 +1,10 @@
+{
+    "appid": "0edfdcc19462e0036ce81809af3a9d15559dbea4",
+    "name": "Kaizoku",
+    "website": "https://github.com/oae/kaizoku",
+    "license": "MIT License",
+    "description": "Kaizoku is self-hosted manga downloader.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "kaizoku.png"
+}
