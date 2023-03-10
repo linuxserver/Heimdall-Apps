@@ -1,0 +1,10 @@
+{
+    "appid": "80089872044e4415d12351a613017381b1ed1d77",
+    "name": "AirDC++ Web Client",
+    "website": "https://github.com/airdcpp-web/airdcpp-webclient",
+    "license": "GNU General Public License v2.0 or later",
+    "description": "AirDC++ Web Client is a locally installed application, which is designed for flexible sharing of files or directories within groups of people in a local network or over internet. The daemon application can be installed on different types of systems, such as on file servers and NAS devices.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "airdcwebclient.png"
+}
