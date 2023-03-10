@@ -1,0 +1,10 @@
+{
+    "appid": "0ce375f04a38e9b0c433b393e76a7473fdfbf6fc",
+    "name": "WatchYourLAN",
+    "website": "https://github.com/aceberg/WatchYourLAN",
+    "license": "MIT License",
+    "description": "Lightweight network IP scanner with web GUI https://github.com/aceberg/WatchYourLAN",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "watchyourlan.png"
+}
