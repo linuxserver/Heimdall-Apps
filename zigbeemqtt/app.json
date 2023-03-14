@@ -1,0 +1,10 @@
+{
+    "appid": "b2a1d91f32dc4d5bc979768320e0a689adf58d41",
+    "name": "zigbee2mqtt",
+    "website": "https://www.zigbee2mqtt.io/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Zigbee2MQTT is a nodejs Gateway application that connects Zigbee networks to MQTT networks",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "zigbee2mqtt.png"
+}
