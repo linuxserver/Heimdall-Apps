@@ -84,7 +84,7 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps
 			"%.1f%%",
 			($info->memUsed / $info->memTotal) * 100
 		);
-		$data["Pkgs"] = $this->symbol(!$info->pkgUpdatesAvailable);
+		$data["Pkgs"] = $this->symbol(!$info->availablePkgUpdates);
 
 		$services = $this->request("services", "getStatus");
 		foreach ($services->data as $service) {
