@@ -1,0 +1,10 @@
+{
+    "appid": "f98669cc9b81fea7bd27f04b1d03b400f511a9df",
+    "name": "Weather",
+    "website": "https://openweathermap.org",
+    "license": "Creative Commons Attribution Non Commercial 4.0 International",
+    "description": "Just add a tile with weather.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "weather.png"
+}
