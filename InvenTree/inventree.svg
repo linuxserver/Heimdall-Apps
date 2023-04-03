@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(0 -652.36)">
+  <g transform="matrix(1.7133 0 0 1.7133 460.05 236.12)">
+   <g stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="1.5623">
+     <path d="m-151.79 359.63v112.76l97.069-56.043v-113.2z" fill="#ddbc91"/>
+     <path d="m-151.79 359.63v112.76l-97.068-56.043v-113.2z" fill="#d9b383"/>
+     <path d="m-54.717 303.15-97.069 56.481-97.068-56.481 97.068-56.174z" fill="#ddbc91"/>
+    </g>
+    <g>
+     <g transform="matrix(1.4761 0 0 1.4761 -218.88 128.54)" fill="#f3f4e4">
+      <path transform="matrix(.40703 0 0 .40703 -35.955 75.176)" d="m78.834 129.19v141.3l121.17 69.955 121.17-69.955v-141.3l-121.17 70.502z" stroke-width="2.6001"/>
+      <path d="m94.77 127.76-49.318 28.697-49.318-28.697 49.318-28.541z" stroke-width="1.0583"/>
+     </g>
+     <path d="m-151.79 275.01v84.491l-72.801 42.541v-84.901z" fill="#d9dbbc" stroke-width="1.5623"/>
+     <path d="m-151.79 275.01v84.491l72.801 42.541v-84.901z" fill="#eaeccf" stroke-width="1.5623"/>
+     <g transform="matrix(.9841 0 0 .9841 -196.51 205.66)" fill="#90a8d8" stroke-width="1.5875">
+      <path d="m45.452 156.46v57.293l49.318-28.474v-57.516z"/>
+      <path d="m45.452 156.46v57.293l-49.318-28.474v-57.516z"/>
+      <path d="m94.77 127.76-49.318 28.697-49.318-28.697 49.318-28.541z"/>
+     </g>
+    </g>
+   </g>
+   <rect x="-728.43" y="95.065" width="281.66" height="552.59" fill="none"/>
+  </g>
+ </g>
+</svg>

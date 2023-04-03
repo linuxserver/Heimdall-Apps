@@ -1,0 +1,10 @@
+{
+    "appid": "ffabb98c1f6147fb0a534168df44ab9982f5cb1b",
+    "name": "InvenTree",
+    "website": "https://inventree.org/",
+    "license": "MIT License",
+    "description": "InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "inventree.svg"
+}
