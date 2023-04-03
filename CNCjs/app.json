@@ -1,0 +1,10 @@
+{
+    "appid": "c3ca2faab8b1e6bf3ba212d383d15d45da8c951e",
+    "name": "CNCjs",
+    "website": "https://cnc.js.org/",
+    "license": "MIT License",
+    "description": "A web-based interface for CNC milling controller running Grbl, Smoothieware, or TinyG. It runs on an Raspberry Pi or a laptop computer that you have Node.js installed, connecting to the Arduino over a serial connection using a USB serial port, a Bluetooth serial module, or a Serial-to-WiFi module like XBee or USR-WIFI232-T.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "cncjs.png"
+}
