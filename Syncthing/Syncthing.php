@@ -25,39 +25,36 @@ class Syncthing extends \App\SupportedApps implements \App\EnhancedApps
 		echo $test->status;
 	}
 
-	public function livestats()
-	{
-		$data = [];
-		$needed_files = 0;
-		$needed_bytes = 0;
-		$status = "inactive";
-		$attrs = $this->get_request_attrs();
+    public function livestats()
+    {
+        $data = [];
+        $needed_files = 0;
+        $needed_bytes = 0;
+        $status = 'inactive';
+        $attrs = $this->get_request_attrs();
 
-		# first get a list of folders
-		$res = parent::execute($this->url("/rest/stats/folder"), $attrs);
-		$details = json_decode($res->getBody());
+        # first get a list of folders
+        $res = parent::execute($this->url('/rest/stats/folder'), $attrs);
+        $details = json_decode($res->getBody());
 
-		foreach ($details as $folder => $folder_status) {
-			$folder_db_res = parent::execute(
-				$this->url('/rest/db/status?folder=${folder}'),
-				$attrs
-			);
-			$folder_db = json_decode($folder_db_res->getBody());
+        foreach ($details as $folder => $folder_status) {
+            $folder_db_res = parent::execute($this->url("/rest/db/status?folder={$folder}"), $attrs);
+            $folder_db = json_decode($folder_db_res->getBody());
+            
+            if ($folder_db) {
+                $needed_files += $folder_db->needFiles;
+                $needed_bytes += $folder_db->needBytes;
+            }     
+        }
 
-			if ($folder_db) {
-				$needed_files += $folder_db["needFiles"];
-				$needed_bytes += $folder_db["needBytes"];
-			}
-		}
+        if ($needed_files || $needed_bytes) {
+            $status = 'active';
+        }
 
-		if ($needed_files || $needed_bytes) {
-			$status = "active";
-		}
-
-		$data["needed_files"] = $needed_files;
-		$data["needed_bytes"] = $needed_bytes;
-		return parent::getLiveStats($status, $data);
-	}
+        $data['needed_files'] = $needed_files;
+        $data['needed_bytes'] = $needed_bytes;
+        return parent::getLiveStats($status, $data);
+    }
 	public function url($endpoint)
 	{
 		$api_url = parent::normaliseurl($this->config->url) . $endpoint;
