@@ -4,7 +4,7 @@
         <strong>{!! $needed_files !!}</strong>
     </li>
     <li>
-        <span class="title">Needed Bytes</span>
-        <strong>{!! $needed_bytes !!}</strong>
+        <span class="title">Needed Gigabytes</span>
+        <strong>{!! round($needed_bytes / 1073741824, 2) !!} GB</strong>
     </li>
 </ul>
