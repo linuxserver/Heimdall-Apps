@@ -19,8 +19,8 @@ class UniFi extends \App\SupportedApps
 	{
 		$test = parent::appTest(
 			$this->url("/api/auth/login"),
-			$this->getLoginAttributes()
-		);
+			$this->getLoginAttributes(),
+        );
 
 		echo $test->status;
 	}
@@ -52,6 +52,8 @@ class UniFi extends \App\SupportedApps
 			foreach ($details->data as $key => $detail) {
 				if ($detail->subsystem === 'wlan') {
 					$data['wlan_users'] = $detail->num_user;
+					$data['wlan_ap'] = $detail->num_ap;
+					$data['wlan_dc'] = $detail->num_disconnected;
 				}
 
 				if ($detail->subsystem === 'lan') {
