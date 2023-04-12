@@ -1,0 +1,10 @@
+{
+    "appid": "4c49b707ba01c996a06cf551a899e1f1058775cf",
+    "name": "ThreeTwo",
+    "website": "https://github.com/rishighan/threetwo",
+    "license": "MIT License",
+    "description": "ThreeTwo! aims to be a comic book curation app.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "threetwo.png"
+}
