@@ -201,8 +201,10 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
         } else {
             $endpoint = "WANCommonIFC1";
         }
+ 		
+		$fritzURL = $this->config->url;
 
-		$api_url = "http://fritz.box:49000/igdupnp/control/{$endpoint}";
+		$api_url = "$fritzURL:49000/igdupnp/control/{$endpoint}";
 
 		return $api_url;
 	}
