@@ -1,11 +1,11 @@
 <ul class="livestats">
     <li>
         <span class="title">VM</span>
-        <strong>{!! $vm_running !!}<span>/{!! $vm_total !!}</span></strong>
+        <strong><span>{!! $vm_running !!}/{!! $vm_total !!}</span></strong>
     </li>
     <li>
         <span class="title">LXC</span>
-        <strong>{!! $container_running !!}<span>/{!! $container_total !!}</span></strong>
+        <strong><span>{!! $container_running !!}/{!! $container_total !!}</span></strong>
     </li>
     <li>
         <span class="title">CPU</span>
