@@ -1,0 +1,10 @@
+{
+    "appid": "847518631182ef7bf3b4a8c6ec4bd1e602750726",
+    "name": "Ubiquiti",
+    "website": "NA",
+    "license": "BSD Zero Clause License",
+    "description": "Need to update the \"Unifi\" listing to the modern Ubiquiti logo and change to Dark to make it look nicer :)",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "ubiquiti.png"
+}
