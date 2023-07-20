@@ -6,15 +6,13 @@ class Mainsail extends \App\SupportedApps implements \App\EnhancedApps
 {
         public $config;
 
-        //protected $login_first = true; // Uncomment if api requests need to be authed first
-        //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
-
-        function __construct()
+		function __construct()
         {
         }
 
         public function test()
-        {
+        {		
+				//https://moonraker.readthedocs.io/en/latest/web_api/#query-server-info
                 $test = parent::appTest($this->url("/server/info"));
                 echo $test->status;
         }
@@ -22,6 +20,7 @@ class Mainsail extends \App\SupportedApps implements \App\EnhancedApps
         public function livestats()
         {
                 $status = "standby";
+				//https://moonraker.readthedocs.io/en/latest/web_api/#query-printer-object-status
                 $res = parent::execute($this->url('/printer/objects/query?display_status&toolhead&print_stats'));
                 if (!$res) {
                         return parent::getLiveStats($status, ["error" => "Connection"]);
@@ -32,13 +31,11 @@ class Mainsail extends \App\SupportedApps implements \App\EnhancedApps
                 $status = $details->result->status->print_stats->state;
                 
                 if ($status == 'printing'){
-
                     $data["completed_pct"] = round($details->result->status->display_status->progress) . '%';
     
                     $total_seconds = $details->result->status->toolhead->estimated_print_time;
                     $completed_seconds = $details->result->status->print_stats->print_duration;
-                    // $total_seconds = 10000;
-                    //$completed_seconds = 1000;
+					
                     if ($completed_seconds === null) {
                             $data["estimated"] = "N/A";
                     } elseif ($completed_seconds > $total_seconds) {
