@@ -1,0 +1,10 @@
+{
+    "appid": "937e8ab4db3d27240fed84578ae01efd052828e2",
+    "name": "Fluidd",
+    "website": "https://docs.fluidd.xyz/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Fluidd is a lightweight & responsive user interface for Klipper, the 3D printer firmware.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "fluidd.png"
+}
