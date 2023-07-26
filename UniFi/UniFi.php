@@ -18,7 +18,7 @@ class UniFi extends \App\SupportedApps
 	public function test()
 	{
 		$test = parent::appTest(
-			$this->url("/api/auth/login"),
+			$this->url("/api/login"),
 			$this->getLoginAttributes(),
         );
 
@@ -30,20 +30,28 @@ class UniFi extends \App\SupportedApps
 		$status = "inactive";
 
 		parent::execute(
-			$this->url("/api/auth/login"),
+			$this->url("/api/login"),
 			$this->getLoginAttributes(),
 			null,
 			'POST'
 		);
 
 		$res = parent::execute(
-			$this->url("/proxy/network/api/s/default/stat/health"),
+			$this->url("/api/s/default/stat/health"),
+			$this->getAttributes(),
+			null,
+			'GET'
+		);
+
+               $res_sat = parent::execute(
+			$this->url("/v2/api/site/default/network_status"),
 			$this->getAttributes(),
 			null,
 			'GET'
 		);
 
 		$details = json_decode($res->getBody());
+                $details_sat = json_decode($res_sat->getBody());
 
 		$data = [];
 
@@ -51,22 +59,20 @@ class UniFi extends \App\SupportedApps
 			$data['error'] = false;
 			foreach ($details->data as $key => $detail) {
 				if ($detail->subsystem === 'wlan') {
-					$data['wlan_users'] = $detail->num_user;
-					$data['wlan_ap'] = $detail->num_ap;
-					$data['wlan_dc'] = $detail->num_disconnected;
+					$data['wlan_users'] = isset($detail->num_user) ? $detail->num_user : 0;
+					$data['wlan_ap'] = isset($detail->num_ap) ? $detail->num_ap : 0;
+					$data['wlan_dc'] = isset($detail->num_disconnected) ? $detail->num_disconnected : 0;
 				}
 
 				if ($detail->subsystem === 'lan') {
-					$data['lan_users'] = $detail->num_user;
-				}
-
-				if ($detail->subsystem === 'wan') {
-					$data['wan_avail'] = $detail->uptime_stats->WAN->availability;
+					$data['lan_users'] = isset($detail->num_user) ? $detail->num_user : 0;
 				}
 			}
 		} else {
 			$data['error'] = true;
 		}
+
+               $data['wan_avail'] = isset($details_sat->average_satisfaction) ? $details_sat->average_satisfaction : 0;
 
 		return parent::getLiveStats($status, $data);
 	}
