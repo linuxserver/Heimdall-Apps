@@ -1,10 +1,22 @@
+<style>
+.fa-exclamation-triangle:before { content: "\f071"; }
+</style>
 <ul class="livestats">
+@if(count($stats) > 0)
+@foreach($stats as $stat)
     <li>
-        <span class="title">Queue</span>
-        <strong>{!! $queue_size !!}</strong>
+    @if(count($stats) > 2)
+        <span class="title">{!! $stat["short"] !!}</span>
+    @else
+        <span class="titel">{!! $stat["title"] !!}</span>
+    @endif
+        <strong>{!! $stat["count"] !!}</strong>
     </li>
+@endforeach
+@else
     <li>
-        <span class="title">Speed</span>
-        <strong>{!! $current_speed !!}</strong>
+        <span class="title">Error</span>
+        <strong>No data</strong>
     </li>
+@endif
 </ul>
