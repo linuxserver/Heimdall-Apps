@@ -1,0 +1,10 @@
+{
+    "appid": "fea877d4f0f1699da0f936f6f27d8cea307ef5e1",
+    "name": "NAV",
+    "website": "https://nav.uninett.no",
+    "license": "GNU General Public License v3.0 only",
+    "description": "NAV (Network Administration Visualized) is a free software program to monitor networks, developed by Sikt - Norwegian Agency for Shared Services in Education and Research, and used by universities and corporations around the world.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "nav.svg"
+}
