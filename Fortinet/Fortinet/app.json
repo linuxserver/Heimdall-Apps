@@ -1,0 +1,10 @@
+{
+    "appid": "d73d4a8b6a6577d2b59781458c109bbfa8b9c221",
+    "name": "Fortinet",
+    "website": "fortinet.com",
+    "license": "Commercial",
+    "description": "Fortinet Inc (Fortinet) is a provider of enterprise-level next-generation firewalls and network security solutions. The company provides protection against security threats and simplifies the IT infrastructure.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "fortinet.png"
+}
