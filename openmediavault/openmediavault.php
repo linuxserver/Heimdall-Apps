@@ -79,7 +79,8 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps
 		$data = ["visiblestats" => []];
 
 		$info = $this->request("system", "getInformation");
-		$data["CPU"] = sprintf("%.1f%%", $info->cpuUsage);
+		$stats = $this->request("system", "getCpuStats");
+		$data["CPU"] = sprintf("%.1f%%", $stats->utilization);
 		$data["RAM"] = sprintf(
 			"%.1f%%",
 			($info->memUsed / $info->memTotal) * 100
