@@ -1,0 +1,10 @@
+{
+    "appid": "ae510f7c5ac32d35764a2c487fc09e07ef044840",
+    "name": "Longhorn",
+    "website": "https://longhorn.io/",
+    "license": "Apache License 2.0",
+    "description": "Longhorn is a distributed block storage system for Kubernetes. Longhorn is cloud-native storage built using Kubernetes and container primitives.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "longhorn.png"
+}
