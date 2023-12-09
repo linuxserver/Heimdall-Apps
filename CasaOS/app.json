@@ -1,0 +1,10 @@
+{
+    "appid": "c1f84beb40ec87b367bb8f4de5adf53052cb8671",
+    "name": "CasaOS",
+    "website": "https://www.casaos.io/",
+    "license": "Apache License 2.0",
+    "description": "A simple, easy-to-use, elegant open-source Personal Cloud system.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "casaos.svg"
+}
