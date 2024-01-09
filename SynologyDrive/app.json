@@ -1,0 +1,10 @@
+{
+    "appid": "d742e0d991e7b6789c160f9c7c200b209341d38e",
+    "name": "Synology Drive",
+    "website": "https://www.synology.com/dsm/feature/drive",
+    "license": "Commercial",
+    "description": "Synology Drive is a unified solution for effortless file management and secure collaboration.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "synologydrive.png"
+}
