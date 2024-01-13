@@ -1,0 +1,10 @@
+{
+    "appid": "3c4f323e2395d13e8c7ddc138b14dd34956978c6",
+    "name": "Memos",
+    "website": "https://github.com/usememos/memos",
+    "license": "MIT License",
+    "description": "A privacy-first, lightweight note-taking service. Easily capture and share your great thoughts.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "memos.png"
+}
