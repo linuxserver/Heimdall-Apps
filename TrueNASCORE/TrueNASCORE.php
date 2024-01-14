@@ -36,7 +36,7 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
 
 		$res = parent::execute($this->url("alert/list"), $this->attrs());
 		$details = json_decode($res->getBody(), true);
-		$data["alert_tot"] = $this->alerts($details);
+		list($data["alert_tot"], $data["alert_crit"]) = $this->alerts($details);
 
 		return parent::getLiveStats($status, $data);
 	}
@@ -109,14 +109,17 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
 
 	public function alerts($alert)
 	{
-		$count = 0;
+		$count_total = $count_critical = 0;
 		foreach ($alert as $key => $value) {
 			if ($value["dismissed"] == false) {
-				$count += 1;
+				$count_total += 1;
+				if (!in_array($value["level"], array("NOTICE", "INFO"))) {
+					$count_critical += 1;
+				}	
 			}
 		}
 
-		return strval($count);
+		return array(strval($count_total), strval($count_critical));
 	}
 
 	public function getConfigValue($key, $default = null)
