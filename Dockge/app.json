@@ -1,0 +1,10 @@
+{
+    "appid": "0bafb882c9d2c034ca5333367f8ccc90f4ae85e4",
+    "name": "Dockge",
+    "website": "https://github.com/louislam/dockge",
+    "license": "MIT License",
+    "description": "A fancy, easy-to-use and reactive self-hosted docker compose.yaml stack-oriented manager.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "dockge.svg"
+}
