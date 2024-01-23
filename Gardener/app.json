@@ -1,0 +1,10 @@
+{
+    "appid": "746aced590a184ef4169166e753f7c211e32e5fc",
+    "name": "Gardener",
+    "website": "https://gardener.cloud",
+    "license": "Apache License 2.0",
+    "description": "Deliver fully-managed clusters at scale everywhere with your own Kubernetes-as-a-Service",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "gardener.svg"
+}
