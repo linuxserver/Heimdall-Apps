@@ -8,7 +8,7 @@
     @if(count($stats) > 2)
         <span class="title">{!! $stat["short"] !!}</span>
     @else
-        <span class="titel">{!! $stat["title"] !!}</span>
+        <span class="title">{!! $stat["title"] !!}</span>
     @endif
         <strong>{!! $stat["count"] !!}</strong>
     </li>
