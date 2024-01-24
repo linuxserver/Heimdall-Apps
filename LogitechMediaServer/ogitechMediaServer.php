@@ -1,5 +1,5 @@
-<?php namespace App\SupportedApps\ogitechMediaServer;
+<?php namespace App\SupportedApps\LogitechMediaServer;
 
-class ogitechMediaServer extends \App\SupportedApps {
+class LogitechMediaServer extends \App\SupportedApps {
 
 }
