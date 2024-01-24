@@ -1,0 +1,10 @@
+{
+    "appid": "9d2560675433f5cf6deef39955dc43fce97740c7",
+    "name": "Synology Photo",
+    "website": "https://www.synology.com/dsm/feature/photos",
+    "license": "Commercial",
+    "description": "Your all-in-one solution for organizing, sharing, and safeguarding your precious memories.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "synologyphoto.png"
+}
