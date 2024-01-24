@@ -1,0 +1,10 @@
+{
+    "appid": "101e12b916274de5d628fad717f09c5ca302b5c2",
+    "name": "Immich",
+    "website": "https://immich.app/",
+    "license": "MIT License",
+    "description": "\"High performance self-hosted photo and video backup solution directly from your mobile phone\"",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "immich.svg"
+}
