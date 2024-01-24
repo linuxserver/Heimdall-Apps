@@ -1,0 +1,10 @@
+{
+    "appid": "6465667a144214d8cba094ca3ad7866f043fe54a",
+    "name": "Forgejo",
+    "website": "https://forgejo.org/",
+    "license": "MIT License",
+    "description": "Forgejo is a self-hosted lightweight software forge. Easy to install and low maintenance, it just does the job.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "forgejo.svg"
+}
