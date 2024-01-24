@@ -1,0 +1,10 @@
+{
+    "appid": "49700574309097bf89153cce1db2ea53c7844d99",
+    "name": "Remmina",
+    "website": "https://remmina.org",
+    "license": "GNU General Public License v2.0 or later",
+    "description": "Remmina is a remote desktop client for POSIX-based computer operating systems. It supports the Remote Desktop Protocol (RDP), VNC, NX, XDMCP, SPICE, X2Go and SSH protocols and uses FreeRDP as foundation.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "Remmina.svg"
+}
