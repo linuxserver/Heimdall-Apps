@@ -15,6 +15,7 @@ on: # yamllint disable-line rule:truthy
       - 'master'
       - 'releases/**'
   pull_request:
+    types: [opened, edited, synchronize, reopened, review_requested]
 
 ###############
 # Set the Job #
