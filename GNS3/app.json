@@ -1,0 +1,10 @@
+{
+    "appid": "95493920561b1c745f4f6eafb1572a1e17c26cc9",
+    "name": "GNS3",
+    "website": "https://www.gns3.com/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Build, Design and Test your network in a risk-free virtual environment and access the largest networking community to help. Whether you are studying for your first networking exam or building out a state-wide telecommunications network, GNS3 offers an easy way to design and build networks of any size without the need for hardware. And the best part is it's free!",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "gns3.png"
+}
