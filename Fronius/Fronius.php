@@ -28,13 +28,13 @@ class Fronius extends \App\SupportedApps implements \App\EnhancedApps
 		$data = [];
 		$data["PAC"] = 0;
 		foreach ($details->Body->Data->PAC->Values as $key => $pac) {
-			$data["PAC"] += $pac;
+			$data["PAC"] += round($pac,0,PHP_ROUND_HALF_UP);
 		}
 		$data["PAC_UNIT"] = $details->Body->Data->PAC->Unit;
 
 		$data["DAY_ENERGY"] = 0;
 		foreach ($details->Body->Data->DAY_ENERGY->Values as $key => $ev) {
-			$data["DAY_ENERGY"] += $ev;
+			$data["DAY_ENERGY"] += round($ev,0,PHP_ROUND_HALF_UP);
 		}
 		$data["DAY_ENERGY_UNIT"] = $details->Body->Data->DAY_ENERGY->Unit;
 
