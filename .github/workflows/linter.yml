@@ -54,7 +54,6 @@ jobs:
       - name: Lint Code Base
         uses: super-linter/super-linter/slim@v5
         env:
-          VALIDATE_ALL_CODEBASE: false
-          # Change to 'master' if your main branch differs
-          DEFAULT_BRANCH: main
+          VALIDATE_ALL_CODEBASE: true
+          DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
