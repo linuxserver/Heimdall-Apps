@@ -61,7 +61,7 @@ class UniFi extends \App\SupportedApps
 				}
 
 				if ($detail->subsystem === 'wan') {
-					$data['wan_avail'] = $detail->uptime_stats->WAN->availability;
+					$data['wan_avail'] = number_format($detail->uptime_stats->WAN->availability,0);
 				}
 			}
 		} else {
