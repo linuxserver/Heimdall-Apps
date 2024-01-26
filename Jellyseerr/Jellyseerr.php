@@ -13,38 +13,31 @@ class Jellyseerr extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function test()
     {
-        $this->attrs["headers"] = [
-			"accept" => "application/json",
-			"X-Api-Key" => $this->config->apikey,
-		];
+        $attrs = $this->getRequestAttrs();
+        $test = parent::appTest($this->url("auth/me"), $attrs);
 
-		$test = parent::appTest($this->url("auth/me"), $this->attrs);
-
-		echo $test->status;
+        echo $test->status;
     }
 
     public function livestats()
     {
-		$status = "inactive";
-		$data = [];
-		$this->attrs["headers"] = [
-			"accept" => "application/json",
-			"X-Api-Key" => $this->config->apikey,
-		];
+        $status = "inactive";
+        $data = [];
+        $attrs = $this->getRequestAttrs();
+        $requestsType = $this->getConfigValue("requests", "pending");
+        $requestsCount = json_decode(
+            parent::execute($this->url("request/count"), $attrs)->getBody()
+        );
+        $issuesType = $this->getConfigValue("issues", "open");
+        $issuesCount = json_decode(
+            parent::execute($this->url("issue/count"), $attrs)->getBody()
+        );
 
-        $pendingRequestsCount = json_decode(
-			parent::execute($this->url("request/count"), $this->attrs)->getBody()
-		);
-
-		$pendingIssueCount = json_decode(
-			parent::execute($this->url("issue/count"), $this->attrs)->getBody()
-		);
-
-        if ($pendingRequestsCount || $pendingIssueCount) 
+        if ($requestsCount || $issuesCount)
         {
-			$data["requests"] = $pendingRequestsCount->pending ?? 0;
-			$data["issues"] = $pendingIssueCount->open ?? 0;
-		}
+            $data["requests"] = $requestsCount->$requestsType ?? 0;
+            $data["issues"] = $issuesCount->$issuesType ?? 0;
+        }
 
         return parent::getLiveStats($status, $data);
     }
@@ -52,10 +45,27 @@ class Jellyseerr extends \App\SupportedApps implements \App\EnhancedApps {
     public function url($endpoint)
     {
         $api_url =
-			parent::normaliseurl($this->config->url) .
-			"api/v1/" .
-			$endpoint;
+            parent::normaliseurl($this->config->url) .
+            "api/v1/" .
+            $endpoint;
 
-		return $api_url;
+        return $api_url;
+    }
+
+    public function getRequestAttrs()
+    {
+        $attrs["headers"] = [
+            "accept" => "application/json",
+            "X-Api-Key" => $this->config->apikey,
+        ];
+
+        return $attrs;
+    }
+
+    public function getConfigValue($key, $default = null)
+    {
+        return isset($this->config) && isset($this->config->$key)
+            ? $this->config->$key
+            : $default;
     }
 }
