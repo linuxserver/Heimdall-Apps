@@ -33,7 +33,7 @@ class Jellyseerr extends \App\SupportedApps implements \App\EnhancedApps {
             parent::execute($this->url("issue/count"), $attrs)->getBody()
         );
 
-        if ($requestsCount || $issuesCount) 
+        if ($requestsCount || $issuesCount)
         {
             $data["requests"] = $requestsCount->$requestsType ?? 0;
             $data["issues"] = $issuesCount->$issuesType ?? 0;
