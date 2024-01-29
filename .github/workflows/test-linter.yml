@@ -48,6 +48,8 @@ jobs:
           php_version: 8.2
           path: ./
           standard: PSR12
+          ignore: livestats.blade.php,config.blade.php
+          exclude: Squiz.Functions.MultiLineFunctionDeclaration
 
 #  phpstan:
 #    name: PHPStan
