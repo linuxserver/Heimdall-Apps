@@ -1,5 +1,5 @@
 parameters:
     level: 6
     scanFiles:
-        - /app/heimdall-src/app/SupportedApps.php
-        - /app/heimdall-src/app/EnhancedApps.php
+        - heimdall-src/app/SupportedApps.php
+        - heimdall-src/app/EnhancedApps.php
