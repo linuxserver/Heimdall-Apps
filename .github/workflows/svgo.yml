@@ -23,7 +23,7 @@ jobs:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           svgo-config: .github/workflows/svgo.config.js
       - name: Commit optimizations
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         if: ${{steps.svgo.outputs.DID_OPTIMIZE}}
         with:
           commit_message: Optimize ${{steps.svgo.outputs.OPTIMIZED_COUNT}} SVG(s) # yamllint disable-line rule:line-length
