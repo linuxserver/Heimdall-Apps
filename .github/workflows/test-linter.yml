@@ -1,0 +1,31 @@
+---
+name: lint
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'releases/**'
+  pull_request:
+    types: [opened, edited, synchronize, reopened, review_requested]
+
+jobs:
+  build:
+    name: lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: PHP syntax checker 8.2
+        uses: prestashop/github-action-php-lint/8.2@v2.1
+      - name: PHP syntax checker 8.1
+        uses: prestashop/github-action-php-lint/8.1@v2.1
+      - name: PHP syntax checker 8.0
+        uses: prestashop/github-action-php-lint/8.0@v2.1
+      - name: PHP syntax checker 7.5
+        uses: prestashop/github-action-php-lint/7.5@v2.1
+      - name: PHP syntax checker 7.0
+        uses: prestashop/github-action-php-lint/7.0@v2.1
