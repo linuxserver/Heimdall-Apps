@@ -48,7 +48,7 @@
             php_version: 8.2
             path: ./
             standard: PSR12
-            ignore: livestats.blade.php,config.blade.php
+            ignore: livestats.blade.php,config.blade.php,.js
             exclude: Squiz.Functions.MultiLineFunctionDeclaration
   
   # Figure out later what the correct paths for Heimdall src should be.
