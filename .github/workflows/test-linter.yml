@@ -24,9 +24,9 @@ jobs:
     name: PHP-MD
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Composer install
-        uses: php-actions/composer@v6
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: PHP Mess Detector
         uses: php-actions/phpmd@v1
         with:
@@ -39,9 +39,9 @@ jobs:
     name: PHP-CS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Composer install
-        uses: php-actions/composer@v6
+      - name: Checkout
+        uses: actions/checkout@v4
+      
       - name: PHP Code Sniffer
         uses: php-actions/phpcs@v1
         with:
@@ -53,8 +53,9 @@ jobs:
     name: PHPStan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: php-actions/composer@v6 # or alternative dependency management
+      - name: Checkout
+        uses: actions/checkout@v4
+      
       - uses: php-actions/phpstan@v3
         with:
           path: ./
