@@ -51,13 +51,21 @@ jobs:
           ignore: livestats.blade.php,config.blade.php
           exclude: Squiz.Functions.MultiLineFunctionDeclaration
 
-#  phpstan:
-#    name: PHPStan
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v4
-#      
-#      - uses: php-actions/phpstan@v3
-#        with:
-#          path: ./
+  phpstan:
+    name: PHPStan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: src
+
+      - name: Checkout Heimdall repo for dependencies
+        uses: actions/checkout@v4
+        with:
+          repository: linuxserver/Heimdall
+          path: heimdall
+      
+      - uses: php-actions/phpstan@v3
+        with:
+          path: src/
