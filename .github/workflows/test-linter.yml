@@ -21,7 +21,7 @@ jobs:
         uses: prestashop/github-action-php-lint/8.2@master
 
 #  phpmd:
-#    name: PHP-MD
+#    name: PHPMD
 #    runs-on: ubuntu-latest
 #    steps:
 #      - name: Checkout
@@ -36,7 +36,7 @@ jobs:
 #          ruleset: test/phpmd/ruleset.xml
 
   phpcs:
-    name: PHP-CS
+    name: PHPCS
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -51,22 +51,25 @@ jobs:
           ignore: livestats.blade.php,config.blade.php
           exclude: Squiz.Functions.MultiLineFunctionDeclaration
 
-  phpstan:
-    name: PHPStan
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          path: src
-
-      - name: Checkout Heimdall repo for dependencies
-        uses: actions/checkout@v4
-        with:
-          repository: linuxserver/Heimdall
-          path: ./heimdall-src
-      
-      - uses: php-actions/phpstan@v3
-        with:
-          path: src/
-          configuration: src/phpstan.neon
+# Figure out later what the correct paths for Heimdall src should be.
+# Needed by PHPStan for symbol discovery.
+#
+#  phpstan:
+#    name: PHPStan
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#        with:
+#          path: src
+#
+#      - name: Checkout Heimdall repo for dependencies
+#        uses: actions/checkout@v4
+#        with:
+#          repository: linuxserver/Heimdall
+#          path: ./heimdall-src
+#      
+#      - uses: php-actions/phpstan@v3
+#        with:
+#          path: src/
+#          configuration: src/phpstan.neon
