@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\EmulatorJS;
+<?php
 
-class EmulatorJS extends \App\SupportedApps {
+namespace App\SupportedApps\EmulatorJS;
 
+class EmulatorJS extends \App\SupportedApps
+{
 }

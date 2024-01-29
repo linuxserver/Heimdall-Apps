@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\WLED;
+<?php
+
+namespace App\SupportedApps\WLED;
 
 class WLED extends \App\SupportedApps
 {

@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Nagios;
+<?php
+
+namespace App\SupportedApps\Nagios;
 
 class Nagios extends \App\SupportedApps
 {

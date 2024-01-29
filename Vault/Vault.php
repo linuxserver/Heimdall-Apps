@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Vault;
+<?php
 
-class Vault extends \App\SupportedApps {
+namespace App\SupportedApps\Vault;
 
+class Vault extends \App\SupportedApps
+{
 }

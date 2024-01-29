@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Memos;
+<?php
 
-class Memos extends \App\SupportedApps {
+namespace App\SupportedApps\Memos;
 
+class Memos extends \App\SupportedApps
+{
 }

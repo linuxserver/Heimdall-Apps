@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\NetBox;
+<?php
+
+namespace App\SupportedApps\NetBox;
 
 class NetBox extends \App\SupportedApps
 {

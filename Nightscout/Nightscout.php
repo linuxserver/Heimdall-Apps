@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Nightscout;
+<?php
 
-class Nightscout extends \App\SupportedApps {
+namespace App\SupportedApps\Nightscout;
 
+class Nightscout extends \App\SupportedApps
+{
 }

@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Forgejo;
+<?php
 
-class Forgejo extends \App\SupportedApps {
+namespace App\SupportedApps\Forgejo;
 
+class Forgejo extends \App\SupportedApps
+{
 }

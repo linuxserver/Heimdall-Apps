@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Dozzle;
+<?php
+
+namespace App\SupportedApps\Dozzle;
 
 class Dozzle extends \App\SupportedApps
 {

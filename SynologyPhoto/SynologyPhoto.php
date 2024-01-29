@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\SynologyPhoto;
+<?php
 
-class SynologyPhoto extends \App\SupportedApps {
+namespace App\SupportedApps\SynologyPhoto;
 
+class SynologyPhoto extends \App\SupportedApps
+{
 }

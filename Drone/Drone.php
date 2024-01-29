@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Drone;
+<?php
+
+namespace App\SupportedApps\Drone;
 
 class Drone extends \App\SupportedApps
 {

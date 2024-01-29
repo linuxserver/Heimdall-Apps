@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\KastenbyVeeam;
+<?php
 
-class KastenbyVeeam extends \App\SupportedApps {
+namespace App\SupportedApps\KastenbyVeeam;
 
+class KastenbyVeeam extends \App\SupportedApps
+{
 }

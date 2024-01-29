@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\LazyLibrarian;
+<?php
+
+namespace App\SupportedApps\LazyLibrarian;
 
 class LazyLibrarian extends \App\SupportedApps
 {

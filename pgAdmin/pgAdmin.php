@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\pgAdmin;
+<?php
+
+namespace App\SupportedApps\pgAdmin;
 
 class pgAdmin extends \App\SupportedApps
 {

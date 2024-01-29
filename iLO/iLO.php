@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\iLO;
+<?php
+
+namespace App\SupportedApps\iLO;
 
 class iLO extends \App\SupportedApps
 {

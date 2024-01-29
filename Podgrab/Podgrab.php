@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Podgrab;
+<?php
 
-class Podgrab extends \App\SupportedApps {
+namespace App\SupportedApps\Podgrab;
 
+class Podgrab extends \App\SupportedApps
+{
 }

@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\ZoneMinder;
+<?php
+
+namespace App\SupportedApps\ZoneMinder;
 
 class ZoneMinder extends \App\SupportedApps
 {

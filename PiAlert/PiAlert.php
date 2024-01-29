@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\PiAlert;
+<?php
 
-class PiAlert extends \App\SupportedApps {
+namespace App\SupportedApps\PiAlert;
 
+class PiAlert extends \App\SupportedApps
+{
 }

@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\ownCloud;
+<?php
+
+namespace App\SupportedApps\ownCloud;
 
 class ownCloud extends \App\SupportedApps
 {

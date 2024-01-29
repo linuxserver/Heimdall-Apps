@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\pfSense;
+<?php
+
+namespace App\SupportedApps\pfSense;
 
 class pfSense extends \App\SupportedApps
 {

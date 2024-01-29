@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\CockpitCMS;
+<?php
+
+namespace App\SupportedApps\CockpitCMS;
 
 class CockpitCMS extends \App\SupportedApps
 {

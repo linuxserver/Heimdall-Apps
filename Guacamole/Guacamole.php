@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Guacamole;
+<?php
+
+namespace App\SupportedApps\Guacamole;
 
 class Guacamole extends \App\SupportedApps
 {

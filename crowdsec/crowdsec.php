@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\crowdsec;
+<?php
+
+namespace App\SupportedApps\crowdsec;
 
 class crowdsec extends \App\SupportedApps
 {

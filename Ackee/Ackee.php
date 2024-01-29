@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Ackee;
+<?php
 
-class Ackee extends \App\SupportedApps {
+namespace App\SupportedApps\Ackee;
 
+class Ackee extends \App\SupportedApps
+{
 }

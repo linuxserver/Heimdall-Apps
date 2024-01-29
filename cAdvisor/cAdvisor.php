@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\cAdvisor;
+<?php
 
-class cAdvisor extends \App\SupportedApps {
+namespace App\SupportedApps\cAdvisor;
 
+class cAdvisor extends \App\SupportedApps
+{
 }

@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Etherpad;
+<?php
 
-class Etherpad extends \App\SupportedApps {
+namespace App\SupportedApps\Etherpad;
 
+class Etherpad extends \App\SupportedApps
+{
 }

@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\MediaElch;
+<?php
 
-class MediaElch extends \App\SupportedApps {
+namespace App\SupportedApps\MediaElch;
 
+class MediaElch extends \App\SupportedApps
+{
 }

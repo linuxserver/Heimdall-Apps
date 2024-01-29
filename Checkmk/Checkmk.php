@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Checkmk;
+<?php
+
+namespace App\SupportedApps\Checkmk;
 
 class Checkmk extends \App\SupportedApps
 {
