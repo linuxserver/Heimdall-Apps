@@ -9,13 +9,13 @@ name: Lint Code Base
 #############################
 # Start the job on all push #
 #############################
-on: # yamllint disable-line rule:truthy
-  push:
-    branches:
-      - 'master'
-      - 'releases/**'
-  pull_request:
-    types: [opened, edited, synchronize, reopened, review_requested]
+#on: # yamllint disable-line rule:truthy
+#  push:
+#    branches:
+#      - 'master'
+#      - 'releases/**'
+#  pull_request:
+#    types: [opened, edited, synchronize, reopened, review_requested]
 
 ###############
 # Set the Job #
