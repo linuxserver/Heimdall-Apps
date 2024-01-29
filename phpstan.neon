@@ -1,5 +1,4 @@
 parameters:
 	level: 6
-	ignoreErrors:
-		- '#extends unknown class App\\SupportedApps#'
-		- '#implements unknown interface App\EnhancedApps#'
+	scanDirectories:
+      - ../heimdall
