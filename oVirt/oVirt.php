@@ -2,14 +2,14 @@
 
 namespace App\SupportedApps\oVirt;
 
-class oVirt extends \App\SupportedApps implements \App\EnhancedApps
+class oVirt extends \App\SupportedApps implements \App\EnhancedApps // phpcs:ignore
 {
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
-    function __construct()
+    public function __construct()
     {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }

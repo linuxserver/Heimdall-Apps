@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\pfSense;
 
-class pfSense extends \App\SupportedApps
+class pfSense extends \App\SupportedApps // phpcs:ignore
 {
 }

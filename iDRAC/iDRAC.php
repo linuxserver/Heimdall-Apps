@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\iDRAC;
 
-class iDRAC extends \App\SupportedApps
+class iDRAC extends \App\SupportedApps // phpcs:ignore
 {
 }

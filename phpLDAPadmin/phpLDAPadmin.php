@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\phpLDAPadmin;
 
-class phpLDAPadmin extends \App\SupportedApps
+class phpLDAPadmin extends \App\SupportedApps // phpcs:ignore
 {
 }

@@ -12,7 +12,7 @@ class UniFi extends \App\SupportedApps
 
     protected $method = 'POST';
 
-    function __construct()
+    public function __construct()
     {
         $this->jar = new \GuzzleHttp\Cookie\CookieJar();
     }

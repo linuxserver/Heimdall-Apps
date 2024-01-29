@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\openHAB;
 
-class openHAB extends \App\SupportedApps
+class openHAB extends \App\SupportedApps // phpcs:ignore
 {
 }

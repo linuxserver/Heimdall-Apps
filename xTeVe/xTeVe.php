@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\xTeVe;
 
-class xTeVe extends \App\SupportedApps
+class xTeVe extends \App\SupportedApps // phpcs:ignore
 {
 }

@@ -8,7 +8,7 @@ class Duplicati extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
-    function __construct()
+    public function __construct()
     {
         $this->jar = new \GuzzleHttp\Cookie\CookieJar();
     }
@@ -182,10 +182,10 @@ class Duplicati extends \App\SupportedApps implements \App\EnhancedApps
             $dates[] = strtotime($scheduleItem["Item2"]);
         }
 
-        return $this->get_date_diff(min($dates), time());
+        return $this->getDateDiff(min($dates), time());
     }
 
-    private function get_date_diff($time1, $time2, $precision = 1)
+    private function getDateDiff($time1, $time2, $precision = 1)
     {
         // If not numeric then convert timestamps
         if (!is_int($time1)) {

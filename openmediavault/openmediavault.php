@@ -5,13 +5,13 @@ namespace App\SupportedApps\openmediavault;
 use Exception;
 use GuzzleHttp\Cookie\CookieJar;
 
-class openmediavault extends \App\SupportedApps implements \App\EnhancedApps
+class openmediavault extends \App\SupportedApps implements \App\EnhancedApps // phpcs:ignore
 {
     public $config;
 
     private $cookie;
 
-    function __construct()
+    public function __construct()
     {
         $this->cookie = new \GuzzleHttp\Cookie\CookieJar();
     }

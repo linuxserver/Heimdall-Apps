@@ -11,7 +11,7 @@ class ChannelsDVR extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
-    function __construct()
+    public function __construct()
     {
     }
 

@@ -12,7 +12,7 @@ class Nessus extends \App\SupportedApps implements \App\EnhancedApps
         "verify" => false,
     ];
 
-    function __construct()
+    public function __construct()
     {
     }
 

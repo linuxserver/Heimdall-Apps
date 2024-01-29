@@ -2,21 +2,22 @@
 
 namespace App\SupportedApps\GNS3;
 
-class GNS3 extends \App\SupportedApps implements \App\EnhancedApps
+class GNS3 extends \App\SupportedApps implements \App\EnhancedApps // phpcs:ignore
 {
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
-    function __construct()
+    public function __construct()
     {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
     public function test()
     {
-        $test = parent::appTest($this->url('/v2/version'), ['auth' => [$this->config->username, $this->config->password]]);
+        $test = parent::appTest($this->url('/v2/version'), ['auth' => [$this->config->username,
+                                                                       $this->config->password]]);
         $details = json_decode($test->response);
         if ($details && isset($details->version)) {
             echo $test->status . "\nServer version: " . $details->version;
@@ -28,7 +29,8 @@ class GNS3 extends \App\SupportedApps implements \App\EnhancedApps
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('/v2/projects'), ['auth' => [$this->config->username, $this->config->password]]);
+        $res = parent::execute($this->url('/v2/projects'), ['auth' => [$this->config->username,
+                                                                       $this->config->password]]);
         $details = json_decode($res->getBody());
 
         $data = [];

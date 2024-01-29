@@ -25,7 +25,7 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
         return $attrs;
     }
 
-    function __construct()
+    public function __construct()
     {
     }
 

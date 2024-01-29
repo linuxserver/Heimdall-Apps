@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\cPanel;
 
-class cPanel extends \App\SupportedApps
+class cPanel extends \App\SupportedApps // phpcs:ignore
 {
 }

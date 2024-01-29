@@ -11,7 +11,7 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     protected $method = "POST"; // Uncomment if requests to the API should be set by POST
 
-    function __construct()
+    public function __construct()
     {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
         $body["method"] = "torrent-get";

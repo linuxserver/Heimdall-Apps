@@ -7,7 +7,7 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
     public $config;
     protected $method = 'POST';
 
-    function __construct()
+    public function __construct()
     {
     }
 
@@ -33,7 +33,8 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
                 "SoapAction" => "urn:schemas-upnp-org:service:{$ns}:1#{$verb}",
             ],
             "body" => "<?xml version='1.0' encoding='utf-8'?>
-                       <s:Envelope s:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/' xmlns:s='http://schemas.xmlsoap.org/soap/envelope/'>
+                       <s:Envelope s:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+                                           xmlns:s='http://schemas.xmlsoap.org/soap/envelope/'>
                             <s:Body>
                                 <u:{$verb} xmlns:u='urn:schemas-upnp-org:service:{$ns}:1' />
                             </s:Body>
@@ -133,19 +134,28 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
             $this->url("statusInfo"),
             $this->getAttrs("statusInfo")
         );
-        $statusInfoDetails = simplexml_load_string($statusInfo->getBody())->children('s', true)->children('u', true)->children();
+        $statusInfoDetails = simplexml_load_string($statusInfo->getBody())
+                                ->children('s', true)
+                                ->children('u', true)
+                                ->children();
 
         $linkProperties = parent::execute(
             $this->url("linkProperties"),
             $this->getAttrs("linkProperties")
         );
-        $linkPropertiesDetails = simplexml_load_string($linkProperties->getBody())->children('s', true)->children('u', true)->children();
+        $linkPropertiesDetails = simplexml_load_string($linkProperties->getBody())
+                                    ->children('s', true)
+                                    ->children('u', true)
+                                    ->children();
 
         $addonInfo = parent::execute(
             $this->url("addonInfo"),
             $this->getAttrs("addonInfo")
         );
-        $addonInfoDetails = simplexml_load_string($addonInfo->getBody())->children('s', true)->children('u', true)->children();
+        $addonInfoDetails = simplexml_load_string($addonInfo->getBody())
+                                    ->children('s', true)
+                                    ->children('u', true)
+                                    ->children();
 
         $data = ["visiblestats" => []];
 

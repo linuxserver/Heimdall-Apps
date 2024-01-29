@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\pgAdmin;
 
-class pgAdmin extends \App\SupportedApps
+class pgAdmin extends \App\SupportedApps // phpcs:ignore
 {
 }

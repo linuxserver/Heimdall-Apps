@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\RompЯ;
 
-class RompЯ extends \App\SupportedApps
+class RompЯ extends \App\SupportedApps // phpcs:ignore
 {
 }

@@ -4,11 +4,11 @@ namespace App\SupportedApps\ruTorrent;
 
 use GuzzleHttp\Exception\RequestException;
 
-class ruTorrent extends \App\SupportedApps implements \App\EnhancedApps
+class ruTorrent extends \App\SupportedApps implements \App\EnhancedApps // phpcs:ignore
 {
     public $config;
 
-    function __construct()
+    public function __construct()
     {
     }
 

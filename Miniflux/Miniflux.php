@@ -9,7 +9,7 @@ class Miniflux extends \App\SupportedApps implements \App\EnhancedApps
     public $config;
     public $attrs = [];
 
-    function __construct()
+    public function __construct()
     {
     }
 

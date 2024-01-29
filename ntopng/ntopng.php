@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\ntopng;
 
-class ntopng extends \App\SupportedApps
+class ntopng extends \App\SupportedApps // phpcs:ignore
 {
 }

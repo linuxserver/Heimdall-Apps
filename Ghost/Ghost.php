@@ -8,7 +8,7 @@ class Ghost extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
-    function __construct()
+    public function __construct()
     {
         $this->jar = new \GuzzleHttp\Cookie\CookieJar(); // Uncomment if cookies need to be set
         $this->authorized = false;
