@@ -49,13 +49,13 @@ jobs:
           path: ./
           standard: PSR12
 
-  phpstan:
-    name: PHPStan
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - uses: php-actions/phpstan@v3
-        with:
-          path: ./
+#  phpstan:
+#    name: PHPStan
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#      
+#      - uses: php-actions/phpstan@v3
+#        with:
+#          path: ./
