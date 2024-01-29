@@ -1,6 +1,6 @@
 parameters:
-    paths: .
+    paths: /app/heimall-apps
     level: 6
     scanFiles:
-        - /home/runner/work/Heimdall-Apps/Heimdall-Apps/heimdall/app/SupportedApps.php
-        - /home/runner/work/Heimdall-Apps/Heimdall-Apps/heimdall/app/EnhancedApps.php
+        - /app/heimdall-src/app/SupportedApps.php
+        - /app/heimdall-src/app/EnhancedApps.php
