@@ -1,5 +1,4 @@
 parameters:
-    paths: /app/heimall-apps
     level: 6
     scanFiles:
         - /app/heimdall-src/app/SupportedApps.php
