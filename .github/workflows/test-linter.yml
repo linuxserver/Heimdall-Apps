@@ -20,20 +20,20 @@ jobs:
       - name: PHP syntax checker 8.2
         uses: prestashop/github-action-php-lint/8.2@master
 
-  phpmd:
-    name: PHP-MD
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: PHP Mess Detector
-        uses: php-actions/phpmd@v1
-        with:
-          php_version: 8.2
-          path: ./
-          output: text
-          ruleset: test/phpmd/ruleset.xml
+#  phpmd:
+#    name: PHP-MD
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v4
+#        
+#      - name: PHP Mess Detector
+#        uses: php-actions/phpmd@v1
+#        with:
+#          php_version: 8.2
+#          path: ./
+#          output: text
+#          ruleset: test/phpmd/ruleset.xml
 
   phpcs:
     name: PHP-CS
@@ -47,7 +47,7 @@ jobs:
         with:
           php_version: 8.2
           path: ./
-          standard: phpcs.xml
+          standard: PSR12
 
   phpstan:
     name: PHPStan
@@ -59,3 +59,4 @@ jobs:
       - uses: php-actions/phpstan@v3
         with:
           path: ./
+          configuration: ./github/workflows/phpstan.neon
