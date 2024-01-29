@@ -14,7 +14,7 @@ const testApp = (appDirectory) => {
 
     // Icon tests
     test("should have an icon file", () => {
-        return existsSync(`${appDirectory} / ${iconName}`);
+        return existsSync(`${appDirectory}/${iconName}`);
     });
 
     test("should have .png or .svg as icon file", () => {
@@ -23,7 +23,7 @@ const testApp = (appDirectory) => {
 
     test("should have an Icon with max width 275px and max height 275px when PNG", () => {
         if (iconName.endsWith(".png")) {
-            const iconSize = getIconSizePNG(`${appDirectory} / ${iconName}`);
+            const iconSize = getIconSizePNG(`${appDirectory}/${iconName}`);
 
             const isWidthTooBig = iconSize.width > ICON_WIDTH_MAX;
             const isHeightTooBig = iconSize.height > ICON_HEIGHT_MAX;
@@ -38,7 +38,7 @@ const testApp = (appDirectory) => {
 
     test("should have an Icon with min width 100px and min height 100px when PNG", () => {
         if (iconName.endsWith(".png")) {
-            const iconSize = getIconSizePNG(`${appDirectory} / ${iconName}`);
+            const iconSize = getIconSizePNG(`${appDirectory}/${iconName}`);
 
             const isWidthTooSmall = iconSize.width < ICON_WIDTH_MIN;
             const isHeightTooSmall = iconSize.height < ICON_HEIGHT_MIN;
@@ -53,7 +53,7 @@ const testApp = (appDirectory) => {
 
     // app.json tests
     test("should have app.json file", () => {
-        return existsSync(`${appDirectory} / app.json`);
+        return existsSync(`${appDirectory}/app.json`);
     });
 
     test("should have name defined in app.json", () => {
@@ -66,30 +66,30 @@ const testApp = (appDirectory) => {
 
     // PHP file
     test("should have a php file", () => {
-        return existsSync(`${appDirectory} / ${appDirectory}.php`);
+        return existsSync(`${appDirectory}/${appDirectory}.php`);
     });
 
     test("should have a Class with same name as directory", () => {
-        const phpFile = `${appDirectory} / ${appDirectory}.php`;
+        const phpFile = `${appDirectory}/${appDirectory}.php`;
         if (!existsSync(phpFile)) {
             return false;
         }
 
         const phpFileContent = readFileSync(
-            `${appDirectory} / ${appDirectory}.php`
+            `${appDirectory}/${appDirectory}.php`
         ).toString();
 
         return phpFileContent.indexOf(`class ${appDirectory}`) !== -1;
     });
 
     test("should have the namespace based on the class name", () => {
-        const phpFile = `${appDirectory} / ${appDirectory}.php`;
+        const phpFile = `${appDirectory}/${appDirectory}.php`;
         if (!existsSync(phpFile)) {
             return false;
         }
 
         const phpFileContent = readFileSync(
-            `${appDirectory} / ${appDirectory}.php`
+            `${appDirectory}/${appDirectory}.php`
         ).toString();
 
         return (

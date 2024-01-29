@@ -21,7 +21,7 @@ const test = (description, callback) => {
 };
 
 const getAppJson = (appDirectory) => {
-    const appJsonPath = `${appDirectory} / app.json`;
+    const appJsonPath = `${appDirectory}/app.json`;
     if (!existsSync(appJsonPath)) {
         return {};
     }
