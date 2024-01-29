@@ -57,15 +57,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: src
 
       - name: Checkout Heimdall repo for dependencies
         uses: actions/checkout@v4
         with:
           repository: linuxserver/Heimdall
-          path: heimdall
+          path: heimdall-src
       
       - uses: php-actions/phpstan@v3
-        with:
-          path: src/
