@@ -1,5 +1,5 @@
 parameters:
 	level: 6
 	ignoreErrors:
-		- '#Class [a-zA-Z0-9\\_]+ extends unknown class App\SupportedApps#'
-		- '#Class [a-zA-Z0-9\\_]+ implements unknown interface App\EnhancedApps#'
+		- '#^Class [a-zA-Z0-9\\_]+ extends unknown class App\\SupportedApps\.$#'
+		- '#^Class [a-zA-Z0-9\\_]+ implements unknown interface App\EnhancedApps\.$#'
