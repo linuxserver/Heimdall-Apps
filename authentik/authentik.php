@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\authentik;
+<?php
 
-class authentik extends \App\SupportedApps
+namespace App\SupportedApps\authentik;
+
+class authentik extends \App\SupportedApps // phpcs:ignore
 {
 }

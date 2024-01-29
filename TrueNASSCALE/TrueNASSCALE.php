@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\TrueNASSCALE;
+<?php
 
-class TrueNASSCALE extends \App\SupportedApps {
+namespace App\SupportedApps\TrueNASSCALE;
 
+class TrueNASSCALE extends \App\SupportedApps
+{
 }

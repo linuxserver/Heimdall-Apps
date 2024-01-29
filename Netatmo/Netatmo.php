@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Netatmo;
+<?php
+
+namespace App\SupportedApps\Netatmo;
 
 class Netatmo extends \App\SupportedApps
 {

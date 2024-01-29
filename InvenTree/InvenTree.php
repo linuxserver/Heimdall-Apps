@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\InvenTree;
+<?php
 
-class InvenTree extends \App\SupportedApps {
+namespace App\SupportedApps\InvenTree;
 
+class InvenTree extends \App\SupportedApps
+{
 }

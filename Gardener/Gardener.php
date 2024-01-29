@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Gardener;
+<?php
 
-class Gardener extends \App\SupportedApps {
+namespace App\SupportedApps\Gardener;
 
+class Gardener extends \App\SupportedApps
+{
 }

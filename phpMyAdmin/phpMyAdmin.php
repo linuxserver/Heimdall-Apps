@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\phpMyAdmin;
+<?php
 
-class phpMyAdmin extends \App\SupportedApps
+namespace App\SupportedApps\phpMyAdmin;
+
+class phpMyAdmin extends \App\SupportedApps // phpcs:ignore
 {
 }

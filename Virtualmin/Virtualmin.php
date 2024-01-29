@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Virtualmin;
+<?php
+
+namespace App\SupportedApps\Virtualmin;
 
 class Virtualmin extends \App\SupportedApps
 {

@@ -1,13 +1,16 @@
-<?php namespace App\SupportedApps\Jellyseerr;
+<?php
 
-class Jellyseerr extends \App\SupportedApps implements \App\EnhancedApps {
+namespace App\SupportedApps\Jellyseerr;
 
+class Jellyseerr extends \App\SupportedApps implements \App\EnhancedApps
+{
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
-    function __construct() {
+    public function __construct()
+    {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
@@ -33,8 +36,7 @@ class Jellyseerr extends \App\SupportedApps implements \App\EnhancedApps {
             parent::execute($this->url("issue/count"), $attrs)->getBody()
         );
 
-        if ($requestsCount || $issuesCount)
-        {
+        if ($requestsCount || $issuesCount) {
             $data["requests"] = $requestsCount->$requestsType ?? 0;
             $data["issues"] = $issuesCount->$issuesType ?? 0;
         }

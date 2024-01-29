@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Papermerge;
+<?php
+
+namespace App\SupportedApps\Papermerge;
 
 class Papermerge extends \App\SupportedApps
 {

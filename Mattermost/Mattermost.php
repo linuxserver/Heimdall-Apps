@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Mattermost;
+<?php
+
+namespace App\SupportedApps\Mattermost;
 
 class Mattermost extends \App\SupportedApps
 {

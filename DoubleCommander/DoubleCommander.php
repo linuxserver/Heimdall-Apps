@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\DoubleCommander;
+<?php
+
+namespace App\SupportedApps\DoubleCommander;
 
 class DoubleCommander extends \App\SupportedApps
 {

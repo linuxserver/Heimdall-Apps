@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\RSSBridge;
+<?php
 
-class RSSBridge extends \App\SupportedApps {
+namespace App\SupportedApps\RSSBridge;
 
+class RSSBridge extends \App\SupportedApps
+{
 }

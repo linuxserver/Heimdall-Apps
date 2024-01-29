@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\youtubedl;
+<?php
 
-class youtubedl extends \App\SupportedApps
+namespace App\SupportedApps\youtubedl;
+
+class youtubedl extends \App\SupportedApps // phpcs:ignore
 {
 }

@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\SynologyDrive;
+<?php
 
-class SynologyDrive extends \App\SupportedApps {
+namespace App\SupportedApps\SynologyDrive;
 
+class SynologyDrive extends \App\SupportedApps
+{
 }

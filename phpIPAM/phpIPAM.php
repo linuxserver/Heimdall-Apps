@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\phpIPAM;
+<?php
 
-class phpIPAM extends \App\SupportedApps
+namespace App\SupportedApps\phpIPAM;
+
+class phpIPAM extends \App\SupportedApps // phpcs:ignore
 {
 }

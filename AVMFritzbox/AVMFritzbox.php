@@ -1,16 +1,18 @@
-<?php namespace App\SupportedApps\AVMFritzbox;
+<?php
+
+namespace App\SupportedApps\AVMFritzbox;
 
 class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
     protected $method = 'POST';
 
-    function __construct()
-	{
-	}
+    public function __construct()
+    {
+    }
 
     public function getAttrs($calltype)
-	{
+    {
         switch ($calltype) {
             case "statusInfo":
                 $verb = "GetStatusInfo";
@@ -26,59 +28,60 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
         }
 
         $attrs = [
-			"headers" => [
-				"Content-Type" => "text/xml; charset='utf-8'",
+            "headers" => [
+                "Content-Type" => "text/xml; charset='utf-8'",
                 "SoapAction" => "urn:schemas-upnp-org:service:{$ns}:1#{$verb}",
-			],
-			"body" => "<?xml version='1.0' encoding='utf-8'?>
-                       <s:Envelope s:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/' xmlns:s='http://schemas.xmlsoap.org/soap/envelope/'>
+            ],
+            "body" => "<?xml version='1.0' encoding='utf-8'?>
+                       <s:Envelope s:encodingStyle='http://schemas.xmlsoap.org/soap/encoding/'
+                                           xmlns:s='http://schemas.xmlsoap.org/soap/envelope/'>
                             <s:Body>
                                 <u:{$verb} xmlns:u='urn:schemas-upnp-org:service:{$ns}:1' />
                             </s:Body>
                        </s:Envelope>",
-		];
+        ];
 
-		return $attrs;
-	}
+        return $attrs;
+    }
 
     public static function getAvailableStats()
-	{
-		return [
-			"NewConnectionStatus" => "Status",
-			"NewUptime" => "Up Time",
-			"NewLayer1DownstreamMaxBitRate" => "Max Down",
-			"NewLayer1UpstreamMaxBitRate" => "Max Up",
+    {
+        return [
+            "NewConnectionStatus" => "Status",
+            "NewUptime" => "Up Time",
+            "NewLayer1DownstreamMaxBitRate" => "Max Down",
+            "NewLayer1UpstreamMaxBitRate" => "Max Up",
             "NewByteReceiveRate" => "Down",
             "NewByteSendRate" => "Up",
             "NewX_AVM_DE_TotalBytesReceived64" => "Received",
             "NewX_AVM_DE_TotalBytesSent64" => "Send",
-		];
-	}
+        ];
+    }
 
     private static function formatValueUsingStat($stat, $value)
-	{
-		if (!isset($value)) {
-			return "N/A";
-		}
+    {
+        if (!isset($value)) {
+            return "N/A";
+        }
 
-		switch ($stat) {
+        switch ($stat) {
             case "NewConnectionStatus":
                 return "{$value}";
             case "NewUptime":
                 return self::toTime((int)$value);
-			case "NewLayer1DownstreamMaxBitRate":
-			case "NewLayer1UpstreamMaxBitRate":
-                return format_bytes(((int)$value)/8, false, "<span>", "/s</span>");
+            case "NewLayer1DownstreamMaxBitRate":
+            case "NewLayer1UpstreamMaxBitRate":
+                return format_bytes(((int)$value) / 8, false, "<span>", "/s</span>");
             case "NewByteReceiveRate":
             case "NewByteSendRate":
                 return format_bytes((int)$value, false, "<span>", "/s</span>");
             case "NewX_AVM_DE_TotalBytesReceived64":
             case "NewX_AVM_DE_TotalBytesSent64":
-				return format_bytes((int)$value, false, "<span>", "</span>");
-			default:
-				return "{$value}";
-		}
-	}
+                return format_bytes((int)$value, false, "<span>", "</span>");
+            default:
+                return "{$value}";
+        }
+    }
 
     private static function toTime($timestamp)
     {
@@ -89,72 +92,81 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
         $hourDuration = sprintf('%02dh', $hours);
         $minDuration =  sprintf('%02dm', $minutes);
         $secDuration =  sprintf('%02ds', $seconds);
-        $HourMinSec = $hourDuration.$minDuration.$secDuration;
+        $HourMinSec = $hourDuration . $minDuration . $secDuration;
 
-        if($hourDuration > 0){
+        if ($hourDuration > 0) {
             $hourDuration = $hourDuration;
         } else {
             $hourDuration = '00h';
         }
 
-        if($minDuration > 0){
+        if ($minDuration > 0) {
             $minDuration = $minDuration;
         } else {
             $minDuration = '00m';
         }
 
-        if($secDuration > 0){
+        if ($secDuration > 0) {
             $secDuration = $secDuration;
         } else {
             $secDuration = '00s';
         }
 
-        $HourMinSec = $hourDuration.$minDuration.$secDuration;
+        $HourMinSec = $hourDuration . $minDuration . $secDuration;
 
         return $HourMinSec;
     }
 
     public function test()
-	{
-		$test = parent::appTest(
+    {
+        $test = parent::appTest(
             $this->url("statusInfo"),
             $this->getAttrs("statusInfo")
         );
-		echo $test->status;
-	}
+        echo $test->status;
+    }
 
-	public function livestats()
-	{
-		$status = "active";
+    public function livestats()
+    {
+        $status = "active";
 
         $statusInfo = parent::execute(
-			$this->url("statusInfo"),
-			$this->getAttrs("statusInfo")
-		);
-		$statusInfoDetails = simplexml_load_string($statusInfo->getBody())->children('s', true)->children('u', true)->children();
+            $this->url("statusInfo"),
+            $this->getAttrs("statusInfo")
+        );
+        $statusInfoDetails = simplexml_load_string($statusInfo->getBody())
+                                ->children('s', true)
+                                ->children('u', true)
+                                ->children();
 
         $linkProperties = parent::execute(
-			$this->url("linkProperties"),
-			$this->getAttrs("linkProperties")
-		);
-		$linkPropertiesDetails = simplexml_load_string($linkProperties->getBody())->children('s', true)->children('u', true)->children();
+            $this->url("linkProperties"),
+            $this->getAttrs("linkProperties")
+        );
+        $linkPropertiesDetails = simplexml_load_string($linkProperties->getBody())
+                                    ->children('s', true)
+                                    ->children('u', true)
+                                    ->children();
 
         $addonInfo = parent::execute(
-			$this->url("addonInfo"),
-			$this->getAttrs("addonInfo")
-		);
-		$addonInfoDetails = simplexml_load_string($addonInfo->getBody())->children('s', true)->children('u', true)->children();
+            $this->url("addonInfo"),
+            $this->getAttrs("addonInfo")
+        );
+        $addonInfoDetails = simplexml_load_string($addonInfo->getBody())
+                                    ->children('s', true)
+                                    ->children('u', true)
+                                    ->children();
 
-		$data = ["visiblestats" => []];
+        $data = ["visiblestats" => []];
 
-		if ($statusInfoDetails && $linkPropertiesDetails && $addonInfoDetails) {
-			foreach ($this->config->availablestats as $stat) {
+        if ($statusInfoDetails && $linkPropertiesDetails && $addonInfoDetails) {
+            foreach ($this->config->availablestats as $stat) {
                 if (!isset(self::getAvailableStats()[$stat])) {
-					continue;
-				}
+                    continue;
+                }
 
                 $newstat = new \stdClass();
-				$newstat->title = self::getAvailableStats()[$stat];
+                $newstat->title = self::getAvailableStats()[$stat];
 
                 switch ($stat) {
                     case "NewConnectionStatus":
@@ -187,25 +199,25 @@ class AVMFritzbox extends \App\SupportedApps implements \App\EnhancedApps
                         );
                 }
 
-				$data["visiblestats"][] = $newstat;
-			}
-		}
+                $data["visiblestats"][] = $newstat;
+            }
+        }
 
-		return parent::getLiveStats($status, $data);
-	}
+        return parent::getLiveStats($status, $data);
+    }
 
-	public function url($endpoint)
-	{
+    public function url($endpoint)
+    {
         if ($endpoint == "statusInfo") {
             $endpoint = "WANIPConn1";
         } else {
             $endpoint = "WANCommonIFC1";
         }
- 		
-		$fritzURL = $this->config->url;
 
-		$api_url = "$fritzURL:49000/igdupnp/control/{$endpoint}";
+        $fritzURL = $this->config->url;
 
-		return $api_url;
-	}
+        $api_url = "$fritzURL:49000/igdupnp/control/{$endpoint}";
+
+        return $api_url;
+    }
 }

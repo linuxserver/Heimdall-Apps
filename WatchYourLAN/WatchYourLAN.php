@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\WatchYourLAN;
+<?php
 
-class WatchYourLAN extends \App\SupportedApps {
+namespace App\SupportedApps\WatchYourLAN;
 
+class WatchYourLAN extends \App\SupportedApps
+{
 }

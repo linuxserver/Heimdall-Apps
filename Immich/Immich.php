@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Immich;
+<?php
 
-class Immich extends \App\SupportedApps {
+namespace App\SupportedApps\Immich;
 
+class Immich extends \App\SupportedApps
+{
 }

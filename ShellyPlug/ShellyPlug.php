@@ -1,10 +1,13 @@
-<?php namespace App\SupportedApps\ShellyPlug;
+<?php
 
-class ShellyPlug extends \App\SupportedApps implements \App\EnhancedApps {
+namespace App\SupportedApps\ShellyPlug;
 
+class ShellyPlug extends \App\SupportedApps implements \App\EnhancedApps
+{
     public $config;
 
-    function __construct() {
+    public function __construct()
+    {
     }
 
     public static function getAvailableStats()
@@ -30,27 +33,27 @@ class ShellyPlug extends \App\SupportedApps implements \App\EnhancedApps {
         $hourDuration = sprintf('%02dh', $hours);
         $minDuration =  sprintf('%02dm', $minutes);
         $secDuration =  sprintf('%02ds', $seconds);
-        $HourMinSec = $hourDuration.$minDuration.$secDuration;
+        $HourMinSec = $hourDuration . $minDuration . $secDuration;
 
-        if($hourDuration > 0){
+        if ($hourDuration > 0) {
             $hourDuration = $hourDuration;
         } else {
             $hourDuration = '00h';
         }
 
-        if($minDuration > 0){
+        if ($minDuration > 0) {
             $minDuration = $minDuration;
         } else {
             $minDuration = '00m';
         }
 
-        if($secDuration > 0){
+        if ($secDuration > 0) {
             $secDuration = $secDuration;
         } else {
             $secDuration = '00s';
         }
 
-        $HourMinSec = $hourDuration.$minDuration.$secDuration;
+        $HourMinSec = $hourDuration . $minDuration . $secDuration;
 
         return $HourMinSec;
     }
@@ -169,7 +172,7 @@ class ShellyPlug extends \App\SupportedApps implements \App\EnhancedApps {
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url)."rpc/".$endpoint;
+        $api_url = parent::normaliseurl($this->config->url) . "rpc/" . $endpoint;
         return $api_url;
     }
 }

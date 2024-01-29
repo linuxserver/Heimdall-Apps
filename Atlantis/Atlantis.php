@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Atlantis;
+<?php
 
-class Atlantis extends \App\SupportedApps {
+namespace App\SupportedApps\Atlantis;
 
+class Atlantis extends \App\SupportedApps
+{
 }

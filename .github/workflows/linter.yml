@@ -1,58 +1,75 @@
 ---
-#################################
-#################################
-## Super Linter GitHub Actions ##
-#################################
-#################################
-name: Lint Code Base
-
-#############################
-# Start the job on all push #
-#############################
-on: # yamllint disable-line rule:truthy
-  push:
-    branches:
-      - 'master'
-      - 'releases/**'
-  pull_request:
-    types: [opened, edited, synchronize, reopened, review_requested]
-
-###############
-# Set the Job #
-###############
-jobs:
-  build:
-    # Name the Job
-    name: Lint Code Base
-    # Set the agent to run on
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: read
-      # To report GitHub Actions status checks
-      statuses: write
-
-    ##################
-    # Load all steps #
-    ##################
-    steps:
-      ##########################
-      # Checkout the code base #
-      ##########################
-      - name: Checkout Code
-        uses: actions/checkout@v4
-        with:
-          # Full git history is needed to get a proper list of changed files
-          # within `super-linter`
-          fetch-depth: 0
-
-      ################################
-      # Run Linter against code base #
-      ################################
-      - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v5
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  name: lint
+  
+  on:
+    push:
+      branches:
+        - 'master'
+        - 'releases/**'
+    pull_request:
+      types: [opened, edited, synchronize, reopened, review_requested]
+  
+  jobs:
+    php-lint:
+      name: PHP lint 8.2
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+  
+        - name: PHP syntax checker 8.2
+          uses: prestashop/github-action-php-lint/8.2@master
+  
+  #  phpmd:
+  #    name: PHPMD
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: Checkout
+  #        uses: actions/checkout@v4
+  #        
+  #      - name: PHP Mess Detector
+  #        uses: php-actions/phpmd@v1
+  #        with:
+  #          php_version: 8.2
+  #          path: ./
+  #          output: text
+  #          ruleset: test/phpmd/ruleset.xml
+  
+    phpcs:
+      name: PHPCS
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        
+        - name: PHP Code Sniffer
+          uses: php-actions/phpcs@v1
+          with:
+            php_version: 8.2
+            path: ./
+            standard: PSR12
+            ignore: livestats.blade.php,config.blade.php,.js
+            exclude: Squiz.Functions.MultiLineFunctionDeclaration
+  
+  # Figure out later what the correct paths for Heimdall src should be.
+  # Needed by PHPStan for symbol discovery.
+  #
+  #  phpstan:
+  #    name: PHPStan
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #      - name: Checkout
+  #        uses: actions/checkout@v4
+  #        with:
+  #          path: src
+  #
+  #      - name: Checkout Heimdall repo for dependencies
+  #        uses: actions/checkout@v4
+  #        with:
+  #          repository: linuxserver/Heimdall
+  #          path: ./heimdall-src
+  #      
+  #      - uses: php-actions/phpstan@v3
+  #        with:
+  #          path: src/
+  #          configuration: src/phpstan.neon

@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\iLO;
+<?php
 
-class iLO extends \App\SupportedApps
+namespace App\SupportedApps\iLO;
+
+class iLO extends \App\SupportedApps // phpcs:ignore
 {
 }

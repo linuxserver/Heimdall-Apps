@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\NetworkUPSTools;
+<?php
 
-class NetworkUPSTools extends \App\SupportedApps {
+namespace App\SupportedApps\NetworkUPSTools;
 
+class NetworkUPSTools extends \App\SupportedApps
+{
 }

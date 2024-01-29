@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Dashdot;
+<?php
+
+namespace App\SupportedApps\Dashdot;
 
 class Dashdot extends \App\SupportedApps
 {

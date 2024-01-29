@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Homer;
+<?php
+
+namespace App\SupportedApps\Homer;
 
 class Homer extends \App\SupportedApps
 {

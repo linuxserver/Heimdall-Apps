@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Audiobookshelf;
+<?php
+
+namespace App\SupportedApps\Audiobookshelf;
 
 class Audiobookshelf extends \App\SupportedApps
 {

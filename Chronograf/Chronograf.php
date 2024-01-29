@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Chronograf;
+<?php
+
+namespace App\SupportedApps\Chronograf;
 
 class Chronograf extends \App\SupportedApps
 {

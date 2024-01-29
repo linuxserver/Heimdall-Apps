@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\openvscodeserver;
+<?php
 
-class openvscodeserver extends \App\SupportedApps {
+namespace App\SupportedApps\openvscodeserver;
 
+class openvscodeserver extends \App\SupportedApps // phpcs:ignore
+{
 }

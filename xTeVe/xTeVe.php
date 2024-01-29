@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\xTeVe;
+<?php
 
-class xTeVe extends \App\SupportedApps
+namespace App\SupportedApps\xTeVe;
+
+class xTeVe extends \App\SupportedApps // phpcs:ignore
 {
 }

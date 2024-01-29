@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\crowdsec;
+<?php
 
-class crowdsec extends \App\SupportedApps
+namespace App\SupportedApps\crowdsec;
+
+class crowdsec extends \App\SupportedApps // phpcs:ignore
 {
 }

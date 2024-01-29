@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Dockge;
+<?php
 
-class Dockge extends \App\SupportedApps {
+namespace App\SupportedApps\Dockge;
 
+class Dockge extends \App\SupportedApps
+{
 }

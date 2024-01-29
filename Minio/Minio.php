@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Minio;
+<?php
+
+namespace App\SupportedApps\Minio;
 
 class Minio extends \App\SupportedApps
 {

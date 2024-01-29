@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\pgAdmin;
+<?php
 
-class pgAdmin extends \App\SupportedApps
+namespace App\SupportedApps\pgAdmin;
+
+class pgAdmin extends \App\SupportedApps // phpcs:ignore
 {
 }

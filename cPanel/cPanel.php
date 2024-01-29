@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\cPanel;
+<?php
 
-class cPanel extends \App\SupportedApps
+namespace App\SupportedApps\cPanel;
+
+class cPanel extends \App\SupportedApps // phpcs:ignore
 {
 }

@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Remmina;
+<?php
 
-class Remmina extends \App\SupportedApps {
+namespace App\SupportedApps\Remmina;
 
+class Remmina extends \App\SupportedApps
+{
 }
