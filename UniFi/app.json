@@ -5,6 +5,6 @@
     "license": "Unknown",
     "description": "The UniFi® Controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.",
     "enhanced": true,
-    "tile_background": "light",
+    "tile_background": "dark",
     "icon": "unifi.png"
 }
