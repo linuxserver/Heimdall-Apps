@@ -1,0 +1,10 @@
+{
+    "appid": "1e4e09b335de7b6397119636469ea4478ee39286",
+    "name": "UptimeRobot",
+    "website": "https://uptimerobot.com/",
+    "license": "Commercial",
+    "description": "UptimeRobot is the most popular website monitoring service in the world. Currently we keep an eye on 4,500,000+ monitors for more than 800,000 users and companies.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "uptimerobot.svg"
+}
