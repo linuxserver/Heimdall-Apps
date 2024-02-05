@@ -1,0 +1,10 @@
+{
+    "appid": "806e2f2b1e7f8cea5f3250ab5822253cfc88d413",
+    "name": "Woodpecker CI",
+    "website": "https://woodpecker-ci.org/",
+    "license": "Apache License 2.0",
+    "description": "Woodpecker is a simple yet powerful CI/CD engine with great extensibility. It focuses on executing pipelines inside containers. If you are already using containers in your daily workflow, you'll for sure love Woodpecker.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "woodpeckerci.svg"
+}
