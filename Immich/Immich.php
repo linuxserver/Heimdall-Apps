@@ -34,7 +34,7 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
 
         $details = [];
 
-        if($data) {
+        if ($data) {
             $details['photos'] = number_format($details->photos);
             $details['videos'] = number_format($details->videos);
         }
