@@ -3,8 +3,8 @@
     "name": "Immich",
     "website": "https://immich.app/",
     "license": "MIT License",
-    "description": "\"High performance self-hosted photo and video backup solution directly from your mobile phone\"",
-    "enhanced": false,
+    "description": "High performance self-hosted photo and video backup solution directly from your mobile phone",
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "immich.svg"
 }
