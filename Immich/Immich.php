@@ -16,7 +16,7 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $test = parent::appTest($this->url("/server-info/statistics"));
+        $test = parent::appTest($this->url("api/server-info/statistics"));
         echo $test->status;
     }
 
@@ -29,14 +29,15 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
                 "x-api-key" => $this->config->api_key,
             ],
         ];
-        $res = parent::execute($this->url("/server-info/statistics"), $attrs);
-        $data = json_decode($res->getBody(), true);
+        $res = parent::execute($this->url("api/server-info/statistics"), $attrs);
+        $data = json_decode($res->getBody());
 
         $details = [];
 
         if ($data) {
-            $details['photos'] = number_format($details->photos);
-            $details['videos'] = number_format($details->videos);
+            $status = "active";
+            $details["photos"] = number_format($data->photos);
+            $details["videos"] = number_format($data->videos);
         }
 
         return parent::getLiveStats($status, $details);
