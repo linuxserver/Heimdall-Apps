@@ -4,7 +4,7 @@ namespace App\SupportedApps\TrueNASSCALE;
 
 class TrueNASSCALE extends \App\SupportedApps implements \App\EnhancedApps
 {
-	public $config;
+    public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
