@@ -44,11 +44,12 @@ class PaperlessNgx extends \App\SupportedApps implements \App\EnhancedApps
         $attrs = $this->getRequestAttrs();
 
         $documents = json_decode(
-            parent::execute($this->url("documents"), $attrs)->getBody()
+            parent::execute($this->url("statistics"), $attrs)->getBody()
         );
 
         $data = [
-            "documentCount" => $documents->count ?? 0,
+            "documentCount" => $documents->documents_total ?? 0,
+            "documentsInbox" => $documents->documents_inbox ?? 0
         ];
 
         return parent::getLiveStats($status, $data);
