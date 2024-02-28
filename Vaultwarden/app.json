@@ -1,0 +1,10 @@
+{
+    "appid": "ddf4f264320af1347ef54d424c60fae3b4fcc448",
+    "name": "Vaultwarden",
+    "website": "https://github.com/dani-garcia/vaultwarden",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Alternative implementation of the Bitwarden server API written in Rust and compatible with upstream Bitwarden clients*, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "vaultwarden.png"
+}
