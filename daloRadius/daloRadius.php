@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\daloRadius;
 
-class daloRadius extends \App\SupportedApps
+class DaloRadius extends \App\SupportedApps
 {
 }
