@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SupportedApps\daloRadius;
+namespace App\SupportedApps\DaloRadius;
 
 class DaloRadius extends \App\SupportedApps
 {
