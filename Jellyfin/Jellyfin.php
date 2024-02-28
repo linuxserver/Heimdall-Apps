@@ -41,9 +41,12 @@ class Jellyfin extends \App\SupportedApps implements \App\EnhancedApps
 
     private function getAttrs()
     {
+        $authorizationHeader = "MediaBrowser " .
+            "Token=\"" . urlencode($this->config->password) . "\", " .
+            "Client=\"Heimdall\"";
         return [
             "headers" => [
-                "Authorization" => "MediaBrowser Token=\"" . urlencode($this->config->password) . "\"",
+                "Authorization" => $authorizationHeader,
             ],
         ];
     }
