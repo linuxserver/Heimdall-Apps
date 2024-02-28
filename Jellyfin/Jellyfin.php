@@ -13,7 +13,7 @@ class Jellyfin extends \App\SupportedApps implements \App\EnhancedApps
     public function test()
     {
         $test = parent::appTest(
-            $this->url("System/Info/Public"),
+            $this->url("System/Info"),
             $this->getAttrs()
         );
         echo $test->status;
@@ -41,9 +41,12 @@ class Jellyfin extends \App\SupportedApps implements \App\EnhancedApps
 
     private function getAttrs()
     {
+        $authorizationHeader = "MediaBrowser " .
+            "Token=\"" . urlencode($this->config->password) . "\", " .
+            "Client=\"Heimdall\"";
         return [
             "headers" => [
-                "X-MediaBrowser-Token" => $this->config->password,
+                "Authorization" => $authorizationHeader,
             ],
         ];
     }
