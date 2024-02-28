@@ -2,7 +2,7 @@
     "appid": "e86ecd660f4e9dc4b3b7515318dbd8de6a836ef8",
     "name": "Shell in a Box",
     "website": "https://github.com/shellinabox/shellinabox",
-    "license": "GNU General Public License v1.0 or later",
+    "license": "GNU General Public License version 2",
     "description": "Shell In A Box implements a web server that can export arbitrary command line tools to a web based terminal emulator. This emulator is accessible to any JavaScript and CSS enabled web browser and does not require any additional browser plugins.",
     "enhanced": false,
     "tile_background": "light",
