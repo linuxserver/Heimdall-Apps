@@ -13,7 +13,7 @@ class Jellyfin extends \App\SupportedApps implements \App\EnhancedApps
     public function test()
     {
         $test = parent::appTest(
-            $this->url("System/Info/Public"),
+            $this->url("System/Info"),
             $this->getAttrs()
         );
         echo $test->status;
