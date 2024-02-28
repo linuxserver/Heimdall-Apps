@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\MailCatcher;
+<?php
 
-class MailCatcher extends \App\SupportedApps {
+namespace App\SupportedApps\MailCatcher;
 
+class MailCatcher extends \App\SupportedApps
+{
 }
