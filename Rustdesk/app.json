@@ -1,0 +1,10 @@
+{
+    "appid": "407dbd5343e971eb76054f9f81d04791cec937ff",
+    "name": "Rustdesk",
+    "website": "https://rustdesk.com/",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "A remote desktop software, the open source TeamViewer alternative, works out of the box, no configuration required. You have full control of your data, with no concerns about security. You can use our public rendezvous/relay server, or self-hosting, or write your own server.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "rustdesk.png"
+}
