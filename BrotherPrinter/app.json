@@ -3,7 +3,7 @@
     "name": "Brother Printer",
     "website": "https://www.brother-usa.com/home/printers-fax",
     "license": "GNU General Public License v3.0 only",
-    "description": "Brother offers a variety of printers, faxes and other office equipment. The request would be for an enhanced app which shows the ink cartridge status which can be gathered from the webinterface.",
+    "description": "Brother offers a variety of printers, faxes and other office equipment. This shows the ink cartridge status based on the Brother web interface.",
     "enhanced": false,
     "tile_background": "dark",
     "icon": "brotherprinter.png"
