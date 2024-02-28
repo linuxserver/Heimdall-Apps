@@ -43,7 +43,7 @@ class Jellyfin extends \App\SupportedApps implements \App\EnhancedApps
     {
         return [
             "headers" => [
-                "X-MediaBrowser-Token" => $this->config->password,
+                "Authorization" => "MediaBrowser Token=\"" . urlencode($this->config->password) . "\"",
             ],
         ];
     }
