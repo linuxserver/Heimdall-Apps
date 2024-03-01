@@ -1,0 +1,10 @@
+{
+    "appid": "8d96806a3f71da78a9db26375c3054f0e43fbe35",
+    "name": "RaspberryMatic",
+    "website": "https://raspberrymatic.de/de/start/",
+    "license": "Apache License 2.0",
+    "description": "RaspberryMatic is an alternative, open source based operating system for running an independent cloud-less HomeMatic control center (CCU) for configuring/using HomeMatic/homematicIP IoT devices developed by eQ3/ELV.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "rasperrymatic.png"
+}
