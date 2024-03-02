@@ -1,7 +1,7 @@
 <?php
 
-namespace App\SupportedApps\RasperryMaticCCU;
+namespace App\SupportedApps\RaspberryMatic;
 
-class RasperryMaticCCU extends \App\SupportedApps
+class RaspberryMatic extends \App\SupportedApps
 {
 }
