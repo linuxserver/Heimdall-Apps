@@ -6,5 +6,5 @@
     "description": "RaspberryMatic is an alternative, open source based operating system for running an independent cloud-less HomeMatic control center (CCU) for configuring/using HomeMatic/homematicIP IoT devices developed by eQ3/ELV.",
     "enhanced": false,
     "tile_background": "dark",
-    "icon": "rasperrymatic.svg"
+    "icon": "raspberrymatic.svg"
 }
