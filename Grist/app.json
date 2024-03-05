@@ -1,0 +1,10 @@
+{
+    "appid": "2ccd756b4e63f692aad310aeee9b157b853608a0",
+    "name": "Grist",
+    "website": "https://www.getgrist.com/",
+    "license": "Apache License 2.0",
+    "description": "Grist is a modern relational spreadsheet. It combines the flexibility of a spreadsheet with the robustness of a database to organize your data and make you more productive.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "grist.png"
+}
