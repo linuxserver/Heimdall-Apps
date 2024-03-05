@@ -1,0 +1,10 @@
+{
+    "appid": "f2e1d605503ee2ffa3f54f836c0503e8328b9fb5",
+    "name": "Crater",
+    "website": "https://craterapp.com/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Financial OS as a Service for smart platforms.\r\nInvoicing, Payments & Lending",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "crater.png"
+}
