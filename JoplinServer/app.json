@@ -1,0 +1,10 @@
+{
+    "appid": "394b40695603f38f0f19fa50fe4f9d4041d98096",
+    "name": "Joplin Server",
+    "website": "https://github.com/laurent22/joplin",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "Joplin - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "joplinserver.svg"
+}
