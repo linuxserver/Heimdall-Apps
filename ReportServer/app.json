@@ -1,0 +1,10 @@
+{
+    "appid": "cdb5795193209b8bbf0a1bd018b9b7dddf2bdc3f",
+    "name": "ReportServer",
+    "website": "https://reportserver.net/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "ReportServer is a modern and versatile open source business intelligence (BI) platform with powerful reporting features.\r\n\r\nWith ReportServer you are not limited to one provider's solutions. ReportServer integrates Jasper, Birt, Mondrian and Excel-based reporting: choose what best suits your needs!",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "reportserver.png"
+}
