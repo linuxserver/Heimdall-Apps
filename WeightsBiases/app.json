@@ -1,0 +1,10 @@
+{
+    "appid": "02be3710e5399ca94da3c71d2b7d9c3af2b593f8",
+    "name": "Weights & Biases",
+    "website": "https://wandb.ai/site",
+    "license": "MIT License",
+    "description": "A tool for visualizing and tracking your machine learning experiments.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "weightsbiases.svg"
+}
