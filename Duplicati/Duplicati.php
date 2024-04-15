@@ -33,7 +33,11 @@ class Duplicati extends \App\SupportedApps implements \App\EnhancedApps
         // https://github.com/duplicati/duplicati/blob/master/Duplicati/Server/webroot/login/login.js
         // https://github.com/Pectojin/duplicati-client/blob/master/auth.py
 
-        $noncedPassword = $this->getNoncedPassword($this->config->password);
+        if (isset($this->config->password) && !empty($this->config->password)) {
+            $noncedPassword = $this->getNoncedPassword($this->config->password);
+        } else {
+            $noncedPassword = "";
+        }
 
         $passAttrs = [
             "body" => "password=" . urlencode($noncedPassword),
