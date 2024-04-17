@@ -92,11 +92,11 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
         ];
         return parent::getLiveStats($status, $data);
     }
+
     public function url($endpoint)
     {
         $api_stub = "api2/json/";
-        $api_url =
-            parent::normaliseurl(
+        $api_url = parent::normaliseurl(
                 $this->getConfigValue("override_url", $this->config->url)
             ) .
             $api_stub .
@@ -107,7 +107,12 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
     public function apiCall($endpoint)
     {
         $res = parent::execute($this->url($endpoint), $this->getRequestAttrs());
-        return json_decode($res->getBody())->data;
+        $object = json_decode($res->getBody());
+
+		if (!$object instanceof \stdClass) {
+			return null;
+		}
+		return $object->data;
     }
 
     public function getConfigValue($key, $default = null)
