@@ -1,0 +1,10 @@
+{
+    "appid": "b134790d9a8269a36013773814955539268e224a",
+    "name": "Jellystat",
+    "website": "https://github.com/CyferShepard/Jellystat",
+    "license": "MIT License",
+    "description": "Jellystat is a free and open source Statistics App for Jellyfin!",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "jellystat.png"
+}
