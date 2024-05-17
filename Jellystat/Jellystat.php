@@ -2,8 +2,8 @@
 
 namespace App\SupportedApps\Jellystat;
 
-class Jellystat extends \App\SupportedApps implements \App\EnhancedApps {
-
+class Jellystat extends \App\SupportedApps implements \App\EnhancedApps
+{
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
