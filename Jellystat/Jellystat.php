@@ -14,16 +14,14 @@ class Jellystat extends \App\SupportedApps implements \App\EnhancedApps {
     }
 
     public function test() {
-        $attrs = $this->getRequestAttrs(false);
+        $attrs = $this->getRequestAttrs();
         $test = parent::appTest($this->url('stats/getLibraryCardStats'), $attrs);
         echo $test->status;
     }
 
     public function livestats() {
-        $debug = $this->config->debug[0];
-
         $status = 'inactive';
-        $attrs = $this->getRequestAttrs($debug);
+        $attrs = $this->getRequestAttrs();
 
         $res = parent::execute($this->url('stats/getAllUserActivity'), $attrs);
 
@@ -48,55 +46,13 @@ class Jellystat extends \App\SupportedApps implements \App\EnhancedApps {
 
         return parent::getLiveStats($status, $details);
     }
-    /* public function livestats() {
-        $debug = $this->config->debug[0];
 
-        $status = 'inactive';
-        $attrs = $this->getRequestAttrs($debug);
-
-        $res = parent::execute($this->url('stats/getLibraryCardStats'), $attrs);
-
-        $results = json_decode($res->getBody());
-
-
-
-        if ($debug == 1) {
-
-
-            echo '<pre>';
-            print_r(($this->config));
-            print_r(($results));
-            echo '</pre>';
-        }
-
-        $details = ["visiblestats" => []];
-
-        foreach ($results as $lib) {
-            if ($lib->Plays > 0)
-                $sorted_lib[$lib->CollectionType] = $lib;
-        }
-
-
-
-        foreach ($this->config->availablestats as $stat) {
-            $newstat = new \stdClass();
-            $newstat->title = self::getAvailableStats()[$stat];
-            $newstat->value = $sorted_lib[$stat]->ItemName;
-            $details["visiblestats"][] = $newstat;
-        }
-
-
-
-
-        return parent::getLiveStats($status, $details);
-    }
- */
     public function url($endpoint) {
         $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
     }
 
-    private function getRequestAttrs($debug) {
+    private function getRequestAttrs() {
         $attrs = [
             "headers" => [
 
@@ -105,25 +61,8 @@ class Jellystat extends \App\SupportedApps implements \App\EnhancedApps {
             ],
         ];
 
-        $attrs['debug'] = $debug;
         return $attrs;
     }
-
-    public static function getAvailableStats() {
-        return [
-            "movies" => "Last Movie",
-            "tvshows" => "Last TV-Show",
-            "mixed" => "Others"
-        ];
-    }
-
-    public static function getDebugStatus() {
-        return [
-            "1" => "On",
-            "0" => "Off"
-        ];
-    }
-
 
     function secondsToHoursMinutes($seconds) {
 
