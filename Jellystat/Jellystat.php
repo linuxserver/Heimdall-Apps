@@ -9,17 +9,20 @@ class Jellystat extends \App\SupportedApps implements \App\EnhancedApps {
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
-    public function __construct() {
+    public function __construct()
+    {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
-    public function test() {
+    public function test()
+    {
         $attrs = $this->getRequestAttrs();
         $test = parent::appTest($this->url('stats/getLibraryCardStats'), $attrs);
         echo $test->status;
     }
 
-    public function livestats() {
+    public function livestats()
+    {
         $status = 'inactive';
         $attrs = $this->getRequestAttrs();
 
@@ -47,12 +50,14 @@ class Jellystat extends \App\SupportedApps implements \App\EnhancedApps {
         return parent::getLiveStats($status, $details);
     }
 
-    public function url($endpoint) {
+    public function url($endpoint)
+    {
         $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
     }
 
-    private function getRequestAttrs() {
+    private function getRequestAttrs()
+    {
         $attrs = [
             "headers" => [
 
@@ -64,7 +69,8 @@ class Jellystat extends \App\SupportedApps implements \App\EnhancedApps {
         return $attrs;
     }
 
-    function secondsToHoursMinutes($seconds) {
+    private function secondsToHoursMinutes($seconds)
+    {
 
         // Calculate the hours
         $hours = floor($seconds / 3600);
