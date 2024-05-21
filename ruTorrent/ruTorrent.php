@@ -7,6 +7,8 @@ use GuzzleHttp\Exception\RequestException;
 class ruTorrent extends \App\SupportedApps implements \App\EnhancedApps // phpcs:ignore
 {
     public $config;
+    private $attrs;
+    private $vars;
 
     public function __construct()
     {
@@ -76,7 +78,7 @@ class ruTorrent extends \App\SupportedApps implements \App\EnhancedApps // phpcs
 
         try {
             $res = parent::execute(
-                $this->url("RPC2"),
+                $this->url("plugins/rpc/rpc.php"),
                 $this->attrs,
                 $this->vars
             );
