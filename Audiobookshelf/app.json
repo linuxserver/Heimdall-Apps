@@ -4,7 +4,7 @@
   "website": "https://audiobookshelf.org",
   "license": "GNU General Public License v3.0 or later",
   "description": "Audiobookshelf is a self-hosted audiobook server for managing and playing your audiobooks.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "audiobookshelf.svg"
 }
