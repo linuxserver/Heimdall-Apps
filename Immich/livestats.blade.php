@@ -7,4 +7,8 @@
         <span class="title">Videos</span>
         <strong>{!! $videos !!}</strong>
     </li>
+    <li>
+        <span class="title">Usage</span>
+        <strong>{!! $usage !!}</strong>
+    </li>
 </ul>
