@@ -16,7 +16,7 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $test = parent::appTest($this->url("api/server-info/statistics"));
+        $test = parent::appTest($this->url("server-info/statistics"));
         echo $test->status;
     }
 
@@ -29,22 +29,26 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
                 "x-api-key" => $this->config->api_key,
             ],
         ];
-        $res = parent::execute($this->url("api/server-info/statistics"), $attrs);
-        $data = json_decode($res->getBody());
+        $res = parent::execute($this->url("server-info/statistics"), $attrs);
+        $details = json_decode($res->getBody());
 
-        $details = [];
+        $data = [];
 
-        if ($data) {
+        if ($details) {
             $status = "active";
-            $details["photos"] = number_format($data->photos);
-            $details["videos"] = number_format($data->videos);
+            $data["photos"] = number_format($details->photos);
+            $data["videos"] = number_format($details->videos);
+            $usageInGiB = number_format($details->usage / 1073741824, 2);
+            $data["usage"] = $usageInGiB . 'GiB';
         }
 
-        return parent::getLiveStats($status, $details);
+        return parent::getLiveStats($status, $data);
     }
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url) . $endpoint;
+            $api_url = parent::normaliseurl($this->config->url) . 
+            "api/" .
+            $endpoint; 
         return $api_url;
     }
 }
