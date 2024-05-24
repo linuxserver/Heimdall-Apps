@@ -1,0 +1,10 @@
+{
+    "appid": "299906b4afd579c56938d8049d0e6afe0fd6bb5b",
+    "name": "EMQX",
+    "website": "https://www.emqx.io/",
+    "license": "Apache License 2.0",
+    "description": "EMQX is an Open-source MQTT broker with a high-performance real-time message processing engine, powering event streaming for IoT devices at massive scale.\r\n\r\nAs the most scalable MQTT broker, EMQX can help you connect any device, at any scale. Move and process your IoT data anywhere.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "emqx.png"
+}
