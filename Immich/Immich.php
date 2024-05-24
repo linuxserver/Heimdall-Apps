@@ -46,9 +46,9 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
     }
     public function url($endpoint)
     {
-            $api_url = parent::normaliseurl($this->config->url) . 
+            $api_url = parent::normaliseurl($this->config->url) .
             "api/" .
-            $endpoint; 
+            $endpoint;
         return $api_url;
     }
 }
