@@ -49,10 +49,13 @@ class Authentik extends \App\SupportedApps implements \App\EnhancedApps
 
         $applicationDetails = $this->fetchApi("api/v3/core/applications/");
         $usersDetails = $this->fetchApi("api/v3/core/users/");
+        $internalUsers = $filteredObjects = array_filter($usersDetails->results, function ($user) {
+            return isset($user->type) && $user->type === 'internal';
+        });
 
         $data = [
             "applications" => $applicationDetails->pagination->count,
-            "users" => $usersDetails->pagination->count,
+            "users" => count($internalUsers),
         ];
 
         return parent::getLiveStats($status, $data);
