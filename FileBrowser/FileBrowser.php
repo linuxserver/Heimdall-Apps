@@ -68,10 +68,6 @@ class FileBrowser extends \App\SupportedApps implements \App\EnhancedApps
         $res = parent::execute($this->url("api/usage"), $attrs);
         $details = json_decode($res->getBody());
 
-        $data = [
-            "used" => $res->getStatusCode(),
-            "total" => $token
-        ];
         if ($details != null) {
             $data["used"] = number_format($details->used / 1073741824, 0) . " GiB";
             $data["total"] =number_format($details->total / 1073741824, 0) . " GiB";
