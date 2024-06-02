@@ -30,7 +30,8 @@ class Maintainerr extends \App\SupportedApps implements \App\EnhancedApps
             return isset($rule->isActive) && $rule->isActive;
         });
 
-        $data["rules"] = count($activeRules);
+        $data["rules"] = count($rules);
+        $data["activeRules"] = count($activeRules);
 
         return parent::getLiveStats($status, $data);
     }

@@ -1,6 +1,6 @@
 <ul class="livestats">
     <li>
         <span class="title">Rules</span>
-        <strong>{!! $rules !!}</strong>
+        <strong>{!! $activeRules !!}<span>/{!! $rules !!}</span></strong>
     </li>
 </ul>
