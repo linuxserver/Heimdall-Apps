@@ -7,6 +7,13 @@
     <div class="input">
         <label>{{ __('app.apps.apikey') }} (<a href="https://docs.goauthentik.io/developer-docs/api/#authentication" target="_blank">help?</a>)</label>
         {!! Form::text('config[apikey]', isset($item) ? $item->getconfig()->apikey : null, ['placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item']) !!}
+        <div>
+            <small>User needs two permissions</small>
+            <ul>
+                <li><small>Can view Application</small></li>
+                <li><small>Can view User</small></li>
+            </ul>
+        </div>
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
