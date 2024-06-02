@@ -1,0 +1,10 @@
+{
+  "appid": "34048cd0432f63fda7286fc2d843f0d68b4d28c5",
+  "name": "Maintainerr",
+  "website": "https://maintainerr.info",
+  "license": "MIT license",
+  "description": "Maintainerr makes managing your media easy. It’s a one-stop-shop for handling those outlying shows and movies that take up precious space",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "maintainerr.svg"
+}
