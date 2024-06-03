@@ -45,6 +45,23 @@ class FileBrowser extends \App\SupportedApps implements \App\EnhancedApps
         }
     }
 
+    function formatBytes($bytes, $precision = 2) {
+        $units = array('B', 'KB', 'MB', 'GB', 'TB');
+        $bytes = max($bytes, 0);
+        $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
+        $pow = min($pow, count($units) - 1);
+
+        $bytes /= pow(1024, $pow);
+
+        $value = round($bytes, $precision);
+        $unit = $units[$pow];
+
+        return [
+             "value" => $value,
+             "unit" => $unit
+        ];
+    }
+
     public function test()
     {
         try {
@@ -69,8 +86,8 @@ class FileBrowser extends \App\SupportedApps implements \App\EnhancedApps
         $details = json_decode($res->getBody());
 
         if ($details != null) {
-            $data["used"] = number_format($details->used / 1073741824, 0) . " GiB";
-            $data["total"] =number_format($details->total / 1073741824, 0) . " GiB";
+            $data["used"] = $this->formatBytes($details->used);
+            $data["total"] = $this->formatBytes($details->total);
         }
         return parent::getLiveStats($status, $data);
     }
