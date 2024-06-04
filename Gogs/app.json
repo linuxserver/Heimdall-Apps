@@ -4,7 +4,7 @@
   "website": "https://gogs.io",
   "license": "MIT License",
   "description": "A painless self-hosted Git service.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "gogs.png"
 }
