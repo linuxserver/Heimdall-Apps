@@ -45,7 +45,7 @@ class FileBrowser extends \App\SupportedApps implements \App\EnhancedApps
         }
     }
 
-    function formatBytes($bytes, $precision = 2) {
+    private function formatBytes($bytes, $precision = 2) {
         $units = array('B', 'KB', 'MB', 'GB', 'TB');
         $bytes = max($bytes, 0);
         $pow = floor(($bytes ? log($bytes) : 0) / log(1024));
