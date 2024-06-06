@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\ntfy;
 
-class ntfy extends \App\SupportedApps
+class ntfy extends \App\SupportedApps // phpcs:ignore
 {
 }
