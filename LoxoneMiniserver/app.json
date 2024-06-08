@@ -1,0 +1,10 @@
+{
+    "appid": "fa69c194633c13ae44e3d9850d52ce42ed829a09",
+    "name": "Loxone Miniserver",
+    "website": "https://www.loxone.com/enen/products/miniserver/",
+    "license": "Proprietary",
+    "description": "Loxone connects all components in an intelligent building, comparable to the human nervous system. All wires run together to the central control, the Miniserver. It enables the individual components and devices to talk to each other and automates most tasks related to safety, comfort and energy efficiency. Whether it concerns a Smart Home, a commercial project or a special application.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "loxoneminiserver.png"
+}
