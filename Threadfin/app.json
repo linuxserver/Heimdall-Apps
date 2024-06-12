@@ -1,0 +1,10 @@
+{
+  "appid": "98028de0432f62fda3283fc2e833f0d68c2a38d9",
+  "name": "Threadfin",
+  "website": "https://github.com/Threadfin/Threadfin",
+  "license": "MIT license",
+  "description": "An M3U proxy for Kernel/Plex/Jellyfin/Emby based on xTeVe",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "threadfin.png"
+}
