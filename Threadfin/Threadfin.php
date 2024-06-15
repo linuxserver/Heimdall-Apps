@@ -41,7 +41,7 @@ class Threadfin extends \App\SupportedApps implements \App\EnhancedApps
     {
         try {
             $res = $this->getStatus();
-            if($res->status == true) {
+            if ($res->status == true) {
                 echo "Successfully communicated with the API";
             } else {
                 echo "Threadfin is not in a good health";
