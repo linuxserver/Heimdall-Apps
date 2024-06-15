@@ -30,7 +30,7 @@ class Gitea extends \App\SupportedApps implements \App\EnhancedApps // phpcs:ign
                     return $data;
                 }
                 if (property_exists($data, "data")) {
-              	    return $data->data;
+                    return $data->data;
                 }
                 throw new Exception("Invalid response");
             case 401:
