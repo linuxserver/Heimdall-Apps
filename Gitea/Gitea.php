@@ -27,10 +27,10 @@ class Gitea extends \App\SupportedApps implements \App\EnhancedApps // phpcs:ign
             case 200:
                 $data = json_decode($res->getBody());
                 if (gettype($data) == "array") {
-                	return $data;
+                    return $data;
                 }
-                if(property_exists($data, "data")) {
-              		return $data->data;
+                if (property_exists($data, "data")) {
+              	    return $data->data;
                 }
                 throw new Exception("Invalid response");
             case 401:
