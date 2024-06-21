@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\dizqueTV;
 
-class dizqueTV extends \App\SupportedApps
+class DizqueTv extends \App\SupportedApps
 {
 }
