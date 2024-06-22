@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SupportedApps\dizqueTV;
+namespace App\SupportedApps\DizqueTv;
 
 class DizqueTv extends \App\SupportedApps
 {
