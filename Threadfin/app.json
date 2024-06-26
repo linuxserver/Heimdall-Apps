@@ -6,5 +6,5 @@
   "description": "An M3U proxy for Kernel/Plex/Jellyfin/Emby based on xTeVe",
   "enhanced": true,
   "tile_background": "dark",
-  "icon": "threadfin.png"
+  "icon": "threadfin.svg"
 }
