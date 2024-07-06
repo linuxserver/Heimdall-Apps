@@ -16,7 +16,13 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $test = parent::appTest($this->url("server-info/statistics"));
+        $attrs = [
+            "headers" => [
+                "Accept" => "application/json",
+                "x-api-key" => $this->config->api_key,
+            ],
+        ];
+        $test = parent::appTest($this->url("server-info/statistics"), $attrs);
         echo $test->status;
     }
 
