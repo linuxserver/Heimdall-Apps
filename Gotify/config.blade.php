@@ -9,10 +9,6 @@
         {!! Form::text('config[apikey]', isset($item) ? $item->getconfig()->apikey : null, ['placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
-        <label>{{ __('app.apps.gotify_token') }}</label>
-        {!! Form::text('config[token]', isset($item) ? $item->getconfig()->token : null, ['placeholder' => __('app.apps.gotify_token'), 'data-config' => 'token', 'class' => 'form-control config-item']) !!}
-    </div>
-    <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
     </div>
 </div>
