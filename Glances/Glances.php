@@ -1,8 +1,8 @@
 <?php
 
-namespace App\SupportedApps\GlancesTest;
+namespace App\SupportedApps\Glances;
 
-class GlancesTest extends \App\SupportedApps implements \App\EnhancedApps
+class Glances extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
