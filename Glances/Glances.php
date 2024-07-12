@@ -1,8 +1,8 @@
 <?php
 
-namespace App\SupportedApps\Glances;
+namespace App\SupportedApps\GlancesTest;
 
-class Glances extends \App\SupportedApps implements \App\EnhancedApps
+class GlancesTest extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
@@ -63,6 +63,17 @@ class Glances extends \App\SupportedApps implements \App\EnhancedApps
                         }
                     }
 
+                    // Fetch MemAvail
+                    if ($stat === "MemUsage") {
+                        $Response = parent::execute($this->url("mem/used"));
+                        $result = json_decode($Response->getBody());
+                        if (isset($result->used)) {
+                            $newstat->value = $this->convertBytesToGigabytes($result->used);
+                        } else {
+                            $newstat->value = null; // or some default value
+                        }
+                    }
+
                     $details["visiblestats"][] = $newstat;
                 }
             }
@@ -83,6 +94,7 @@ class Glances extends \App\SupportedApps implements \App\EnhancedApps
             "CpuTotal" => "CpuTotal",
             "MemTotal" => "MemTotal",
             "MemAvail" => "MemAvail",
+            "MemUsage" => "MemUsage",
         ];
     }
 
