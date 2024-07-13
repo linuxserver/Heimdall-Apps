@@ -4,7 +4,7 @@
   "website": "https://gotify.net",
   "license": "MIT License",
   "description": "A self-hosted push notification service.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "gotify.png"
 }
