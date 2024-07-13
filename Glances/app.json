@@ -4,7 +4,7 @@
   "website": "https://nicolargo.github.io/glances",
   "license": "GNU Lesser General Public License v3.0 only",
   "description": "Glances is a cross-platform monitoring tool which aims to present a large amount of monitoring information through a curses or Web based interface.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "glances.png"
 }
