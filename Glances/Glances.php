@@ -26,7 +26,7 @@ class Glances extends \App\SupportedApps implements \App\EnhancedApps
             foreach ($this->config->availablestats as $stat) {
                 $newstat = new \stdClass();
                 $availableStats = self::getAvailableStats();
-                
+
                 if (isset($availableStats[$stat])) {
                     $newstat->title = $availableStats[$stat];
 
