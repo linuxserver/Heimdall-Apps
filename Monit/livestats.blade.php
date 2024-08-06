@@ -1,10 +1,10 @@
 <ul class="livestats">
     <li>
-        <span class="title">Queue</span>
-        <strong>{!! $queue_size !!}</strong>
+        <span class="title">Running</span>
+        <strong>{!! $running_services !!}</strong>
     </li>
     <li>
-        <span class="title">Speed</span>
-        <strong>{!! $current_speed !!}</strong>
+        <span class="title">Failed</span>
+        <strong>{!! $failed_services !!}</strong>
     </li>
 </ul>
