@@ -4,6 +4,18 @@ namespace App\SupportedApps\Monit;
 
 class Monit extends \App\SupportedApps
 {
+    public static function getAvailableStats()
+    {
+        return [
+            'running_services' => 'Running',
+            'failed_services' => 'Failed',
+            'load' => 'Load',
+            'cpu' => 'CPU',
+            'memory' => 'Memory',
+            'swap' => 'Swap'
+        ];
+    }
+
     public function test()
     {
         $response = $this->executeCurl($this->url('/_status?format=xml'));
@@ -17,7 +29,14 @@ class Monit extends \App\SupportedApps
     public function livestats()
     {
         $status = 'inactive';
-        $data = [];
+        $data = [
+            'running_services' => 'N/A',
+            'failed_services' => 'N/A',
+            'load' => 'N/A',
+            'cpu' => 'N/A',
+            'memory' => 'N/A',
+            'swap' => 'N/A'
+        ];
 
         $response = $this->executeCurl($this->url('/_status?format=xml'));
 
@@ -26,13 +45,11 @@ class Monit extends \App\SupportedApps
             $json = json_encode($xml);
             $data = json_decode($json, true);
 
-            // 计算运行的服务数量和失败的服务数量
             $running_services = 0;
             $failed_services = 0;
 
             if (isset($data['service'])) {
                 if (isset($data['service'][0])) {
-                    // 如果是多个服务的情况
                     foreach ($data['service'] as $service) {
                         if (isset($service['status']) && $service['status'] == 0) {
                             $running_services++;
@@ -41,7 +58,6 @@ class Monit extends \App\SupportedApps
                         }
                     }
                 } else {
-                    // 如果是单个服务的情况
                     if (isset($data['service']['status']) && $data['service']['status'] == 0) {
                         $running_services++;
                     } else {
@@ -51,40 +67,27 @@ class Monit extends \App\SupportedApps
             }
 
             $status = 'active';
-            $metrics = [];
-
-            if (isset($this->config->availablestats) && in_array('running_services', $this->config->availablestats)) {
-                $metrics['running_services'] = $running_services;
-            }
-
-            if (isset($this->config->availablestats) && in_array('failed_services', $this->config->availablestats)) {
-                $metrics['failed_services'] = $failed_services;
-            }
-
-            $data = $metrics;
-        } else {
-            $data = [
-                'error' => 'Failed to connect to Monit. HTTP Status: ' . $response['httpcode']
-            ];
+            $data['running_services'] = $running_services;
+            $data['failed_services'] = $failed_services;
         }
 
-        return parent::getLiveStats($status, $data);
-    }
+        $visiblestats = [];
+        if (isset($this->config->availablestats)) {
+            foreach ($this->config->availablestats as $stat) {
+                $visiblestats[] = [
+                    'title' => self::getAvailableStats()[$stat],
+                    'value' => $data[$stat] ?? 'N/A'
+                ];
+            }
+        }
 
-    public static function getAvailableStats()
-    {
-        return [
-            'running_services' => 'Running Services',
-            'failed_services' => 'Failed Services'
-        ];
+        return parent::getLiveStats($status, ['visiblestats' => $visiblestats]);
     }
 
     private function url($endpoint)
     {
         $config = $this->config;
-
         $url = rtrim($config->url, '/');
-
         return $url . $endpoint;
     }
 
