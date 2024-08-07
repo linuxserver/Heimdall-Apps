@@ -29,15 +29,7 @@ class Monit extends \App\SupportedApps
     public function livestats()
     {
         $status = 'inactive';
-        $data = [
-            'running_services' => 'N/A',
-            'failed_services' => 'N/A',
-            'load' => 'N/A',
-            'cpu' => 'N/A',
-            'memory' => 'N/A',
-            'swap' => 'N/A'
-        ];
-
+        $data = [];
         $response = $this->executeCurl($this->url('/_status?format=xml'));
 
         if ($response['httpcode'] == 200) {
@@ -47,6 +39,10 @@ class Monit extends \App\SupportedApps
 
             $running_services = 0;
             $failed_services = 0;
+            $load = 'N/A';
+            $cpu = 'N/A';
+            $memory = 'N/A';
+            $swap = 'N/A';
 
             if (isset($data['service'])) {
                 if (isset($data['service'][0])) {
@@ -66,9 +62,29 @@ class Monit extends \App\SupportedApps
                 }
             }
 
+            foreach ($data['service'] as $service) {
+                if (isset($service['system'])) {
+                    $load = $service['system']['load']['avg05'] ?? 'N/A';
+                    $cpu = isset($service['system']['cpu']['user']) ? $service['system']['cpu']['user'] . '%' : 'N/A';
+                    $memory = isset($service['system']['memory']['percent']) ? $service['system']['memory']['percent'] . '%' : 'N/A';
+                    $swap = isset($service['system']['swap']['percent']) ? $service['system']['swap']['percent'] . '%' : 'N/A';
+                    break;
+                }
+            }
+
             $status = 'active';
-            $data['running_services'] = $running_services;
-            $data['failed_services'] = $failed_services;
+            $data = [
+                'running_services' => $running_services,
+                'failed_services' => $failed_services,
+                'load' => $load,
+                'cpu' => $cpu,
+                'memory' => $memory,
+                'swap' => $swap
+            ];
+        } else {
+            $data = [
+                'error' => 'Failed to connect to Monit. HTTP Status: ' . $response['httpcode']
+            ];
         }
 
         $visiblestats = [];

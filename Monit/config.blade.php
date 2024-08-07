@@ -21,39 +21,3 @@
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
     </div>
 </div>
-
-<script>
-    document.getElementById('test_config').addEventListener('click', function() {
-        var username = document.querySelector('[data-config="username"]').value;
-        var password = document.querySelector('[data-config="password"]').value;
-        var url = document.getElementById('override_url').value;
-
-        console.log('Username:', username);
-        console.log('Password:', password);
-        console.log('URL:', url);
-
-        if (!username || !password || !url) {
-            alert('URL, Username, and Password are required');
-            return;
-        }
-
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Basic ' + btoa(username + ':' + password),
-                'Content-Type': 'application/json',
-            },
-        })
-        .then(response => {
-            if (response.status === 200) {
-                alert('Successfully communicated with the API');
-            } else {
-                alert('Failed: Invalid credentials');
-            }
-        })
-        .catch(error => {
-            alert('Error testing Monit configuration');
-            console.error('Error:', error);
-        });
-    });
-</script>
