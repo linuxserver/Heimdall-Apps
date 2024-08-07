@@ -51,18 +51,32 @@ class Monit extends \App\SupportedApps
             }
 
             $status = 'active';
-            $data = [
-                'running_services' => $running_services,
-                'failed_services' => $failed_services
-            ];
+            $metrics = [];
+
+            if (isset($this->config->availablestats) && in_array('running_services', $this->config->availablestats)) {
+                $metrics['running_services'] = $running_services;
+            }
+
+            if (isset($this->config->availablestats) && in_array('failed_services', $this->config->availablestats)) {
+                $metrics['failed_services'] = $failed_services;
+            }
+
+            $data = $metrics;
         } else {
             $data = [
                 'error' => 'Failed to connect to Monit. HTTP Status: ' . $response['httpcode']
             ];
         }
 
-        // 返回JSON格式数据
         return parent::getLiveStats($status, $data);
+    }
+
+    public static function getAvailableStats()
+    {
+        return [
+            'running_services' => 'Running Services',
+            'failed_services' => 'Failed Services'
+        ];
     }
 
     private function url($endpoint)
