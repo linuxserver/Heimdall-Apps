@@ -1,4 +1,5 @@
 <h2>{{ __('app.apps.config') }} ({{ __('app.optional') }}) @include('items.enable')</h2>
+
 <div class="items">
     <div class="input">
         <label>{{ strtoupper(__('app.url')) }}</label>
@@ -11,6 +12,10 @@
     <div class="input">
         <label>{{ __('app.apps.password') }}</label>
         {!! Form::input('password', 'config[password]', '', ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
+    </div>
+    <div class="input">
+        <label>Stats to show</label>
+        {!! Form::select('config[availablestats][]', App\SupportedApps\Monit\Monit::getAvailableStats(), isset($item) && isset($item->getconfig()->availablestats) ? $item->getconfig()->availablestats : null, ['multiple' => 'multiple', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>

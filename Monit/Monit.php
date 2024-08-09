@@ -4,6 +4,18 @@ namespace App\SupportedApps\Monit;
 
 class Monit extends \App\SupportedApps
 {
+    public static function getAvailableStats()
+    {
+        return [
+            'running_services' => 'Running',
+            'failed_services' => 'Failed',
+            'load' => 'Load',
+            'cpu' => 'CPU',
+            'memory' => 'Memory',
+            'swap' => 'Swap'
+        ];
+    }
+
     public function test()
     {
         $response = $this->executeCurl($this->url('/_status?format=xml'));
@@ -18,7 +30,6 @@ class Monit extends \App\SupportedApps
     {
         $status = 'inactive';
         $data = [];
-
         $response = $this->executeCurl($this->url('/_status?format=xml'));
 
         if ($response['httpcode'] == 200) {
@@ -26,13 +37,15 @@ class Monit extends \App\SupportedApps
             $json = json_encode($xml);
             $data = json_decode($json, true);
 
-            // 计算运行的服务数量和失败的服务数量
             $running_services = 0;
             $failed_services = 0;
+            $load = 'N/A';
+            $cpu = 'N/A';
+            $memory = 'N/A';
+            $swap = 'N/A';
 
             if (isset($data['service'])) {
                 if (isset($data['service'][0])) {
-                    // 如果是多个服务的情况
                     foreach ($data['service'] as $service) {
                         if (isset($service['status']) && $service['status'] == 0) {
                             $running_services++;
@@ -41,7 +54,6 @@ class Monit extends \App\SupportedApps
                         }
                     }
                 } else {
-                    // 如果是单个服务的情况
                     if (isset($data['service']['status']) && $data['service']['status'] == 0) {
                         $running_services++;
                     } else {
@@ -50,10 +62,24 @@ class Monit extends \App\SupportedApps
                 }
             }
 
+            foreach ($data['service'] as $service) {
+                if (isset($service['system'])) {
+                    $load = $service['system']['load']['avg05'] ?? 'N/A';
+                    $cpu = isset($service['system']['cpu']['user']) ? $service['system']['cpu']['user'] . '%' : 'N/A';
+                    $memory = isset($service['system']['memory']['percent']) ? $service['system']['memory']['percent'] . '%' : 'N/A';
+                    $swap = isset($service['system']['swap']['percent']) ? $service['system']['swap']['percent'] . '%' : 'N/A';
+                    break;
+                }
+            }
+
             $status = 'active';
             $data = [
                 'running_services' => $running_services,
-                'failed_services' => $failed_services
+                'failed_services' => $failed_services,
+                'load' => $load,
+                'cpu' => $cpu,
+                'memory' => $memory,
+                'swap' => $swap
             ];
         } else {
             $data = [
@@ -61,16 +87,23 @@ class Monit extends \App\SupportedApps
             ];
         }
 
-        // 返回JSON格式数据
-        return parent::getLiveStats($status, $data);
+        $visiblestats = [];
+        if (isset($this->config->availablestats)) {
+            foreach ($this->config->availablestats as $stat) {
+                $visiblestats[] = [
+                    'title' => self::getAvailableStats()[$stat],
+                    'value' => $data[$stat] ?? 'N/A'
+                ];
+            }
+        }
+
+        return parent::getLiveStats($status, ['visiblestats' => $visiblestats]);
     }
 
     private function url($endpoint)
     {
         $config = $this->config;
-
         $url = rtrim($config->url, '/');
-
         return $url . $endpoint;
     }
 
