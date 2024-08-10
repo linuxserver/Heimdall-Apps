@@ -20,7 +20,7 @@ class Transmission extends \App\SupportedApps implements \App\EnhancedApps
             "http_errors" => false,
             "timeout" => 5,
             "body" => json_encode($body),
-            "verify" => false, 
+            "verify" => false,
         ];
     }
 
