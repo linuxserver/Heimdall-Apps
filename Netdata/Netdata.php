@@ -39,39 +39,39 @@ class Netdata extends \App\SupportedApps implements \App\EnhancedApps
         if ($response['httpcode'] == 200) {
             $json = json_decode($response['response'], true);
 
-            $cpu = isset($json['system.cpu']['dimensions']['idle']['value']) 
-                ? number_format(100 - $json['system.cpu']['dimensions']['idle']['value'], 1) . '%' 
+            $cpu = isset($json['system.cpu']['dimensions']['idle']['value'])
+                ? number_format(100 - $json['system.cpu']['dimensions']['idle']['value'], 1) . '%'
                 : 'N/A';
 
-            $memoryFree = isset($json['system.ram']['dimensions']['free']['value']) 
-                ? number_format($json['system.ram']['dimensions']['free']['value'], 1) . 'MB' 
+            $memoryFree = isset($json['system.ram']['dimensions']['free']['value'])
+                ? number_format($json['system.ram']['dimensions']['free']['value'], 1) . 'MB'
                 : 'N/A';
-            $memoryUsed = isset($json['system.ram']['dimensions']['used']['value']) 
-                ? number_format($json['system.ram']['dimensions']['used']['value'], 1) . 'MB' 
-                : 'N/A';
-
-            $load1 = isset($json['system.load']['dimensions']['load1']['value']) 
-                ? $json['system.load']['dimensions']['load1']['value'] 
-                : 'N/A';
-            $load5 = isset($json['system.load']['dimensions']['load5']['value']) 
-                ? $json['system.load']['dimensions']['load5']['value'] 
-                : 'N/A';
-            $load15 = isset($json['system.load']['dimensions']['load15']['value']) 
-                ? $json['system.load']['dimensions']['load15']['value'] 
+            $memoryUsed = isset($json['system.ram']['dimensions']['used']['value'])
+                ? number_format($json['system.ram']['dimensions']['used']['value'], 1) . 'MB'
                 : 'N/A';
 
-            $diskIn = isset($json['system.io']['dimensions']['in']['value']) 
-                ? number_format($json['system.io']['dimensions']['in']['value'], 1) . 'KB/s' 
+            $load1 = isset($json['system.load']['dimensions']['load1']['value'])
+                ? $json['system.load']['dimensions']['load1']['value']
                 : 'N/A';
-            $diskOut = isset($json['system.io']['dimensions']['out']['value']) 
-                ? number_format($json['system.io']['dimensions']['out']['value'], 1) . 'KB/s' 
+            $load5 = isset($json['system.load']['dimensions']['load5']['value'])
+                ? $json['system.load']['dimensions']['load5']['value']
+                : 'N/A';
+            $load15 = isset($json['system.load']['dimensions']['load15']['value'])
+                ? $json['system.load']['dimensions']['load15']['value']
                 : 'N/A';
 
-            $networkIn = isset($json['system.net']['dimensions']['InOctets']['value']) 
-                ? number_format($json['system.net']['dimensions']['InOctets']['value'], 1) . 'KB/s' 
+            $diskIn = isset($json['system.io']['dimensions']['in']['value'])
+                ? number_format($json['system.io']['dimensions']['in']['value'], 1) . 'KB/s'
                 : 'N/A';
-            $networkOut = isset($json['system.net']['dimensions']['OutOctets']['value']) 
-                ? number_format($json['system.net']['dimensions']['OutOctets']['value'], 1) . 'KB/s' 
+            $diskOut = isset($json['system.io']['dimensions']['out']['value'])
+                ? number_format($json['system.io']['dimensions']['out']['value'], 1) . 'KB/s'
+                : 'N/A';
+
+            $networkIn = isset($json['system.net']['dimensions']['InOctets']['value'])
+                ? number_format($json['system.net']['dimensions']['InOctets']['value'], 1) . 'KB/s'
+                : 'N/A';
+            $networkOut = isset($json['system.net']['dimensions']['OutOctets']['value'])
+                ? number_format($json['system.net']['dimensions']['OutOctets']['value'], 1) . 'KB/s'
                 : 'N/A';
 
             $status = 'active';
