@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\PhotoPrism;
+<?php
+
+namespace App\SupportedApps\PhotoPrism;
 
 class PhotoPrism extends \App\SupportedApps implements \App\EnhancedApps
 {
@@ -7,12 +9,12 @@ class PhotoPrism extends \App\SupportedApps implements \App\EnhancedApps
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
-    function __construct()
+    public function __construct()
     {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
-    function get_request_attrs()
+    public function getRequestAttrs()
     {
         $attrs["headers"] = ["X-Session-ID" => $this->config->session];
         return $attrs;
@@ -20,7 +22,7 @@ class PhotoPrism extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $attrs = $this->get_request_attrs();
+        $attrs = $this->getRequestAttrs();
         $test = parent::appTest($this->url("api/v1/config"), $attrs);
         echo $test->status;
     }
@@ -28,7 +30,7 @@ class PhotoPrism extends \App\SupportedApps implements \App\EnhancedApps
     public function livestats()
     {
         $status = "inactive";
-        $attrs = $this->get_request_attrs();
+        $attrs = $this->getRequestAttrs();
         $res = parent::execute($this->url("api/v1/config"), $attrs);
         $details = json_decode($res->getBody(), true);
         $data = [];
