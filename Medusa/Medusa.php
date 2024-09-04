@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Medusa;
+<?php
+
+namespace App\SupportedApps\Medusa;
 
 class Medusa extends \App\SupportedApps
 {

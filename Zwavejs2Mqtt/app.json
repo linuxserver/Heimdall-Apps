@@ -1,0 +1,10 @@
+{
+    "appid": "6aea59b2531c720a59e1ab6e9991a0ecce9ec847",
+    "name": "Zwavejs2Mqtt",
+    "website": "https://zwave-js.github.io/zwavejs2mqtt/#/",
+    "license": "MIT License",
+    "description": "A full-featured Z-Wave to MQTT Gateway that exposes Z-Wave devices to an MQTT broker in a fully configurable manner. Zwavejs2Mqtt supports HTTPS and user authentication, provides a map showing how nodes communicate with the Z-Wave controller, integrates directly with Home Assistant, and much more!",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "zwavejs2mqtt.svg"
+}

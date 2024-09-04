@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Robonect;
+<?php
 
-class Robonect extends \App\SupportedApps {
+namespace App\SupportedApps\Robonect;
 
+class Robonect extends \App\SupportedApps
+{
 }

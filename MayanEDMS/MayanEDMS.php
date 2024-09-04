@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\MayanEDMS;
+<?php
+
+namespace App\SupportedApps\MayanEDMS;
 
 class MayanEDMS extends \App\SupportedApps
 {

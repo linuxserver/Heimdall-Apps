@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Infoblox;
+<?php
+
+namespace App\SupportedApps\Infoblox;
 
 class Infoblox extends \App\SupportedApps
 {

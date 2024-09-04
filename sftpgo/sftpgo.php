@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\sftpgo;
+<?php
 
-class sftpgo extends \App\SupportedApps
+namespace App\SupportedApps\sftpgo;
+
+class sftpgo extends \App\SupportedApps // phpcs:ignore
 {
 }

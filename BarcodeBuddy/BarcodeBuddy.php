@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\BarcodeBuddy;
+<?php
 
-class BarcodeBuddy extends \App\SupportedApps {
+namespace App\SupportedApps\BarcodeBuddy;
 
+class BarcodeBuddy extends \App\SupportedApps
+{
 }

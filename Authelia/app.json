@@ -1,0 +1,10 @@
+{
+    "appid": "a32b08d97b1615dc27f58b6b17f67624c04e2c4f",
+    "name": "Authelia",
+    "website": "https://www.authelia.com/",
+    "license": "Apache License 2.0",
+    "description": "Authelia is an open source authentication and authorization server protecting modern web applications by collaborating with reverse proxies such as NGINX, Traefik and HAProxy. Consequently, no code is required to protect your apps.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "authelia.png"
+}

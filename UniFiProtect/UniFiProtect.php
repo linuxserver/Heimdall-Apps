@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\UniFiProtect;
+<?php
 
-class UniFiProtect extends \App\SupportedApps {
+namespace App\SupportedApps\UniFiProtect;
 
+class UniFiProtect extends \App\SupportedApps
+{
 }

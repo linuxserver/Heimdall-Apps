@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Keycloak;
+<?php
+
+namespace App\SupportedApps\Keycloak;
 
 class Keycloak extends \App\SupportedApps
 {

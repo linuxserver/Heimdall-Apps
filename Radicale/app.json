@@ -1,0 +1,10 @@
+{
+    "appid": "1a32a3959bddd2c1c26f47b06f7e21c29d48f653",
+    "name": "Radicale",
+    "website": "https://radicale.org/v3.html",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "A simple CalDAV (calendar) and CardDAV (contact) server.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "radicale.svg"
+}

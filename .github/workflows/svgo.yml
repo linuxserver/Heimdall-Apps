@@ -1,3 +1,4 @@
+---
 # GitHub Action uses SVGO to Minify and removeDimensions of SVG files
 name: Optimize SVG Files
 
@@ -14,15 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Optimize SVGs
-        uses: ericcornelissen/svgo-action@v3
+        uses: ericcornelissen/svgo-action@v4
         id: svgo
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           svgo-config: .github/workflows/svgo.config.js
       - name: Commit optimizations
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         if: ${{steps.svgo.outputs.DID_OPTIMIZE}}
         with:
-          commit_message: Optimize ${{steps.svgo.outputs.OPTIMIZED_COUNT}} SVG(s)
+          commit_message: Optimize ${{steps.svgo.outputs.OPTIMIZED_COUNT}} SVG(s) # yamllint disable-line rule:line-length

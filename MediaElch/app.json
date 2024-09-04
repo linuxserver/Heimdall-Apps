@@ -1,0 +1,10 @@
+{
+    "appid": "308beb12199fc0d4689f9aed47b444c098ead787",
+    "name": "MediaElch",
+    "website": "https://www.kvibes.de/mediaelch/",
+    "license": "GNU Lesser General Public License v3.0 or later",
+    "description": "MediaElch is a media manager for Kodi and other media servers. Information about Movies, TV Shows, Concerts and Music are stored as NFO files. Fanarts and metadata are downloaded automatically from various sites including The Movie DB, The TV DB, Videobuster, IMDB and Fanart.tv. Music information is scraped from The Audio DB, All Music and Discogs. TV themes and trailers can also be downloaded.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "MediaElch.png"
+}

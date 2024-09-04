@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\YNAB;
+<?php
+
+namespace App\SupportedApps\YNAB;
 
 class YNAB extends \App\SupportedApps
 {

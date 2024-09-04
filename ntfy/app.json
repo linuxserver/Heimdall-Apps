@@ -1,10 +1,10 @@
 {
-    "appid": "7b0fd23adad7efad51905a8458a5f82d86697ccc",
-    "name": "ntfy",
-    "website": "https://ntfy.sh",
-    "license": "Apache License 2.0",
-    "description": "ntfy is a self-hostable application for sending push notifications to mobile and desktops.",
-    "enhanced": false,
-    "tile_background": "dark",
-    "icon": "ntfy.png"
+  "appid": "794cdf1bdd53d6a98d77ceadd79f647354cd821b",
+  "name": "ntfy",
+  "website": "https://ntfy.sh/",
+  "license": "Apache-2.0, GPL-2.0",
+  "description": "ntfy (pronounced notify) is a simple HTTP-based pub-sub notification service. It allows you to send notifications to your phone or desktop via scripts from any computer, and/or using a REST API. It's infinitely flexible, and 100% free software.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "ntfy.svg"
 }

@@ -1,0 +1,10 @@
+{
+    "appid": "80ae543b72401945334f11915bf93263ce206986",
+    "name": "Asustor",
+    "website": "https://www.asustor.com/",
+    "license": "Commercial",
+    "description": "https://www.asustor.com/",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "asustor.png"
+}

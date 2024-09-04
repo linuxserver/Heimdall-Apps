@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Prometheus;
+<?php
+
+namespace App\SupportedApps\Prometheus;
 
 class Prometheus extends \App\SupportedApps
 {

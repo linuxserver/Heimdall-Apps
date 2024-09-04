@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\ntfy;
+<?php
 
-class ntfy extends \App\SupportedApps {
+namespace App\SupportedApps\ntfy;
 
+class ntfy extends \App\SupportedApps // phpcs:ignore
+{
 }

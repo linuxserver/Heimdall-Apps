@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\StirlingPDF;
+<?php
 
-class StirlingPDF extends \App\SupportedApps {
+namespace App\SupportedApps\StirlingPDF;
 
+class StirlingPDF extends \App\SupportedApps
+{
 }

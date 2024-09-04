@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\ISPConfig;
+<?php
 
-class ISPConfig extends \App\SupportedApps {
+namespace App\SupportedApps\ISPConfig;
 
+class ISPConfig extends \App\SupportedApps
+{
 }

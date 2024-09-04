@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Element;
+<?php
+
+namespace App\SupportedApps\Element;
 
 class Element extends \App\SupportedApps
 {

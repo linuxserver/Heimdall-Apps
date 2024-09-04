@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\FreePBX;
+<?php
+
+namespace App\SupportedApps\FreePBX;
 
 class FreePBX extends \App\SupportedApps
 {

@@ -4,7 +4,7 @@
   "website": "https://mailcow.email",
   "license": "GNU General Public License v3.0 only",
   "description": "Mailcow is a Docker based email server which provides an elegant web interface for managing domains, mailboxes and more.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "mailcow.svg"
 }

@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Splunk;
+<?php
+
+namespace App\SupportedApps\Splunk;
 
 class Splunk extends \App\SupportedApps
 {

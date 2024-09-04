@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\RSSHub;
+<?php
 
-class RSSHub extends \App\SupportedApps {
+namespace App\SupportedApps\RSSHub;
 
+class RSSHub extends \App\SupportedApps
+{
 }

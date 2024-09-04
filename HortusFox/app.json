@@ -1,0 +1,10 @@
+{
+    "appid": "a52d4087451d21d48630f5aca0d48dea56af9954",
+    "name": "HortusFox",
+    "website": "https://www.hortusfox.com/",
+    "license": "MIT License",
+    "description": "Self-hosted collaborative plant management system for your local environment.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "hortusfox.png"
+}

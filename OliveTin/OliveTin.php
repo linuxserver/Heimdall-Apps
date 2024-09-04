@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\OliveTin;
+<?php
 
-class OliveTin extends \App\SupportedApps {
+namespace App\SupportedApps\OliveTin;
 
+class OliveTin extends \App\SupportedApps
+{
 }

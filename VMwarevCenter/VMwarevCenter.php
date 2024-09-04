@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\VMwarevCenter;
+<?php
+
+namespace App\SupportedApps\VMwarevCenter;
 
 class VMwarevCenter extends \App\SupportedApps
 {

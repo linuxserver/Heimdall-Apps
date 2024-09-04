@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\PartKeepr;
+<?php
+
+namespace App\SupportedApps\PartKeepr;
 
 class PartKeepr extends \App\SupportedApps
 {
