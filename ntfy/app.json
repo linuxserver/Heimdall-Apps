@@ -1,0 +1,10 @@
+{
+    "appid": "7b0fd23adad7efad51905a8458a5f82d86697ccc",
+    "name": "ntfy",
+    "website": "https://ntfy.sh",
+    "license": "Apache License 2.0",
+    "description": "ntfy is a self-hostable application for sending push notifications to mobile and desktops.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "ntfy.png"
+}
