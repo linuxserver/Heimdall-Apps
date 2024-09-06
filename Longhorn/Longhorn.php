@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Longhorn;
+<?php
 
-class Longhorn extends \App\SupportedApps {
+namespace App\SupportedApps\Longhorn;
 
+class Longhorn extends \App\SupportedApps
+{
 }
