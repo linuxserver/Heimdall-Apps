@@ -1,0 +1,10 @@
+{
+    "appid": "28818eb9f50c6d5102ad5e63536caa064a4b7c0b",
+    "name": "Slskd",
+    "website": "https://github.com/slskd/slskd",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "A modern client-server application for the Soulseek file sharing network.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "slskd.svg"
+}
