@@ -17,7 +17,7 @@ class Argus extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $test = parent::appTest($this->url('status'));
+        $test = parent::appTest($this->url(endpoint: "/healthcheck"));
         echo $test->status;
     }
 
@@ -34,7 +34,7 @@ class Argus extends \App\SupportedApps implements \App\EnhancedApps
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url) . "/api/v1" . $endpoint;
         return $api_url;
     }
 }
