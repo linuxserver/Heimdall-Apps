@@ -4,7 +4,6 @@ namespace App\SupportedApps\Argus;
 
 class Argus extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
@@ -31,7 +30,6 @@ class Argus extends \App\SupportedApps implements \App\EnhancedApps
         return parent::getLiveStats($status, $data);
         
     }
-
     public function url($endpoint)
     {
         $api_url = parent::normaliseurl($this->config->url) . "/api/v1" . $endpoint;
