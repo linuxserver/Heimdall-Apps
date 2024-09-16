@@ -28,7 +28,6 @@ class Argus extends \App\SupportedApps implements \App\EnhancedApps
 
         $data = [];
         return parent::getLiveStats($status, $data);
-        
     }
     public function url($endpoint)
     {
