@@ -6,7 +6,7 @@
 		{!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
 	</div>
 	<div class="input">
-        <label>Api Key/App Password(v6)</label>
+        <label>Api Key(v5)/App Password(v6)</label>
 		{!! Form::text('config[apikey]', isset($item) && property_exists($item->getconfig(), 'apikey') ? $item->getconfig()->apikey : null, ['placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item']) !!}
 	</div>
 <div class="items">
