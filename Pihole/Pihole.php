@@ -28,8 +28,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
             $test = $this->getInfo();
             if ($test["valid"]) {
                 echo "Successfully communicated with the API";
-            }
-            else {
+            } else {
                 echo "Error while communicating with the API";
             }
         }
