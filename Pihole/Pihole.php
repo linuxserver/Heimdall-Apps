@@ -13,37 +13,33 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 
     public function __construct()
     {
-        //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
+        $this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
     public function test()
     {
         $version = $this->config->version;
+
         if ($version == 5) {
             $test = parent::appTest($this->url("api.php?summaryRaw"));
             echo $test->status;
         }
         if ($version == 6) {
-            $test = $this->login();
-            if ($test->getStatusCode() === 200 && $test->getBody()) {
-                $wk_resp = json_decode($test->getBody());
-                echo "Hello " . $wk_resp->data->username;
-            } else {
-                echo "Failed";
+            $test = $this->getInfo();
+            if ($test["valid"]){
+                echo "Successfully communicated with the API";
+            }else{
+                echo "Error while communicating with the API";
             }
         }
     }
     public function livestats()
     {
-        $status = "inactive";
         $version = $this->config->version;
         
         if ($version == 5) {
             $res = parent::execute($this->url("api.php?summaryRaw"));
             $details = json_decode($res->getBody());
-
-            $data = [];
-
             if ($details) {
                 $data["ads_blocked"] = number_format(
                     $details->ads_blocked_today
@@ -52,36 +48,38 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
                     $details->ads_percentage_today,
                     1
                 );
+                $data["gravity"] = number_format(
+                    $details->domains_being_blocked,
+                    0,
+                    '',
+                    '.'
+                );
+
                 $status = "active";
             }
         }
 
         if ($version == 6) {
-            $auth = $this->login();
+            $results = $this->getInfo();
 
-            $attrs = [
-                "body" => "sid:" . $auth->sid,
-                "headers" => [
-                    "content-type" => "application/json",
-                    "accept" => "application/json",
-                ],
-            ];
-            $result = parent::execute($this->url("api/stats/summary"),$attrs);
+            $data["ads_blocked"] = $results["queries"];
+            $data["ads_percentage"] = $results["percent"];
+            $data["gravity"] = $results["gravity"];
 
-            $data["ads_blocked"] = $result->blocked;
-            $data["ads_percentage"] = $result->percent_blocked;
+            $status = "active";
         }
         return parent::getLiveStats($status, $data);
     }
+
     public function url($endpoint)
     {
         $version = $this->config->version;
         if ($version == 5){
-            $apiKey = $this->config->apikey;
+            $apikey = $this->config->apikey;
             $api_url = parent::normaliseurl($this->config->url) . $endpoint;
 
-            if ($apiKey) {
-                $api_url .= "&auth=" . $apiKey;
+            if ($apikey) {
+                $api_url .= "&auth=" . $apikey;
             }
         }
         if ($version == 6) {
@@ -89,20 +87,54 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
         }
         return $api_url;
     }
-    public function login()
+
+    public function getInfo()
     {
         $attrs = [
-            "body" => "password:" . $this->config->apiKey,
+            "body" => json_encode(['password' => $this->config->apikey]),
+            "cookies" => $this->jar,
             "headers" => [
-                "content-type" => "application/json",
-                "accept" => "application/json",
+                "Content-Type" => "application/json",
+                "Accept" => "application/json",
             ],
         ];
-        return parent::execute(
-            $this->url("api/auth"),
-            $attrs,
-            null,
-            "POST"
-        );
+
+        // Create session and retreave data
+        $response = parent::execute($this->url("api/auth"), $attrs, null, "POST");
+        $auth = json_decode($response->getBody());
+
+        $attrsid = [
+            "body" => json_encode(['sid' => $auth->session->sid]),
+            "cookies" => $this->jar,
+            "headers" => [
+                "Content-Type" => "application/json",
+                "Accept" => "application/json",
+            ],
+        ];
+
+        // Get queries data
+        $responsesummary = parent::execute($this->url("api/stats/summary"), $attrsid, null, "GET");
+        $datasummary = json_decode($responsesummary->getBody());
+
+        // After retrieving the data the session is closed to declutter
+        parent::execute($this->url("api/auth"), $attrsid, null, "DELETE");
+
+        // Extract data from the response
+        $valid = $auth->session->valid;
+        $validity = $auth->session->validity;
+        $message = $auth->session->message;
+        $queriesblocked = $datasummary->queries->blocked;
+        $percentblocked = round($datasummary->queries->percent_blocked, 2);
+        $gravity = number_format($datasummary->gravity->domains_being_blocked, 0, '', '.');
+        
+        $data = [
+            'valid'    => $valid,
+            'validity' => $validity,
+            'message'  => $message,
+            'queries'  => $queriesblocked,
+            'percent'  => $percentblocked,
+            'gravity'  => $gravity
+        ];
+        return $data;
     }
 }
