@@ -13,7 +13,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 
     public function __construct()
     {
-        $this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
+        $this->jar = new \GuzzleHttp\Cookie\CookieJar(); // Uncomment if cookies need to be set
     }
 
     public function test()
@@ -26,9 +26,9 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
         }
         if ($version == 6) {
             $test = $this->getInfo();
-            if ($test["valid"]){
+            if ($test["valid"]) {
                 echo "Successfully communicated with the API";
-            }else{
+            }else {
                 echo "Error while communicating with the API";
             }
         }
@@ -36,7 +36,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
     public function livestats()
     {
         $version = $this->config->version;
-        
+
         if ($version == 5) {
             $res = parent::execute($this->url("api.php?summaryRaw"));
             $details = json_decode($res->getBody());
@@ -74,7 +74,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
     public function url($endpoint)
     {
         $version = $this->config->version;
-        if ($version == 5){
+        if ($version == 5) {
             $apikey = $this->config->apikey;
             $api_url = parent::normaliseurl($this->config->url) . $endpoint;
 
@@ -126,7 +126,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
         $queriesblocked = $datasummary->queries->blocked;
         $percentblocked = round($datasummary->queries->percent_blocked, 2);
         $gravity = number_format($datasummary->gravity->domains_being_blocked, 0, '', '.');
-        
+
         $data = [
             'valid'    => $valid,
             'validity' => $validity,
