@@ -90,27 +90,53 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 
     public function getInfo()
     {
-        $attrs = [
-            "body" => json_encode(['password' => $this->config->apikey]),
-            "cookies" => $this->jar,
-            "headers" => [
-                "Content-Type" => "application/json",
-                "Accept" => "application/json",
-            ],
-        ];
+        $ignoreTls = $this->getConfigValue("ignore_tls", false);
+        if ($ignoreTls) {
+            $attrs = [
+                "body" => json_encode(['password' => $this->config->apikey]),
+                "cookies" => $this->jar,
+                "verify" => false,
+                "headers" => [
+                    "Content-Type" => "application/json",
+                    "Accept" => "application/json",
+                ],
+            ];
+            $attrsid["verify"] = false;
+        } else {
+            $attrs = [
+                "body" => json_encode(['password' => $this->config->apikey]),
+                "cookies" => $this->jar,
+                "headers" => [
+                    "Content-Type" => "application/json",
+                    "Accept" => "application/json",
+                ],
+            ];
+        }
 
         // Create session and retreave data
         $response = parent::execute($this->url("api/auth"), $attrs, null, "POST");
         $auth = json_decode($response->getBody());
 
-        $attrsid = [
-            "body" => json_encode(['sid' => $auth->session->sid]),
-            "cookies" => $this->jar,
-            "headers" => [
-                "Content-Type" => "application/json",
-                "Accept" => "application/json",
-            ],
-        ];
+        if ($ignoreTls) {
+            $attrsid = [
+                "body" => json_encode(['sid' => $auth->session->sid]),
+                "cookies" => $this->jar,
+                "verify" => false,
+                "headers" => [
+                    "Content-Type" => "application/json",
+                    "Accept" => "application/json",
+                ],
+            ];
+        } else {
+            $attrsid = [
+                "body" => json_encode(['sid' => $auth->session->sid]),
+                "cookies" => $this->jar,
+                "headers" => [
+                    "Content-Type" => "application/json",
+                    "Accept" => "application/json",
+                ],
+            ];
+        }
 
         // Get queries data
         $responsesummary = parent::execute($this->url("api/stats/summary"), $attrsid, null, "GET");
@@ -136,5 +162,11 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
             'gravity'  => $gravity
         ];
         return $data;
+    }
+    public function getConfigValue($key, $default = null)
+    {
+        return isset($this->config) && isset($this->config->$key)
+            ? $this->config->$key
+            : $default;
     }
 }
