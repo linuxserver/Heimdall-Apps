@@ -1,0 +1,10 @@
+{
+    "appid": "3219c51b1c1d47f0771ef6a7b7f1e568505ea9cf",
+    "name": "TeslaLogger",
+    "website": "https://github.com/bassmaster187/TeslaLogger",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "TeslaLogger is a self hosted data logger for your Tesla Model S/3/X/Y. Currently it supports RaspberryPi 3B, 3B+, 4B, Docker and Synology NAS.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "teslalogger.png"
+}
