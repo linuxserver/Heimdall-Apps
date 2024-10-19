@@ -4,7 +4,6 @@ namespace App\SupportedApps\Autobrr;
 
 class Autobrr extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
@@ -29,12 +28,11 @@ class Autobrr extends \App\SupportedApps implements \App\EnhancedApps
 
         $data = [];
         return parent::getLiveStats($status, $data);
-        
     }
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
     }
 }
