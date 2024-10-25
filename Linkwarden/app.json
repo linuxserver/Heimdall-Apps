@@ -1,0 +1,10 @@
+{
+    "appid": "2566a0e890babb6f22648c25e5c6aba5530394d3",
+    "name": "Linkwarden",
+    "website": "https://linkwarden.app/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Linkwarden is a self-hosted, open-source collaborative bookmark manager to collect, organize and archive webpages.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "linkwarden.png"
+}
