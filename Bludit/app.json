@@ -1,0 +1,10 @@
+{
+    "appid": "c1aa84341ce69af2e1462008358e80cb12a1ef4d",
+    "name": "Bludit",
+    "website": "https://www.bludit.com/",
+    "license": "MIT License",
+    "description": "Bludit is a flat file content management system that can be used to set up websites or blogs. JSON files are used to store the content.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "bludit.svg"
+}
