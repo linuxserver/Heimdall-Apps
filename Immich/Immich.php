@@ -22,7 +22,7 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
                 "x-api-key" => $this->config->api_key,
             ],
         ];
-        $test = parent::appTest($this->url("server-info/statistics"), $attrs);
+        $test = parent::appTest($this->url("server/statistics"), $attrs);
         echo $test->status;
     }
 
@@ -35,7 +35,7 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
                 "x-api-key" => $this->config->api_key,
             ],
         ];
-        $res = parent::execute($this->url("server-info/statistics"), $attrs);
+        $res = parent::execute($this->url("server/statistics"), $attrs);
         $details = json_decode($res->getBody());
 
         $data = [];
