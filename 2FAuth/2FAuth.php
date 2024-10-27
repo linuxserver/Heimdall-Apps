@@ -1,7 +1,7 @@
 <?php
 
-namespace App\SupportedApps\FAuth;
+namespace App\SupportedApps\2FAuth;
 
-class FAuth extends \App\SupportedApps
+class 2FAuth extends \App\SupportedApps
 {
 }
