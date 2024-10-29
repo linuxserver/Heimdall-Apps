@@ -4,17 +4,7 @@ namespace App\SupportedApps\Diaspora;
 
 class Diaspora extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
-
-    //protected $login_first = true; // Uncomment if api requests need to be authed first
-    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
-
-    public function __construct()
-    {
-        //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
-    }
-
     private function getBaseDomain($url) {
         $regex = '/^(https?:)/i';
         $baseurl = preg_replace($regex, '', $url);
@@ -26,7 +16,7 @@ class Diaspora extends \App\SupportedApps implements \App\EnhancedApps
         $podurl = parent::normaliseurl($this->config->url);
         $podurl = $this->getBaseDomain($podurl);
         $query = 'query{
-                    node(domain: "'.$podurl.'"){
+                    node(domain: "' . $podurl . '"){
                       id
                       name
                       metatitle
@@ -95,7 +85,6 @@ class Diaspora extends \App\SupportedApps implements \App\EnhancedApps
         $rdata = json_decode($res, true);
         return $rdata;
     }
-
     public function test()
     {
         try {
@@ -105,7 +94,6 @@ class Diaspora extends \App\SupportedApps implements \App\EnhancedApps
             echo $err->getMessage();
         }
     }
-
     public function livestats()
     {
         $status = "inactive";
@@ -113,36 +101,33 @@ class Diaspora extends \App\SupportedApps implements \App\EnhancedApps
         $RawDetails = $this->fetchApi();
         $nodeCount = count($RawDetails['data']['node']);
         if ($nodeCount > 0) {
-        $Details = $RawDetails['data']['node'][0];
-        $data = [
-            "COMMENT_COUNTS" => $Details["comment_counts"],
-            "LOCAL_POSTS" => $Details["local_posts"],
-            "TOTAL_USERS" => $Details["total_users"],
-            "ACTIVE_USERS_MONTHLY" => $Details["active_users_monthly"],
-            "ACTIVE_USERS_HALFYEAR" => $Details["active_users_halfyear"],
-            "SIGNUP" => $Details["signup"],
-        ];
+            $Details = $RawDetails['data']['node'][0];
+            $data = [
+                "COMMENT_COUNTS" => $Details["comment_counts"],
+                "LOCAL_POSTS" => $Details["local_posts"],
+                "TOTAL_USERS" => $Details["total_users"],
+                "ACTIVE_USERS_MONTHLY" => $Details["active_users_monthly"],
+                "ACTIVE_USERS_HALFYEAR" => $Details["active_users_halfyear"],
+                "SIGNUP" => $Details["signup"],
+            ];
 
-        foreach ($this->config->availablestats as $stat) {
-            $newstat = new \stdClass();
-            $newstat->title = self::getAvailableStats()[$stat];
-            $newstat->value = number_format($data[strtoupper($stat)]);
-            $data["visiblestats"][] = $newstat;
-        }
-        $status = "active";
-        return parent::getLiveStats($status, $data);
+            foreach ($this->config->availablestats as $stat) {
+                $newstat = new \stdClass();
+                $newstat->title = self::getAvailableStats()[$stat];
+                $newstat->value = number_format($data[strtoupper($stat)]);
+                $data["visiblestats"][] = $newstat;
+            }
+            $status = "active";
+            return parent::getLiveStats($status, $data);
         } else {
-            return NULL;
+            return null;
         }
     }
-
-
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
     }
-
     public static function getAvailableStats()
     {
         return [
@@ -199,5 +184,4 @@ class Diaspora extends \App\SupportedApps implements \App\EnhancedApps
             //"protocols" => "Protocols",
         ];
     }
-
 }
