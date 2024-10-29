@@ -3,7 +3,7 @@
     "name": "Diaspora",
     "website": "https://diasporafoundation.org/",
     "license": "GNU Affero General Public License v3.0 only",
-    "description": "A privacy-aware, distributed, open source social network",
+    "description": "A privacy-aware, distributed, open source social network. Limitation: diaspora pod must be available at https://fediverse.observer/!",
     "enhanced": true,
     "tile_background": "light",
     "icon": "diaspora.svg"
