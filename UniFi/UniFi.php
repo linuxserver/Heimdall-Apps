@@ -67,13 +67,14 @@ class UniFi extends \App\SupportedApps
                     // TODO: Update UI to adapt to lack of Switches
                     $data['lan_users'] = isset($detail->num_user) ? $detail->num_user : 0;
                     $data['num_sw'] = isset($detail->num_sw) ? $detail->num_sw : 0;
-
                 }
 
                 if ($detail->subsystem === 'wan') {
                     // Handle lack of GW
                     // TODO: Update UI to adapt to lack of GW
-                    $data['wan_avail'] = isset($detail->uptime_stats->WAN->availability) ? number_format($detail->uptime_stats->WAN->availability, 0) : 0;
+                    $data['wan_avail'] = isset($detail->uptime_stats->WAN->availability)
+                                       ? number_format($detail->uptime_stats->WAN->availability, 0)
+                                       : 0;
                     $data['num_gw'] = isset($detail->num_gw) ? $detail->num_gw : 0;
                 }
             }
