@@ -1,0 +1,10 @@
+{
+    "appid": "a5b7013f56e4bedca9aaa8979a9c209fc5c6a12f",
+    "name": "Listmonk",
+    "website": "https://listmonk.app/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Listmonk is a self-hosted, high performance one-way mailing list and newsletter manager. It comes as a standalone binary and the only dependency is a Postgres database.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "listmonk.png"
+}
