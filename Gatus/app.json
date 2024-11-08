@@ -1,0 +1,10 @@
+{
+    "appid": "df713b8b4238000416a2a9f31e0e7697b31bec56",
+    "name": "Gatus",
+    "website": "https://gatus.io/",
+    "license": "Apache License 2.0",
+    "description": "Gatus is a developer-oriented health dashboard that gives you the ability to monitor your services using HTTP, ICMP, TCP, and even DNS queries as well as evaluate the result of said queries by using a list of conditions on values like the status code, the response time, the certificate expiration, the body and many others. The icing on top is that each of these health checks can be paired with alerting via Slack, PagerDuty, Discord, Twilio and more.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "gatus.png"
+}
