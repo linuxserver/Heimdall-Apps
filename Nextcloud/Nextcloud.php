@@ -32,7 +32,7 @@ class Nextcloud extends \App\SupportedApps implements \App\EnhancedApps
         $username = $this->config->username;
 
         $test = parent::appTest(
-            $this->url("/ocs/v1.php/cloud/users/" . $username . "?format=json"),
+            $this->url("/ocs/v2.php/cloud/users/" . $username . "?format=json"),
             $this->getHeaders()
         );
         echo $test->status;
@@ -44,7 +44,7 @@ class Nextcloud extends \App\SupportedApps implements \App\EnhancedApps
 
         $username = $this->config->username;
         $res = parent::execute(
-            $this->url("/ocs/v1.php/cloud/users/" . $username . "?format=json"),
+            $this->url("/ocs/v2.php/cloud/users/" . $username . "?format=json"),
             $this->getHeaders()
         );
         $details = json_decode($res->getBody());
