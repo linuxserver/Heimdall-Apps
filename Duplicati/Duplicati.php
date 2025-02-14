@@ -30,31 +30,44 @@ class Duplicati extends \App\SupportedApps implements \App\EnhancedApps
     public function auth()
     {
         // Auth flow references
-        // https://github.com/duplicati/duplicati/blob/master/Duplicati/Server/webroot/login/login.js
-        // https://github.com/Pectojin/duplicati-client/blob/master/auth.py
+        // https://github.com/duplicati/duplicati/blob/master/Duplicati/WebserverCore/Endpoints/V1/Auth.cs
+        // https://github.com/duplicati/duplicati/blob/master/Duplicati/WebserverCore/Middlewares/JWTProvider.cs
+        $body = json_encode(["password" => $this->config->password]);
 
-        $noncedPassword = $this->getNoncedPassword($this->config->password);
 
-        $passAttrs = [
-            "body" => "password=" . urlencode($noncedPassword),
-            "cookies" => $this->jar,
+        $vars = [
+            "http_errors" => false,
+            "timeout" => 5,
+            "body" => $body,
+            "cookies" => $this->jar,  // Store cookies for session handling
             "headers" => [
-                "content-type" => "application/x-www-form-urlencoded"
+                "Content-Type" => "application/json",
             ],
         ];
 
-        $passResponse = parent::execute(
-            $this->url("login.cgi"),
-            $passAttrs,
-            null,
+
+        $result = parent::execute(
+            $this->url("api/v1/auth/login"),
+            [],
+            $vars,
             "POST"
         );
 
-        if (null === $passResponse || $passResponse->getStatusCode() !== 200) {
+        if ($result === null) {
+            throw new Exception("Could not connect to Duplicati");
+        }
+
+        $responseBody = $result->getBody()->getContents();
+
+
+        $response = json_decode($responseBody, true);
+
+        if (null === $response || $result->getStatusCode() !== 200 || !isset($response['AccessToken'])) {
             throw new Exception("Error logging in");
         }
 
-        return $passResponse;
+        $this->config->jwt = $response['AccessToken']; // Store the token correctly
+        return $response['AccessToken'];
     }
 
     public function livestats()
@@ -85,65 +98,14 @@ class Duplicati extends \App\SupportedApps implements \App\EnhancedApps
         return $api_url;
     }
 
-    private function getNoncedPassword($password)
-    {
-
-        $nonceDetails = $this->getNonce();
-
-        $nonce = $nonceDetails["Nonce"];
-        $salt = $nonceDetails["Salt"];
-
-        // Prepare nonced+salted password
-        $encodedPassword = mb_convert_encoding($password, 'UTF-8', 'ISO-8859-1');
-
-        $saltedPasssword =  $encodedPassword . base64_decode($salt);
-
-        $hashedSaltedPassword = hash('sha256', $saltedPasssword, true);
-
-        $nonceAndPass = base64_decode($nonce) . $hashedSaltedPassword;
-
-        $hashedNoncedPassword = hash('sha256', $nonceAndPass, true);
-
-        $encodedHashedNoncedPassword = base64_encode($hashedNoncedPassword);
-
-        return $encodedHashedNoncedPassword;
-    }
-
-    private function getNonce()
-    {
-        $nonceAttrs = [
-            "body" => "get-nonce=1",
-            "cookies" => $this->jar,
-            "headers" => [
-                "content-type" => "application/x-www-form-urlencoded"
-            ],
-        ];
-
-        $nonceResponse = parent::execute(
-            $this->url("login.cgi"),
-            $nonceAttrs,
-            null,
-            "POST"
-        );
-
-        if (null === $nonceResponse || $nonceResponse->getStatusCode() !== 200) {
-            throw new Exception("Error getting nonce");
-        }
-
-        $nonceBody = $nonceResponse->getBody();
-        $nonceBodyData = $nonceBody->read(50 * 1024);
-        $nonceDetails = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $nonceBodyData), true);
-
-        return $nonceDetails;
-    }
 
     private function getServerState()
     {
         $attrs = [
             "cookies" => $this->jar,
             "headers" => [
-                "content-type" => "application/json",
-                "X-XSRF-Token" => urldecode($this->jar->getCookieByName("xsrf-token")->getValue())
+                "Content-Type" => "application/json",
+                "Authorization" => "Bearer " . $this->config->jwt,  // Add JWT token
             ],
         ];
         $result = parent::execute(
@@ -197,11 +159,11 @@ class Duplicati extends \App\SupportedApps implements \App\EnhancedApps
 
         // If time1 > time2 then swap the 2 values
         if ($time1 > $time2) {
-            list( $time1, $time2 ) = array( $time2, $time1 );
+            list($time1, $time2) = array($time2, $time1);
         }
 
         // Set up intervals and diffs arrays
-        $intervals = array( 'year', 'month', 'day', 'hour', 'minute', 'second' );
+        $intervals = array('year', 'month', 'day', 'hour', 'minute', 'second');
         $diffs = array();
 
         foreach ($intervals as $interval) {
@@ -219,7 +181,7 @@ class Duplicati extends \App\SupportedApps implements \App\EnhancedApps
             }
 
             $time1 = strtotime("+" . $looped . " " . $interval, $time1);
-            $diffs[ $interval ] = $looped;
+            $diffs[$interval] = $looped;
         }
 
         $count = 0;
