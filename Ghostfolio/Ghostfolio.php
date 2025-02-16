@@ -79,7 +79,6 @@ class Ghostfolio extends \App\SupportedApps implements \App\EnhancedApps
             $details["visiblestats"][] = $stat;
         }
         return parent::getLiveStats($status, $details);
-
     }
 
 
@@ -117,6 +116,4 @@ class Ghostfolio extends \App\SupportedApps implements \App\EnhancedApps
             "currentNetWorth" => "Net Worth",
         ];
     }
-
-
 }
