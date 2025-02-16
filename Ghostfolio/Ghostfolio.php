@@ -6,7 +6,6 @@ use Exception;
 
 class Ghostfolio extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
 
     public function __construct()
@@ -75,7 +74,12 @@ class Ghostfolio extends \App\SupportedApps implements \App\EnhancedApps
             $stat = new \stdClass();
             $stat->title = self::getAvailableStats()[$key];
             $value = $data[$key] ?? null;
-            $stat->value = is_numeric($value) ? rtrim(rtrim(number_format($value, 1, decimal_separator: '.', thousands_separator: ''), characters: '0'), characters: '.') : substr(string: $value, offset: 0, length: 1);
+            $stat->value = is_numeric($value)
+                ? rtrim(
+                    rtrim(number_format($value, 1, decimal_separator: '.', thousands_separator: ''), characters: '0'),
+                    characters: '.'
+                )
+                : substr(string: $value, offset: 0, length: 1);
             $details["visiblestats"][] = $stat;
         }
         return parent::getLiveStats($status, $details);
