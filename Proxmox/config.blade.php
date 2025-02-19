@@ -32,7 +32,7 @@
     <div class="input">
         <label>{{ __('app.apps.apikey') }}</label>
         {!! Form::input('password', 'config[token_value]', isset($item) ? $item->getconfig()->token_value : null, ['placeholder' => '01234567-89ab-cdef-0123-456789abcdef', 'data-config' => 'token_value', 'class' => 'form-control config-item']) !!}
-        <p style="font-size: .8em;">Requires at least <code>Sys.Audit</code> permission for <code>/nodes</code> path (and propagated).</p>
+        <p style="font-size: .8em;">Requires at least <code>Sys.Audit</code> permission for <code>/nodes</code> path and <code>VM.Audit</code> permission for <code>/vms</code>. Both need to be propagated.</p>
     </div>
     <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
