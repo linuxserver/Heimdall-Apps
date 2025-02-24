@@ -48,7 +48,7 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
                     $details->ads_percentage_today,
                     1
                 );
-                
+
                 $status = "active";
             }
         }
