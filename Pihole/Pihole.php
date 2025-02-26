@@ -29,14 +29,12 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
             if ($test["valid"]) {
                 echo "Successfully communicated with the API";
             } else {
-                echo "Error while communicating with the API: " . $test["message"];
+                echo "Error while communicating with the API";
             }
         }
     }
     public function livestats()
     {
-        $data = [];
-        $status = "inactive";
         $version = $this->config->version;
 
         if ($version == 5) {
@@ -50,12 +48,6 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
                     $details->ads_percentage_today,
                     1
                 );
-                $data["gravity"] = number_format(
-                    $details->domains_being_blocked,
-                    0,
-                    '',
-                    '.'
-                );
 
                 $status = "active";
             }
@@ -64,13 +56,10 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
         if ($version == 6) {
             $results = $this->getInfo();
 
-            if ($results["valid"]) {
-                $data["ads_blocked"] = $results["queries"];
-                $data["ads_percentage"] = $results["percent"];
-                $data["gravity"] = $results["gravity"];
+            $data["ads_blocked"] = $results["queries"];
+            $data["ads_percentage"] = $results["percent"];
 
-                $status = "active";
-            }
+            $status = "active";
         }
         return parent::getLiveStats($status, $data);
     }
@@ -117,23 +106,9 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
             ];
         }
 
-        // Create session and retrieve data
+        // Create session and retreave data
         $response = parent::execute($this->url("api/auth"), $attrs, null, "POST");
         $auth = json_decode($response->getBody());
-
-        if (!$auth->session->valid) {
-        
-            $data = [
-                'valid'    => false,
-                'validity' => -1,
-                'message'  => $auth->session->message,
-                'queries'  => 0,
-                'percent'  => 0,
-                'gravity'  => 0
-            ];
-
-            return $data;
-        }
 
         if ($ignoreTls) {
             $attrsid = [
@@ -167,29 +142,18 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
         $valid = $auth->session->valid;
         $validity = $auth->session->validity;
         $message = $auth->session->message;
-
-        if (!$auth->session->valid) {
-            $queriesblocked = 0;
-            $percentblocked = 0;
-            $gravity = 0;
-        } else {
-            $queriesblocked = $datasummary->queries->blocked;
-            $percentblocked = round($datasummary->queries->percent_blocked, 2);
-            $gravity = number_format($datasummary->gravity->domains_being_blocked, 0, '', '.');
-        }
+        $queriesblocked = $datasummary->queries->blocked;
+        $percentblocked = round($datasummary->queries->percent_blocked, 2);
 
         $data = [
             'valid'    => $valid,
             'validity' => $validity,
             'message'  => $message,
             'queries'  => $queriesblocked,
-            'percent'  => $percentblocked,
-            'gravity'  => $gravity
+            'percent'  => $percentblocked
         ];
-
         return $data;
     }
-
     public function getConfigValue($key, $default = null)
     {
         return isset($this->config) && isset($this->config->$key)
