@@ -48,12 +48,6 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
                     $details->ads_percentage_today,
                     1
                 );
-                $data["gravity"] = number_format(
-                    $details->domains_being_blocked,
-                    0,
-                    '',
-                    '.'
-                );
 
                 $status = "active";
             }
@@ -64,7 +58,6 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
 
             $data["ads_blocked"] = $results["queries"];
             $data["ads_percentage"] = $results["percent"];
-            $data["gravity"] = $results["gravity"];
 
             $status = "active";
         }
@@ -151,15 +144,13 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
         $message = $auth->session->message;
         $queriesblocked = $datasummary->queries->blocked;
         $percentblocked = round($datasummary->queries->percent_blocked, 2);
-        $gravity = number_format($datasummary->gravity->domains_being_blocked, 0, '', '.');
 
         $data = [
             'valid'    => $valid,
             'validity' => $validity,
             'message'  => $message,
             'queries'  => $queriesblocked,
-            'percent'  => $percentblocked,
-            'gravity'  => $gravity
+            'percent'  => $percentblocked
         ];
         return $data;
     }
