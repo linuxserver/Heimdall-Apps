@@ -115,7 +115,6 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
         $auth = json_decode($response->getBody());
 
         if (!$auth->session->valid) {
-
             $data = [
                 'valid'    => false,
                 'validity' => -1,
@@ -123,7 +122,6 @@ class Pihole extends \App\SupportedApps implements \App\EnhancedApps
                 'queries'  => 0,
                 'percent'  => 0
             ];
-
             return $data;
         }
 
