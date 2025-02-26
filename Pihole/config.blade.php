@@ -2,7 +2,7 @@
 <div class="items">
 	<input type="hidden" data-config="dataonly" class="config-item" name="config[dataonly]" value="1" />
 	<div class="input">
-		<label>{{ strtoupper(__('app.url')) }} (for v6 use https)</label>
+		<label>{{ strtoupper(__('app.url')) }}</label>
 		{!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
 	</div>
 	<div class="input">
