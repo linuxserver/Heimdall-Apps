@@ -1,8 +1,8 @@
 <?php
 
-namespace App\SupportedApps\ROMM;
+namespace App\SupportedApps\RomM;
 
-class ROMM extends \App\SupportedApps implements \App\EnhancedApps
+class RomM extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
@@ -33,7 +33,7 @@ class ROMM extends \App\SupportedApps implements \App\EnhancedApps
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
     }
 
