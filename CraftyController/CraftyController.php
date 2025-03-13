@@ -127,7 +127,7 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
             $value = (float)$matches[1];
             $unit = $matches[2];
 
-            return $value * ($units[$unit] ?? 1);
+            return round($value * ($units[$unit] ?? 1), 1);
         }
 
         return false; // Invalid format
