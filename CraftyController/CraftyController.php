@@ -4,7 +4,6 @@ namespace App\SupportedApps\CraftyController;
 
 class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
 
     private $token = null;
@@ -18,17 +17,16 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
     }
 
     public function test()
-    {   
-        $test = parent::appTest($this->url('api/v2/auth/login'), $this->auth_attrs());
+    {
+        $test = parent::appTest($this->url('api/v2/auth/login'), $this->authAttrs());
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = "inactive";
-        $res = parent::execute($this->url('api/v2/auth/login'), $this->auth_attrs());
+        $res = parent::execute($this->url('api/v2/auth/login'), $this->authAttrs());
         $data = json_decode($res->getBody());
-        
         if ($data->status == 'ok') {
             $this->token = $data->data->token;
         }
@@ -41,19 +39,21 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
         $online = 0;
 
         foreach ($details->data as $server) {
-            $server_res = parent::execute($this->url('api/v2/servers/' . $server->server_id . '/stats'), attrs: $this->attrs(), overridemethod: 'GET');
+            $server_res = parent::execute($this->url('api/v2/servers/' . $server->server_id . '/stats'),
+                                          attrs: $this->attrs(), 
+                                          overridemethod: 'GET');
             $server_details = json_decode($server_res->getBody());
-            if ($server_details->data->running == True)
+            if ($server_details->data->running == true) {
                 $online++;
+            }
         }
 
         $vars['servers_online'] = $online;
 
         return parent::getLiveStats($status, $vars);
-        
     }
 
-    private function auth_attrs()
+    private function authAttrs()
     {
         return [
             "body" => json_encode([
@@ -64,7 +64,7 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
         ];
     }
 
-    
+
     public function attrs()
     {
         $attrs["headers"] = [
@@ -78,7 +78,7 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
     }
 }
