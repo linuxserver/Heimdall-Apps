@@ -1,10 +1,10 @@
 <ul class="livestats">
     <li>
-        <span class="title">servers</span>
-        <strong>{!! $servers_total !!}</strong>
+        <span class="title">servers: {!! $servers_total !!}</span>
+        <span class="title">players: {!! $players_online !!}</span>
     </li>
     <li>
-        <span class="title">online</span>
-        <strong>{!! $servers_online !!}</strong>
+        <span class="title">online: {!! $servers_online !!}</span>
+        <span class="title">{!! $mem !!} GB</span>
     </li>
 </ul>
