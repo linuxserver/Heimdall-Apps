@@ -39,9 +39,11 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
         $online = 0;
 
         foreach ($details->data as $server) {
-            $server_res = parent::execute($this->url('api/v2/servers/' . $server->server_id . '/stats'),
-                                          attrs: $this->attrs(), 
-                                          overridemethod: 'GET');
+            $server_res = parent::execute(
+                $this->url('api/v2/servers/' . $server->server_id . '/stats'),
+                attrs: $this->attrs(),
+                overridemethod: 'GET'
+            );
             $server_details = json_decode($server_res->getBody());
             if ($server_details->data->running == true) {
                 $online++;
