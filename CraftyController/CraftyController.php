@@ -122,14 +122,14 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
             'TB' => 1024,                     // Convert TB to GB
             'PB' => 1024 * 1024,              // Convert PB to GB
         ];
-    
+
         if (preg_match('/^([\d\.]+)\s*([KMGTP]?B)$/i', strtoupper($size), $matches)) {
             $value = (float)$matches[1];
             $unit = $matches[2];
-    
+
             return $value * ($units[$unit] ?? 1);
         }
-    
+
         return false; // Invalid format
     }
 }
