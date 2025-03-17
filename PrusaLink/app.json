@@ -1,0 +1,10 @@
+{
+    "appid": "e5f6e96e960a08fa8f1fe702b45690cbc789ebc9",
+    "name": "PrusaLink",
+    "website": "https://github.com/prusa3d/Prusa-Link-Web/tree/master",
+    "license": "CNRI Python Open Source GPL Compatible License Agreement",
+    "description": "Website for Prusa Printers to Control and get the current Status of the printer\r\nhttps://github.com/prusa3d/Prusa-Link-Web/blob/master/spec/openapi.yaml",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "prusalink.svg"
+}
