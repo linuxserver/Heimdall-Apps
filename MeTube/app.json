@@ -1,0 +1,10 @@
+{
+    "appid": "d1c308982299c5face7a8b9bcf3f585ae08c13fd",
+    "name": "MeTube",
+    "website": "https://github.com/alexta69/metube",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "MeTube is a self-hosted web GUI for youtube-dl (using the yt-dlp fork) with playlist support. It allows you to download videos from YouTube and dozens of other sites.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "metube.png"
+}
