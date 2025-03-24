@@ -6,7 +6,6 @@ use Carbon\CarbonInterval;
 
 class PrusaLink extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
@@ -28,7 +27,7 @@ class PrusaLink extends \App\SupportedApps implements \App\EnhancedApps
         $status = 'inactive';
         $res = parent::execute($this->url('api/v1/status'), $this->getAttrs());
         $details = json_decode($res->getBody());
-    
+
         // Check if time_remaining exists and convert it
         if (isset($details->job->time_remaining)) {
             $short_time_remaining = $this->secondsToShortTime($details->job->time_remaining);
@@ -51,26 +50,26 @@ class PrusaLink extends \App\SupportedApps implements \App\EnhancedApps
         $data = [
             "state" => $details->printer->state ?? "OFFLINE", // Default state as "OFFLINE"
             "short_time_remaining" => $short_time_remaining,
-            "temp_nozzle" => $temp_nozzle, 
+            "temp_nozzle" => $temp_nozzle,
             "temp_bed" => $temp_bed
         ];
-    
+
         return parent::getLiveStats($status, $data);
     }
-    
+
     private function secondsToShortTime($seconds) {
         return CarbonInterval::seconds($seconds)
             ->cascade()
             ->forHumans([
-                'short' => true,  
+                'short' => true,
                 'join' => ' ', // Use a space instead of "and" or ","
-                'maximumUnit' => 2 
+                'maximumUnit' => 2
             ]);
-    }    
+    }
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url).$endpoint;
+        $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
     }
 
@@ -82,5 +81,4 @@ class PrusaLink extends \App\SupportedApps implements \App\EnhancedApps
             ],
         ];
     }
-
-};
+}
