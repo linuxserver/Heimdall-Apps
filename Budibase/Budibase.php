@@ -4,7 +4,6 @@ namespace App\SupportedApps\Budibase;
 
 class Budibase extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
@@ -25,19 +24,19 @@ class Budibase extends \App\SupportedApps implements \App\EnhancedApps
         $test = parent::appTest($this->url('metrics'), $attrs);
         echo $test->status;
     }
-    
+
     public function decode_response($response)
     {
         $response = explode(PHP_EOL, $response);
         $data = [];
         foreach ($response as $x) {
-           $y = explode(' ', $x); 
-           if (is_array($y) && count($y) == 2) {
-              $data[$y[0]] = $y[1];
-           }
+            $y = explode(' ', $x);
+            if (is_array($y) && count($y) == 2) {
+                $data[$y[0]] = $y[1];
+            }
         }
         return $data;
-    }  
+    }
 
     public function livestats()
     {
@@ -49,7 +48,7 @@ class Budibase extends \App\SupportedApps implements \App\EnhancedApps
         $status = 'inactive';
         $res = parent::execute($this->url('metrics'), $attrs);
         $info = $this->decode_response($res->getBody());
-        
+
         $data = [
             "total" => $info['budibase_tenant_app_count'],
             "active" => $info['budibase_tenant_production_app_count']
@@ -59,7 +58,7 @@ class Budibase extends \App\SupportedApps implements \App\EnhancedApps
         }
 
         return parent::getLiveStats($status, $data);
-        
+
     }
 
     public function url($endpoint)
