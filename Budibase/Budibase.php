@@ -58,12 +58,11 @@ class Budibase extends \App\SupportedApps implements \App\EnhancedApps
         }
 
         return parent::getLiveStats($status, $data);
-
     }
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url, true)."api/public/v1/".$endpoint;
+        $api_url = parent::normaliseurl($this->config->url, true) . "api/public/v1/" . $endpoint;
         return $api_url;
     }
 }
