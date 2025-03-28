@@ -25,7 +25,7 @@ class Budibase extends \App\SupportedApps implements \App\EnhancedApps
         echo $test->status;
     }
 
-    public function decode_response($response)
+    public function decodeResponse($response)
     {
         $response = explode(PHP_EOL, $response);
         $data = [];
@@ -47,7 +47,7 @@ class Budibase extends \App\SupportedApps implements \App\EnhancedApps
         ];
         $status = 'inactive';
         $res = parent::execute($this->url('metrics'), $attrs);
-        $info = $this->decode_response($res->getBody());
+        $info = $this->decodeResponse($res->getBody());
 
         $data = [
             "total" => $info['budibase_tenant_app_count'],
