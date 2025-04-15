@@ -1,0 +1,10 @@
+{
+    "appid": "200fe80f6b54e75f36a0ae671663f47b417de384",
+    "name": "Crafty Controller",
+    "website": "https://craftycontrol.com",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Crafty Controller is a free and open-source Minecraft launcher and manager that allows users to start and administer Minecraft servers from a user-friendly interface.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "craftycontroller.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "b5f16344632fdfe68391a2dc3816ee0edbb1813c",
+    "name": "IT-Tools",
+    "website": "https://it-tools.tech/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Useful tools for developer and people working in IT.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "ittools.png"
+}

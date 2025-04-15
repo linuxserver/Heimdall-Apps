@@ -1,0 +1,10 @@
+{
+    "appid": "b04259bb2c34972e8838c00a48a74ff3fba83247",
+    "name": "Hoarder",
+    "website": "https://hoarder.app/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Quickly save links, notes, and images and hoarder will automatically tag them for you using AI for faster retrieval. Built for the data hoarders out there!",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "hoarder.png"
+}

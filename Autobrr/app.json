@@ -1,0 +1,10 @@
+{
+    "appid": "66506eac84c6980a1beccafa10003ec78da7dd17",
+    "name": "Autobrr",
+    "website": "https://autobrr.com",
+    "license": "Open Public License v1.0",
+    "description": "autobrr is the modern download automation tool for torrents. With inspiration and ideas from tools like trackarr, autodl-irssi and flexget we built one tool that can do it all, and then some.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "autobrr.png"
+}

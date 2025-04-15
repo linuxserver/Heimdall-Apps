@@ -1,0 +1,10 @@
+{
+    "appid": "2960455d20b997408a0ea2b8ae16f334755bfa44",
+    "name": "PlexRipper",
+    "website": "https://www.plexripper.rocks/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "The best cross-platform Plex media downloader there is!",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "plexripper.png"
+}

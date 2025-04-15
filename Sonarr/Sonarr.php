@@ -51,7 +51,7 @@ class Sonarr extends \App\SupportedApps implements \App\EnhancedApps
     public function url($endpoint)
     {
         $api_url =
-            parent::normaliseurl($this->config->url) .
+            parent::normaliseurl($this->config->url, true) .
             "api/v3/" .
             $endpoint .
             "?sortKey=series.title&apikey=" .

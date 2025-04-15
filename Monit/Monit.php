@@ -65,9 +65,15 @@ class Monit extends \App\SupportedApps
             foreach ($data['service'] as $service) {
                 if (isset($service['system'])) {
                     $load = $service['system']['load']['avg05'] ?? 'N/A';
-                    $cpu = isset($service['system']['cpu']['user']) ? $service['system']['cpu']['user'] . '%' : 'N/A';
-                    $memory = isset($service['system']['memory']['percent']) ? $service['system']['memory']['percent'] . '%' : 'N/A';
-                    $swap = isset($service['system']['swap']['percent']) ? $service['system']['swap']['percent'] . '%' : 'N/A';
+                    $cpu = isset($service['system']['cpu']['user'])
+                        ? $service['system']['cpu']['user'] . '%'
+                        : 'N/A';
+                    $memory = isset($service['system']['memory']['percent'])
+                        ? $service['system']['memory']['percent'] . '%'
+                        : 'N/A';
+                    $swap = isset($service['system']['swap']['percent'])
+                        ? $service['system']['swap']['percent'] . '%'
+                        : 'N/A';
                     break;
                 }
             }

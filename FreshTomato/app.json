@@ -1,0 +1,10 @@
+{
+    "appid": "d1df19c8ce35dc448b460c9e9782a4d577b345ee",
+    "name": "FreshTomato",
+    "website": "https://freshtomato.org/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "FreshTomato is an open source firmware project based on Linux, for home and SOHO WiFi routers.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "freshtomato.png"
+}

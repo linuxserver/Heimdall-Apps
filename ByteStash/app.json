@@ -1,0 +1,10 @@
+{
+    "appid": "bdaf9034b558e70fc584d519952bfad13ae8a4f9",
+    "name": "ByteStash",
+    "website": "https://github.com/jordan-dalby/ByteStash",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "ByteStash is a self-hosted web application designed to store, organise, and manage your code snippets efficiently. With support for creating, editing, and filtering snippets, ByteStash helps you keep track of your code in one secure place.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "bytestash.png"
+}

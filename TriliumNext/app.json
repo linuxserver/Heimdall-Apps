@@ -1,0 +1,10 @@
+{
+    "appid": "63d0c2c2a5b5dc9f5eb5ebf32c3a5b3a26d3d047",
+    "name": "TriliumNext",
+    "website": "https://triliumnext.github.io/Docs/",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "TriliumNext Notes is an open-source, cross-platform hierarchical note taking application with focus on building large personal knowledge bases.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "triliumnext.svg"
+}
