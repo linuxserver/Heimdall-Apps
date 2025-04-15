@@ -1,0 +1,10 @@
+{
+    "appid": "636e86d7a1a80e47d1ec19e6782e3700227c7603",
+    "name": "Ghostfolio",
+    "website": "https://ghostfol.io",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "test",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "ghostfolio.png"
+}

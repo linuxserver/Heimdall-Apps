@@ -14,21 +14,29 @@ class PhotoPrism extends \App\SupportedApps implements \App\EnhancedApps
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
+    public function getRequestAttrs()
+    {
+        $attrs["headers"] = ["X-Session-ID" => $this->config->session];
+        return $attrs;
+    }
+
     public function test()
     {
-        $test = parent::appTest($this->url("api/v1/config"));
+        $attrs = $this->getRequestAttrs();
+        $test = parent::appTest($this->url("api/v1/config"), $attrs);
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = "inactive";
-        $res = parent::execute($this->url("api/v1/config"));
+        $attrs = $this->getRequestAttrs();
+        $res = parent::execute($this->url("api/v1/config"), $attrs);
         $details = json_decode($res->getBody(), true);
-
         $data = [];
 
         if ($details) {
+            $status = "active";
             $data["photos"] = number_format($details["count"]["photos"]) ?? 0;
             $data["videos"] = number_format($details["count"]["videos"]) ?? 0;
         }

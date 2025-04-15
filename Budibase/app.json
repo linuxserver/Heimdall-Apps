@@ -1,0 +1,29 @@
+{
+    "appid": "6c51d4f37f544b0327d327d1bade045a7809a4d9",
+    "name": "Budibase",
+    "website": "https://budibase.com/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Budibase is an open-source low-code platform that saves engineers 100s of hours building forms, portals, and approval apps, securely.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "budibase.png",
+    "config": {
+      "type": "apikey",
+      "stat1": {
+        "name": "Total Apps",
+        "url": ":url:api/public/v1/metrics",
+        "key": "budibase_tenant_app_count",
+        "filter": "none",
+        "updateOnChange": "no",
+        "suffix": ""
+      },
+      "stat2": {
+        "name": "Active Apps",
+        "url": ":url:api/public/v1/metrics",
+        "key": "budibase_tenant_production_app_count",
+        "filter": "none",
+        "updateOnChange": "no",
+        "suffix": ""
+    }
+  }
+}

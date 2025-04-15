@@ -48,7 +48,7 @@ class Bazarr extends \App\SupportedApps implements \App\EnhancedApps
     public function url($endpoint)
     {
         $api_url =
-            parent::normaliseurl($this->config->url) .
+            parent::normaliseurl($this->config->url, true) .
             "api/" .
             $endpoint .
             "?apikey=" .

@@ -1,0 +1,10 @@
+{
+    "appid": "255152b7a2da117e832aefd33210bfbaa8534b43",
+    "name": "Notifiarr (Client)",
+    "website": "https://github.com/Notifiarr/notifiarr",
+    "license": "MIT License",
+    "description": "This is the unified client for Notifiarr.com. The client enables content requests from Media Bot in your Discord Server and also provides reports for Plex usage and system health among many other features.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "notifiarrclient.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "047a5440cad6772ebe1a7af1f286a2429f16bf43",
+    "name": "Diaspora",
+    "website": "https://diasporafoundation.org/",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "A privacy-aware, distributed, open source social network",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "diaspora.svg"
+}

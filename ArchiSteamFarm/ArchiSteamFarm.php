@@ -24,7 +24,7 @@ class ArchiSteamFarm extends \App\SupportedApps implements \App\EnhancedApps
         }
 
         $test = parent::appTest(
-            $this->url("status?password=" . $this->config->password)
+            $this->url("status?password=" . urlencode($this->config->password))
         );
         echo $test->status;
     }
@@ -36,7 +36,7 @@ class ArchiSteamFarm extends \App\SupportedApps implements \App\EnhancedApps
         }
         $status = "inactive";
         $res = parent::execute(
-            $this->url("api/bot/asf?password=" . $this->config->password)
+            $this->url("api/bot/asf?password=" . urlencode($this->config->password))
         );
         $details = json_decode($res->getBody());
 

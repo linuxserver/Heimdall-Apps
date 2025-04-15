@@ -1,0 +1,10 @@
+{
+    "appid": "80fd108a3d7a5a3c4e2cd0c4da36c943099e006e",
+    "name": "Argus",
+    "website": "https://github.com/release-argus/Argus",
+    "license": "Apache License 2.0",
+    "description": "Argus is a lightweight monitor to notify of new software releases via Gotify/Slack/other messages and/or WebHooks.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "argus.png"
+}

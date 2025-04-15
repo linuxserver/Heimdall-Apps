@@ -1,0 +1,10 @@
+{
+    "appid": "3e8ad678e7c68ee1d77c5296bb7bfb060159b731",
+    "name": "Cyberchef",
+    "website": "https://github.com/gchq/CyberChef",
+    "license": "Apache License 2.0",
+    "description": "CyberChef is a simple, intuitive web app for carrying out all manner of \"cyber\" operations within a web browser.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "cyberchef.png"
+}
