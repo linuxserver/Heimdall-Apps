@@ -12,7 +12,7 @@ class Tdarr extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $url = $this->url("api/v2/status/");
+        $url = $this->url("api/v2/status");
         $test = parent::appTest($url);
 
         echo $test->status;
@@ -30,7 +30,7 @@ class Tdarr extends \App\SupportedApps implements \App\EnhancedApps
             ],
         ];
 
-        $url = $this->url("api/v2/cruddb/");
+        $url = $this->url("api/v2/cruddb");
         // Setup cURL
         $ch = curl_init($url);
         curl_setopt_array($ch, [

@@ -31,6 +31,23 @@
         </div>
     </div>
     <div class="input">
+        <label>Self Hosted</label>
+        <div class="toggleinput" style="margin-top: 26px; padding-left: 15px;">
+            {!! Form::hidden('config[self_hosted]', 0, ['class' => 'config-item', 'data-config' => 'self_hosted']) !!}
+            <label class="switch">
+                <?php
+                $checked_selfhost = false;
+                if (isset($item) && !empty($item) && isset($item->getconfig()->self_hosted)) {
+                    $checked_selfhost = $item->getconfig()->self_hosted;
+                }
+                $set_checked_selfhost = $checked_selfhost ? ' checked="checked"' : '';
+                ?>
+                <input type="checkbox" class="config-item" data-config="self_hosted" name="config[self_hosted]" value="1" <?php echo $set_checked_selfhost; ?> />
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
     </div>
 </div>
