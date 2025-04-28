@@ -1,0 +1,10 @@
+{
+    "appid": "24301c5e991ab307ddbc92673d2b1f4b501964a9",
+    "name": "Pinchflat",
+    "website": "https://github.com/kieraneglin/pinchflat",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "Pinchflat is a self-hosted app for downloading YouTube content built using yt-dlp. It's designed to be lightweight, self-contained, and easy to use. You set up rules for how to download content from YouTube channels or playlists and it'll do the rest, periodically checking for new content.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "pinchflat.png"
+}
