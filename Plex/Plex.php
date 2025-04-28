@@ -27,7 +27,7 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps
     {
         $status = "inactive";
         $data = [];
-        if($this->config->section_1_key > 0) {
+        if ($this->config->section_1_key > 0) {
             $res = parent::execute($this->url("/library/sections/{$this->config->section_1_key}/all"), $this->attrs());
             $body = $res->getBody();
             $xml = simplexml_load_string(
@@ -42,7 +42,7 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps
             }
         }
 
-        if($this->config->section_2_key > 0) {
+        if ($this->config->section_2_key > 0) {
             $res = parent::execute($this->url("/library/sections/{$this->config->section_2_key}/all"), $this->attrs());
             $body = $res->getBody();
             $xml = simplexml_load_string(
