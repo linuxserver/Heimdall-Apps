@@ -1,0 +1,10 @@
+{
+    "appid": "ac2f9c8aee6a960204b0fb387d33185679217db2",
+    "name": "MySpeed",
+    "website": "https://myspeed.dev",
+    "license": "MIT License",
+    "description": "MySpeed is a speed test analysis software that records your internet speed for up to 30 days.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "myspeed.png"
+}
