@@ -6,6 +6,14 @@
         {!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
     </div>
     <div class="input">
+        <label title="">Section 1 Key (<a href="https://support.plex.tv/articles/201638786-plex-media-server-url-commands/" target="_blank">help?</a>)</label>
+        {!! Form::text('config[section_1_key]', isset($item) ? $item->getconfig()->section_1_key : null, ['placeholder' => __('section_1_key'), 'data-config' => 'section_1_key', 'class' => 'form-control config-i
+    </div>
+    <div class="input">
+        <label title="">Section 2 Key (<a href="https://support.plex.tv/articles/201638786-plex-media-server-url-commands/" target="_blank">help?</a>)</label>
+        {!! Form::text('config[section_2_key]', isset($item) ? $item->getconfig()->section_2_key : null, ['placeholder' => __('section_2_key'), 'data-config' => 'section_2_key', 'class' => 'form-control config-i
+    </div>
+    <div class="input">
         <label title="">Plex Token (<a href="https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/" target="_blank">help?</a>)</label>
         {!! Form::text('config[token]', isset($item) ? $item->getconfig()->token : null, ['placeholder' => __('token'), 'data-config' => 'token', 'class' => 'form-control config-item']) !!}
     </div>

@@ -1,11 +1,11 @@
 <ul class="livestats">
     <li>
-        <span class="title">Recent</span>
-        <strong>{!! $recently_added ?? '' !!}</strong>
+        <span class="title">{!! $section_1_title ?? '' !!}</span>
+        <strong>{!! $section_1_number ?? '' !!}</strong>
     </li>
     <li>
-        <span class="title">On Deck</span>
-        <strong>{!! $on_deck ?? '' !!}</strong>
+        <span class="title">{!! $section_2_title ?? '' !!}</span>
+        <strong>{!! $section_2_number ?? '' !!}</strong>
     </li>
 
 </ul>
