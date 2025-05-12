@@ -57,12 +57,12 @@ class UptimeKuma extends \App\SupportedApps implements \App\EnhancedApps
         ];
 
         foreach ($lines as $line) {
-            if (strlen($line) === 0 || strpos($line, '#') === 0) {
+            if (strlen($line) === 0 || strpos($line, '#') !== 0) {
                 // If the line is empty or is a comment we can skip it
                 continue;
             }
 
-            if (strpos($line, 'monitor_status') === 0) {
+            if (strpos($line, 'monitor_status') !== 0) {
                 // If the line is a metric but not a monitor we can ignore it
                 continue;
             }
