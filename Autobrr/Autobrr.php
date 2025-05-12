@@ -6,33 +6,58 @@ class Autobrr extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
-    //protected $login_first = true; // Uncomment if api requests need to be authed first
-    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
-
-    public function __construct()
-    {
-        //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
-    }
-
     public function test()
     {
-        $test = parent::appTest($this->url('status'));
+        $headers = [
+            'headers' => [
+                'X-API-Token' => $this->config->apikey,
+            ],
+        ];
+
+        $test = parent::appTest($this->url('healthz/liveness'), $headers);
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('status'));
-        $details = json_decode($res->getBody());
-
-        $data = [];
+        $headers = [
+            'headers' => [
+                'X-API-Token' => $this->config->apikey,
+            ],
+        ];
+    
+        $filtersRes = parent::execute($this->url('filters'), $headers);
+        $filters = json_decode($filtersRes->getBody(), true);
+        $filterCount = is_array($filters) ? count($filters) : 0;
+    
+        $ircRes = parent::execute($this->url('irc'), $headers);
+        $irc = json_decode($ircRes->getBody(), true);
+        $ircCount = 0;
+    
+        if (is_array($irc)) {
+            foreach ($irc as $conn) {
+                if (!empty($conn['connected'])) {
+                    $ircCount++;
+                }
+            }
+        }
+    
+        $data = [
+            'Filters' => $filterCount,
+            'IRC'     => $ircCount,
+        ];
+    
+        if ($filterCount > 0 || $ircCount > 0) {
+            $status = 'active';
+        }
+    
         return parent::getLiveStats($status, $data);
     }
 
     public function url($endpoint)
     {
-        $api_url = parent::normaliseurl($this->config->url) . $endpoint;
-        return $api_url;
+        return parent::normaliseurl($this->config->url) . 'api/' . $endpoint;
     }
 }
+
