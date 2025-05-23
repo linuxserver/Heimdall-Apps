@@ -62,7 +62,7 @@ class UptimeKuma extends \App\SupportedApps implements \App\EnhancedApps
                 continue;
             }
 
-            if (strpos($line, 'monitor_status') === 0) {
+            if (strpos($line, 'monitor_status') !== 0) {
                 // If the line is a metric but not a monitor we can ignore it
                 continue;
             }
