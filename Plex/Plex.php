@@ -26,37 +26,35 @@ class Plex extends \App\SupportedApps implements \App\EnhancedApps
     public function livestats()
     {
         $status = "inactive";
-        $res = parent::execute(
-            $this->url("/library/recentlyAdded"),
-            $this->attrs()
-        );
-        $body = $res->getBody();
-        $xml = simplexml_load_string(
-            $body,
-            "SimpleXMLElement",
-            LIBXML_NOCDATA | LIBXML_NOBLANKS
-        );
-
         $data = [];
-
-        if ($xml) {
-            $data["recently_added"] = $xml["size"];
-            $status = "active";
+        if ($this->config->section_1_key > 0) {
+            $res = parent::execute($this->url("/library/sections/{$this->config->section_1_key}/all"), $this->attrs());
+            $body = $res->getBody();
+            $xml = simplexml_load_string(
+                $body,
+                "SimpleXMLElement",
+                LIBXML_NOCDATA | LIBXML_NOBLANKS
+            );
+            if ($xml) {
+                $data["section_1_number"] = $xml["size"];
+                $data["section_1_title"] = $xml["librarySectionTitle"];
+                $status = "active";
+            }
         }
 
-        $res = parent::execute($this->url("/library/onDeck"));
-
-        $res = parent::execute($this->url("/library/onDeck"), $this->attrs());
-
-        $body = $res->getBody();
-        $xml = simplexml_load_string(
-            $body,
-            "SimpleXMLElement",
-            LIBXML_NOCDATA | LIBXML_NOBLANKS
-        );
-        if ($xml) {
-            $data["on_deck"] = $xml["size"];
-            $status = "active";
+        if ($this->config->section_2_key > 0) {
+            $res = parent::execute($this->url("/library/sections/{$this->config->section_2_key}/all"), $this->attrs());
+            $body = $res->getBody();
+            $xml = simplexml_load_string(
+                $body,
+                "SimpleXMLElement",
+                LIBXML_NOCDATA | LIBXML_NOBLANKS
+            );
+            if ($xml) {
+                $data["section_2_number"] = $xml["size"];
+                $data["section_2_title"] = $xml["librarySectionTitle"];
+                $status = "active";
+            }
         }
 
         return parent::getLiveStats($status, $data);
