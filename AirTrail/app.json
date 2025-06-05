@@ -3,7 +3,7 @@
   "name": "AirTrail",
   "website": "https://airtrail.johan.ohly.dk/",
   "license": "GNU General Public License v3.0 only",
-  "description": " A modern, open-source personal flight tracking system.",
+  "description": "A modern, open-source personal flight tracking system.",
   "enhanced": false,
   "tile_background": "dark",
   "icon": "airtrail.png"
