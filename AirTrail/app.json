@@ -1,0 +1,10 @@
+{
+  "appid": "6cc9df46f8a7ee3bf8ce4d44555ee3cbef760535",
+  "name": "AirTrail",
+  "website": "https://airtrail.johan.ohly.dk/",
+  "license": "GNU General Public License v3.0 only",
+  "description": "A modern, open-source personal flight tracking system.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "airtrail.png"
+}
