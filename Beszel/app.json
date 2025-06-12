@@ -1,0 +1,10 @@
+{
+    "appid": "14641c955e3750a6405faa911be80402a9bf0e31",
+    "name": "Beszel",
+    "website": "https://github.com/henrygd/beszel",
+    "license": "MIT License",
+    "description": "A lightweight server resource monitoring hub with historical data, docker stats, and alerts.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "beszel.svg"
+}
