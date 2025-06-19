@@ -1,0 +1,10 @@
+{
+    "appid": "e368337b94ce07c52ef5f319e18319b4fa2ac5c6",
+    "name": "Proxmox Backup Server",
+    "website": "https://www.proxmox.com/en/proxmox-backup-server",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Proxmox Backup Server is an enterprise backup solution, for backing up and restoring VMs, containers, and physical hosts. By supporting incremental, fully deduplicated backups, Proxmox Backup Server significantly reduces network load and saves valuable storage space. With strong encryption and methods of ensuring data integrity, you can feel safe when backing up data, even to targets which are not fully trusted.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "ProxmoxBackupServer.png"
+}
