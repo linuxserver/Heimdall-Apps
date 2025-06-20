@@ -1,0 +1,10 @@
+{
+    "appid": "2122ac179c7fd90b194e114bf04175237afe54e4",
+    "name": "Portall",
+    "website": "https://github.com/need4swede/portall/",
+    "license": "MIT License",
+    "description": "Portall provides an intuitive web-interface for generating, tracking, and organizing ports and services across multiple hosts.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "Portall.png"
+}
