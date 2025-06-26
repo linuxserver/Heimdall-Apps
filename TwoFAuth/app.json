@@ -1,0 +1,10 @@
+{
+    "appid": "0f39819ef48a5ad062e9329587b299839e099539",
+    "name": "2FAuth",
+    "website": "https://github.com/Bubka/2FAuth",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "2FAuth is a web based self-hosted alternative to One Time Passcode (OTP) generators like Google Authenticator, designed for both mobile and desktop.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "2fauth.png"
+}
