@@ -5,7 +5,7 @@
         {!! Form::text('config[override_url]', isset($item) ? $item->getconfig()->override_url : null, ['placeholder' => __('app.apps.override'), 'id' => 'override_url', 'class' => 'form-control']) !!}
     </div>
     <div class="input">
-        <label>{{ __('app.apps.apikey') }} (<a href="https://docs.goauthentik.io/developer-docs/api/#authentication" target="_blank">help?</a>)</label>
+        <label>{{ __('app.apps.apikey') }} (<a href="https://docs.goauthentik.io/docs/developer-docs/api/#api-token" target="_blank">help?</a>)</label>
         {!! Form::text('config[apikey]', isset($item) ? $item->getconfig()->apikey : null, ['placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item']) !!}
         <div>
             <small>User needs two permissions</small>
