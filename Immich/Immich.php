@@ -26,7 +26,7 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
         echo $test->status;
     }
 
-    private function number_format_large($number)
+    private function formatLargeNumber($number)
     {
         $suffixes = [ "", "k", "M", "G" ];
         $rank = 0;
@@ -54,8 +54,8 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
 
         if ($details) {
             $status = "active";
-            $data["photos"] = $this->number_format_large($details->photos);
-            $data["videos"] = $this->number_format_large($details->videos);
+            $data["photos"] = $this->formatLargeNumber($details->photos);
+            $data["videos"] = $this->formatLargeNumber($details->videos);
             $usageInGiB = number_format($details->usage / 1073741824, 2);
             $data["usage"] = $usageInGiB . 'GiB';
         }
