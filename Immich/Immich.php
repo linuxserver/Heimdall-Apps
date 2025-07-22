@@ -26,6 +26,18 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
         echo $test->status;
     }
 
+    private function formatLargeNumber($number)
+    {
+        $suffixes = [ "", "k", "M", "G" ];
+        $rank = 0;
+        while (abs($number) > 1000 && $rank < count($suffixes)) {
+            $number /= 1000;
+            $rank++;
+        }
+        $decimals = $number < 10 && $rank > 0 ? 1 : 0;
+        return number_format($number, $decimals) . $suffixes[$rank];
+    }
+
     public function livestats()
     {
         $status = "inactive";
@@ -42,8 +54,8 @@ class Immich extends \App\SupportedApps implements \App\EnhancedApps
 
         if ($details) {
             $status = "active";
-            $data["photos"] = number_format($details->photos);
-            $data["videos"] = number_format($details->videos);
+            $data["photos"] = $this->formatLargeNumber($details->photos);
+            $data["videos"] = $this->formatLargeNumber($details->videos);
             $usageInGiB = number_format($details->usage / 1073741824, 2);
             $data["usage"] = $usageInGiB . 'GiB';
         }
