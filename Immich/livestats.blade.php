@@ -1,10 +1,10 @@
 <ul class="livestats">
     <li>
-        <span class="title">Photos</span>
+        <span class="title">Pics</span>
         <strong>{!! $photos !!}</strong>
     </li>
     <li>
-        <span class="title">Videos</span>
+        <span class="title">Vids</span>
         <strong>{!! $videos !!}</strong>
     </li>
     <li>
