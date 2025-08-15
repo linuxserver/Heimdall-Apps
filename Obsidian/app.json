@@ -1,0 +1,10 @@
+{
+    "appid": "94517207d6864215269c5fab0cc9e928272372bd",
+    "name": "Obsidian",
+    "website": "https://obsidian.md/",
+    "license": "Commercial",
+    "description": "Obsidian is a powerful and free note‑taking app designed to keep your thoughts truly private. Your notes are stored locally on your device, giving you full control over your data. With a rich ecosystem of community and official plugins, you can customize and extend Obsidian to fit your unique workflow.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "obsidian.png"
+}
