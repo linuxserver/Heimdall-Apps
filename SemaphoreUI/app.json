@@ -1,0 +1,10 @@
+{
+    "appid": "59670495863d2d833ceb4584f3a57b866159aa8e",
+    "name": "Semaphore UI",
+    "website": "https://semaphoreui.com/",
+    "license": "MIT License",
+    "description": "Modern UI for Ansible, Terraform/OpenTofu/Terragrunt, PowerShell and other DevOps tools.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "semaphoreui.png"
+}
