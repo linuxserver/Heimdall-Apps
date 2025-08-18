@@ -1,0 +1,10 @@
+{
+    "appid": "c33213e627b43330f87293800148123fb34cc68e",
+    "name": "Baserow",
+    "website": "https://baserow.io/",
+    "license": "MIT License",
+    "description": "Baserow is an open source no-code database and Airtable alternative. Create your own database without technical experience. Our user friendly no-code tool gives you the powers of a developer without leaving your browser.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "baserow.png"
+}
