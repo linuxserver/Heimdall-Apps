@@ -1,0 +1,10 @@
+{
+    "appid": "41196627eacd06ca27010ac1fb07944e7bfa5216",
+    "name": "Hoppscotch",
+    "website": "https://github.com/hoppscotch/hoppscotch/",
+    "license": "MIT License",
+    "description": "Hoppscotch is light-weight, web based API development suite. It was built from the ground up with ease of use and accessibility in mind providing all the functionality needed for API developers with minimalist, unobtrusive UI. It is free-to-use and as an added perk completely Open Source!",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "hoppscotch.png"
+}
