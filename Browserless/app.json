@@ -1,0 +1,10 @@
+{
+    "appid": "d98196101a984fa44b27540b1193b8189d8d7724",
+    "name": "Browserless",
+    "website": "https://www.browserless.io/",
+    "license": "Commercial",
+    "description": "Browserless is a web-based service that allows for remote clients to connect and execute headless work; all inside of docker. Free for non-commercial uses.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "browserless.png"
+}
