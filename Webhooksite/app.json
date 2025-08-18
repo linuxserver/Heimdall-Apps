@@ -1,0 +1,10 @@
+{
+    "appid": "e5faa1115b47858ba769c281e7ecd327fbb981ea",
+    "name": "Webhook.site",
+    "website": "https://webhook.site/",
+    "license": "MIT License",
+    "description": "Easily test HTTP webhooks with this handy tool that displays requests instantly.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "webhooksite.png"
+}
