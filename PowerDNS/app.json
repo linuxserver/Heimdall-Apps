@@ -1,0 +1,10 @@
+{
+    "appid": "0e8ccac75b4a352edd0a0c2913b8799f92188fb5",
+    "name": "PowerDNS",
+    "website": "https://www.powerdns.com/",
+    "license": "GNU General Public License v2.0 only",
+    "description": "PowerDNS is an open-source, high-performance DNS server suite offering authoritative, recursive, and load-balancing features. It's scalable, extensible, supports DNSSEC, and runs on Unix-like systems.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "powerdns.png"
+}
