@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\drawDB;
 
-class drawDB extends \App\SupportedApps
+class drawDB extends \App\SupportedApps // phpcs:ignore
 {
 }
