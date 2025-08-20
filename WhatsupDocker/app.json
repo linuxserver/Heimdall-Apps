@@ -1,0 +1,11 @@
+{
+    "appid": "471b1748546610893a56b7d9254afa4752f630b9",
+    "name": "What's up Docker",
+    "website": "https://github.com/getwud/wud",
+    "license": "MIT License",
+    "description": "Gets you notified when new versions of your Docker containers are available and lets you react the way you want.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "whatsupdocker.png",
+    "sha": "2f0356bc2cafcca5232e02d1283d2a2bd401ef81"
+}
