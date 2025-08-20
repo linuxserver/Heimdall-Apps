@@ -1,0 +1,10 @@
+{
+    "appid": "78af1f0ba45d09a9887c2a92ea4135edfedf19f4",
+    "name": "Scratch Map",
+    "website": "https://github.com/ad3m3r5/scratch-map",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "An open-source scratch-off style map to track your travels.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "scratchmap.png"
+}
