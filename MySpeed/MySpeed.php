@@ -7,7 +7,6 @@ class MySpeed extends \App\SupportedApps implements \App\EnhancedApps
     public $config;
 
     public function __construct() {
-        
     }
 
     public function test()
