@@ -7,7 +7,6 @@ class Audiobookshelf extends \App\SupportedApps implements \App\EnhancedApps
     public $config;
 
     public function __construct() {
-        
     }
 
     public function test()
@@ -26,7 +25,7 @@ class Audiobookshelf extends \App\SupportedApps implements \App\EnhancedApps
             $status = 'active';
             $data = [
                 'totalTime' => $this->secondsToHoursMinutes($details->totalTime),
-                'bookCount' => $this->get_book_count()
+                'bookCount' => $this->getBookCount()
             ];
         }
 
@@ -39,20 +38,20 @@ class Audiobookshelf extends \App\SupportedApps implements \App\EnhancedApps
         return $api_url;
     }
 
-    private function get_book_count()
+    private function getBookCount()
     {
         $res = parent::execute($this->url('api/libraries'), $this->getAttrs());
         $libraries = json_decode($res->getBody())->libraries;
 
-        $book_count = 0;
+        $bookCount = 0;
         foreach ($libraries as $library) {
             $lib_id = $library->id;
             $res = parent::execute($this->url('api/libraries/' . $lib_id . '/items'), $this->getAttrs());
             $library_details = json_decode($res->getBody());
-            $book_count += $library_details->total;
+            $bookCount += $library_details->total;
         }
 
-        return $book_count;
+        return $bookCount;
     }
 
     private function getAttrs()
