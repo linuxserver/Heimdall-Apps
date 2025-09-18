@@ -2,8 +2,6 @@
 
 namespace App\SupportedApps\Tachidesk;
 
-use Log;
-
 class Tachidesk extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
@@ -22,7 +20,6 @@ class Tachidesk extends \App\SupportedApps implements \App\EnhancedApps
         $status = 'inactive';
 
         $category  =  $this->getCategory();
-        Log::info('Tachidesk: livestats: category: ' . $category);
 
         $res = parent::execute($this->url('api/v1/category/' . $category));
         $details = json_decode($res->getBody());
