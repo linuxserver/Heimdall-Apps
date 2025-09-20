@@ -1,0 +1,10 @@
+{
+    "appid": "9ebfa3a7bc09302c2d7c55713d121bf073c9cc63",
+    "name": "Readeck",
+    "website": "https://readeck.org/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Readeck is a simple web application that lets you save the precious readable content of web pages you like and want to keep forever.\r\nSee it as a bookmark manager and a read later tool.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "readeck.png"
+}
