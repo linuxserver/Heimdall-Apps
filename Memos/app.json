@@ -4,7 +4,7 @@
     "website": "https://github.com/usememos/memos",
     "license": "MIT License",
     "description": "A privacy-first, lightweight note-taking service. Easily capture and share your great thoughts.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "memos.png"
 }
