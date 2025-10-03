@@ -1,0 +1,10 @@
+{
+    "appid": "3fd3c499757161cb316862b03f944b230f9aa883",
+    "name": "Crontab UI",
+    "website": "https://github.com/alseambusher/crontab-ui",
+    "license": "MIT License",
+    "description": "Crontab UI: easy and safe way to manage your crontab files\r\nEditing the plain text crontab is error prone for managing jobs, e.g., adding jobs, deleting jobs, or pausing jobs. A small mistake can easily bring down all the jobs and might cost you a lot of time. With Crontab UI, it is very easy to manage crontab.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "crontabui.png"
+}

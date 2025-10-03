@@ -1,0 +1,10 @@
+{
+    "appid": "a0e4660cff5683237214967680366d2e938567c5",
+    "name": "SPFToolbox",
+    "website": "https://spftoolbox.com/",
+    "license": "MIT License",
+    "description": "SPFtoolbox is a Javascript and PHP app to look up DNS records such as SPF, MX, Whois, and more",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "spftoolbox.png"
+}

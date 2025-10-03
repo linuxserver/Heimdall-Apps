@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\ThreeTwo;
+<?php
 
-class ThreeTwo extends \App\SupportedApps {
+namespace App\SupportedApps\ThreeTwo;
 
+class ThreeTwo extends \App\SupportedApps
+{
 }

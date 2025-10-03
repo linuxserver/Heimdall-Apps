@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\ZNC;
+<?php
+
+namespace App\SupportedApps\ZNC;
 
 class ZNC extends \App\SupportedApps
 {

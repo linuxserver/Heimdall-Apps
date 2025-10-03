@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Concourse;
+<?php
+
+namespace App\SupportedApps\Concourse;
 
 class Concourse extends \App\SupportedApps
 {

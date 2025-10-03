@@ -4,7 +4,7 @@
   "website": "https://uptime.kuma.pet",
   "license": "MIT License",
   "description": "It is a self-hosted monitoring tool like \"Uptime Robot\".",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "uptimekuma.svg"
 }

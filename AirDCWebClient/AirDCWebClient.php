@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\AirDCWebClient;
+<?php
 
-class AirDCWebClient extends \App\SupportedApps {
+namespace App\SupportedApps\AirDCWebClient;
 
+class AirDCWebClient extends \App\SupportedApps
+{
 }

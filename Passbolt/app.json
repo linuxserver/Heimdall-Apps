@@ -1,0 +1,10 @@
+{
+    "appid": "cec6fe93657819abfba5ee23399b026f599fafe2",
+    "name": "Passbolt",
+    "website": "https://www.passbolt.com/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Finally, a password manager built for organizations that take their security and privacy seriously.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "passbolt.png"
+}

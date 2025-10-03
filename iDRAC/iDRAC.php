@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\iDRAC;
+<?php
 
-class iDRAC extends \App\SupportedApps
+namespace App\SupportedApps\iDRAC;
+
+class iDRAC extends \App\SupportedApps // phpcs:ignore
 {
 }

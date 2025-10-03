@@ -1,0 +1,10 @@
+{
+    "appid": "7e9d6cf69e36e72a53457904973f677aaaa993d0",
+    "name": "ADS-B Exchange",
+    "website": "https://www.adsbexchange.com/",
+    "license": "MIT License",
+    "description": "The world’s largest community of unfiltered ADS-B/Mode S/MLAT feeders, providing enthusiasts, researchers, and journalists access to the globe’s most extensive flight data for unprecedented flight monitoring.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "adsbexchange.png"
+}

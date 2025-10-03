@@ -4,7 +4,7 @@
   "website": "https://github.com/AnalogJ/scrutiny",
   "license": "MIT License",
   "description": "Scrutiny is a Hard Drive Health Dashboard & Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "light",
   "icon": "scrutiny.png"
 }

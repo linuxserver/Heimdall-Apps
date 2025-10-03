@@ -1,0 +1,10 @@
+{
+    "appid": "767c55408f5945f50235d1e51db641e0473da137",
+    "name": "Vikunja",
+    "website": "https://vikunja.io/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "The to-do app to organize your life.\r\nAlso one of the two wild South American camelids which live in the high\r\nalpine areas of the Andes and a relative of the llama.\r\nVikunja is an Open-Source, self-hosted To-Do list application for all platforms. It is licensed under the AGPLv3.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "vikunja.png"
+}

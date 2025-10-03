@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\ownCloud;
+<?php
 
-class ownCloud extends \App\SupportedApps
+namespace App\SupportedApps\ownCloud;
+
+class ownCloud extends \App\SupportedApps // phpcs:ignore
 {
 }

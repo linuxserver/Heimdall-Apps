@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\osTicket;
+<?php
 
-class osTicket extends \App\SupportedApps
+namespace App\SupportedApps\osTicket;
+
+class osTicket extends \App\SupportedApps // phpcs:ignore
 {
 }

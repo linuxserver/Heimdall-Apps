@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\vmwarehorizon;
+<?php
 
-class vmwarehorizon extends \App\SupportedApps
+namespace App\SupportedApps\vmwarehorizon;
+
+class vmwarehorizon extends \App\SupportedApps // phpcs:ignore
 {
 }

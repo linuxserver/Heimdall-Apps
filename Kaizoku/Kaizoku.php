@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Kaizoku;
+<?php
 
-class Kaizoku extends \App\SupportedApps {
+namespace App\SupportedApps\Kaizoku;
 
+class Kaizoku extends \App\SupportedApps
+{
 }

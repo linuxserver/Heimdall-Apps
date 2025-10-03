@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Kavita;
+<?php
 
-class Kavita extends \App\SupportedApps {
+namespace App\SupportedApps\Kavita;
 
+class Kavita extends \App\SupportedApps
+{
 }

@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Tailscale;
+<?php
+
+namespace App\SupportedApps\Tailscale;
 
 class Tailscale extends \App\SupportedApps
 {

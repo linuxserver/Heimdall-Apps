@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\CNCjs;
+<?php
 
-class CNCjs extends \App\SupportedApps {
+namespace App\SupportedApps\CNCjs;
 
+class CNCjs extends \App\SupportedApps
+{
 }

@@ -1,0 +1,10 @@
+{
+    "appid": "19a3b4c1126a8e16ac55ee7808cc76eab9ab066a",
+    "name": "MQTTX",
+    "website": "https://mqttx.app/",
+    "license": "Apache License 2.0",
+    "description": "A Powerful and All-in-One MQTT 5.0 client toolbox for Desktop, CLI and WebSocket.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "mqttx.png"
+}

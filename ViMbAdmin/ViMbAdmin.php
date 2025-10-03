@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\ViMbAdmin;
+<?php
+
+namespace App\SupportedApps\ViMbAdmin;
 
 class ViMbAdmin extends \App\SupportedApps
 {

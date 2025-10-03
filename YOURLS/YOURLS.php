@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\YOURLS;
+<?php
+
+namespace App\SupportedApps\YOURLS;
 
 class YOURLS extends \App\SupportedApps
 {

@@ -1,0 +1,10 @@
+{
+    "appid": "ca7eeb277689b9f5ec3f47392c5e86a7d5528f6e",
+    "name": "NocoDB",
+    "website": "https://nocodb.com/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "NocoDB is an open source no-code database platform designed to provide users with the ability to build, manage, and scale databases through an intuitive spreadsheet-like interface, eliminating the need for technical coding skills. The platform allows businesses and teams to create online databases from scratch or by connecting to existing databases such as PostgreSQL or MySQL.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "nocodb.png"
+}

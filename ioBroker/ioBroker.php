@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\ioBroker;
+<?php
 
-class ioBroker extends \App\SupportedApps
+namespace App\SupportedApps\ioBroker;
+
+class ioBroker extends \App\SupportedApps // phpcs:ignore
 {
 }

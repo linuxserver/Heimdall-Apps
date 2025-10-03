@@ -1,0 +1,10 @@
+{
+    "appid": "13498df125d8e37dad6072bbe856f081d001148f",
+    "name": "Redis-Commander",
+    "website": "https://joeferner.github.io/redis-commander/",
+    "license": "MIT License",
+    "description": "Redis-Commander is a node.js web application used to view, edit, and manage a Redis Database",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "rediscommander.png"
+}

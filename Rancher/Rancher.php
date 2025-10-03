@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Rancher;
+<?php
+
+namespace App\SupportedApps\Rancher;
 
 class Rancher extends \App\SupportedApps
 {

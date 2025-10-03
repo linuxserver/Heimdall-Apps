@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Cannery;
+<?php
 
-class Cannery extends \App\SupportedApps {
+namespace App\SupportedApps\Cannery;
 
+class Cannery extends \App\SupportedApps
+{
 }

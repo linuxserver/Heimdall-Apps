@@ -1,0 +1,10 @@
+{
+    "appid": "ac0fea3a3005484f1afcda501930eab3f21f8393",
+    "name": "Open WebUI",
+    "website": "https://github.com/open-webui/open-webui",
+    "license": "Modified BSD 3-Clause License",
+    "description": "Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "openwebui.svg"
+}

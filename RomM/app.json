@@ -1,0 +1,10 @@
+{
+    "appid": "2a3931f4ca016a139bcf5a97c85ee0a67825fe43",
+    "name": "RomM",
+    "website": "https://romm.app",
+    "license": "Affero General Public License v3.0",
+    "description": "RomM is your beautiful, powerful, self-hosted rom manager. Scan, enrich, and browse your game collection with a clean and responsive interface. With support for multiple platforms, various naming schemes and custom tags, RomM is a must-have for anyone who plays on emulators.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "romm.png"
+}

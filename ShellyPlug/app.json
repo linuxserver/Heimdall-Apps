@@ -1,0 +1,10 @@
+{
+    "appid": "304c38e1914566a45eb705ba7315a638d25b44ce",
+    "name": "Shelly Plug",
+    "website": "https://www.shelly.com/",
+    "license": "MIT License",
+    "description": "Shelly offers easy-to-use products for smart home enthusiasts and professionals. The wide product range delivers complete home automation experience and innovative technology at reasonable prices and with attention to the smallest details.\r\n\r\nThis application supports Shelly Plugs.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "shellyplug.png"
+}

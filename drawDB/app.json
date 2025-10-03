@@ -1,0 +1,10 @@
+{
+    "appid": "af2b601ca8cc937fe779a8fe70a9d9a512e8ff81",
+    "name": "drawDB",
+    "website": "https://www.drawdb.app/",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "drawDB is a free and online open source database diagram editor where you can visiaulize your schema, share your diagram, export SQL scripts, reverse engineer DDL scripts, and much more...",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "drawdb.png"
+}

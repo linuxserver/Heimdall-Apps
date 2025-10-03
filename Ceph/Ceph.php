@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\Ceph;
+<?php
 
-class Ceph extends \App\SupportedApps {
+namespace App\SupportedApps\Ceph;
 
+class Ceph extends \App\SupportedApps
+{
 }

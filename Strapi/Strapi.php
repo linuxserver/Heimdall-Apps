@@ -1,4 +1,6 @@
-<?php namespace App\SupportedApps\Strapi;
+<?php
+
+namespace App\SupportedApps\Strapi;
 
 class Strapi extends \App\SupportedApps
 {

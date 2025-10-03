@@ -14,7 +14,7 @@
     },
     "stat1": {
       "name": "Total",
-      "url": ":url:ocs/v1.php/cloud/users/:username:?format=json",
+      "url": ":url:ocs/v2.php/cloud/users/:username:?format=json",
       "key": "ocs.data.quota.total",
       "filter": "size",
       "updateOnChange": "No",
@@ -22,7 +22,7 @@
     },
     "stat2": {
       "name": "Used",
-      "url": ":url:ocs/v1.php/cloud/users/:username:?format=json",
+      "url": ":url:ocs/v2.php/cloud/users/:username:?format=json",
       "key": "ocs.data.quota.used",
       "filter": "size",
       "updateOnChange": "No",

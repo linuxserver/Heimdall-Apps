@@ -1,0 +1,10 @@
+{
+    "appid": "50f46198a1bd51840547aee34fc045921e43d4c6",
+    "name": "Actual",
+    "website": "https://actualbudget.org/",
+    "license": "MIT License",
+    "description": "A local-first personal finance app",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "actual.png"
+}

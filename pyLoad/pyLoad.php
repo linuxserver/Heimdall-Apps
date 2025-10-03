@@ -1,5 +1,7 @@
-<?php namespace App\SupportedApps\pyLoad;
+<?php
 
-class pyLoad extends \App\SupportedApps
+namespace App\SupportedApps\pyLoad;
+
+class pyLoad extends \App\SupportedApps // phpcs:ignore
 {
 }
