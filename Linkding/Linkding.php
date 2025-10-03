@@ -2,8 +2,6 @@
 
 namespace App\SupportedApps\Linkding;
 
-use Log;
-
 class Linkding extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
@@ -13,10 +11,6 @@ class Linkding extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        Log::info('Testing Linkding API');
-        Log::info('URL: ' . $this->url('api/bookmarks'));
-        Log::info('Headers: ' . json_encode($this->getHeaders()));
-
         $test = parent::appTest($this->url('api/bookmarks?limit=1'), $this->getHeaders());
         echo $test->status;
     }
