@@ -1,0 +1,10 @@
+{
+    "appid": "1a039cf9812aee2944f3e2c472288fab189bc1a9",
+    "name": "Linkding",
+    "website": "https://linkding.link/",
+    "license": "MIT License",
+    "description": "A self-hosted bookmark manager designed to be minimal, fast, and easy to set up.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "linkding.png"
+}
