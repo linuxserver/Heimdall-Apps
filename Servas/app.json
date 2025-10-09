@@ -1,0 +1,10 @@
+{
+    "appid": "2a0d064dc49d4c6568604bb41c81e5d63c6c9e97",
+    "name": "Servas",
+    "website": "https://servas.app/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Servas is a self-hosted, open source bookmark manager.\r\nIt helps you to organise your bookmarks and works great on all your devices.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "servas.svg"
+}
