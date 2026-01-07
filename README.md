@@ -1,6 +1,6 @@
 # Heimdall-Apps
 
-Fullfilling a foundation app request
+Fulfilling a foundation app request
 
 [![Fulfilling an app request](https://i.imgur.com/d4x91Bj.gif)](https://youtu.be/tDHxSOWqOBQ)
 
