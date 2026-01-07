@@ -1,0 +1,10 @@
+{
+    "appid": "a4f9c2e87d1b3a6f0c5e9d82b7a1e43f6c0d9b5e",
+    "name": "bitShake",
+    "website": "https://www.bitshake.de/",
+    "license": "Proprietary",
+    "description": "A smart IR-based electric meter reader that captures energy consumption and power data from digital electricity meters and provides it via Wi-Fi/Tasmota integration.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "bitShake.svg"
+}
