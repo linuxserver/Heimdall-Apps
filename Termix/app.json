@@ -1,0 +1,10 @@
+{
+    "appid": "1125bbe3d5b6deae20bc936b74dbbdc109f208c9",
+    "name": "Termix",
+    "website": "https://docs.termix.site/",
+    "license": "Apache License 2.0",
+    "description": "Termix is a clientless web-based server management platform with SSH terminal, tunneling, and file editing capabilities.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "termix.png"
+}
