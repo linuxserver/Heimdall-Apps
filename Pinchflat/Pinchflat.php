@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\Pinchflat;
 
-class Pinchflat extends \App\SupportedApps // phpcs:ignore
+class Pinchflat extends \App\SupportedApps
 {
 }
