@@ -9,6 +9,20 @@
         {!! Form::text('config[apikey]', isset($item) ? $item->getconfig()->apikey : null, ['placeholder' => __('app.apps.apikey'), 'data-config' => 'apikey', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
+        <label>API Mode</label>
+        <?php
+        $api_mode = 'auto';
+        if (isset($item) && !empty($item) && isset($item->getconfig()->api_mode)) {
+            $api_mode = $item->getconfig()->api_mode;
+        }
+        ?>
+        <select name="config[api_mode]" class="form-control config-item" data-config="api_mode">
+            <option value="auto" {{ $api_mode === 'auto' ? 'selected' : '' }}>Auto (WebSocket preferred, REST fallback)</option>
+            <option value="websocket" {{ $api_mode === 'websocket' ? 'selected' : '' }}>WebSocket Only (TrueNAS 25.04+)</option>
+            <option value="rest" {{ $api_mode === 'rest' ? 'selected' : '' }}>REST Only (Legacy)</option>
+        </select>
+    </div>
+    <div class="input">
         <label>Skip TLS verification</label>
         <div class="toggleinput" style="margin-top: 26px; padding-left: 15px;">
             {!! Form::hidden('config[ignore_tls]', 0, ['class' => 'config-item', 'data-config' => 'ignore_tls']) !!}
