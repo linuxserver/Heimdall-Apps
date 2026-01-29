@@ -20,12 +20,74 @@ class UniFi extends \App\SupportedApps
     public function test()
     {
         $urls = $this->getAPIURLs();
-        $test = parent::appTest(
+        $self_hosted = $this->getConfigValue("self_hosted", false);
+
+        // Perform login request
+        $loginRes = parent::execute(
             $this->url($urls['loginURL']),
             $this->getLoginAttributes(),
+            null,
+            'POST'
         );
 
-        echo $test->status;
+        if ($loginRes === null) {
+            echo "Failed: Connection error";
+            return;
+        }
+
+        $statusCode = $loginRes->getStatusCode();
+        $body = json_decode($loginRes->getBody());
+
+        // Check for explicit failure codes
+        if ($statusCode === 401 || $statusCode === 403) {
+            echo "Failed: Invalid credentials";
+            return;
+        }
+
+        // Self-hosted controllers return 400 on auth failure
+        if ($statusCode === 400) {
+            $msg = isset($body->meta->msg) ? $body->meta->msg : "Invalid credentials";
+            echo "Failed: " . $msg;
+            return;
+        }
+
+        // For 200 responses, verify the login actually succeeded
+        if ($statusCode === 200) {
+            // Self-hosted: check meta.rc === "ok"
+            if ($self_hosted) {
+                if (!isset($body->meta->rc) || $body->meta->rc !== "ok") {
+                    $msg = isset($body->meta->msg) ? $body->meta->msg : "Login failed";
+                    echo "Failed: " . $msg;
+                    return;
+                }
+            }
+
+            // Additional verification: try to fetch stats to confirm session works
+            $statsRes = parent::execute(
+                $this->url($urls['statsURL']),
+                $this->getAttributes(),
+                null,
+                'GET'
+            );
+
+            if ($statsRes !== null && $statsRes->getStatusCode() === 200) {
+                $statsBody = json_decode($statsRes->getBody());
+                // UDM returns data array, self-hosted returns meta.rc
+                $hasData = isset($statsBody->data);
+                $hasMetaOk = isset($statsBody->meta) && isset($statsBody->meta->rc) && $statsBody->meta->rc === "ok";
+                if ($hasData || $hasMetaOk) {
+                    echo "Successfully connected to UniFi";
+                    return;
+                }
+            }
+
+            // Stats fetch failed but login seemed ok
+            echo "Login succeeded but unable to fetch stats - check user permissions";
+            return;
+        }
+
+        // Unexpected status code
+        echo "Failed: Unexpected response (HTTP " . $statusCode . ")";
     }
 
     public function livestats()
