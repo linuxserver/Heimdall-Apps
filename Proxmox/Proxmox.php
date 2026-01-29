@@ -40,12 +40,22 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
     {
         $status = "active";
 
+        // Default data for inactive status (view template requires these variables)
+        $inactiveData = [
+            "vm_running" => 0,
+            "vm_total" => 0,
+            "container_running" => 0,
+            "container_total" => 0,
+            "cpu_percent" => 0,
+            "memory_percent" => 0,
+        ];
+
         $nodes = explode(",", $this->getConfigValue("nodes", ""));
 
         if ($nodes == [""]) {
             $nodeData = $this->apiCall("nodes");
             if ($nodeData === null) {
-                return parent::getLiveStats("inactive", []);
+                return parent::getLiveStats("inactive", $inactiveData);
             }
             $nodes = array_map(function ($v) {
                 return $v->node;
@@ -53,7 +63,7 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
         }
 
         if (empty($nodes)) {
-            return parent::getLiveStats("inactive", []);
+            return parent::getLiveStats("inactive", $inactiveData);
         }
 
         $vm_running = 0;
@@ -96,7 +106,7 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
         }
 
         if ($valid_nodes === 0) {
-            return parent::getLiveStats("inactive", []);
+            return parent::getLiveStats("inactive", $inactiveData);
         }
 
         $data = [
