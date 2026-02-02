@@ -39,14 +39,31 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
     public function livestats()
     {
         $status = "active";
-        $attrs = $this->getRequestAttrs();
+
+        // Default data for inactive status (view template requires these variables)
+        $inactiveData = [
+            "vm_running" => 0,
+            "vm_total" => 0,
+            "container_running" => 0,
+            "container_total" => 0,
+            "cpu_percent" => 0,
+            "memory_percent" => 0,
+        ];
 
         $nodes = explode(",", $this->getConfigValue("nodes", ""));
 
         if ($nodes == [""]) {
+            $nodeData = $this->apiCall("nodes");
+            if ($nodeData === null) {
+                return parent::getLiveStats("inactive", $inactiveData);
+            }
             $nodes = array_map(function ($v) {
                 return $v->node;
-            }, $this->apiCall("nodes"));
+            }, $nodeData);
+        }
+
+        if (empty($nodes)) {
+            return parent::getLiveStats("inactive", $inactiveData);
         }
 
         $vm_running = 0;
@@ -56,39 +73,49 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
         $cpu_percent_sum = 0.0;
         $memory_total = 0.0;
         $memory_used = 0.0;
+        $valid_nodes = 0;
+
         foreach ($nodes as $node) {
             $node_status = $this->apiCall("nodes/" . $node . "/status");
-            $cpu_percent_sum += $node_status->cpu;
-            $memory_used += $node_status->memory->used;
-            $memory_total += $node_status->memory->total;
+            if ($node_status !== null) {
+                $valid_nodes++;
+                $cpu_percent_sum += $node_status->cpu ?? 0;
+                $memory_used += isset($node_status->memory) ? ($node_status->memory->used ?? 0) : 0;
+                $memory_total += isset($node_status->memory) ? ($node_status->memory->total ?? 0) : 0;
+            }
 
             $vm_stats = $this->apiCall("nodes/" . $node . "/qemu");
-            $vm_total += count($vm_stats);
-            $vm_running += count(
-                array_filter($vm_stats, function ($v) {
-                    return $v->status == "running";
-                })
-            );
+            if ($vm_stats !== null) {
+                $vm_total += count($vm_stats);
+                $vm_running += count(
+                    array_filter($vm_stats, function ($v) {
+                        return isset($v->status) && $v->status == "running";
+                    })
+                );
+            }
 
             $container_stats = $this->apiCall("nodes/" . $node . "/lxc");
-            $container_total += count($container_stats);
-            $container_running += count(
-                array_filter($container_stats, function ($v) {
-                    return $v->status == "running";
-                })
-            );
+            if ($container_stats !== null) {
+                $container_total += count($container_stats);
+                $container_running += count(
+                    array_filter($container_stats, function ($v) {
+                        return isset($v->status) && $v->status == "running";
+                    })
+                );
+            }
         }
 
-        $res = parent::execute($this->url("version"), $attrs);
-        $details = json_decode($res->getBody())->data;
+        if ($valid_nodes === 0) {
+            return parent::getLiveStats("inactive", $inactiveData);
+        }
 
         $data = [
             "vm_running" => $vm_running,
             "vm_total" => $vm_total,
             "container_running" => $container_running,
             "container_total" => $container_total,
-            "cpu_percent" => ($cpu_percent_sum / count($nodes)) * 100,
-            "memory_percent" => (100 / $memory_total) * $memory_used,
+            "cpu_percent" => ($cpu_percent_sum / $valid_nodes) * 100,
+            "memory_percent" => $memory_total > 0 ? (100 / $memory_total) * $memory_used : 0,
         ];
         return parent::getLiveStats($status, $data);
     }
@@ -107,6 +134,11 @@ class Proxmox extends \App\SupportedApps implements \App\EnhancedApps
     public function apiCall($endpoint)
     {
         $res = parent::execute($this->url($endpoint), $this->getRequestAttrs());
+
+        if ($res === null) {
+            return null;
+        }
+
         $object = json_decode($res->getBody());
 
         if (!$object instanceof \stdClass) {

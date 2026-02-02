@@ -15,7 +15,7 @@
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
-          uses: actions/checkout@v5
+          uses: actions/checkout@v6
   
         - name: PHP syntax checker 8.2
           uses: prestashop/github-action-php-lint/8.2@master
@@ -25,7 +25,7 @@
   #    runs-on: ubuntu-latest
   #    steps:
   #      - name: Checkout
-  #        uses: actions/checkout@v5
+  #        uses: actions/checkout@v6
   #        
   #      - name: PHP Mess Detector
   #        uses: php-actions/phpmd@v1
@@ -40,7 +40,7 @@
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
-          uses: actions/checkout@v5
+          uses: actions/checkout@v6
         
         - name: PHP Code Sniffer
           uses: php-actions/phpcs@v1
@@ -59,12 +59,12 @@
   #    runs-on: ubuntu-latest
   #    steps:
   #      - name: Checkout
-  #        uses: actions/checkout@v5
+  #        uses: actions/checkout@v6
   #        with:
   #          path: src
   #
   #      - name: Checkout Heimdall repo for dependencies
-  #        uses: actions/checkout@v5
+  #        uses: actions/checkout@v6
   #        with:
   #          repository: linuxserver/Heimdall
   #          path: ./heimdall-src
