@@ -1,0 +1,10 @@
+{
+    "appid": "2c2a89c1c45d2977cfce538e475902f5520f4382",
+    "name": "aura",
+    "website": "https://github.com/mediux-team/AURA",
+    "license": "MIT License",
+    "description": "aura (Automated Utility for Retrieval of Assets) is a visual tool for managing Mediux image assets for your media server. It provides a sleek and intuitive interface to browse, preview, and apply image sets to your library content across platforms like Plex, Emby, and Jellyfin.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "aura.png"
+}
