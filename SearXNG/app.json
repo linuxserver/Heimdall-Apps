@@ -1,0 +1,10 @@
+{
+  "appid": "7e356dd50dd3723072ce97822610c792f30c8d00",
+  "name": "SearXNG",
+  "website": "https://docs.searxng.org",
+  "license": "AGPL-3.0",
+  "description": "A free internet metasearch engine which aggregates results from more than 70 search services. SearXNG is a fork of Searx with continued active development.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "searxng.png"
+}
