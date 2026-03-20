@@ -1,0 +1,10 @@
+{
+	"appid": "8941259431327e65f98ef6f45f6e673039837daa",
+    "name": "Seerr",
+    "website": "https://seerr.dev",
+    "license": "MIT License",
+    "description": "Seerr is a request management and media discovery tool built to work with your existing Plex/Jellyfin ecosystem.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "seerr.svg"
+}
