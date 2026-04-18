@@ -11,6 +11,20 @@ class SpeedtestTracker extends \App\SupportedApps implements \App\EnhancedApps
     //protected $login_first = true; // Uncomment if api requests need to be authed first
     //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
 
+    public function getRequestAttrs()
+    {
+        $api_token = $this->config->apikey;
+
+        $attrs = [
+            "headers" => [
+                "Accept" => "application/json",
+                "Authorization" => "Bearer " . $api_token,
+            ],
+        ];
+
+        return $attrs;
+    }
+
     public function __construct()
     {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
@@ -18,14 +32,16 @@ class SpeedtestTracker extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $test = parent::appTest($this->url("api/speedtest/latest/"));
+        $attrs = $this->getRequestAttrs();
+        $test = parent::appTest($this->url("api/v1/results/latest/"), $attrs);
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = "inactive";
-        $res = parent::execute($this->url("api/speedtest/latest/"));
+        $attrs = $this->getRequestAttrs();
+        $res = parent::execute($this->url("api/v1/results/latest/"), $attrs);
         $details = json_decode($res->getBody());
 
         $data = [];
@@ -78,7 +94,7 @@ class SpeedtestTracker extends \App\SupportedApps implements \App\EnhancedApps
         switch ($stat) {
             case "download":
             case "upload":
-                return number_format($number) . "<span>Mbit/s</span>";
+                return number_format($number * 8 / 1000000) . "<span>Mbit/s</span>";
             case "ping":
                 return number_format($number) . "<span>ms</span>";
             case "created_at":
