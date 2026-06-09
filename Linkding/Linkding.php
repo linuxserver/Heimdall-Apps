@@ -25,7 +25,7 @@ class Linkding extends \App\SupportedApps implements \App\EnhancedApps
         if ($details) {
             $status = 'active';
             $data = [
-                "bookmark_count" => $details->count,
+                "bookmarkCount" => $details->count,
             ];
         }
 
@@ -42,7 +42,8 @@ class Linkding extends \App\SupportedApps implements \App\EnhancedApps
     {
         return [
             "headers" => [
-                "Authorization" => "Token " . $this->config->access_token,
+                "accept" => "application/json",
+                "Authorization" => "Token " . $this->config->apikey
             ],
         ];
     }
