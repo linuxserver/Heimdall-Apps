@@ -4,7 +4,6 @@ namespace App\SupportedApps\WatchYourLAN;
 
 class WatchYourLAN extends \App\SupportedApps implements \App\EnhancedApps
 {
-
     public $config;
 
     //protected $login_first = true; // Uncomment if api requests need to be authed first
@@ -29,11 +28,11 @@ class WatchYourLAN extends \App\SupportedApps implements \App\EnhancedApps
         $unknown_count = 0;
 
         if (is_array($hosts)) {
-          foreach ($hosts as $key => $host) {
-            if (isset($host->Known) && $host->Known == 0) {
-                $unknown_count += 1;
+            foreach ($hosts as $key => $host) {
+                if (isset($host->Known) && $host->Known == 0) {
+                    $unknown_count += 1;
+                }
             }
-          }
         }
 
         $data['unknown_count'] = $unknown_count;
