@@ -11,21 +11,21 @@ class Linkding extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        $test = parent::appTest($this->url('api/bookmarks?limit=1'), $this->getHeaders());
+        $test = parent::appTest($this->url('api/bookmarks/?limit=1'), $this->getHeaders());
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = 'inactive';
-        $res = parent::execute($this->url('api/bookmarks?limit=1000'), $this->getHeaders());
+        $res = parent::execute($this->url('api/bookmarks/?limit=10000'), $this->getHeaders());
         $details = json_decode($res->getBody());
 
         $data = [];
         if ($details) {
             $status = 'active';
             $data = [
-                "bookmarkCount" => $details->count,
+                "bookmarkCount" => $details->count
             ];
         }
 
