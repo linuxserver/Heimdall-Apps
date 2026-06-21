@@ -3,7 +3,7 @@
     "name": "InfCloud",
     "website": "https://inf-it.com/open-source/clients/infcloud/",
     "license": "GNU Affero General Public License v3.0",
-    "description": "InfCloud ia an open source CalDAV/CardDAV web client implementation",
+    "description": "InfCloud is an open source CalDAV/CardDAV web client implementation.",
     "enhanced": false,
     "tile_background": "dark",
     "icon": "infcloud_logo.svg"
