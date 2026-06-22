@@ -4,25 +4,17 @@ namespace App\SupportedApps\TrueNASCORE;
 
 class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
 {
-    public $config;
+    use TrueNASApiTrait;
 
-    //protected $login_first = true; // Uncomment if api requests need to be authed first
-    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
+    public $config;
 
     public function __construct()
     {
-        //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
     public function test()
     {
-        $test = parent::appTest($this->url("core/ping"), $this->attrs());
-        if ($test->code === 200) {
-            $data = $test->response;
-            if ($test->response != '"pong"') {
-                $test->status = "Failed: " . $data;
-            }
-        }
+        $test = $this->testApi();
         echo $test->status;
     }
 
@@ -31,14 +23,20 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
         $status = "inactive";
         $data = [];
 
-        $res = parent::execute($this->url("system/info"), $this->attrs());
-        $details = json_decode($res->getBody());
-        $seconds = $details->uptime_seconds ?? 0;
-        $data["uptime"] = $this->uptime($seconds);
+        try {
+            $systemInfo = $this->apiCall('system.info');
+            $seconds = $systemInfo['uptime_seconds'] ?? 0;
+            $data["uptime"] = $this->uptime($seconds);
 
-        $res = parent::execute($this->url("alert/list"), $this->attrs());
-        $details = json_decode($res->getBody(), true);
-        list($data["alert_tot"], $data["alert_crit"]) = $this->alerts($details);
+            $alerts = $this->apiCall('alert.list');
+            list($data["alert_tot"], $data["alert_crit"]) = $this->alerts($alerts);
+        } catch (\Exception $e) {
+            $data["uptime"] = "Error";
+            $data["alert_tot"] = "?";
+            $data["alert_crit"] = "?";
+        } finally {
+            $this->disconnectWebSocket();
+        }
 
         return parent::getLiveStats($status, $data);
     }
@@ -68,29 +66,22 @@ class TrueNASCORE extends \App\SupportedApps implements \App\EnhancedApps
 
     public function uptime($inputSeconds)
     {
-        // Adapted from https://stackoverflow.com/questions/8273804/convert-seconds-into-days-hours-minutes-and-seconds
-
         $res = "";
         $secondsInAMinute = 60;
         $secondsInAnHour = 60 * $secondsInAMinute;
         $secondsInADay = 24 * $secondsInAnHour;
 
-        // extract days
         $days = floor($inputSeconds / $secondsInADay);
 
-        // extract hours
         $hourSeconds = $inputSeconds % $secondsInADay;
         $hours = floor($hourSeconds / $secondsInAnHour);
 
-        // extract minutes
         $minuteSeconds = $hourSeconds % $secondsInAnHour;
         $minutes = floor($minuteSeconds / $secondsInAMinute);
 
-        // extract the remaining seconds
         $remainingSeconds = $minuteSeconds % $secondsInAMinute;
         $seconds = ceil($remainingSeconds);
 
-        //$res = strval($days).'d '.strval($hours).':'.sprintf('%02d', $minutes).':'.sprintf('%02d', $seconds);
         if ($days > 0) {
             $res =
                 strval($days) .
