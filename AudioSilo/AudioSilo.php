@@ -30,7 +30,7 @@ class AudioSilo extends \App\SupportedApps implements \App\EnhancedApps
         ];
 
         try {
-            $token = $this->login();
+            $token = $this->getSessionToken();
             if ($token !== null) {
                 $stats = $this->fetchStats($token);
                 if ($stats !== null && isset($stats->total_books)) {
@@ -42,19 +42,21 @@ class AudioSilo extends \App\SupportedApps implements \App\EnhancedApps
                 }
                 // Revoke the short-lived session we minted for this poll so
                 // tokens don't accumulate on the server. Best effort.
-                $this->logout($token);
+                $this->revokeSession($token);
             }
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             // Any transport/auth failure leaves the tile inactive with zeros.
         }
 
         return parent::getLiveStats($status, $data);
     }
 
-    // login exchanges the admin username/password for a session bearer token.
-    // AudioSilo has no static API key; /admin/stats needs an admin session, so
-    // we log in per poll. Returns the token, or null when login is refused.
-    private function login()
+    // getSessionToken exchanges the admin username/password for a session bearer
+    // token. AudioSilo has no static API key; /admin/stats needs an admin
+    // session, so we log in per poll. Returns the token, or null when login is
+    // refused or the server can't be reached. (Named to avoid the base class's
+    // public login() used by the login-first flow.)
+    private function getSessionToken()
     {
         $attrs = [
             "headers" => [
@@ -73,26 +75,29 @@ class AudioSilo extends \App\SupportedApps implements \App\EnhancedApps
             null,
             "POST"
         );
+        if ($res === null) {
+            return null;
+        }
         $body = json_decode($res->getBody());
         return isset($body->token) ? $body->token : null;
     }
 
     // fetchStats reads the admin overview (catalog totals + who's listening).
+    // Returns the decoded object, or null when the request fails.
     private function fetchStats($token)
     {
         $res = parent::execute($this->url('api/v1/admin/stats'), $this->authAttrs($token));
+        if ($res === null) {
+            return null;
+        }
         return json_decode($res->getBody());
     }
 
-    // logout revokes the per-poll session token. Best effort - failures here
-    // must never break the tile, so any error is swallowed.
-    private function logout($token)
+    // revokeSession logs out the per-poll session token. Best effort - the
+    // response is ignored, and execute() swallows connection errors itself.
+    private function revokeSession($token)
     {
-        try {
-            parent::execute($this->url('api/v1/auth/logout'), $this->authAttrs($token), null, "POST");
-        } catch (\Exception $e) {
-            // ignore
-        }
+        parent::execute($this->url('api/v1/auth/logout'), $this->authAttrs($token), null, "POST");
     }
 
     // countListening reports how many distinct users have a book in progress in
