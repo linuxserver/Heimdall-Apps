@@ -1,0 +1,10 @@
+{
+  "appid": "e82ab241f951414d245c2ad266b11a49ad25b2c9",
+  "name": "AudioSilo",
+  "website": "https://audiosilo.app",
+  "license": "GNU Affero General Public License v3.0",
+  "description": "AudioSilo is a self-hosted audiobook server with a web, iOS and Android player.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "audiosilo.svg"
+}
