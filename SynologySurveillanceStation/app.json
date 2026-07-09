@@ -1,0 +1,10 @@
+{
+    "appid": "dc532ce90cd95ce9570df2e3d85359e47aa24484",
+    "name": "Synology Surveillance Station",
+    "website": "https://www.synology.com/en-global/surveillance",
+    "license": "Commercial",
+    "description": "Synology's video surveillance application bundled into their NAS devices.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "synologysurveillancestation.png"
+}

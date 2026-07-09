@@ -1,0 +1,10 @@
+{
+    "appid": "b24d8f63b8802524214b208afd82a5a99649ca40",
+    "name": "AudioBookRequest",
+    "website": "https://github.com/markbeep/AudioBookRequest",
+    "license": "MIT License",
+    "description": "AudioBookRequest aims to be a simple and lightweight tool for managing audiobook requests for your media server. It should be easy to set up and use, while integrating nicely with other common tools in the *arr stack. AudioBookRequest serves as as the frontend for you and your friends to easily make audiobook wishlists or create requests in an organized fashion.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "audiobookrequest.png"
+}

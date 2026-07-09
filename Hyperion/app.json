@@ -1,0 +1,10 @@
+{
+    "appid": "36a7ee9468bf3ea76bf41e4ea30ecf48c391ba92",
+    "name": "Hyperion",
+    "website": "https://hyperion-project.org/",
+    "license": "MIT License",
+    "description": "Hyperion is an open source (MIT) Bias or Ambient Lighting implementation for GNU/Linux, macOS and Windows, which you might know from TV manufacturers. It supports many LED devices and video grabbers. In simple words, this software dynamically processes input video signal (using for example current video framebuffer), and converts it into signal to steer ambient light (using for example LED strips controlled over USB device).",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "hyperion.png"
+}

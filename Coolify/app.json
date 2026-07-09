@@ -1,0 +1,10 @@
+{
+    "appid": "62f3cfb591ba027f8c13694f169a9c1165de1580",
+    "name": "Coolify",
+    "website": "https://coolify.io/",
+    "license": "Apache License 2.0",
+    "description": "An open-source, self-hostable PaaS alternative to Vercel, Heroku & Netlify that lets you easily deploy static sites, databases, full-stack applications and 280+ one-click services on your own servers.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "coolify.png"
+}

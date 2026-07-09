@@ -1,0 +1,10 @@
+{
+    "appid": "0edd090f35b41110e5723deb7d9e367f55cc5b7c",
+    "name": "Profilarr",
+    "website": "https://dictionarry.dev/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Configuration management tool for Radarr/Sonarr that automates importing and version control of custom formats and quality profiles.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "profilarr.png"
+}

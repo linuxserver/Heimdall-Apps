@@ -1,0 +1,10 @@
+{
+    "appid": "56b4f3f190a00a736c968f26154beca76e29ace2",
+    "name": "AFFiNE",
+    "website": "https://affine.pro/",
+    "license": "MIT License",
+    "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "affine.png"
+}

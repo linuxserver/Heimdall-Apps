@@ -1,0 +1,10 @@
+{
+    "appid": "ec49215645f16a7f8f2b83538d86890df6c3f806",
+    "name": "LibreChat",
+    "website": "https://librechat.ai/",
+    "license": "MIT License",
+    "description": "Enhanced ChatGPT Clone: Features OpenAI, Assistants API, Azure, Groq, GPT-4 Vision, Mistral, Bing, Anthropic, OpenRouter, Vertex AI, Gemini, AI model switching, message search, langchain, DALL-E-3, ChatGPT Plugins, OpenAI Functions, Secure Multi-User System, Presets, completely open-source for self-hosting. More features in development",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "librechat.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "2068f0670eb019ceef8a2f826b111c3ade317424",
+    "name": "OpenObserve",
+    "website": "https://openobserve.ai/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Open-source observability platform designed for modern applications. OpenObserve simplifies observability with a streamlined, three-step process: effortless setup, seamless integration, and actionable insights.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "openobserve.png"
+}

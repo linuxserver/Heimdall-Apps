@@ -1,0 +1,10 @@
+{
+    "appid": "66f9dcaea3b08aaa9ad8c8f5f0d1fd9499b4203b",
+    "name": "FoundryVTT",
+    "website": "https://foundryvtt.com/",
+    "license": "Proprietary",
+    "description": "FoundryVTT is a proprietary self-hosted or cloud-hosted Solution to running your own Table Top Role Playing Games. FoundryVTT supports many different Table Top systems, like D&D5e, ShadowRun5e, or Blades in the Dark, as well as many others.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "foundryvtt.png"
+}

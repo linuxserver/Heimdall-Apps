@@ -1,0 +1,10 @@
+{
+    "appid": "61f611a4fd585e96d518c703dc7dcdeec8354e1c",
+    "name": "qui",
+    "website": "https://getqui.com/",
+    "license": "CNRI Python Open Source GPL Compatible License Agreement",
+    "description": "A fast, modern web interface for qBittorrent. Supports managing multiple qBittorrent instances from a single, lightweight application.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "qui.png"
+}

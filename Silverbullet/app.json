@@ -1,0 +1,10 @@
+{
+    "appid": "54e2511996db81ab4a76c429a898d15a46b099bb",
+    "name": "Silverbullet",
+    "website": "https://silverbullet.md/",
+    "license": "MIT License",
+    "description": "An open source personal productivity platform built on Markdown, turbo charged with the scripting power of Lua.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "silverbullet.png"
+}

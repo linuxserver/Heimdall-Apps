@@ -1,0 +1,10 @@
+{
+    "appid": "136ffdccd1da4e73d171ea21714a2e218d44b449",
+    "name": "Bento PDF",
+    "website": "https://bentopdf.com/",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "BentoPDF is a powerful, privacy-first PDF toolkit that runs directly in your browser. It lets you manipulate, edit, merge and process PDF files without any server-side processing, ensuring the security and privacy of your files.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "bentopdf.png"
+}

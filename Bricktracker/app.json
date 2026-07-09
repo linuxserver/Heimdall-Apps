@@ -1,0 +1,10 @@
+{
+    "appid": "2407b6a54722cc03e3242fb52181f7215b0fcb06",
+    "name": "Bricktracker",
+    "website": "https://gitea.baerentsen.space/FrederikBaerentsen/BrickTracker",
+    "license": "MIT License",
+    "description": "A web application for organizing and tracking LEGO sets, parts, and minifigures.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "bricktracker.png"
+}

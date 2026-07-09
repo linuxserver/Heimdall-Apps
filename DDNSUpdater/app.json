@@ -1,0 +1,10 @@
+{
+    "appid": "0b0dfdd43dc61e3b1dbd81e5b1ac67df75282223",
+    "name": "DDNS Updater",
+    "website": "https://github.com/qdm12/ddns-updater",
+    "license": "MIT License",
+    "description": "Program to keep DNS A and/or AAAA records updated for multiple DNS providers.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "ddnsupdater.svg"
+}

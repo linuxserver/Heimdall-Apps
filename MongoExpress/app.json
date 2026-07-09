@@ -1,0 +1,10 @@
+{
+    "appid": "f4ca93ed4d0bccbff31cd7eca4122be1d94523f0",
+    "name": "Mongo Express",
+    "website": "https://github.com/mongo-express/mongo-express",
+    "license": "MIT License",
+    "description": "A web-based MongoDB admin interface written with Node.js, Express, and Bootstrap 5.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "mongoexpress.png"
+}

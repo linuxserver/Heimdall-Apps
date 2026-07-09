@@ -1,0 +1,10 @@
+{
+    "appid": "668c248f02f52bcd8dbf072fa58801cdb73f90f4",
+    "name": "Shoko",
+    "website": "https://shokoanime.com/",
+    "license": "MIT License",
+    "description": "Shoko makes managing your anime collection effortless. It ensures that your collection is well-organized, accessible, and easy to navigate. Regardless of whether you have a small or large anime collection, Shoko can handle it. Thanks to its scalability, it can grow alongside your collection with ease.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "shoko.svg"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "75bcbc48dbde2c6c7304098b6d4fb82041cbf8eb",
+    "name": "Hydrawise",
+    "website": "https://www.hydrawise.com/",
+    "license": "Apache License 2.0",
+    "description": "Intuitive Hydrawise software is an easy-to-use solution for efficient water management. It provides professionals and homeowners with detailed oversight of their irrigation controllers, allowing them to adjust watering schedules, monitor piping and electrical systems, and achieve up to 50% in water savings through Predictive Watering® adjustments. Available as a mobile app or web interface.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "hydrawise.png"
+}

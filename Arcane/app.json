@@ -1,0 +1,10 @@
+{
+    "appid": "e7cbd6b1ecc571b4e93f4795246090dad7057012",
+    "name": "Arcane",
+    "website": "https://getarcane.app/",
+    "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+    "description": "Arcane is designed to be an easy and modern Docker management platform, built with everybody in mind. The goal of Arcane is to be built for and by the community to make sure nobody feels left out or behind with their specific features or processes.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "arcane.png"
+}

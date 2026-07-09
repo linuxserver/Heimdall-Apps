@@ -1,0 +1,10 @@
+{
+    "appid": "c433a54cf606cf4a5f932ac264187e1daf54c7fe",
+    "name": "MC Server Soft",
+    "website": "https://mcserversoft.com/",
+    "license": "MIT License",
+    "description": "The oldest maintained Minecraft server wrapper for Windows. MC Server Soft is a server wrapper, a program that doesn't change anything about the Minecraft server itself. It is a UI built on top of the server console, with the purpose of adding additional functionality and ease of management for the server owner.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "mcserversoft.png"
+}

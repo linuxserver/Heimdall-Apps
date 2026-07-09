@@ -1,0 +1,10 @@
+{
+    "appid": "5f106e08a7eccd3e8a29978f275d5f33143e1bff",
+    "name": "Radio Garden",
+    "website": "https://radio.garden/",
+    "license": "MIT License",
+    "description": "All the radio in the world.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "radiogarden.png"
+}

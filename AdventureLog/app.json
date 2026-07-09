@@ -1,0 +1,10 @@
+{
+    "appid": "098e0b8fe2102018fd3c283e5d4a53b2be427f99",
+    "name": "AdventureLog",
+    "website": "https://adventurelog.app/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "AdventureLog is a self-hosted travel app.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "adventurelog.png"
+}

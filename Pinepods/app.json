@@ -1,0 +1,10 @@
+{
+    "appid": "e4acde0540ed4c95e59b1503fd2bd99c63da2ed8",
+    "name": "Pinepods",
+    "website": "https://www.pinepods.online/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Pinepods is a self-hosted, open-source podcast management system, based on Rust, that allows cross-platform synchronization.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "pinepods.png"
+}

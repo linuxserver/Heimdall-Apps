@@ -1,0 +1,10 @@
+{
+    "appid": "a15dcce1cea084a6585df29024d764c5f1b7a647",
+    "name": "GenieACS",
+    "website": "https://github.com/genieacs/genieacs",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "GenieACS is a high performance Auto Configuration Server (ACS) for remote management of TR-069 enabled devices. It utilizes a declarative and fault tolerant configuration engine for automating complex provisioning scenarios at scale. It's battle-tested to handle hundreds of thousands and potentially millions of concurrent devices.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "genieacs.png"
+}

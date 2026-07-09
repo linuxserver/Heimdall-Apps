@@ -1,0 +1,10 @@
+{
+    "appid": "53faac78793ef7b8fa6adfa4627721b3f16d3181",
+    "name": "SigNoz",
+    "website": "https://signoz.io/",
+    "license": "MIT License",
+    "description": "SigNoz is an open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application. An open-source alternative to DataDog, NewRelic, etc. Open source Application Performance Monitoring (APM) & Observability tool",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "signoz.png"
+}

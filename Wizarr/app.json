@@ -1,0 +1,10 @@
+{
+    "appid": "5ff2a4ea6efdf5f3ebc1cbeb97816097ca68cb44",
+    "name": "Wizarr",
+    "website": "https://github.com/wizarrrr/wizarr",
+    "license": "MIT License",
+    "description": "Wizarr is an automatic user invitation and management system for Plex, Jellyfin, Emby, Audiobookshelf, Romm, Komga and Kavita. Create a unique invite link and share it with users — they'll be automatically added to your media server and guided through downloading apps, accessing request systems, and more!",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "wizarr.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "8439fc486bfe4e8c612f575df236838bdf996e9d",
+    "name": "Pulse",
+    "website": "https://github.com/rcourtman/Pulse",
+    "license": "MIT License",
+    "description": "Real-time monitoring for Proxmox VE, Proxmox Mail Gateway, PBS, and Docker infrastructure with alerts and webhooks. Monitor your hybrid Proxmox and Docker estate from a single dashboard. Get instant alerts when nodes go down, containers misbehave, backups fail, or storage fills up. Supports email, Discord, Slack, Telegram, and more.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "pulse.svg"
+}

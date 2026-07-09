@@ -1,0 +1,10 @@
+{
+    "appid": "999e9b74413a19dc31feb621045d53623ca0e8b9",
+    "name": "Nginx UI",
+    "website": "https://nginxui.com/",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "Nginx UI is a comprehensive web-based interface designed to simplify the management and configuration of Nginx servers. It offers real-time server statistics, AI-powered ChatGPT assistance, one-click deployment, automatic renewal of Let's Encrypt certificates, and user-friendly editing tools for website configurations. Additionally, Nginx UI provides features such as online access to Nginx logs, automatic testing and reloading of configuration files, a web terminal, dark mode, and responsive web design. Built with Go and Vue, Nginx UI ensures a seamless and efficient experience for managing your Nginx server.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "nginxui.png"
+}

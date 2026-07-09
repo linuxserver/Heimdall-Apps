@@ -1,0 +1,10 @@
+{
+    "appid": "cb9a368c22f1bf9d886b1d6d6703083d171066d3",
+    "name": "Sophos UTM 9",
+    "website": "https://www.sophos.com/en-us/products/unified-threat-management",
+    "license": "Commercial",
+    "description": "Sophos UTM is easy to use thanks to the configurable real-time dashboard, flexible modular licensing, and intuitive reusable network object definitions.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "sophosutm9.png"
+}

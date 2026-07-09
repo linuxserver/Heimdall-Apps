@@ -1,0 +1,10 @@
+{
+    "appid": "b840fc02d524045429941cc15f59e41cb7be6c52",
+    "name": "redis",
+    "website": "https://redis.io",
+    "license": "Apache License 2.0",
+    "description": "Redis is an open-source in-memory data store used as a database, cache, streaming engine and message broker.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "redis.png"
+}

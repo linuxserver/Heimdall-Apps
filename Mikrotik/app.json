@@ -1,0 +1,10 @@
+{
+    "appid": "2e4c755fb532733fa1e390dcfb12f5e0a2cd0f7d",
+    "name": "Mikrotik",
+    "website": "https://mikrotik.com/",
+    "license": "Proprietary",
+    "description": "MikroTik is a Latvian network equipment manufacturing company. MikroTik develops and sells wired and wireless network routers, network switches, access points, as well as operating systems and auxiliary software.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "mikrotik.png"
+}

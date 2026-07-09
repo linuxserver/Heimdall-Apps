@@ -1,0 +1,10 @@
+{
+    "appid": "7a0f2125bfba623eb4bfd23780e7d65364be32e7",
+    "name": "Go2rtc",
+    "website": "https://go2rtc.com",
+    "license": "MIT License",
+    "description": "Ultimate camera streaming application with support for RTSP, RTMP, HTTP-FLV, WebRTC, MSE, HLS, MP4, MJPEG, HomeKit, FFmpeg, etc.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "go2rtc.png"
+}
