@@ -26,3 +26,6 @@ jobs:
 
       - name: Run App Tests
         run: node testRunner.js
+
+      - name: Run unit tests
+        run: node --test "scripts/tests/*.test.js"

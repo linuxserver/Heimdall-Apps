@@ -4,7 +4,10 @@
   "description": "Fullfilling a foundation app request",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node testRunner.js && node --test \"scripts/tests/*.test.js\"",
+    "test:apps": "node testRunner.js",
+    "test:unit": "node --test \"scripts/tests/*.test.js\"",
+    "scaffold": "node scripts/scaffold.js"
   },
   "repository": {
     "type": "git",
