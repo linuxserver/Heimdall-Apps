@@ -49,7 +49,10 @@ class WGDashboard extends \App\SupportedApps implements \App\EnhancedApps
         $res = parent::execute($this->url('api/getWireguardConfigurations'), $this->getAttrs());
         if ($res !== null) {
             $body = json_decode($res->getBody());
-            if ($body !== null && isset($body->status) && $body->status === true && isset($body->data) && is_array($body->data)) {
+            if (
+                $body !== null && isset($body->status) && $body->status === true
+                && isset($body->data) && is_array($body->data)
+            ) {
                 $status = 'active';
                 $data['configs'] = count($body->data);
                 $connected = 0;
