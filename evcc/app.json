@@ -1,0 +1,10 @@
+{
+    "appid": "d31b835a2762114118c3bd608c5131ebcd6ee073",
+    "name": "evcc",
+    "website": "https://evcc.io/",
+    "license": "MIT License",
+    "description": "evcc is an extensible EV charge controller and home energy management system. It optimises charging your electric vehicle with as much self-generated solar power as possible, in most cases without any changes to your existing home electrical installation.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "evcc.png"
+}
