@@ -1,0 +1,10 @@
+{
+    "appid": "29c7e63664ad71de0023009767daaa9529c7a1f6",
+    "name": "Kuvasz Uptime",
+    "website": "https://kuvasz-uptime.dev/",
+    "license": "Apache License 2.0",
+    "description": "Kuvasz (pronounced [ˈkuvɒs]) is an open-source uptime and SSL monitoring service, with multiple notification channels, status pages, IaC support via YAML, Prometheus integration, a complete REST API and many more.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "kuvaszuptime.png"
+}
