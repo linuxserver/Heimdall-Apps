@@ -1,0 +1,10 @@
+{
+    "appid": "43fbaa84d2e8f6cb4e5a8a8f00af49bbc4229e77",
+    "name": "LubeLogger",
+    "website": "https://lubelogger.com/",
+    "license": "MIT License",
+    "description": "Self-Hosted, Open-Source, Unconventionally-Named Vehicle Maintenance Records and Fuel Mileage Tracker",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "lubelogger.png"
+}
