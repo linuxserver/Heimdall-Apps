@@ -1,0 +1,10 @@
+{
+    "appid": "b14ab480028768cb748fd97de56144a304eb8a1a",
+    "name": "PeaNUT",
+    "website": "https://github.com/Brandawg93/PeaNUT",
+    "license": "Apache License 2.0",
+    "description": "A tiny dashboard for Network UPS Tools (NUT).",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "peanut.svg"
+}
