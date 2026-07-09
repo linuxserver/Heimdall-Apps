@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\aura;
 
-class aura extends \App\SupportedApps
+class aura extends \App\SupportedApps // phpcs:ignore
 {
 }
