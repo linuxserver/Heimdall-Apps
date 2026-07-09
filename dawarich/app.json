@@ -1,0 +1,10 @@
+{
+    "appid": "28446c7c7e4e5001daa704873d7a14cd9ea18835",
+    "name": "dawarich",
+    "website": "https://dawarich.app",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Self-hostable alternative to Google Location History (Google Maps Timeline).",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "dawarich.png"
+}
