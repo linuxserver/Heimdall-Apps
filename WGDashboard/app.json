@@ -1,0 +1,10 @@
+{
+    "appid": "84104f4346a60adb795726e3f4f0d1333f8b1942",
+    "name": "WGDashboard",
+    "website": "https://github.com/donaldzou/WGDashboard",
+    "license": "Apache License 2.0",
+    "description": "Monitoring WireGuard is not convenient; in most cases you'll need to login to your server and type wg show. WGDashboard was created to view and manage all your WireGuard configurations in an easy way, while keeping it simple to install and use.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "wgdashboard.png"
+}
