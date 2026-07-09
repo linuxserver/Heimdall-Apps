@@ -1,0 +1,10 @@
+{
+    "appid": "47a7dbae555c0a47121f8c5ff6a459905e3cbf64",
+    "name": "Kutt",
+    "website": "https://hub.docker.com/r/kutt/kutt",
+    "license": "MIT License",
+    "description": "Kutt is a modern URL shortener with support for custom domains. Create and edit links, view statistics, manage users, and more.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "kutt.png"
+}

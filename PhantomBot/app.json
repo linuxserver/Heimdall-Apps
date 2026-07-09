@@ -1,0 +1,10 @@
+{
+    "appid": "1b43b0b5b06610b13a9db9074c12fdd831408f27",
+    "name": "PhantomBot",
+    "website": "https://phantombot.dev/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "PhantomBot is a Twitch chat bot powered by Java. PhantomBot has many modern features out of the box such as a built-in webpanel, enhanced moderation, games, a point system, raffles, custom commands, a music player, and more. PhantomBot can also be integrated with many services such as Discord, TipeeeStream, StreamLabs and StreamElements!",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "phantombot.png"
+}

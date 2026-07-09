@@ -1,0 +1,10 @@
+{
+    "appid": "d11c485949439d12c6d634478672001e05e0f4e7",
+    "name": "Cachet",
+    "website": "https://cachethq.io/",
+    "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+    "description": "Cachet is a beautiful and powerful open-source status page system that lets you communicate downtime, incidents and scheduled maintenance to your users.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "cachet.png"
+}

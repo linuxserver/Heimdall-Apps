@@ -1,0 +1,10 @@
+{
+    "appid": "d5d4adb30283d947c6ba6e072df1328b07b1c262",
+    "name": "FileBrowser Quantum",
+    "website": "https://github.com/gtsteffaniak/filebrowser",
+    "license": "Apache License 2.0",
+    "description": "FileBrowser Quantum provides an easy way to access and manage your files from the web. It has a web page interface that allows you to create secure shared links, users with their own specific permissions and settings, and offers a great viewing experience for many file types. This version is called \"Quantum\" because it packs tons of advanced features into a tiny, easy to run file. Unlike the majority of alternative options, FileBrowser Quantum is simple to install and easy to configure.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "filebrowserquantum.png"
+}

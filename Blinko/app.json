@@ -1,0 +1,10 @@
+{
+    "appid": "357f5ce56cc9cb4f118f7875926750c2d9cab5c8",
+    "name": "Blinko",
+    "website": "https://blinko.mintlify.app/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Blinko is an innovative open-source project designed for individuals who want to quickly capture and organize their fleeting thoughts. Blinko allows users to seamlessly jot down ideas the moment they strike, ensuring that no spark of creativity is lost.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "blinko.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "6b5a89dca3eb3952605e81e78038d24d083d98f6",
+    "name": "PdfDing",
+    "website": "https://www.pdfding.com",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "Selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "pdfding.svg"
+}

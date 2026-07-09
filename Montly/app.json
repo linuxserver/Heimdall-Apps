@@ -1,0 +1,10 @@
+{
+    "appid": "44cd37665ac46421677ae877d56811e16fd9aacc",
+    "name": "Montly",
+    "website": "https://azurecoder.dev/Montly/",
+    "license": "MIT License",
+    "description": "Self-hosted monthly recurring task tracker. Track bills, subscriptions, payments, and reminders — with receipt uploads, spending reports, multi-user support, and a clean mobile-friendly UI.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "montly.svg"
+}

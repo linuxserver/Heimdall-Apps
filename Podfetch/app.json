@@ -1,0 +1,10 @@
+{
+    "appid": "433dc2c56e482aa6d8bc5cfae5ac5e4ec3d0f752",
+    "name": "Podfetch",
+    "website": "https://podfetch.com/",
+    "license": "Apache License 2.0",
+    "description": "Podfetch es un gestor de podcasts autohospedado. Es una aplicación web que permite descargar podcasts y escucharlos en línea. Está escrita en Rust y utiliza React para el frontend. Además, incluye integración con GPodder, por lo que puedes seguir usando tu aplicación de podcasts actual.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "podfetch.png"
+}

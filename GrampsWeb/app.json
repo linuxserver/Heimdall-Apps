@@ -1,0 +1,10 @@
+{
+    "appid": "d939899925c863cdedc6c1ab845e56286a1052fd",
+    "name": "Gramps Web",
+    "website": "https://www.grampsweb.org/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "The free, open-source genealogy system for building your family tree – together. Use it standalone or as a companion to Gramps Desktop, with full control over your data and privacy as the top priority.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "grampsweb.png"
+}

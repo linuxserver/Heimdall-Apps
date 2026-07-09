@@ -1,0 +1,10 @@
+{
+    "appid": "b6ab23b9afaaa5597a71515f5a12916d3a8a2ce1",
+    "name": "LinkStack",
+    "website": "https://linkstack.org/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "LinkStack – the ultimate solution for creating a personalized and professional profile page. Showcase all your important links in one place, forget the limitation of one link on social media. Set up your personal site on your own server with just a few clicks.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "linkstack.svg"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "911b452cf4d6ec592b6ea8ec1640f61692c02180",
+    "name": "Alby Hub",
+    "website": "https://albyhub.com/",
+    "license": "Apache License 2.0",
+    "description": "Alby Hub allows you to control your Lightning node or wallet from any other application that supports NWC.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "albyhub.png"
+}

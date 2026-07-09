@@ -1,0 +1,10 @@
+{
+    "appid": "a1d41101adb784f6f664e1f48a0590cbb419b591",
+    "name": "Firewalla",
+    "website": "https://firewalla.com/",
+    "license": "GNU Affero General Public License v3.0 or later",
+    "description": "Local firewall/VPN.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "firewalla.png"
+}

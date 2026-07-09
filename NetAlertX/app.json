@@ -1,0 +1,10 @@
+{
+    "appid": "1995e66a94d6c03e0997a48670efae1a323d0b84",
+    "name": "NetAlertX",
+    "website": "https://netalertx.com/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Why NetAlertx? NetAlertx provides a user-friendly solution to monitor your network, ensuring peace of mind and enhanced security. NetAlertx is your ultimate network management companion. Stay ahead with real-time alerts for new devices, disconnections, and critical changes. With scheduled scans and seamless integration with over 80 notification services, including email and Telegram, NetAlertx keeps you informed anywhere. Visualize your network with intuitive UI customization and unify multiple networks effortlessly. Plus, integrate with Home Assistant for advanced automation. Whether you're monitoring your home or office network, NetAlertx empowers you with deep insights and proactive management. NetAlertx features a robust plugin system that allows third-party scripts to feed events into the UI and send notifications, with functionalities like dynamic UI creation, value filtering, and importing objects into the database.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "netalertx.png"
+}

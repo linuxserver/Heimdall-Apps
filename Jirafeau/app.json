@@ -1,0 +1,10 @@
+{
+    "appid": "5a70c37fbca520f2038e47bfa861665be9230deb",
+    "name": "Jirafeau",
+    "website": "https://jirafeau.net",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Jirafeau is a \"one-click-filesharing\": Select your file, upload, share a link. That's it. See jirafeau.net for a demo.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "jirafeau.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "e8ce43d7274cd6a9c7da580c4ada6422b643a97a",
+    "name": "Kasm Workspace",
+    "website": "https://www.kasmweb.com/",
+    "license": "GNU General Public License v2.0 only",
+    "description": "Kasm Workspaces is a platform that streams containerized desktops and browsers to your web browser. You can access secure and customized work environments from any device and location, and use them for web isolation, OSINT, remote access, and more.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "kasmworkspace.png"
+}

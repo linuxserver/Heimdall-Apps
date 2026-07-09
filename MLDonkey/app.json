@@ -1,0 +1,10 @@
+{
+    "appid": "88e357f015f7262c750588a77fe776ba17af0567",
+    "name": "MLDonkey",
+    "website": "https://github.com/logicwar/mldonkey",
+    "license": "GNU General Public License v1.0 or later",
+    "description": "MLDonkey for download ed2K: links",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "mldonkey.png"
+}

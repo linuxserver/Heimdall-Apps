@@ -1,0 +1,10 @@
+{
+    "appid": "2119fac6806f60e4c5c9c843b535167c1e3e0b70",
+    "name": "Qinglong",
+    "website": "https://github.com/whyour/qinglong",
+    "license": "MIT License",
+    "description": "Qinglong is a scheduled task management platform that supports Python3, JavaScript, Shell, and Typescript.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "qinglong.png"
+}

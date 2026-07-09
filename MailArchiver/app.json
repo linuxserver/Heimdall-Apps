@@ -1,0 +1,10 @@
+{
+    "appid": "18b260cfc9e5eab31fa2c005df43f63bf85c6927",
+    "name": "Mail-Archiver",
+    "website": "https://mail-archiver.org/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "A comprehensive solution for archiving, searching, and exporting emails.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "mailarchiver.png"
+}

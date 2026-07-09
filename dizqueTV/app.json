@@ -1,0 +1,10 @@
+{
+    "appid": "3d31db14dadbacff762457487867dde4d8d64093",
+    "name": "dizqueTV",
+    "website": "https://github.com/vexorian/dizquetv",
+    "license": "zlib License",
+    "description": "Create live TV channel streams from media on your Plex servers.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "dizquetv.png"
+}

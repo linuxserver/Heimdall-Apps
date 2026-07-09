@@ -1,0 +1,10 @@
+{
+    "appid": "2721c724e1932aee2eb38c86d887ddc25bf01b54",
+    "name": "zoraxy",
+    "website": "https://github.com/tobychui/zoraxy",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Zoraxy is an open-source, lightweight reverse proxy and networking tool that simplifies the management of web traffic. It allows users to easily route, forward, and manage requests across multiple services and applications, often used to expose local services to the internet. Zoraxy supports features like SSL termination, authentication, and load balancing, making it a versatile option for small-scale deployments or developers needing quick access to their services. Its key strengths are its simplicity, ease of use, and the ability to run on minimal resources, such as on a Raspberry Pi or small server setups.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "zoraxy.png"
+}

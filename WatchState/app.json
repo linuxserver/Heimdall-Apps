@@ -1,0 +1,10 @@
+{
+    "appid": "460b760a454371f18688c2deee5ccdd58de3595a",
+    "name": "WatchState",
+    "website": "https://github.com/arabcoders/watchstate",
+    "license": "MIT License",
+    "description": "This tool primary goal is to sync your backends users play state without relying on third party services, out of the box, this tool supports Jellyfin, Plex and Emby media servers.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "watchstate.png"
+}
