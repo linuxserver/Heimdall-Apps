@@ -1,0 +1,10 @@
+{
+    "appid": "ad00c690d667f9dc6834a33aa36f56e2d3df78d9",
+    "name": "Cup",
+    "website": "https://github.com/sergi0g/cup",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Cup is a lightweight and fast tool for checking Docker container images for available updates. It supports multiple registries such as Docker Hub, ghcr.io, and Quay, and offers both a command-line and web-based interface.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "cup.svg"
+}
