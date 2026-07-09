@@ -1,5 +1,7 @@
 ---
-# GitHub Action uses SVGO to Minify and removeDimensions of SVG files
+# Uses SVGO to minify and removeDimensions of SVG files, committing the
+# optimized results back to the repository. Replaces the archived
+# ericcornelissen/svgo-action with a direct `npx svgo` invocation.
 name: Optimize SVG Files
 
 on:
@@ -16,14 +18,50 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
-      - name: Optimize SVGs
-        uses: ericcornelissen/svgo-action@v4
-        id: svgo
         with:
-          repo-token: ${{secrets.GITHUB_TOKEN}}
-          svgo-config: .github/workflows/svgo.config.js
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Optimize SVGs
+        id: svgo
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Determine the SVG files changed in this push. Fall back to every
+          # tracked SVG when the previous commit is unavailable (e.g. the first
+          # push to a branch or a force push).
+          before="${{ github.event.before }}"
+          if [ -z "$before" ] \
+            || [ "$before" = "0000000000000000000000000000000000000000" ] \
+            || ! git cat-file -e "${before}^{commit}" 2>/dev/null; then
+            mapfile -t files < <(git ls-files -- '*.svg')
+          else
+            mapfile -t files < <(git diff --name-only --diff-filter=d \
+              "$before" "${{ github.sha }}" -- '*.svg')
+          fi
+
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "No SVG files to optimize."
+            echo "optimized_count=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Optimizing ${#files[@]} SVG file(s):"
+          printf '  %s\n' "${files[@]}"
+          npx --yes svgo@3 --config .github/workflows/svgo.config.js "${files[@]}"
+
+          # Count the files SVGO actually changed so the commit message matches.
+          count=$(git diff --name-only -- '*.svg' | wc -l | tr -d '[:space:]')
+          echo "optimized_count=${count}" >> "$GITHUB_OUTPUT"
+
       - name: Commit optimizations
         uses: stefanzweifel/git-auto-commit-action@v7
-        if: ${{steps.svgo.outputs.DID_OPTIMIZE}}
+        if: ${{ steps.svgo.outputs.optimized_count != '0' }}
         with:
-          commit_message: Optimize ${{steps.svgo.outputs.OPTIMIZED_COUNT}} SVG(s) # yamllint disable-line rule:line-length
+          commit_message: Optimize ${{steps.svgo.outputs.optimized_count}} SVG(s) # yamllint disable-line rule:line-length
+          file_pattern: '*.svg'
