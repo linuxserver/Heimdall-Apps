@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: How the app-request flow works
+    url: https://github.com/linuxserver/Heimdall-Apps/blob/master/docs/REQUEST-FLOW.md
+    about: Read how app requests are validated, approved and scaffolded automatically.
+  - name: Requesting apps (wiki)
+    url: https://github.com/linuxserver/Heimdall-Apps/wiki/Requesting-Apps
+    about: Background on adding apps to Heimdall.
