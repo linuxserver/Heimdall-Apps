@@ -1,0 +1,10 @@
+{
+    "appid": "b3283d686c217e7f10392a96fabc093e6e2d0385",
+    "name": "Mailpit",
+    "website": "https://mailpit.axllent.org/",
+    "license": "MIT License",
+    "description": "Mailpit is a small, fast, low memory, zero-dependency, multi-platform email testing tool & API for developers. It acts as an SMTP server, provides a modern web interface to view & test captured emails, and contains an API for automated integration testing.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "mailpit.svg"
+}
