@@ -2,9 +2,16 @@
 
 namespace App\SupportedApps\AudioSilo;
 
+use Illuminate\Support\Facades\Cache;
+
 class AudioSilo extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
+
+    // How long a successful stats fetch is reused before the AudioSilo server is
+    // queried again. Catalog totals change rarely, so a 5-minute cache keeps the
+    // tile fresh while sparing the server the tile's frequent refresh loop.
+    private const CACHE_TTL = 300;
 
     public function __construct()
     {
@@ -12,117 +19,64 @@ class AudioSilo extends \App\SupportedApps implements \App\EnhancedApps
 
     public function test()
     {
-        // The public server-info endpoint needs no auth and always answers on a
-        // healthy AudioSilo server, so it is the reliable reachability check.
-        // Credentials are exercised by the live tile (see livestats).
-        $test = parent::appTest($this->url('api/v1/server'));
+        // /admin/stats is exactly what the tile reads, so testing it validates
+        // both the API key and that it carries admin access in one call
+        // (401 = bad/missing key, 403 = valid key but not an admin).
+        $test = parent::appTest($this->url('api/v1/admin/stats'), $this->getAttrs());
         echo $test->status;
     }
 
     public function livestats()
     {
+        $cacheKey = $this->cacheKey();
+
+        // Serve a recent successful result without touching the server - the tile
+        // refresh loop runs far more often than these totals change (see CACHE_TTL).
+        $cached = Cache::get($cacheKey);
+        if (is_array($cached)) {
+            return parent::getLiveStats('active', $cached);
+        }
+
         $status = 'inactive';
         $data = [
             'books' => 0,
-            'libraries' => 0,
             'users' => 0,
-            'listening' => 0,
         ];
 
-        try {
-            $token = $this->getSessionToken();
-            if ($token !== null) {
-                $stats = $this->fetchStats($token);
-                if ($stats !== null && isset($stats->total_books)) {
-                    $status = 'active';
-                    $data['books'] = (int) $stats->total_books;
-                    $data['libraries'] = (int) $stats->total_libraries;
-                    $data['users'] = (int) $stats->total_users;
-                    $data['listening'] = $this->countListening($stats);
-                }
-                // Revoke the short-lived session we minted for this poll so
-                // tokens don't accumulate on the server. Best effort.
-                $this->revokeSession($token);
+        // Single authenticated GET - the API key is a bearer token, so there is
+        // no per-poll login/logout to do. execute() returns null on a failed
+        // connection (it never throws), so guard before reading the body.
+        $res = parent::execute($this->url('api/v1/admin/stats'), $this->getAttrs());
+        if ($res !== null) {
+            $stats = json_decode($res->getBody());
+            if ($stats !== null && isset($stats->total_books)) {
+                $status = 'active';
+                $data['books'] = (int) $stats->total_books;
+                $data['users'] = (int) $stats->total_users;
+                // Cache only successes, so a transient outage retries on the
+                // next refresh instead of pinning an empty tile for 5 minutes.
+                Cache::put($cacheKey, $data, self::CACHE_TTL);
             }
-        } catch (\Throwable $e) {
-            // Any transport/auth failure leaves the tile inactive with zeros.
         }
 
         return parent::getLiveStats($status, $data);
     }
 
-    // getSessionToken exchanges the admin username/password for a session bearer
-    // token. AudioSilo has no static API key; /admin/stats needs an admin
-    // session, so we log in per poll. Returns the token, or null when login is
-    // refused or the server can't be reached. (Named to avoid the base class's
-    // public login() used by the login-first flow.)
-    private function getSessionToken()
+    // cacheKey scopes the cached stats to this tile's server + key so several
+    // AudioSilo tiles never share one cache entry.
+    private function cacheKey()
     {
-        $attrs = [
-            "headers" => [
-                "Accept" => "application/json",
-                "Content-Type" => "application/json",
-            ],
-            "body" => json_encode([
-                "username" => $this->config->username,
-                "password" => $this->config->password,
-                "device_name" => "Heimdall",
-            ]),
-        ];
-        $res = parent::execute(
-            $this->url('api/v1/auth/login'),
-            $attrs,
-            null,
-            "POST"
-        );
-        if ($res === null) {
-            return null;
-        }
-        $body = json_decode($res->getBody());
-        return isset($body->token) ? $body->token : null;
+        $url = $this->config->url ?? '';
+        $key = $this->config->apikey ?? '';
+        return 'audiosilo_livestats_' . md5($url . '|' . $key);
     }
 
-    // fetchStats reads the admin overview (catalog totals + who's listening).
-    // Returns the decoded object, or null when the request fails.
-    private function fetchStats($token)
-    {
-        $res = parent::execute($this->url('api/v1/admin/stats'), $this->authAttrs($token));
-        if ($res === null) {
-            return null;
-        }
-        return json_decode($res->getBody());
-    }
-
-    // revokeSession logs out the per-poll session token. Best effort - the
-    // response is ignored, and execute() swallows connection errors itself.
-    private function revokeSession($token)
-    {
-        parent::execute($this->url('api/v1/auth/logout'), $this->authAttrs($token), null, "POST");
-    }
-
-    // countListening reports how many distinct users have a book in progress in
-    // the cross-user listening feed (finished books are excluded), matching the
-    // server's "who's listening" framing.
-    private function countListening($stats)
-    {
-        if (!isset($stats->listening) || !is_array($stats->listening)) {
-            return 0;
-        }
-        $users = [];
-        foreach ($stats->listening as $row) {
-            if (empty($row->finished) && isset($row->user_id)) {
-                $users[$row->user_id] = true;
-            }
-        }
-        return count($users);
-    }
-
-    private function authAttrs($token)
+    private function getAttrs()
     {
         return [
             "headers" => [
                 "Accept" => "application/json",
-                "Authorization" => "Bearer " . $token,
+                "Authorization" => "Bearer " . ($this->config->apikey ?? ''),
             ],
         ];
     }
