@@ -1,0 +1,63 @@
+---
+name: App Request - Validate
+
+# Validates app-request issues and comments back with the computed appid /
+# folder, missing fields and duplicate checks. Read + comment only.
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  issues: write
+
+concurrency:
+  group: app-request-validate-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate request
+    if: contains(github.event.issue.labels.*.name, 'app-request')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup node env
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+
+      # Reads the issue body from $GITHUB_EVENT_PATH (never interpolated into
+      # shell), writes the comment to a file and sets steps.validate.outputs.is_valid.
+      - name: Validate request
+        id: validate
+        env:
+          REQUEST_COMMENT_FILE: ${{ runner.temp }}/comment.md
+        run: node scripts/validate-request.js
+
+      - name: Comment result
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          COMMENT_FILE: ${{ runner.temp }}/comment.md
+        run: >-
+          gh issue comment "$ISSUE_NUMBER"
+          --repo "$GITHUB_REPOSITORY"
+          --body-file "$COMMENT_FILE"
+
+      - name: Apply labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          IS_VALID: ${{ steps.validate.outputs.is_valid }}
+        run: |
+          set -euo pipefail
+          if [ "$IS_VALID" = "true" ]; then
+            add="request-valid"; remove="request-invalid"
+          else
+            add="request-invalid"; remove="request-valid"
+          fi
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --add-label "$add"
+          gh issue edit "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --remove-label "$remove" || true

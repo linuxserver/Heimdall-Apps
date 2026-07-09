@@ -1,0 +1,93 @@
+---
+name: App Request - Scaffold
+
+# Scaffolds an app folder and opens a PR. Runs ONLY when a maintainer applies
+# the `approved` label to an app-request issue (never on open / edit).
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: app-request-scaffold-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  scaffold:
+    name: Scaffold and open PR
+    # Maintainer gate: the triggering label must be `approved` AND the issue
+    # must already carry the `app-request` label.
+    if: >-
+      github.event.label.name == 'approved' &&
+      contains(github.event.issue.labels.*.name, 'app-request')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup node env
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+
+      # Re-parses + re-validates the issue, downloads the icon from an
+      # allow-listed attachment host, scaffolds the folder and emits PR
+      # metadata. No attacker data is interpolated into shell.
+      - name: Scaffold app
+        id: scaffold
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          REQUEST_COMMENT_FILE: ${{ runner.temp }}/comment.md
+          REQUEST_PR_BODY_FILE: ${{ runner.temp }}/pr-body.md
+        run: node scripts/scaffold-from-issue.js
+
+      - name: Comment failure
+        if: always() && steps.scaffold.outputs.ok != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          COMMENT_FILE: ${{ runner.temp }}/comment.md
+        run: |
+          set -euo pipefail
+          if [ -f "$COMMENT_FILE" ]; then
+            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$COMMENT_FILE"
+          fi
+
+      # Optimize the icon with the repo's svgo config. The path is a fixed,
+      # alnum-validated "<Folder>/<icon>", passed via env and quoted.
+      - name: Optimize SVG icon
+        if: steps.scaffold.outputs.ok == 'true' && steps.scaffold.outputs.icon_is_svg == 'true'
+        env:
+          ICON_PATH: ${{ steps.scaffold.outputs.icon_path }}
+        run: npx --yes svgo@3 --config .github/workflows/svgo.config.js "$ICON_PATH"
+
+      - name: Create Pull Request
+        if: steps.scaffold.outputs.ok == 'true'
+        id: cpr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ github.token }}
+          branch: ${{ steps.scaffold.outputs.branch }}
+          base: master
+          title: ${{ steps.scaffold.outputs.pr_title }}
+          body-path: ${{ runner.temp }}/pr-body.md
+          commit-message: ${{ steps.scaffold.outputs.commit_message }}
+          author: ${{ steps.scaffold.outputs.author }}
+          labels: app-request
+          delete-branch: true
+
+      - name: Comment PR link
+        if: steps.scaffold.outputs.ok == 'true' && steps.cpr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+        run: >-
+          gh issue comment "$ISSUE_NUMBER"
+          --repo "$GITHUB_REPOSITORY"
+          --body "Scaffolded and opened $PR_URL"
