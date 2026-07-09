@@ -1,0 +1,10 @@
+{
+    "appid": "a0fbc0b0dddf78ad9a158c45673f3ff9f3bcfe10",
+    "name": "Zipline",
+    "website": "https://zipline.diced.sh/",
+    "license": "MIT License",
+    "description": "The next generation ShareX / File upload server. Packed with features and a great dashboard. What more could you want?",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "zipline.png"
+}
