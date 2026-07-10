@@ -1,0 +1,10 @@
+{
+    "appid": "3473303159fd176995bf450167e777b0a6f97a47",
+    "name": "bitmagnet",
+    "website": "https://bitmagnet.io/",
+    "license": "MIT License",
+    "description": "A self-hosted BitTorrent indexer, DHT crawler, content classifier and torrent search engine with web UI, GraphQL API and Servarr stack integration.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "bitmagnet.svg"
+}
