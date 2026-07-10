@@ -1,0 +1,10 @@
+{
+    "appid": "d5150731970b061c918a555174c487df9ae52519",
+    "name": "Shlink",
+    "website": "https://shlink.io/",
+    "license": "MIT License",
+    "description": "A PHP-based self-hosted URL shortener that can be used to serve shortened URLs under your own domain.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "shlink.svg"
+}
