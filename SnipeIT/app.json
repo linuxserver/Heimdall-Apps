@@ -1,0 +1,10 @@
+{
+    "appid": "1155d91648f7612882a2c4743e9422dae3d55f89",
+    "name": "Snipe-IT",
+    "website": "https://github.com/snipe/snipe-it",
+    "license": "GNU Affero General Public License v3.0 only",
+    "description": "Snipe-IT is a free, open source IT asset management system built on Laravel. It tracks who has which hardware, when it was purchased for accurate depreciation, and handles software licenses, accessories and consumables through a web-based interface.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "snipeit.png"
+}
