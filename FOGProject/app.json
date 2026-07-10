@@ -1,0 +1,10 @@
+{
+    "appid": "36bee84171ec8bcd5df868cf6cfa1faf67b23008",
+    "name": "FOG Project",
+    "website": "https://fogproject.org/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "A free, open-source network computer cloning and management solution.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "fogproject.png"
+}

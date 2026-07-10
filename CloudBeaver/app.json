@@ -1,0 +1,10 @@
+{
+    "appid": "e47bc8f7e265217ac0adfb77a2c6b6574d348f1a",
+    "name": "CloudBeaver",
+    "website": "https://cloudbeaver.io/",
+    "license": "Apache License 2.0",
+    "description": "CloudBeaver is a light modern web application for database management. Out of the box it supports various SQL, NoSQL and BigData datasources. In a few clicks you can configure your server, add all your database connections and create users, then share the link within your team and start working together.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "cloudbeaver.svg"
+}

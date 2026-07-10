@@ -1,0 +1,10 @@
+{
+    "appid": "1f067dcc562bc16dc9ba987235e4da94d4027174",
+    "name": "Homey",
+    "website": "https://my.homey.app/",
+    "license": "Commercial",
+    "description": "Control, automate and monitor your entire smart home in one app. Discover the world's most easy-to-use, privacy-first smart home platform.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "homey.svg"
+}

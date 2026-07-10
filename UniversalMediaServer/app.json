@@ -1,0 +1,10 @@
+{
+    "appid": "a7f4fea70f0cf1a13f6f279d8b5248eaa59debc9",
+    "name": "Universal Media Server",
+    "website": "https://www.universalmediaserver.com/",
+    "license": "GNU General Public License v2.0 only",
+    "description": "A DLNA, UPnP and HTTP(S) Media Server.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "universalmediaserver.png"
+}

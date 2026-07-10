@@ -1,0 +1,10 @@
+{
+    "appid": "af5a29cc419b97f7f02c832f8c43a912ce38d176",
+    "name": "Windows Server Essentials 2016",
+    "website": "https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016-essentials",
+    "license": "Commercial",
+    "description": "Windows Server Essentials offers a flexible, affordable, and easy-to-use server solution for small businesses with up to 25 users and 50 devices. An ideal first server, it can also be used as the primary server in a multi-server environment, and the 2016 release adds a wide range of new and enhanced features to help small businesses be more productive.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "windowsserveressentials2016.svg"
+}

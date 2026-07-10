@@ -1,0 +1,10 @@
+{
+    "appid": "cc11dbeabcbe5d680f813bfb0ce3bb2fd00c0e0a",
+    "name": "Apex Fusion",
+    "website": "https://apexfusion.com/apex/",
+    "license": "Commercial",
+    "description": "Apex Fusion is the cloud portal for Neptune Systems' Apex aquarium controllers, sensors and accessories. It lets you monitor and control your aquarium equipment from anywhere as part of an easy-to-use, integrated system.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "apexfusion.png"
+}

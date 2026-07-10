@@ -1,0 +1,10 @@
+{
+    "appid": "ee217c6ffa53ca5f23650cc480b4e1d90755e289",
+    "name": "NextDNS",
+    "website": "https://www.nextdns.io/",
+    "license": "Proprietary",
+    "description": "The new firewall for the modern Internet. NextDNS protects you from all kinds of security threats, blocks ads and trackers on websites and in apps, and provides a safe and supervised Internet for kids on all devices and on all networks.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "nextdns.svg"
+}

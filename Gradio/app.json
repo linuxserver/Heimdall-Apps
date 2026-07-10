@@ -1,0 +1,10 @@
+{
+    "appid": "7f5f7cf0f04eb3b7c9e25e84150b2ed8db30be29",
+    "name": "Gradio",
+    "website": "https://gradio.app/",
+    "license": "Apache License 2.0",
+    "description": "Create UIs for your machine learning model in Python in three minutes.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "gradio.svg"
+}

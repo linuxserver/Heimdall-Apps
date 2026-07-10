@@ -1,0 +1,10 @@
+{
+    "appid": "f3f825605559ba18fd17c39b4d96beae54d08160",
+    "name": "iKuai",
+    "website": "https://www.ikuai8.com/",
+    "license": "Noweb License",
+    "description": "iKuai is an intelligent flow-control and network management platform. It aims to deliver professional, intelligent and user-friendly network coverage with a complete management solution.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "ikuai.png"
+}

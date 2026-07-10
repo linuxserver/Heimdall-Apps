@@ -1,0 +1,10 @@
+{
+    "appid": "5d58f588ecf562a14b74980eddd4c8ef4396707f",
+    "name": "Loxberry",
+    "website": "https://wiki.loxberry.de/",
+    "license": "ODC Public Domain Dedication & License 1.0",
+    "description": "LoxBerry is a plugin platform for the Raspberry Pi, other single-board computers (RockPi, Odroid and many more) and virtual machines, designed to extend Loxone smart-home installations.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "loxberry.png"
+}

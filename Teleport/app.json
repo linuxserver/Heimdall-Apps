@@ -1,0 +1,10 @@
+{
+    "appid": "7eef5b1253eae1377f62e9c31efc638100e11854",
+    "name": "Teleport",
+    "website": "https://goteleport.com/",
+    "license": "Apache License 2.0",
+    "description": "Teleport is an open-source tool for providing zero trust access to servers and cloud applications using SSH, Kubernetes and HTTPS. It can eliminate the need for VPNs by providing a single gateway to access computing infrastructure via SSH, Kubernetes clusters, and cloud applications through a built-in proxy.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "teleport.svg"
+}

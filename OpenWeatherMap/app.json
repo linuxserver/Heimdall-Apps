@@ -1,0 +1,10 @@
+{
+    "appid": "721f85901503a74546b5eefb49b7fa894eebed78",
+    "name": "OpenWeatherMap",
+    "website": "https://openweathermap.org/",
+    "license": "Creative Commons Attribution Non Commercial 4.0 International",
+    "description": "OpenWeatherMap provides current weather data, forecasts, and historical weather information through a web service and API for locations around the world.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "openweathermap.svg"
+}

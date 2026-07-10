@@ -1,0 +1,10 @@
+{
+    "appid": "88f0ced5c5338c9068beaa6746b2eb3d04e18e74",
+    "name": "Axigen Mail Server",
+    "website": "https://www.axigen.com/mail-server/download/",
+    "license": "Academic Free License v1.1",
+    "description": "Mail server, calendaring and collaboration. Self-hosted: runs on Linux, Windows, or Docker. Total control, total privacy. Made in Europe.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "axigenmailserver.png"
+}

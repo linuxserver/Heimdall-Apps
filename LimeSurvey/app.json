@@ -1,0 +1,10 @@
+{
+    "appid": "66a4c7134874924d5f7d33470e158ce3b2c8e12a",
+    "name": "LimeSurvey",
+    "website": "https://community.limesurvey.org/",
+    "description": "LimeSurvey is a simple, quick and anonymous online survey tool bursting with insights. Whether you are a student, professional or enterprise, you can design a survey and get the results you need, all for free.",
+    "license": "Community Data License Agreement Permissive 1.0",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "limesurvey.svg"
+}

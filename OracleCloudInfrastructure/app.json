@@ -1,0 +1,10 @@
+{
+    "appid": "298f672b08d83259020ba52c1f55eb16958d790b",
+    "name": "Oracle Cloud Infrastructure",
+    "website": "https://oraclecloud.com/",
+    "license": "Commercial",
+    "description": "Oracle Cloud Infrastructure (OCI) is a next-generation cloud designed to run any application faster and more securely, for less.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "oraclecloudinfrastructure.svg"
+}

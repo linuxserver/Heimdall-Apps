@@ -1,0 +1,10 @@
+{
+    "appid": "42914e4d724a69b82428742ca3f19c44c740323e",
+    "name": "deCONZ",
+    "website": "https://github.com/dresden-elektronik/deconz-rest-plugin",
+    "license": "BSD 3-Clause Clear License",
+    "description": "The deCONZ REST plugin provides a REST API to access Zigbee 3.0 (Z30), Zigbee Home Automation (ZHA) and Zigbee Light Link (ZLL) lights, switches and sensors from Xiaomi Aqara, IKEA TRADFRI, Philips Hue, innr, Samsung and many more vendors.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "deconz.png"
+}

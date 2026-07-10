@@ -1,0 +1,10 @@
+{
+    "appid": "02cb68c1129acf59561e2881df1f7bcb16d139da",
+    "name": "FreeIPA",
+    "website": "https://www.freeipa.org/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "FreeIPA is an integrated Identity and Authentication solution for Linux/UNIX networked environments. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "freeipa.png"
+}

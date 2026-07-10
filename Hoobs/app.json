@@ -1,0 +1,10 @@
+{
+    "appid": "d530cf11cd8015b5e1907c298066e1537255e824",
+    "name": "Hoobs",
+    "website": "https://hoobs.com/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "HOOBS makes smart accessories compatible with your favorite ecosystem. Whether you prefer Apple HomeKit, Google Home, or Amazon Alexa, HOOBS helps you find compatible accessories and services that all work together nicely under one roof.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "hoobs.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "d7949b203a8e263045886ea3edb4fee50f742acd",
+    "name": "Download Station",
+    "website": "https://www.synology.com/en-global/dsm/packages/DownloadStation",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Download Station is a web-based download application which allows you to download files from the Internet through BT, FTP, HTTP, NZB, FlashGet, QQDL, and eMule, and subscribe to RSS feeds to keep you updated on the hottest or latest BT. It offers the auto unzip service to help you extract compressed files to your Synology NAS whenever files are downloaded. With Download Station, you can download files from multiple file hosting sites, and search for torrent files via system default search engines as well as self-added engines with the BT search function.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "downloadstation.png"
+}

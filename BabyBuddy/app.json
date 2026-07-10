@@ -1,0 +1,10 @@
+{
+    "appid": "30830dcf0690700377872b9b42d5d3976cdf1939",
+    "name": "Baby Buddy",
+    "website": "https://github.com/babybuddy/babybuddy",
+    "license": "BSD-2-Clause Plus Patent License",
+    "description": "A buddy for babies! Helps caregivers track sleep, feedings, diaper changes, tummy time and more to learn about and predict a baby's needs without (as much) guess work.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "babybuddy.svg"
+}

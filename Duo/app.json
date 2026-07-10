@@ -1,0 +1,10 @@
+{
+    "appid": "16ef1d431149d2a08902873a443dbbe54c85cddb",
+    "name": "Duo",
+    "website": "https://duo.com/",
+    "license": "Commercial",
+    "description": "Securing your entire organization has never been easier. Duo's multi-factor authentication (MFA), single sign-on (SSO), remote access and access control products deploy fast in any environment, helping keep companies safer with minimal downtime and optimized productivity.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "duo.svg"
+}

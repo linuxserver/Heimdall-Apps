@@ -1,0 +1,10 @@
+{
+    "appid": "ffedd1ae88a796e1a7063d741f755bd72d4cfb11",
+    "name": "Bind9",
+    "website": "https://www.isc.org/bind/",
+    "license": "Code Project Open License 1.02",
+    "description": "BIND 9 has evolved to be a very flexible, full-featured DNS system.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "bind9.png"
+}

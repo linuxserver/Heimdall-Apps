@@ -1,0 +1,10 @@
+{
+    "appid": "dc67119066c800ba083b3a2d7229145fbe5321fe",
+    "name": "Revolt",
+    "website": "https://revolt.chat/",
+    "license": "CNRI Python Open Source GPL Compatible License Agreement",
+    "description": "An open-source, self-hostable chat platform and alternative to Discord.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "revolt.png"
+}

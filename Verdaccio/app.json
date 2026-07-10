@@ -1,0 +1,10 @@
+{
+    "appid": "b14a46e1ec25e3d44ed8ada019dbdac2fffc4be9",
+    "name": "Verdaccio",
+    "website": "https://verdaccio.org/",
+    "license": "MIT License",
+    "description": "Verdaccio is a simple, zero-config-required local private npm registry.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "verdaccio.svg"
+}

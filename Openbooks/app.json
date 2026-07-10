@@ -1,0 +1,10 @@
+{
+    "appid": "1c36496854b388a2ba3b6c57d68ef8295c9b8bb1",
+    "name": "Openbooks",
+    "website": "https://github.com/evan-buss/openbooks",
+    "license": "MIT License",
+    "description": "Openbooks allows you to download ebooks from irc.irchighway.net quickly and easily.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "openbooks.png"
+}

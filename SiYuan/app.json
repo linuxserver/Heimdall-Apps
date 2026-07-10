@@ -1,0 +1,10 @@
+{
+    "appid": "272d2e61a0588c1403f90aa403f2581308395c34",
+    "name": "SiYuan",
+    "website": "https://b3log.org/siyuan/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "SiYuan is a privacy-first personal knowledge management system supporting fine-grained block-level references and Markdown WYSIWYG editing.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "siyuan.png"
+}

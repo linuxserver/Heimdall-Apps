@@ -1,0 +1,10 @@
+{
+    "appid": "f5253e62e0f2366eeeac7ce66fc6429b9b97776b",
+    "name": "Gaps",
+    "website": "https://github.com/JasonHHouse/gaps",
+    "license": "MIT License",
+    "description": "Gaps searches through your Plex Server for all movies, then queries for known movies in the same collection. If those movies don't exist in your library, Gaps will recommend getting those movies, legally of course.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "gaps.svg"
+}

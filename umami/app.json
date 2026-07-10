@@ -1,0 +1,10 @@
+{
+    "appid": "7a86668cedf9000efc7fc0662036d4b42c375d41",
+    "name": "umami",
+    "website": "https://umami.is/",
+    "license": "MIT License",
+    "description": "Umami is a simple, fast, website analytics alternative to Google Analytics. Umami does not collect any personal information, does not use cookies, does not track users across websites, and is GDPR compliant.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "umami.png"
+}

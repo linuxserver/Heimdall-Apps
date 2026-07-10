@@ -1,0 +1,10 @@
+{
+    "appid": "28799c3309f7b95cbbae24997acc4822e10c5c17",
+    "name": "ESET PROTECT",
+    "website": "https://protect.eset.com/",
+    "license": "GNU General Public License v1.0 or later",
+    "description": "ESET PROTECT Cloud is your main dashboard for managing security across your entire organization.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "esetprotect.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "0fffc087ecfce3ecb2ffea144d7b550bba9d832e",
+    "name": "Selfoss",
+    "website": "https://www.selfoss.aditu.de/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "selfoss is a multipurpose RSS reader and feed aggregation web application. It allows you to easily follow updates from different websites, social networks and other platforms, all in a single place. It is written in PHP, allowing you to run it basically anywhere.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "selfoss.png"
+}

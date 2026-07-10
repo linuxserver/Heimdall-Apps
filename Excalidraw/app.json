@@ -1,0 +1,10 @@
+{
+    "appid": "ee9907b543b03f1f4fc5531332aea93b36152c69",
+    "name": "Excalidraw",
+    "website": "https://excalidraw.com/",
+    "license": "MIT License",
+    "description": "Excalidraw is a virtual collaborative whiteboard tool that lets you easily sketch diagrams that have a hand-drawn feel to them.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "excalidraw.png"
+}

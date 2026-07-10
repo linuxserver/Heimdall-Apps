@@ -1,0 +1,10 @@
+{
+    "appid": "b212cb2eac64d638f5291e01ff0cc014afc621eb",
+    "name": "Apcupsd",
+    "website": "http://www.apcupsd.org/",
+    "license": "CNRI Python Open Source GPL Compatible License Agreement",
+    "description": "Apcupsd, short for APC UPS daemon, is a utility that runs on Linux, UNIX, macOS and Windows. It allows the computer to interact with APC UPSes and also works with some OEM-branded products manufactured by APC. Apcupsd is a free software equivalent of APC's proprietary PowerChute software.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "apcupsd.png"
+}

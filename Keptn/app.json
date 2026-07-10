@@ -1,0 +1,10 @@
+{
+    "appid": "4c1d1320b5b469d7de2b43841dff02ea1d29fbeb",
+    "name": "Keptn",
+    "website": "https://keptn.sh/",
+    "license": "Apache License 2.0",
+    "description": "Keptn is an open source, data-driven application life-cycle orchestration tool for cloud-native environments.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "keptn.svg"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "ade537718e23004da7f5147d7d1faea477d60ad1",
+    "name": "Docspell",
+    "website": "https://docspell.org/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Docspell is a personal document organizer, sometimes called a Document Management System (DMS). You use a scanner to convert your papers into files, and Docspell then assists in organizing the resulting mess. It can unify your files from scanners, emails and other sources, and is targeted at home use for families and households as well as smaller groups and companies.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "docspell.svg"
+}

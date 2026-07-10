@@ -1,0 +1,10 @@
+{
+    "appid": "b2670053bbd2b8f81c56d9b5cf038404d6ba1d9a",
+    "name": "Whisparr",
+    "website": "https://github.com/whisparr/whisparr",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Whisparr is an adult movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort and rename them.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "whisparr.svg"
+}
