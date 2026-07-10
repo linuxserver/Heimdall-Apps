@@ -60,6 +60,14 @@ code.
 - **Settings → Actions → General → Workflow permissions**: enable
   **"Allow GitHub Actions to create and approve pull requests."** Without it,
   `create-pull-request` cannot open the PR.
+- **`APP_REQUEST_TOKEN` secret** (repo or org level): a fine-grained PAT (or
+  GitHub App installation token) with **Contents: read/write** and
+  **Pull requests: read/write** on this repo. GitHub suppresses events caused
+  by the default `GITHUB_TOKEN`, so a PR opened with it never triggers the
+  `pull_request` workflows (PR Checks, linter). The scaffold workflow uses
+  this secret when present and falls back to `github.token`; with the
+  fallback, a maintainer must close and reopen the scaffolded PR to kick off
+  its checks.
 - Issue forms with the `upload` field must be available on the repo (it is part
   of GitHub's issue-forms schema; if a form ever fails to render, confirm the
   `upload` field type is still supported for the account/repo).

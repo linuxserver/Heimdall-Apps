@@ -13,7 +13,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [20]
+        # Node >= 21 is required for glob patterns in `node --test`
+        node: [22]
 
     steps:
       - name: Checkout

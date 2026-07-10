@@ -71,7 +71,11 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ github.token }}
+          # PRs created with the default GITHUB_TOKEN do not trigger
+          # `pull_request` workflows (PR Checks, linter), so use a PAT / App
+          # token when available. Falls back to github.token, in which case
+          # checks must be kicked off by closing and reopening the PR.
+          token: ${{ secrets.APP_REQUEST_TOKEN || github.token }}
           branch: ${{ steps.scaffold.outputs.branch }}
           base: master
           title: ${{ steps.scaffold.outputs.pr_title }}
