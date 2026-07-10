@@ -11,6 +11,12 @@ on:
 permissions:
   contents: write
 
+# Queue runs instead of racing: rapid-fire merges each trigger a run, and
+# concurrent runs pushing to master reject each other (non-fast-forward).
+concurrency:
+  group: svgo-master
+  cancel-in-progress: false
+
 jobs:
   svgs:
     name: SVGs
@@ -19,6 +25,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
+          # Check out the branch tip rather than the trigger SHA so a queued
+          # run builds on the previous run's optimize commit and its push
+          # fast-forwards.
+          ref: master
           fetch-depth: 0
 
       - name: Set up Node.js
