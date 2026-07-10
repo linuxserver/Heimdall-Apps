@@ -1,0 +1,10 @@
+{
+    "appid": "2ec817ffb73f534229d85ff2a0911fbf298f7e3b",
+    "name": "Sophos XG",
+    "website": "https://www.sophos.com/en-us/products/next-gen-firewall",
+    "license": "Commercial",
+    "description": "Sophos Firewall's Xstream architecture protects your network from the latest threats while accelerating your important SaaS, SD-WAN, and cloud application traffic.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "sophosxg.svg"
+}

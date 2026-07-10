@@ -1,0 +1,10 @@
+{
+    "appid": "deb54243dc08e689bef4021802675df7b0c753a6",
+    "name": "MediaTracker",
+    "website": "https://github.com/bonukai/MediaTracker",
+    "license": "MIT License",
+    "description": "Self-hosted platform for tracking movies, TV shows, video games, books and audiobooks, highly inspired by Flox.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "mediatracker.svg"
+}

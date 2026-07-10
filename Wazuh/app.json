@@ -1,0 +1,10 @@
+{
+    "appid": "f232d28815f00b238d69440000cc0cedafa51b8c",
+    "name": "Wazuh",
+    "website": "https://wazuh.com/",
+    "license": "GNU General Public License v2.0 only",
+    "description": "Wazuh is a free, open source and enterprise-ready security monitoring solution for threat detection, integrity monitoring, incident response and compliance.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "wazuh.png"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "ff991f82a68ffaccf4ff305d0f9b9ae878d427ef",
+    "name": "uTorrent",
+    "website": "https://www.utorrent.com/",
+    "license": "GNU Lesser General Public License v2.1 only",
+    "description": "µTorrent is a popular, feature-rich BitTorrent client for Windows, Mac and Android, developed by BitTorrent Inc. It offers a safe, lightweight torrent download client for the desktop, along with browser-based streaming and a mobile downloader for Android.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "utorrent.svg"
+}

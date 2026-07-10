@@ -1,0 +1,10 @@
+{
+    "appid": "1708091e877bde8a70a629b3a86f5da21f31ebb1",
+    "name": "maltrail",
+    "website": "https://github.com/stamparm/maltrail",
+    "license": "MIT License",
+    "description": "Maltrail is a malicious traffic detection system, utilizing publicly available (black)lists containing malicious and/or generally suspicious trails, along with static trails compiled from various AV reports and custom user defined lists. A trail can be anything from a domain name, URL, IP address, or HTTP User-Agent header value. It also uses optional advanced heuristic mechanisms that can help in the discovery of unknown threats.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "maltrail.png"
+}

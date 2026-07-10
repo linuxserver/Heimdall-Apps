@@ -1,0 +1,10 @@
+{
+    "appid": "e24e9b627d67e8241b91f63bd9c9cd0f3f97600a",
+    "name": "KonomiTV",
+    "website": "https://github.com/tsukumijima/KonomiTV",
+    "license": "MIT License",
+    "description": "KonomiTV is a modern, web-based media server for watching and recording live Japanese television. It is designed with a clean, easy-to-use interface that works across desktop and mobile devices.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "konomitv.svg"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "6d72e14bef55ca86ec69aec3225a3ea0e456d1b1",
+    "name": "HiFiBerry",
+    "website": "https://www.hifiberry.com/hifiberryos/",
+    "license": "MIT License",
+    "description": "HiFiBerryOS is a minimal Linux distribution optimized for audio playback. The goal isn't to add as much functionality as possible, but to focus on music. HiFiBerry combines a lot of different services such as Spotify, Airplay, Squeezebox, Bluetooth, Roon, and MPD into one package.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "hifiberry.svg"
+}

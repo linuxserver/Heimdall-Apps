@@ -1,0 +1,10 @@
+{
+    "appid": "9f2a83c4ebdbf57b0e5fd748f2b60bc604212137",
+    "name": "Maxscale",
+    "website": "https://mariadb.com/products/maxscale/",
+    "license": "GNU General Public License v2.0 or later",
+    "description": "MariaDB MaxScale is an intelligent database proxy that forwards database statements to one or more servers using complex rules and a semantic understanding of the statements. It is designed to provide load balancing and high availability transparently to applications, with a scalable, plugin-based architecture supporting different protocols and routing decisions.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "maxscale.svg"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "5aba62021841136792fe28f99031328b5ce05a79",
+    "name": "IsardVDI",
+    "website": "https://isardvdi.com/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "IsardVDI is a free software desktop virtualization platform.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "isardvdi.png"
+}

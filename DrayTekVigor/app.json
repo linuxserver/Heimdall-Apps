@@ -1,0 +1,10 @@
+{
+    "appid": "56835c63945464ba216f114cc94810584fec0fb2",
+    "name": "DrayTek Vigor",
+    "website": "https://www.draytek.de/",
+    "license": "GNU General Public License v1.0 or later",
+    "description": "DrayTek is an ADSL/VDSL/DSL2 modem and router manufacturer, and the Vigor line is its modem line. It supports HTTP(S) API requests.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "draytekvigor.png"
+}

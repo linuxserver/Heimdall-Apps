@@ -1,0 +1,10 @@
+{
+    "appid": "b86d83df7031cfab0e9df38759fe87970acd839c",
+    "name": "Brewblox",
+    "website": "https://www.brewblox.com/",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "Monitor and control everything in your brewery from a single dashboard. Its modular design makes it easy to add, remove, or update devices, so you only enable what you need.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "brewblox.png"
+}

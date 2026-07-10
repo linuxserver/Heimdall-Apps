@@ -1,0 +1,10 @@
+{
+    "appid": "d01efdd19c06455076ee03617a77cc95e0412336",
+    "name": "Amule",
+    "website": "https://www.amule.org/",
+    "license": "GNU General Public License v1.0 only",
+    "description": "aMule is a free peer-to-peer file sharing application for the eDonkey and Kad networks. Similar to eMule, it adds features such as GeoIP country flags and runs on Linux and other platforms.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "amule.png"
+}

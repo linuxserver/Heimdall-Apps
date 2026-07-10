@@ -1,0 +1,10 @@
+{
+    "appid": "1e48cdffa2791145e9401d0bbafa2553769c5160",
+    "name": "BitNinja Security",
+    "website": "https://bitninja.com/",
+    "license": "Proprietary",
+    "description": "BitNinja is a multi-layered security system that automatically blocks cyberattacks at any threat level and makes troubleshooting security incidents easier via a self-service console. It offers all-in-one, easy-to-use and resource-friendly Linux server security.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "bitninjasecurity.png"
+}

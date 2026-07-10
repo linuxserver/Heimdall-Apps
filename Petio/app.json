@@ -1,0 +1,10 @@
+{
+    "appid": "da49a1e9075c69cdfdf788e6e17188c3f8f4f406",
+    "name": "Petio",
+    "website": "https://petio.tv/",
+    "license": "MIT License",
+    "description": "A request, review and discovery companion app for Plex. Allow your users to interact with media both on and off your server. Available as a Docker image and as binaries, it features a React frontend using Redux, a Node.js Express API, and a MongoDB database.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "petio.png"
+}

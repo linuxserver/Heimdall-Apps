@@ -1,0 +1,10 @@
+{
+    "appid": "0cf9b9d5b9d94890598627e2e54a44930218d6bc",
+    "name": "UISP",
+    "website": "https://uisp.com/",
+    "license": "MIT License",
+    "description": "Comprehensive ISP network and business management.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "uisp.png"
+}

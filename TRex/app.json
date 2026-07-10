@@ -1,0 +1,10 @@
+{
+    "appid": "6d0bd8c6fb8879a4f20d36c05c096d688ef21ac7",
+    "name": "T-Rex",
+    "website": "https://trex-miner.com/",
+    "license": "Open Software License 1.0",
+    "description": "T-Rex is a versatile NVIDIA GPU cryptocurrency mining application. It supports a variety of algorithms, with a focus on making mining as fast and as convenient to use as possible.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "trex.png"
+}

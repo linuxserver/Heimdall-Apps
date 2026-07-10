@@ -1,0 +1,10 @@
+{
+    "appid": "38b75e97120cd04f721f89841db30c2b2ee02e34",
+    "name": "SmokePing",
+    "website": "https://oss.oetiker.ch/",
+    "license": "GNU General Public License v2.0 or later",
+    "description": "SmokePing is a deluxe latency measurement tool. It can measure, store and display latency, latency distribution and packet loss. SmokePing uses RRDtool to maintain a long-term data store and to draw pretty graphs, giving up to the minute information on the state of each network connection.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "smokeping.png"
+}

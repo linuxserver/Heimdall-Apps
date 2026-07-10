@@ -1,0 +1,10 @@
+{
+    "appid": "120a5ee3b2867132f19e026e12a6310514a05f73",
+    "name": "DD-WRT",
+    "website": "https://dd-wrt.com/",
+    "license": "CNRI Python Open Source GPL Compatible License Agreement",
+    "description": "DD-WRT is a Linux-based open-source alternative firmware suitable for a great variety of WLAN routers and embedded systems. The main emphasis is on providing the easiest possible handling while supporting a large number of functionalities within the framework of the respective hardware platform used.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "ddwrt.png"
+}

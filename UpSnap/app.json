@@ -1,0 +1,10 @@
+{
+    "appid": "007a0e9945af3d97b044437487ef659f6153a69e",
+    "name": "UpSnap",
+    "website": "https://github.com/seriousm4x/UpSnap",
+    "license": "MIT License",
+    "description": "A simple Wake-on-LAN web app written with SvelteKit, Go and PocketBase.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "upsnap.png"
+}

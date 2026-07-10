@@ -1,0 +1,10 @@
+{
+    "appid": "5f5b783544928a3c583cbeb4872e75351c56ad0d",
+    "name": "PacketFence",
+    "website": "https://www.packetfence.org/",
+    "license": "GNU General Public License v2.0 only",
+    "description": "PacketFence is a fully supported, trusted, free and open source network access control (NAC) solution. Its feature set includes a captive portal for registration and remediation, centralized wired, wireless and VPN management, BYOD capabilities, 802.1X and RBAC support, and integrated network anomaly detection with layer-2 isolation of problematic devices. It can be used to effectively secure networks ranging from small to very large heterogeneous environments.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "packetfence.svg"
+}

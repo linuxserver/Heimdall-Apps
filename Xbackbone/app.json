@@ -1,0 +1,10 @@
+{
+    "appid": "2ca95e6d1886314f9faa757c69a3b5d0eb6eef61",
+    "name": "Xbackbone",
+    "website": "https://github.com/SergiX44/XBackBone",
+    "license": "GNU General Public License v3.0 or later",
+    "description": "XBackBone is a simple, self-hosted, lightweight PHP file manager that supports the ShareX instant sharing tool and *nix systems. It handles uploading and displaying images, GIFs, video, code and formatted text, and includes a web UI with multi-user management, upload history and search.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "xbackbone.png"
+}

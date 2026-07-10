@@ -1,0 +1,10 @@
+{
+    "appid": "ce14e2411b71060007063c5a8f590f5fc64a14cb",
+    "name": "S.E.P.I.A. Open Assistant",
+    "website": "https://github.com/SEPIA-Framework",
+    "license": "MIT License",
+    "description": "S.E.P.I.A. is an acronym for self-hosted, extendable, personal, intelligent assistant. It is a modular, open source web app and framework equipped with the tools to build your own full-fledged digital voice assistant, including speech recognition (STT), wake-word detection, text-to-speech (TTS), natural language understanding, dialog management, SDKs and much more.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "sepiaopenassistant.png"
+}

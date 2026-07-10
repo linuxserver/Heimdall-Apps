@@ -1,0 +1,10 @@
+{
+    "appid": "294156eb5d1613ec8d4b15818f0df868ff279167",
+    "name": "SillyTavern",
+    "website": "https://sillytavern.app/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "SillyTavern is a locally installed LLM frontend for power users, providing a unified interface for many large language model APIs, chat and roleplay tools, and extensions.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "sillytavern.svg"
+}

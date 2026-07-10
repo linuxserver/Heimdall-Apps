@@ -1,0 +1,10 @@
+{
+    "appid": "944f296a97feb3e99407cbf097a1f6aa1187cc02",
+    "name": "PiGallery2",
+    "website": "https://bpatrik.github.io/pigallery2/",
+    "license": "MIT License",
+    "description": "A fast, directory-first photo gallery website, optimised for running on low-resource servers, especially the Raspberry Pi.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "pigallery2.png"
+}

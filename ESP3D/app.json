@@ -1,0 +1,10 @@
+{
+    "appid": "988e421cf9930626a983a2c6f1f4a80ce22b33f3",
+    "name": "ESP3D",
+    "website": "https://github.com/luc-github/ESP3D",
+    "license": "GNU General Public License v3.0 only",
+    "description": "ESP3D is a firmware for the ESP8266/ESP8285 or ESP32 that allows you to control your 3D printer over Wi-Fi through a web interface.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "esp3d.png"
+}

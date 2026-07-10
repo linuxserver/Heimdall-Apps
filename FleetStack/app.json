@@ -1,0 +1,10 @@
+{
+    "appid": "b3edd4aee70ec3298ac00cf434081893ee4bc8a8",
+    "name": "Fleet Stack",
+    "website": "https://fleetstackglobal.com/",
+    "license": "MIT License",
+    "description": "Fleet Stack is self-hosted GPS tracking software that helps businesses track their vehicles, assets, and workforce in real time. With Fleet Stack, businesses can optimize their operations, reduce costs, and improve customer satisfaction.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "fleetstack.svg"
+}

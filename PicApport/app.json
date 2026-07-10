@@ -1,0 +1,10 @@
+{
+    "appid": "f53c3236ce4e979407647afec9cd3d1f9b6401f2",
+    "name": "PicApport",
+    "website": "https://www.picapport.de/",
+    "license": "Creative Commons Attribution Non Commercial 4.0 International",
+    "description": "PicApport is an easy-to-use, free photo server that allows you to view and manage photos on all devices connected to your home network, such as desktop PCs, notebooks, tablets, iPads, Android smartphones and iPhones. Look at your photos on any device connected to your network, without having to transfer them to an external provider first.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "picapport.png"
+}

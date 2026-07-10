@@ -1,0 +1,10 @@
+{
+    "appid": "6791b665d08a040b524c73c8800a9388dcc00b80",
+    "name": "GlueTun",
+    "website": "https://github.com/qdm12/gluetun",
+    "license": "MIT License",
+    "description": "A lightweight, swiss-knife-like VPN client for multiple VPN service providers. This Docker container routes network traffic through a VPN tunnel, and other containers can set their network mode to it. It also integrates Shadowsocks and an HTTP proxy, and provides an API to retrieve the current VPN connection details.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "gluetun.svg"
+}

@@ -1,0 +1,10 @@
+{
+    "appid": "4405bf27647620a14e2cbc2d2d4088cd648e5160",
+    "name": "alist",
+    "website": "https://alist.nn.ci/",
+    "license": "CNRI Python Open Source GPL Compatible License Agreement",
+    "description": "A file list program that supports multiple storage, and supports web browsing and WebDAV, powered by gin and Solidjs.",
+    "enhanced": false,
+    "tile_background": "light",
+    "icon": "alist.svg"
+}

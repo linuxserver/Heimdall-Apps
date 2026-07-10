@@ -1,0 +1,10 @@
+{
+    "appid": "d688ae4face9f51ed4844f51c609fc9762900535",
+    "name": "Codex",
+    "website": "https://github.com/ajslater/codex",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Codex is a comic archive browser and reader that runs as a web server. It offers full-text search of metadata, per-user bookmarking, and automatic importing of new or changed comics, and reads CBZ, CBR, CBT and PDF formatted comics.",
+    "enhanced": false,
+    "tile_background": "dark",
+    "icon": "codex.svg"
+}
