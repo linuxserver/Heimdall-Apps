@@ -1,0 +1,10 @@
+{
+    "appid": "d91277cf6297f5da3e8515cf035ebf2463276d14",
+    "name": "tubearchivist",
+    "website": "https://github.com/tubearchivist/tubearchivist",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Your self-hosted YouTube media server. Subscribe to your favorite YouTube channels, download videos using yt-dlp, index and make them searchable, play them back, and keep track of viewed and unviewed videos.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "tubearchivist.svg"
+}
