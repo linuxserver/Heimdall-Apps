@@ -1,0 +1,10 @@
+{
+    "appid": "099f98ee10bbfb6796f005655b3b7c69607aec4e",
+    "name": "STORJ Node",
+    "website": "https://www.storj.io/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Storj is an S3-compatible platform and suite of decentralized applications that allows you to store data in a secure and decentralized manner. Storage Node Operators contribute unused hard drive capacity to the network, enabling the storage network to be distributed around the world.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "storjnode.svg"
+}
