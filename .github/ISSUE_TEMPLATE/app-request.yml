@@ -1,0 +1,95 @@
+name: App request
+description: Request a new app be added to Heimdall
+title: "[APP] - <app name>"
+labels: ["app-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an app! Fill in the fields below and attach an
+        icon. A bot validates the request automatically and comments back; a
+        maintainer then approves it to scaffold the app and open a PR.
+
+        Search the [existing apps](https://appslist.heimdall.site/list.json)
+        first so we don't create a duplicate.
+  - type: input
+    id: name
+    attributes:
+      label: App name
+      description: The display name of the app, e.g. "AdGuard Home".
+      placeholder: My Awesome App
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: Project homepage or repository (must start with http:// or https://).
+      placeholder: https://example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: The app's software license. Pick "Commercial/Proprietary" or "Other" if unsure.
+      options:
+        - MIT License
+        - Apache License 2.0
+        - GNU General Public License v3.0 only
+        - GNU General Public License v3.0 or later
+        - GNU General Public License v2.0 only
+        - GNU General Public License v2.0 or later
+        - GNU Affero General Public License v3.0
+        - GNU Affero General Public License v3.0 only
+        - GNU Affero General Public License v3.0 or later
+        - GNU Lesser General Public License v2.1 only
+        - GNU Lesser General Public License v3.0 only
+        - BSD 3-Clause "New" or "Revised" License
+        - BSD 2-Clause "Simplified" License
+        - Mozilla Public License 2.0
+        - The Unlicense
+        - Commercial/Proprietary
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: tile_background
+    attributes:
+      label: Tile background
+      description: Whether the icon looks best on a dark or light tile.
+      options:
+        - dark
+        - light
+      default: 0
+    validations:
+      required: true
+  - type: upload
+    id: icon
+    attributes:
+      label: Icon
+      description: |
+        Upload a square icon as `.svg` (preferred) or `.png`. PNGs should be
+        between 100x275px. Drag-and-drop or browse to attach the file.
+    validations:
+      required: true
+      accept: .svg,.png
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A short paragraph describing what the app does.
+      placeholder: What is this app for?
+    validations:
+      required: true
+  - type: checkboxes
+    id: enhanced
+    attributes:
+      label: I intend to build this as an Enhanced app myself
+      description: |
+        Enhanced apps show live stats on the tile and need extra PHP code. Tick
+        this only if you plan to build that integration yourself in a follow-up
+        PR. Requests are always scaffolded as a foundation app first.
+      options:
+        - label: Yes, I plan to add Enhanced support in a follow-up
+          required: false
