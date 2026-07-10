@@ -1,0 +1,10 @@
+{
+    "appid": "df2165907007d3e76e6d7dbc5fdd29b731831bec",
+    "name": "Plausible",
+    "website": "https://plausible.io/",
+    "license": "GNU Affero General Public License v3.0",
+    "description": "Plausible Analytics is a simple, lightweight (< 1 KB), open-source and privacy-friendly alternative to Google Analytics. It doesn't use cookies and is fully compliant with GDPR, CCPA and PECR.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "plausible.svg"
+}
