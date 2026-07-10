@@ -1,0 +1,10 @@
+{
+    "appid": "59bce9723b0b9a5f802b30866d1d5581393d0627",
+    "name": "Matomo",
+    "website": "https://matomo.org/",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Matomo is the leading open alternative to Google Analytics that gives you full control over your data. Matomo lets you easily collect data from websites & apps and visualise this data and extract insights. Privacy is built-in.",
+    "enhanced": true,
+    "tile_background": "light",
+    "icon": "matomo.svg"
+}
