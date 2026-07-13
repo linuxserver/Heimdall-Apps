@@ -1,0 +1,10 @@
+{
+  "appid": "35edd78007565fa64e6b239060a0d165ce005136",
+  "name": "SuggestArr",
+  "website": "https://giuseppe99barchetta.github.io/SuggestArr/",
+  "license": "MIT License",
+  "description": "Effortlessly request recommended movies, TV shows and anime to Jellyseer/Overseer based on your recently watched content on Jellyfin, Plex or Emby—let SuggestArr handle it all automatically, keeping your library fresh with new and exciting content!",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "suggestarr.svg"
+}
