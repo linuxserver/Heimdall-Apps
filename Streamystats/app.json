@@ -1,0 +1,10 @@
+{
+  "appid": "edebac9035d9a829c0646e0597a1c7ff97fbbfef",
+  "name": "Streamystats",
+  "website": "https://github.com/fredrikburmester/streamystats",
+  "license": "Other",
+  "description": "Streamystats is a statistics service for Jellyfin, providing analytics and data visualization.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "streamystats.svg"
+}
