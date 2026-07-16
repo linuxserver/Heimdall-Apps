@@ -1,0 +1,10 @@
+{
+  "appid": "2f30a87f74760968c906bb4d758a08e535ea35c4",
+  "name": "BirdNET-Go",
+  "website": "https://github.com/tphakala/birdnet-go",
+  "license": "Other",
+  "description": "Self-hosted, 24/7, local AI inference. BirdNET-Go ingests soundcard input or network audio streams, runs multi-model classification, and presents detections in a fast web UI. Runs on a Raspberry Pi.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "birdnetgo.png"
+}
