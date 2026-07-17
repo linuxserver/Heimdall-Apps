@@ -70,7 +70,7 @@ body:
       label: Icon
       description: |
         Upload a square icon as `.svg` (preferred) or `.png`. PNGs should be
-        between 100x275px. Drag-and-drop or browse to attach the file.
+        between 100 and 300px square. Drag-and-drop or browse to attach the file.
     validations:
       required: true
       accept: .svg,.png

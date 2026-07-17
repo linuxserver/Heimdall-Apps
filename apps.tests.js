@@ -3,9 +3,9 @@ const { getAppJson, test, getIconSizePNG } = require("./testHelpers");
 const { appid: computeAppid } = require("./scripts/lib/slug");
 
 const ICON_WIDTH_MIN = 100;
-const ICON_WIDTH_MAX = 275;
+const ICON_WIDTH_MAX = 300;
 const ICON_HEIGHT_MIN = 100;
-const ICON_HEIGHT_MAX = 275;
+const ICON_HEIGHT_MAX = 300;
 
 // Apps whose appid predates (or diverges from) sha1(Str::slug(name, '')).
 // These are grandfathered: their appid is a stable public identifier that
@@ -65,7 +65,7 @@ const testApp = (appDirectory) => {
         return iconName.endsWith(".svg") || iconName.endsWith(".png");
     });
 
-    test("should have an Icon with max width 275px and max height 275px when PNG", () => {
+    test("should have an Icon with max width 300px and max height 300px when PNG", () => {
         if (iconName.endsWith(".png")) {
             const iconSize = getIconSizePNG(`${appDirectory}/${iconName}`);
 
