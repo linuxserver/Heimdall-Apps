@@ -35,6 +35,7 @@ jobs:
         id: validate
         env:
           REQUEST_COMMENT_FILE: ${{ runner.temp }}/comment.md
+          GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/validate-request.js
 
       - name: Comment result

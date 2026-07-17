@@ -15,6 +15,7 @@ const fs = require("fs");
 
 const { parseIssueForm } = require("./lib/parse-issue-form");
 const { extractFields, validateFields } = require("./lib/fields");
+const { downloadIcon } = require("./lib/download-icon");
 const { scanRepo } = require("./lib/repo");
 
 const LIVE_LIST_URL = "https://appslist.heimdall.site/list.json";
@@ -34,12 +35,19 @@ function mdCell(value) {
  * @param {string} args.body issue body
  * @param {{folders: Set<string>, appids: Map<string,string>}} args.repoScan
  * @param {{apps: {appid: string, name: string}[]}|null} args.liveList
+ * @param {{ok: boolean, error: string|null}|null} [args.iconCheck] result of
+ *   downloading + dimension-checking the icon (null when not performed).
  * @returns {{isValid: boolean, comment: string, folder: string|null, appid: string|null}}
  */
-function buildReport({ body, repoScan, liveList }) {
+function buildReport({ body, repoScan, liveList, iconCheck = null }) {
     const parsed = parseIssueForm(body);
     const raw = extractFields(parsed);
     const v = validateFields(raw);
+
+    // Fold an icon download / dimension failure into the field errors so it is
+    // reported and blocks validity like any other problem.
+    const iconError = iconCheck && !iconCheck.ok ? iconCheck.error : null;
+    const errorList = iconError ? [...v.errors, iconError] : v.errors;
 
     const lines = [];
     lines.push("## App request validation");
@@ -64,7 +72,7 @@ function buildReport({ body, repoScan, liveList }) {
         }
     }
     const duplicate = folderCollision || appidCollision;
-    const isValid = v.ok && !duplicate;
+    const isValid = v.ok && !duplicate && !iconError;
 
     lines.push("| Field | Value |");
     lines.push("| --- | --- |");
@@ -78,10 +86,10 @@ function buildReport({ body, repoScan, liveList }) {
     );
     lines.push("");
 
-    if (v.errors.length) {
+    if (errorList.length) {
         lines.push("### Problems");
         lines.push("");
-        for (const e of v.errors) lines.push(`- ${e}`);
+        for (const e of errorList) lines.push(`- ${e}`);
         lines.push("");
     }
 
@@ -131,6 +139,25 @@ async function fetchLiveList() {
     }
 }
 
+/**
+ * Download the icon and check it (host allow-list, type, PNG dimensions) so an
+ * oversized icon is flagged when the issue is filed rather than after scaffold.
+ * Returns null when there is no icon URL to check (the missing-icon error is
+ * already reported by validateFields).
+ * @param {string|null} iconUrl
+ * @param {string} [token]
+ * @returns {Promise<{ok: boolean, error: string|null}|null>}
+ */
+async function checkIcon(iconUrl, token) {
+    if (!iconUrl) return null;
+    try {
+        await downloadIcon(iconUrl, { token });
+        return { ok: true, error: null };
+    } catch (e) {
+        return { ok: false, error: `**Icon** ${e.message}` };
+    }
+}
+
 async function main() {
     const eventPath = process.env.GITHUB_EVENT_PATH;
     if (!eventPath) throw new Error("GITHUB_EVENT_PATH is not set");
@@ -140,7 +167,12 @@ async function main() {
     const repoScan = scanRepo(process.cwd());
     const liveList = await fetchLiveList();
 
-    const { isValid, comment } = buildReport({ body, repoScan, liveList });
+    // Resolve the icon URL the same way buildReport does, then download and
+    // dimension-check it before building the report.
+    const v = validateFields(extractFields(parseIssueForm(body)));
+    const iconCheck = await checkIcon(v.iconUrl, process.env.GITHUB_TOKEN);
+
+    const { isValid, comment } = buildReport({ body, repoScan, liveList, iconCheck });
 
     const commentFile = process.env.REQUEST_COMMENT_FILE;
     if (commentFile) fs.writeFileSync(commentFile, comment);

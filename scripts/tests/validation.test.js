@@ -12,7 +12,13 @@ const {
     isAllowedAttachmentUrl,
     extractAttachmentUrl,
 } = require("../lib/icon-url");
-const { sniffImage } = require("../lib/download-icon");
+const {
+    sniffImage,
+    pngDimensions,
+    downloadIcon,
+    ICON_MIN_PX,
+    ICON_MAX_PX,
+} = require("../lib/download-icon");
 const { scaffoldApp } = require("../scaffold");
 const { authorIdentity } = require("../scaffold-from-issue");
 
@@ -130,6 +136,68 @@ test("extractAttachmentUrl pulls the first allowed URL, ignores others", () => {
     );
     assert.equal(extractAttachmentUrl("no url here"), null);
     assert.equal(extractAttachmentUrl("https://evil.com/a.png"), null);
+});
+
+// Build a PNG whose IHDR advertises the given dimensions. Only the header is
+// needed for sniffing + dimension reads.
+function makePng(width, height) {
+    const buf = Buffer.alloc(24);
+    Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]).copy(buf, 0);
+    buf.write("IHDR", 12, "ascii");
+    buf.writeUInt32BE(width, 16);
+    buf.writeUInt32BE(height, 20);
+    return buf;
+}
+
+// A fetch() stub that returns the given bytes as a successful response.
+function fetchReturning(buffer) {
+    return async () => ({
+        ok: true,
+        status: 200,
+        headers: { get: () => String(buffer.length) },
+        arrayBuffer: async () => buffer.buffer.slice(
+            buffer.byteOffset,
+            buffer.byteOffset + buffer.byteLength
+        ),
+    });
+}
+
+const ATTACHMENT_URL = "https://github.com/user-attachments/assets/abc-123";
+
+test("pngDimensions reads IHDR width/height, null for non-PNG", () => {
+    assert.deepEqual(pngDimensions(makePng(200, 150)), { width: 200, height: 150 });
+    assert.equal(pngDimensions(SVG), null);
+    assert.equal(pngDimensions(Buffer.from("short")), null);
+});
+
+test("downloadIcon rejects a PNG over the max dimension", async () => {
+    await assert.rejects(
+        downloadIcon(ATTACHMENT_URL, {
+            fetchImpl: fetchReturning(makePng(ICON_MAX_PX + 1, ICON_MAX_PX + 1)),
+        }),
+        /too large/
+    );
+});
+
+test("downloadIcon rejects a PNG under the min dimension", async () => {
+    await assert.rejects(
+        downloadIcon(ATTACHMENT_URL, {
+            fetchImpl: fetchReturning(makePng(ICON_MIN_PX - 1, ICON_MIN_PX - 1)),
+        }),
+        /too small/
+    );
+});
+
+test("downloadIcon accepts an in-range PNG and any SVG", async () => {
+    const png = await downloadIcon(ATTACHMENT_URL, {
+        fetchImpl: fetchReturning(makePng(ICON_MAX_PX, ICON_MAX_PX)),
+    });
+    assert.equal(png.ext, ".png");
+    // SVGs scale and are exempt from the dimension check.
+    const svg = await downloadIcon(ATTACHMENT_URL, {
+        fetchImpl: fetchReturning(SVG),
+    });
+    assert.equal(svg.ext, ".svg");
 });
 
 test("sniffImage identifies PNG and SVG by content, not name", () => {
