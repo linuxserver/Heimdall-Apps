@@ -132,6 +132,7 @@ async function main() {
         `| Folder | \`${result.folder}\` |`,
         `| appid | \`${result.appid}\` |`,
         `| License | ${v.clean.license.replace(/[`|\r\n]/g, " ")} |`,
+        `| Description | ${v.clean.description.replace(/[`|\r\n]/g, " ")} |`,
         `| Tile background | ${v.clean.tile_background} |`,
         `| Icon | \`${result.iconName}\` |`,
         `| Requester wants Enhanced | ${v.clean.wantsEnhanced ? "yes" : "no"} |`,
