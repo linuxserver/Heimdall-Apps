@@ -1,0 +1,10 @@
+{
+  "appid": "77b070a4835c69b30a347c63df3e3fcd490620d9",
+  "name": "Pocket ID",
+  "website": "https://pocket-id.org/",
+  "license": "BSD 2-Clause \"Simplified\" License",
+  "description": "User-friendly OpenID Connect and OAuth 2.0 provider that lets users sign in to your applications with passkeys.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "pocketid.svg"
+}
