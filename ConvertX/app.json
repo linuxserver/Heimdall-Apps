@@ -1,0 +1,10 @@
+{
+  "appid": "64ceb760e1fb1d5444b300230d5c009769eb40d8",
+  "name": "ConvertX",
+  "website": "https://github.com/c4illin/ConvertX",
+  "license": "GNU Affero General Public License v3.0",
+  "description": "💾 Self-hosted online file converter. Supports 1000+ formats ⚙️",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "convertx.png"
+}
