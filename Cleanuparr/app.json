@@ -1,0 +1,10 @@
+{
+  "appid": "95bf6c7a1fba58d82c0a2b94167776c46c5c02cb",
+  "name": "Cleanuparr",
+  "website": "https://github.com/cleanuparr/cleanuparr",
+  "license": "GNU General Public License v3.0 or later",
+  "description": "Advanced download manager for the Servarr ecosystem",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "cleanuparr.png"
+}
