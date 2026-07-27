@@ -1,0 +1,10 @@
+{
+  "appid": "9d59ddc6d6180fa396ba12515021d3471b3f2d0d",
+  "name": "qBit Manage",
+  "website": "https://github.com/StuffAnThings/qbit_manage",
+  "license": "MIT License",
+  "description": "This tool will help manage tedious tasks in qBittorrent and automate them. Tag, categorize, remove Orphaned data, remove unregistered torrents and much much more.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "qbitmanage.png"
+}
