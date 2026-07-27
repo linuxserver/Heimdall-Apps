@@ -1,0 +1,10 @@
+{
+  "appid": "b4ed1bbe2bd124be29afea5d393f5ef915d3e509",
+  "name": "Calibre Web Automated",
+  "website": "https://github.com/crocodilestick/Calibre-Web-Automated",
+  "license": "GNU General Public License v3.0 or later",
+  "description": "Calibre-Web but Automated and with tons of New Features! Fully automate and simplify your eBook set up!",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "calibrewebautomated.png"
+}
