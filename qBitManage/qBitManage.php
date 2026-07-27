@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\qBitManage;
 
-class qBitManage extends \App\SupportedApps
+class qBitManage extends \App\SupportedApps // phpcs:ignore
 {
 }
