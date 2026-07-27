@@ -1,0 +1,10 @@
+{
+  "appid": "70eb588e6586ce0584638943d81adc1f02d18a99",
+  "name": "SparkyFitness",
+  "website": "https://codewithcj.github.io/SparkyFitness/",
+  "license": "Other",
+  "description": "Built for Families. Powered by AI. Track food, fitness, water, and health — together.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "sparkyfitness.png"
+}
