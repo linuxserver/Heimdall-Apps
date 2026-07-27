@@ -13,6 +13,10 @@
         {!! Form::input('password', 'config[password]', '', ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
+        <label>Stats to show</label>
+        {!! Form::select('config[availablestats][]', App\SupportedApps\Komga\Komga::getAvailableStats(), isset($item) ? $item->getConfig()->availablestats ?? null : null, ['multiple' => 'multiple']) !!}
+    </div>
+    <div class="input">
         <button style="margin-top: 32px;" class="btn test" id="test_config">Test</button>
     </div>
 </div>

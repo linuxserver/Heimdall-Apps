@@ -6,32 +6,80 @@ class Komga extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
 
-    //protected $login_first = true; // Uncomment if api requests need to be authed first
-    //protected $method = 'POST';  // Uncomment if requests to the API should be set by POST
-
     public function __construct()
     {
         //$this->jar = new \GuzzleHttp\Cookie\CookieJar; // Uncomment if cookies need to be set
     }
 
+    public function getHeaders()
+    {
+        $username = $this->config->username;
+        $password = $this->config->password;
+
+        $attrs["headers"] = [
+            "Authorization" =>
+                "Basic " . base64_encode($username . ":" . $password),
+            "Accept" => "application/json",
+        ];
+        return $attrs;
+    }
+
     public function test()
     {
-        $test = parent::appTest($this->url("status"));
+        $test = parent::appTest(
+            $this->url("api/v2/users/me"),
+            $this->getHeaders()
+        );
         echo $test->status;
     }
 
     public function livestats()
     {
         $status = "inactive";
-        $res = parent::execute($this->url("status"));
-        $details = json_decode($res->getBody());
+        $data = ["visiblestats" => []];
 
-        $data = [];
+        $stats = $this->config->availablestats ?? ["series", "books"];
+
+        foreach ($stats as $stat) {
+            if (!isset(self::getAvailableStats()[$stat])) {
+                continue;
+            }
+
+            $res = parent::execute(
+                $this->url("api/v1/" . $stat . "?size=1"),
+                $this->getHeaders()
+            );
+
+            $details = $res ? json_decode($res->getBody()) : null;
+
+            if (!isset($details->totalElements)) {
+                continue;
+            }
+
+            $status = "active";
+
+            $newstat = new \stdClass();
+            $newstat->title = self::getAvailableStats()[$stat];
+            $newstat->value = number_format($details->totalElements);
+
+            $data["visiblestats"][] = $newstat;
+        }
+
         return parent::getLiveStats($status, $data);
     }
+
     public function url($endpoint)
     {
         $api_url = parent::normaliseurl($this->config->url) . $endpoint;
         return $api_url;
+    }
+
+    public static function getAvailableStats()
+    {
+        return [
+            "series" => "Series",
+            "books" => "Books",
+            "collections" => "Collections",
+        ];
     }
 }
