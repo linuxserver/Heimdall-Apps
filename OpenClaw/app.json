@@ -1,0 +1,10 @@
+{
+  "appid": "c0e408a0ac1ea21e5206e43deb9e95d3381f7f5f",
+  "name": "OpenClaw",
+  "website": "https://github.com/openclaw/openclaw",
+  "license": "MIT License",
+  "description": "OpenClaw is a self-hosted, multi-channel AI gateway that runs and orchestrates AI agents across chat platforms like Discord, Slack, Telegram, and WhatsApp.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "openclaw.svg"
+}
