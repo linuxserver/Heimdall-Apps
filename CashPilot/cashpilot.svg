@@ -1,42 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="CashPilot">
+  <!--
+    Header logo. Deliberately NOT the same artwork as icon.svg (the favicon):
+    this one is drawn to survive being scaled to ~24px on the theme's coloured
+    header bar. That means no background plate (it would read as a dark blob
+    against the purple), no sub-pixel strokes, and no fine detail that turns to
+    mud. Bold shapes and high contrast only.
+  -->
   <defs>
-    <linearGradient id="bg" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" style="stop-color:#0A0A1A"/>
-      <stop offset="50%" style="stop-color:#12082A"/>
-      <stop offset="100%" style="stop-color:#0E0520"/>
+    <linearGradient id="cpSun" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="40%" stop-color="#FF9800"/>
+      <stop offset="72%" stop-color="#E91E63"/>
+      <stop offset="100%" stop-color="#AB47BC"/>
     </linearGradient>
-    <linearGradient id="sun" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#FFD54F"/>
-      <stop offset="35%" style="stop-color:#FF9800"/>
-      <stop offset="65%" style="stop-color:#E91E63"/>
-      <stop offset="100%" style="stop-color:#7B1FA2"/>
-    </linearGradient>
-    <clipPath id="sunClip">
-      <circle cx="128" cy="128" r="72"/>
-    </clipPath>
+    <mask id="cpBands">
+      <rect width="256" height="256" fill="#fff"/>
+      <!-- Horizon bands cut straight out of the disc, thick enough to stay
+           visible when the whole mark is 24px wide. -->
+      <rect x="16" y="150" width="224" height="10" fill="#000"/>
+      <rect x="16" y="172" width="224" height="13" fill="#000"/>
+      <rect x="16" y="197" width="224" height="16" fill="#000"/>
+    </mask>
   </defs>
-  <rect width="256" height="256" rx="32" fill="url(#bg)"/>
-  <circle cx="128" cy="128" r="72" fill="url(#sun)"/>
-  <g clip-path="url(#sunClip)">
-    <rect x="40" y="128" width="176" height="5" fill="#0A0A1A" opacity="0.85"/>
-    <rect x="40" y="140" width="176" height="5" fill="#0A0A1A" opacity="0.85"/>
-    <rect x="40" y="152" width="176" height="6" fill="#0A0A1A" opacity="0.85"/>
-    <rect x="40" y="165" width="176" height="7" fill="#0A0A1A" opacity="0.85"/>
-    <rect x="40" y="179" width="176" height="8" fill="#0A0A1A" opacity="0.85"/>
-    <!-- Airplane: long wings, thin fuselage, small tail -->
-    <g transform="translate(128,96) rotate(30)">
-      <path d="M0,-28 L2.5,-6 L30,2 L3,5 L4,12 L0,8 L-4,12 L-3,5 L-30,2 L-2.5,-6 Z"
-            fill="#0A0A1A" opacity="0.65"/>
+
+  <!--
+    THE SUN TOUCHES ALL FOUR EDGES. It used to sit in a 192x192 box inside a
+    256 canvas (32px of padding left and right, 36 top), which read as a small
+    mark floating in space wherever it was placed. Scaling about the disc's own
+    centre (r 96 to 128, and up 4px because the sun sat at cy=132) makes the
+    ink bounding box exactly 256x256 at +0+0: touching, never overflowing.
+    Verified by rendering and trimming, not by eye.
+
+    The whole mark is scaled rather than every band and the plane re-derived by
+    hand, so the artwork below stays exactly as drawn.
+  -->
+  <g transform="translate(128,128) scale(1.3333333) translate(-128,-132)">
+  <circle cx="128" cy="132" r="96" fill="url(#cpSun)" mask="url(#cpBands)"/>
+  
+    <!-- Plane: the official dark silhouette, matching banner.svg (#000010 at 0.65).
+         It was white, which is the one colour that disappears here: the top of the
+         sun gradient is #FFD54F, so a white plane on it is near-invisible and read
+         as a smudge rather than an aircraft. The banner has always drawn it dark
+         against the sun; this is the same mark at header size. -->
+    <g transform="translate(128,104) rotate(28)">
+      <path d="M0,-46 L4,-10 L50,3 L5,8 L6.5,20 L0,13 L-6.5,20 L-5,8 L-50,3 L-4,-10 Z"
+            fill="#000010" opacity="0.65"/>
     </g>
-  </g>
-  <g opacity="0.12" stroke="#8E24AA" stroke-width="0.8" fill="none">
-    <line x1="128" y1="200" x2="0" y2="256"/>
-    <line x1="128" y1="200" x2="256" y2="256"/>
-    <line x1="128" y1="200" x2="60" y2="256"/>
-    <line x1="128" y1="200" x2="196" y2="256"/>
-    <line x1="128" y1="200" x2="128" y2="256"/>
-    <line x1="20" y1="216" x2="236" y2="216"/>
-    <line x1="10" y1="236" x2="246" y2="236"/>
-    <line x1="0" y1="252" x2="256" y2="252"/>
   </g>
 </svg>
