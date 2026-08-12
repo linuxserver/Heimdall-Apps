@@ -1,8 +1,10 @@
 ---
-# Losslessly optimizes PNG icons with optipng, committing the smaller results
-# back to the repository. Mirrors svgo.yml (which does the same for SVGs).
-# optipng only recompresses and strips metadata -- pixel data and dimensions
-# are untouched, so icons are never visually degraded.
+# Optimizes PNG icons, committing the results back to the repository.
+# Icons larger than the 300x300 maximum enforced by apps.tests.js are first
+# resized to fit (aspect ratio preserved, shrink only); everything is then
+# losslessly recompressed with optipng, which only recompresses and strips
+# metadata. Mirrors svgo.yml (which optimizes SVGs; those have no pixel
+# dimensions to resize).
 name: Optimize PNG Files
 
 on:
@@ -32,11 +34,11 @@ jobs:
           ref: master
           fetch-depth: 0
 
-      - name: Install optipng
+      - name: Install optipng and ImageMagick
         run: |
           set -euo pipefail
           sudo apt-get update
-          sudo apt-get install -y optipng
+          sudo apt-get install -y optipng imagemagick
 
       - name: Optimize PNGs
         id: optipng
@@ -65,16 +67,36 @@ jobs:
 
           echo "Optimizing ${#files[@]} PNG file(s):"
           printf '  %s\n' "${files[@]}"
+
+          # Resize any icon exceeding the 300x300 maximum that apps.tests.js
+          # enforces. The '>' flag makes mogrify shrink-only and the fit is
+          # proportional, so compliant icons are never rewritten. head -n1
+          # guards against multi-frame PNGs printing one size per frame.
+          resized=0
+          for f in "${files[@]}"; do
+            read -r w h < <(identify -format '%w %h\n' "$f" | head -n1)
+            if [ "$w" -gt 300 ] || [ "$h" -gt 300 ]; then
+              echo "Resizing $f (${w}x${h} -> fit within 300x300)"
+              mogrify -resize '300x300>' "$f"
+              resized=$((resized + 1))
+            fi
+          done
+
           # -o5: thorough lossless search; -strip all: drop metadata chunks.
           optipng -o5 -strip all "${files[@]}"
 
-          # Count the files optipng actually changed so the commit message matches.
+          # Count the files actually changed so the commit message matches.
           count=$(git diff --name-only -- '*.png' | wc -l | tr -d '[:space:]')
+          msg="Optimize ${count} PNG(s)"
+          if [ "$resized" -gt 0 ]; then
+            msg="${msg}, resized ${resized} to fit 300x300"
+          fi
           echo "optimized_count=${count}" >> "$GITHUB_OUTPUT"
+          echo "commit_message=${msg}" >> "$GITHUB_OUTPUT"
 
       - name: Commit optimizations
         uses: stefanzweifel/git-auto-commit-action@v7
         if: ${{ steps.optipng.outputs.optimized_count != '0' }}
         with:
-          commit_message: Optimize ${{steps.optipng.outputs.optimized_count}} PNG(s) # yamllint disable-line rule:line-length
+          commit_message: ${{ steps.optipng.outputs.commit_message }}
           file_pattern: '*.png'
