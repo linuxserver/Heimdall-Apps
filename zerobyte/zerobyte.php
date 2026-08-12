@@ -2,6 +2,6 @@
 
 namespace App\SupportedApps\zerobyte;
 
-class zerobyte extends \App\SupportedApps
+class zerobyte extends \App\SupportedApps // phpcs:ignore
 {
 }
