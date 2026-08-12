@@ -1,0 +1,10 @@
+{
+  "appid": "f885b64f1778c7ac0a3f4bb840f7d8525364490a",
+  "name": "zerobyte",
+  "website": "https://zerobyte.app/",
+  "license": "GNU Affero General Public License v3.0",
+  "description": "Zerobyte gives you a clean web interface to schedule, monitor, restore, and maintain encrypted backups across local disks, NAS shares, remote servers, and cloud storage.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "zerobyte.png"
+}
