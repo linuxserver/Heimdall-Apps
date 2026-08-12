@@ -4,7 +4,7 @@
     "website": "https://dockhand.pro",
     "license": "Apache License 2.0",
     "description": "Modern Docker management for everyone. Licensed under BSL 1.1 The code is naked. Deal with it. Converts to Apache 2.0 in 2029",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "light",
     "icon": "dockhand.png"
 }
