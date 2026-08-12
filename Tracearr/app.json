@@ -1,0 +1,10 @@
+{
+  "appid": "bd1c80be4150d0398a83fa59ef2a0c299dd0eaf4",
+  "name": "Tracearr",
+  "website": "https://tracearr.com",
+  "license": "Other",
+  "description": "Real-time monitoring for Plex, Jellyfin, and Emby servers. Track streams, analyze playback, and detect account sharing from a single dashboard.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "tracearr.png"
+}
