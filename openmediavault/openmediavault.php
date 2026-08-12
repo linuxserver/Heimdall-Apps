@@ -16,6 +16,13 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps // 
         $this->cookie = new \GuzzleHttp\Cookie\CookieJar();
     }
 
+    public function getConfigValue($key, $default = null)
+    {
+        return isset($this->config) && isset($this->config->$key)
+            ? $this->config->$key
+            : $default;
+    }
+
     public function url($endpoint)
     {
         $api_url = parent::normaliseurl($this->config->url) . "rpc.php";
