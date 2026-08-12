@@ -1,0 +1,10 @@
+{
+  "appid": "92d3495e9e82905efa254d34d5f879c00b460de3",
+  "name": "BookOrbit",
+  "website": "https://bookorbit.app/",
+  "license": "Other",
+  "description": "A self-hosted library and reading platform for ebooks, audiobooks, and comics",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "bookorbit.png"
+}
