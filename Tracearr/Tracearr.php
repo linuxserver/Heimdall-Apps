@@ -15,18 +15,19 @@ class Tracearr extends \App\SupportedApps implements \App\EnhancedApps
     public function livestats()
     {
         $status = "inactive";
-        $data = [];
+        $data = [
+            "streams" => 0,
+            "transcodes" => 0,
+            "bandwidth" => "0 Mbps",
+        ];
 
         $res = parent::execute($this->url("api/v2/public/streams?summary=true"), $this->getAttrs());
-        $details = json_decode($res->getBody());
-        $summary = $details->summary ?? null;
+        $summary = $res ? (json_decode($res->getBody())->summary ?? null) : null;
 
         if ($summary) {
-            $data = [
-                "streams" => $summary->total,
-                "transcodes" => $summary->transcodes,
-                "bandwidth" => $summary->total_bitrate,
-            ];
+            $data["streams"] = $summary->total;
+            $data["transcodes"] = $summary->transcodes;
+            $data["bandwidth"] = $summary->total_bitrate;
             if ($summary->total > 0) {
                 $status = "active";
             }
