@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="CashPilot">
+  <!--
+    Header logo. Deliberately NOT the same artwork as icon.svg (the favicon):
+    this one is drawn to survive being scaled to ~24px on the theme's coloured
+    header bar. That means no background plate (it would read as a dark blob
+    against the purple), no sub-pixel strokes, and no fine detail that turns to
+    mud. Bold shapes and high contrast only.
+  -->
+  <defs>
+    <linearGradient id="cpSun" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F"/>
+      <stop offset="40%" stop-color="#FF9800"/>
+      <stop offset="72%" stop-color="#E91E63"/>
+      <stop offset="100%" stop-color="#AB47BC"/>
+    </linearGradient>
+    <mask id="cpBands">
+      <rect width="256" height="256" fill="#fff"/>
+      <!-- Horizon bands cut straight out of the disc, thick enough to stay
+           visible when the whole mark is 24px wide. -->
+      <rect x="16" y="150" width="224" height="10" fill="#000"/>
+      <rect x="16" y="172" width="224" height="13" fill="#000"/>
+      <rect x="16" y="197" width="224" height="16" fill="#000"/>
+    </mask>
+  </defs>
+
+  <!--
+    THE SUN TOUCHES ALL FOUR EDGES. It used to sit in a 192x192 box inside a
+    256 canvas (32px of padding left and right, 36 top), which read as a small
+    mark floating in space wherever it was placed. Scaling about the disc's own
+    centre (r 96 to 128, and up 4px because the sun sat at cy=132) makes the
+    ink bounding box exactly 256x256 at +0+0: touching, never overflowing.
+    Verified by rendering and trimming, not by eye.
+
+    The whole mark is scaled rather than every band and the plane re-derived by
+    hand, so the artwork below stays exactly as drawn.
+  -->
+  <g transform="translate(128,128) scale(1.3333333) translate(-128,-132)">
+  <circle cx="128" cy="132" r="96" fill="url(#cpSun)" mask="url(#cpBands)"/>
+  
+    <!-- Plane: the official dark silhouette, matching banner.svg (#000010 at 0.65).
+         It was white, which is the one colour that disappears here: the top of the
+         sun gradient is #FFD54F, so a white plane on it is near-invisible and read
+         as a smudge rather than an aircraft. The banner has always drawn it dark
+         against the sun; this is the same mark at header size. -->
+    <g transform="translate(128,104) rotate(28)">
+      <path d="M0,-46 L4,-10 L50,3 L5,8 L6.5,20 L0,13 L-6.5,20 L-5,8 L-50,3 L-4,-10 Z"
+            fill="#000010" opacity="0.65"/>
+    </g>
+  </g>
+</svg>
