@@ -1,0 +1,10 @@
+{
+    "appid": "5b7c085bf60518c8e7261473688a98200e60847b",
+    "name": "CashPilot",
+    "website": "https://github.com/GeiserX/CashPilot",
+    "license": "GNU General Public License v3.0 only",
+    "description": "Self-hosted passive income orchestrator. Deploy, manage and monitor bandwidth-sharing, DePIN, storage and GPU compute containers from a single web dashboard, with earnings tracked across 49 services.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "cashpilot.svg"
+}
