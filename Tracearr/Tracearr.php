@@ -44,11 +44,17 @@ class Tracearr extends \App\SupportedApps implements \App\EnhancedApps
 
     private function getAttrs()
     {
-        return [
+        $attrs = [
             "headers" => [
                 "Accept" => "application/json",
                 "Authorization" => "Bearer " . $this->config->apikey,
             ],
         ];
+
+        if (!empty($this->config->ignore_tls)) {
+            $attrs["verify"] = false;
+        }
+
+        return $attrs;
     }
 }
