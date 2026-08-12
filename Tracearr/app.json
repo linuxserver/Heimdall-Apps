@@ -4,7 +4,7 @@
   "website": "https://tracearr.com",
   "license": "Other",
   "description": "Real-time monitoring for Plex, Jellyfin, and Emby servers. Track streams, analyze playback, and detect account sharing from a single dashboard.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "tracearr.png"
 }
