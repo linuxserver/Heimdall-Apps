@@ -33,6 +33,10 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps // 
             "cookies" => $this->cookie,
         ];
 
+        if ($this->getConfigValue("ignore_tls", false)) {
+            $attrs["verify"] = false;
+        }
+
         // @see \App\SupportedApps\execute($url, $attrs = [], $overridevars=false, $overridemethod=false)
         $result = parent::execute($this->url(false), $attrs, null, "POST");
         if (null === $result) {
