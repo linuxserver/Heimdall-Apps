@@ -27,7 +27,7 @@ class Tracearr extends \App\SupportedApps implements \App\EnhancedApps
         if ($summary) {
             $data["streams"] = $summary->total;
             $data["transcodes"] = $summary->transcodes;
-            $data["bandwidth"] = $summary->total_bitrate;
+            $data["bandwidth"] = $summary->total > 0 ? $summary->total_bitrate : "0 Mbps";
             if ($summary->total > 0) {
                 $status = "active";
             }
