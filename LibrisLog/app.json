@@ -4,7 +4,7 @@
   "website": "https://github.com/codebude/librislog",
   "license": "MIT License",
   "description": "LibrisLog is a self-hosted multi-user book tracking webapp that allows to maintain different reading lists, import books from Open Library & Google Books, scrape cover art, and get rich reading analytics.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "librislog.png"
 }
