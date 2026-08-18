@@ -1,14 +1,14 @@
 <ul class="livestats">
     <li>
-        <span class="title">Streams</span>
+        <span class="title">Total</span>
         <strong>{!! $streams !!}</strong>
     </li>
     <li>
-        <span class="title">Transcodes</span>
+        <span class="title">Tcode</span>
         <strong>{!! $transcodes !!}</strong>
     </li>
     <li>
-        <span class="title">Bandwidth</span>
+        <span class="title">Rate</span>
         <strong>{!! $bandwidth !!}</strong>
     </li>
 </ul>
