@@ -3,7 +3,7 @@
   "name": "Nexus Dashboard",
   "website": "https://github.com/DarkflameUniverse/NexusDashboard",
   "license": "GNU Affero General Public License v3.0",
-  "description": "Logo source: Official NexusDashboard GitHub repository\n\nNexus Dashboard is the web-based administration and moderation interface for Darkflame Universe game servers. It provides account, play key and character management, inventory and statistics viewers, name and property moderation, bug report handling, activity and audit logs, in-game mail tools, and scheduled economy reports.",
+  "description": "Nexus Dashboard is the web-based administration and moderation interface for Darkflame Universe game servers. It provides account, play key and character management, inventory and statistics viewers, name and property moderation, bug report handling, activity and audit logs, in-game mail tools, and scheduled economy reports.",
   "enhanced": false,
   "tile_background": "light",
   "icon": "nexusdashboard.png"
