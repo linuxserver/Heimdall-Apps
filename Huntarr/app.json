@@ -1,0 +1,10 @@
+{
+  "appid": "02a021f58ace4b09442b11dc179df495422ab27a",
+  "name": "Huntarr",
+  "website": "https://github.com/MGHazz/huntarr.io-archive",
+  "license": "GNU General Public License v3.0 only",
+  "description": "Huntarr automates searches for missing and upgradeable media across Sonarr, Radarr, Lidarr, Readarr, and Whisparr instances.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "huntarr.svg"
+}
