@@ -1,0 +1,10 @@
+{
+  "appid": "6c8d03f4ed15237d83bf1c556dd5cccf48b8f0dc",
+  "name": "re:Director",
+  "website": "https://re-director.github.io/",
+  "license": "Apache License 2.0",
+  "description": "A simple domain redirection management tool.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "redirector.svg"
+}
