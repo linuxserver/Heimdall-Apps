@@ -1,0 +1,10 @@
+{
+  "appid": "95a90a79d88c1edbf28748feeef8f2fdffecb346",
+  "name": "Stork",
+  "website": "https://www.isc.org/stork/",
+  "license": "Mozilla Public License 2.0",
+  "description": "ISC Stork is a monitoring and management dashboard for Kea DHCP and BIND 9 servers, including configuration, health, utilization, and host-reservation views.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "stork.png"
+}
