@@ -1,0 +1,10 @@
+{
+  "appid": "a7379d83fab1a89ea15053889d9ed1a93d67c0d2",
+  "name": "Bluemap",
+  "website": "https://github.com/BlueMap-Minecraft",
+  "license": "MIT License",
+  "description": "BlueMap is a web-based 3D map renderer and viewer for Minecraft worlds. It generates detailed, interactive maps that can be explored in a browser and supports multiple worlds, markers, player positions and different viewing perspectives. \n\nlogo scource is the bluemap Git repo.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "bluemap.png"
+}
