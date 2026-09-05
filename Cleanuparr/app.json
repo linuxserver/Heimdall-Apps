@@ -4,7 +4,7 @@
   "website": "https://github.com/cleanuparr/cleanuparr",
   "license": "GNU General Public License v3.0 or later",
   "description": "Advanced download manager for the Servarr ecosystem",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "dark",
   "icon": "cleanuparr.png"
 }
