@@ -16,7 +16,7 @@ A **foundation** app:
 | --- | --- |
 | `app.json` | metadata (see below) |
 | `<Folder>.php` | `class <Folder> extends \App\SupportedApps` |
-| `<slug>.<ext>` | the icon (`.svg` preferred, or `.png` 100-300px) |
+| `<slug>.<ext>` | the icon (`.svg` preferred, or `.png` 100-300px square) |
 
 An **enhanced** app additionally ships:
 

@@ -10,6 +10,10 @@
  *   - the real file type is determined by magic bytes, not by the URL or a
  *     claimed extension, so a mislabelled payload cannot smuggle in a
  *     non-image (or the wrong image type).
+ *
+ * PNG icons are also dimension-checked. Oversized ones are accepted and resized
+ * during scaffolding; only icons that would still be under the minimum after
+ * that resize are rejected. See downloadIcon for the reasoning.
  */
 
 const { isAllowedAttachmentUrl } = require("./icon-url");
@@ -35,6 +39,30 @@ function pngDimensions(buf) {
         return null;
     }
     return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+}
+
+/**
+ * Dimensions after fitting inside ICON_MAX_PX square, preserving aspect ratio
+ * and never upscaling — the shape ImageMagick's `-resize '300x300>'` produces,
+ * which is what the scaffold workflow runs on an oversized PNG.
+ *
+ * Rounds *down* so the prediction is never larger than what ImageMagick
+ * actually writes: a caller checking the result against the minimum must not
+ * pass an icon that then lands a pixel short on the runner.
+ *
+ * @param {number} width
+ * @param {number} height
+ * @returns {{width: number, height: number}}
+ */
+function fitWithinMax(width, height) {
+    if (width <= ICON_MAX_PX && height <= ICON_MAX_PX) {
+        return { width, height };
+    }
+    const scale = Math.min(ICON_MAX_PX / width, ICON_MAX_PX / height);
+    return {
+        width: Math.max(1, Math.floor(width * scale)),
+        height: Math.max(1, Math.floor(height * scale)),
+    };
 }
 
 /**
@@ -96,23 +124,31 @@ async function downloadIcon(url, opts = {}) {
         throw new Error("Icon is not a valid PNG or SVG file.");
     }
 
-    // PNGs are dimension-bounded (SVGs scale, so they are exempt). This mirrors
-    // the PR test suite so an oversized icon is rejected here rather than
-    // slipping through to break every open PR.
+    // PNGs are dimension-bounded (SVGs scale, so they are exempt), and
+    // apps.tests.js enforces the same bounds on every PR.
+    //
+    // Only the *minimum* is a hard failure. An icon over the maximum is resized
+    // to fit during scaffolding (see the "Resize PNG icon" step in
+    // app-request-scaffold.yml), so rejecting it here would turn a fixable
+    // request into a round-trip with the requester. What resizing cannot fix is
+    // an extreme aspect ratio: fitting 2000x150 inside 300x300 yields 300x22,
+    // which is below the minimum and needs a differently shaped icon.
     if (ext === ".png") {
         const dim = pngDimensions(buffer);
         if (!dim) {
             throw new Error("Icon PNG header could not be read.");
         }
         const { width, height } = dim;
-        if (width > ICON_MAX_PX || height > ICON_MAX_PX) {
+        const fitted = fitWithinMax(width, height);
+        if (fitted.width < ICON_MIN_PX || fitted.height < ICON_MIN_PX) {
+            const scaled =
+                fitted.width === width && fitted.height === height
+                    ? ""
+                    : ` (${fitted.width}x${fitted.height}px once scaled to fit ` +
+                      `${ICON_MAX_PX}x${ICON_MAX_PX})`;
             throw new Error(
-                `Icon is too large (${width}x${height}px, max ${ICON_MAX_PX}x${ICON_MAX_PX}).`
-            );
-        }
-        if (width < ICON_MIN_PX || height < ICON_MIN_PX) {
-            throw new Error(
-                `Icon is too small (${width}x${height}px, min ${ICON_MIN_PX}x${ICON_MIN_PX}).`
+                `Icon is too small (${width}x${height}px${scaled}, min ` +
+                    `${ICON_MIN_PX}x${ICON_MIN_PX}). Please attach a squarer icon.`
             );
         }
     }
@@ -124,6 +160,7 @@ module.exports = {
     downloadIcon,
     sniffImage,
     pngDimensions,
+    fitWithinMax,
     DEFAULT_MAX_BYTES,
     ICON_MIN_PX,
     ICON_MAX_PX,

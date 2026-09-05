@@ -16,6 +16,7 @@ const {
     sniffImage,
     pngDimensions,
     downloadIcon,
+    fitWithinMax,
     ICON_MIN_PX,
     ICON_MAX_PX,
 } = require("../lib/download-icon");
@@ -170,13 +171,27 @@ test("pngDimensions reads IHDR width/height, null for non-PNG", () => {
     assert.equal(pngDimensions(Buffer.from("short")), null);
 });
 
-test("downloadIcon rejects a PNG over the max dimension", async () => {
-    await assert.rejects(
-        downloadIcon(ATTACHMENT_URL, {
-            fetchImpl: fetchReturning(makePng(ICON_MAX_PX + 1, ICON_MAX_PX + 1)),
-        }),
-        /too large/
-    );
+test("fitWithinMax shrinks to fit, preserves ratio, never upscales", () => {
+    // Already inside the box: returned untouched, never enlarged.
+    assert.deepEqual(fitWithinMax(300, 300), { width: 300, height: 300 });
+    assert.deepEqual(fitWithinMax(120, 100), { width: 120, height: 100 });
+    // Square and rectangular shrinks.
+    assert.deepEqual(fitWithinMax(512, 512), { width: 300, height: 300 });
+    assert.deepEqual(fitWithinMax(1024, 512), { width: 300, height: 150 });
+    assert.deepEqual(fitWithinMax(512, 1024), { width: 150, height: 300 });
+    // Rounds down, so the prediction is never larger than ImageMagick's output.
+    assert.deepEqual(fitWithinMax(1000, 301), { width: 300, height: 90 });
+});
+
+test("downloadIcon accepts an oversized PNG for resizing at scaffold time", async () => {
+    const png = await downloadIcon(ATTACHMENT_URL, {
+        fetchImpl: fetchReturning(makePng(ICON_MAX_PX + 1, ICON_MAX_PX + 1)),
+    });
+    assert.equal(png.ext, ".png");
+    const big = await downloadIcon(ATTACHMENT_URL, {
+        fetchImpl: fetchReturning(makePng(2048, 2048)),
+    });
+    assert.equal(big.ext, ".png");
 });
 
 test("downloadIcon rejects a PNG under the min dimension", async () => {
@@ -185,6 +200,16 @@ test("downloadIcon rejects a PNG under the min dimension", async () => {
             fetchImpl: fetchReturning(makePng(ICON_MIN_PX - 1, ICON_MIN_PX - 1)),
         }),
         /too small/
+    );
+});
+
+test("downloadIcon rejects an icon too lopsided to survive the resize", async () => {
+    // 2000x150 fits to 300x22 -- over the maximum, but resizing cannot save it.
+    await assert.rejects(
+        downloadIcon(ATTACHMENT_URL, {
+            fetchImpl: fetchReturning(makePng(2000, 150)),
+        }),
+        /too small.*once scaled to fit/
     );
 });
 
