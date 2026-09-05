@@ -4,7 +4,7 @@
     "website": "https://github.com/slskd/slskd",
     "license": "GNU Affero General Public License v3.0",
     "description": "A modern client-server application for the Soulseek file sharing network.",
-    "enhanced": false,
+    "enhanced": true,
     "tile_background": "dark",
     "icon": "slskd.svg"
 }
