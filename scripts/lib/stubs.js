@@ -35,6 +35,20 @@ function buildAppJson(a) {
 }
 
 /**
+ * PSR12 requires PascalCase class names, but the class must mirror the folder,
+ * which in turn must mirror the app name (apps.tests.js enforces both). Apps
+ * whose name starts lowercase — alist, pfSense, openHAB, ntfy, oVirt — therefore
+ * cannot satisfy the sniff, and the repo silences it per-class rather than
+ * disabling it everywhere. Emit the same marker so a scaffolded app does not
+ * open a PR that fails PHPCS.
+ * @param {string} folder
+ * @returns {string} "" or the trailing phpcs annotation
+ */
+function classNameSuppression(folder) {
+    return /^[A-Z]/.test(folder) ? "" : " // phpcs:ignore";
+}
+
+/**
  * Foundation PHP class.
  * @param {string} folder
  * @returns {string}
@@ -44,7 +58,7 @@ function foundationPhp(folder) {
 
 namespace App\\SupportedApps\\${folder};
 
-class ${folder} extends \\App\\SupportedApps
+class ${folder} extends \\App\\SupportedApps${classNameSuppression(folder)}
 {
 }
 `;
@@ -60,7 +74,7 @@ function enhancedPhp(folder) {
 
 namespace App\\SupportedApps\\${folder};
 
-class ${folder} extends \\App\\SupportedApps implements \\App\\EnhancedApps
+class ${folder} extends \\App\\SupportedApps implements \\App\\EnhancedApps${classNameSuppression(folder)}
 {
     public $config;
 
