@@ -1,0 +1,10 @@
+{
+  "appid": "a9055c31eac02d3a9c7d84ceef49fdff47bad88b",
+  "name": "Netbird",
+  "website": "https://netbird.io/",
+  "license": "BSD 3-Clause \"New\" or \"Revised\" License",
+  "description": "NetBird is an Open Source Zero Trust Networking platform that allows you to create secure private networks for your organization or home.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "netbird.svg"
+}
