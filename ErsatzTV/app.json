@@ -1,0 +1,10 @@
+{
+  "appid": "97cb396704f31765179458479da02b11300dae0c",
+  "name": "ErsatzTV",
+  "website": "https://ersatztv.org/",
+  "license": "Other",
+  "description": "ErsatzTV transforms a personal media library into custom live television channels with scheduling, transcoding, IPTV, and HDHomeRun emulation.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "ersatztv.png"
+}
