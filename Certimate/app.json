@@ -1,0 +1,10 @@
+{
+  "appid": "014ead93249d93b30a9e1e50861ede106a5ba1d4",
+  "name": "Certimate",
+  "website": "https://github.com/certimate-go/certimate",
+  "license": "MIT License",
+  "description": "Certimate is a self-hosted ACME certificate manager that automates certificate issuance, deployment, renewal, and monitoring across many DNS and hosting providers.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "certimate.png"
+}
