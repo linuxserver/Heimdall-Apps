@@ -117,7 +117,7 @@ class CraftyController extends \App\SupportedApps implements \App\EnhancedApps
         if (is_numeric($size)) {
             return round($size / (1024 * 1024 * 1024), 1);
         }
-        
+
         $units = [
             'B'  => 1 / (1024 * 1024 * 1024),  // Convert bytes to GB
             'KB' => 1 / (1024 * 1024),        // Convert KB to GB
