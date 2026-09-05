@@ -1,0 +1,10 @@
+{
+  "appid": "ce52dac0e197c667a331090485551e3b85980d7d",
+  "name": "FlareSolverr",
+  "website": "https://github.com/FlareSolverr/FlareSolverr",
+  "license": "MIT License",
+  "description": "FlareSolverr is a proxy service that uses a browser session to solve supported Cloudflare challenges for applications such as indexer managers.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "flaresolverr.png"
+}
