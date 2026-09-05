@@ -1,0 +1,10 @@
+{
+  "appid": "1ba78e86603122518e909662d4277e72f57eb2d7",
+  "name": "BINDERY",
+  "website": "https://getbindery.dev",
+  "license": "MIT License",
+  "description": "Automated book download manager for Usenet. Monitor authors, search indexers, download via SABnzbd, and organize your library. The modern replacement for Readarr.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "bindery.png"
+}
