@@ -1,0 +1,10 @@
+{
+  "appid": "23514762999f69958d614449eeeefcee50239bcc",
+  "name": "Trek",
+  "website": "https://github.com/liketrek/TREK",
+  "license": "GNU Affero General Public License v3.0",
+  "description": "Trek is a self-hosted, real-time collaborative travel planner — with maps, budgets, packing lists, a journal, and AI built in.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "trek.svg"
+}
