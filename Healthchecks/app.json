@@ -4,7 +4,7 @@
   "website": "https://healthchecks.io",
   "license": "BSD 3-Clause \"New\" or \"Revised\" License",
   "description": "Instant alerts when your cron jobs fail silently.",
-  "enhanced": false,
+  "enhanced": true,
   "tile_background": "light",
   "icon": "healthchecks.png"
 }
