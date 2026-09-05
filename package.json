@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/linuxserver/Heimdall-Apps#readme",
   "dependencies": {
-    "folder-hash": "^4.1.1",
+    "folder-hash": "^4.1.3",
     "glob": "^7.1.6",
     "jszip": "^3.10.0",
     "ncu": "^0.2.1"
