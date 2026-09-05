@@ -115,6 +115,9 @@ defensively:
 - The icon URL is allow-listed to `https://github.com/user-attachments/assets/…`
   and `https://user-images.githubusercontent.com/…` before download; anything
   else aborts the run with a comment.
-- SVG icons are run through `svgo` before they land in the PR.
+- SVG icons are run through `svgo` before they land in the PR; PNG icons over
+  the 300x300 maximum are scaled down to fit (shrink-only, aspect preserved).
+  A PNG is rejected only when it is under the 100x100 minimum, including when
+  fitting an extreme aspect ratio inside 300x300 would put it there.
 - The validate workflow has only `issues: write`. Only the scaffold workflow —
   gated on the maintainer-applied `approved` label — can write to the repo.

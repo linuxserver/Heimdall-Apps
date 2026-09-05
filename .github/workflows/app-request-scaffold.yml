@@ -66,6 +66,32 @@ jobs:
           ICON_PATH: ${{ steps.scaffold.outputs.icon_path }}
         run: npx --yes svgo@3 --config .github/workflows/svgo.config.js "$ICON_PATH"
 
+      # Shrink an oversized PNG to the 300x300 maximum that apps.tests.js
+      # enforces, so a large upload is fixed here instead of being bounced back
+      # to the requester. '>' makes mogrify shrink-only and the fit is
+      # proportional, so a compliant icon is never rewritten -- the same
+      # treatment png-optimize.yml gives PNGs already on master. downloadIcon
+      # has already rejected anything that would fall under the 100x100 minimum
+      # at this size. The path is a fixed, alnum-validated "<Folder>/<icon>",
+      # passed via env and quoted.
+      - name: Resize PNG icon
+        if: steps.scaffold.outputs.ok == 'true' && steps.scaffold.outputs.icon_is_svg == 'false'
+        shell: bash
+        env:
+          ICON_PATH: ${{ steps.scaffold.outputs.icon_path }}
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          read -r w h < <(identify -format '%w %h\n' "$ICON_PATH" | head -n1)
+          if [ "$w" -gt 300 ] || [ "$h" -gt 300 ]; then
+            echo "Resizing $ICON_PATH (${w}x${h} -> fit within 300x300)"
+            mogrify -resize '300x300>' "$ICON_PATH"
+            identify -format 'Now %wx%h\n' "$ICON_PATH" | head -n1
+          else
+            echo "$ICON_PATH is ${w}x${h}; no resize needed."
+          fi
+
       - name: Create Pull Request
         if: steps.scaffold.outputs.ok == 'true'
         id: cpr

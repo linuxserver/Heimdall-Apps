@@ -69,8 +69,9 @@ body:
     attributes:
       label: Icon
       description: |
-        Upload a square icon as `.svg` (preferred) or `.png`. PNGs should be
-        between 100 and 300px square. Drag-and-drop or browse to attach the file.
+        Upload a square icon as `.svg` (preferred) or `.png`. PNGs must be at
+        least 100px on each side; anything over 300px is scaled down for you.
+        Drag-and-drop or browse to attach the file.
     validations:
       required: true
       accept: .svg,.png
