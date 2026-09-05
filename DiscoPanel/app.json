@@ -1,0 +1,10 @@
+{
+  "appid": "b461585d732c38b8b0ed0557735354a3c29a297c",
+  "name": "DiscoPanel",
+  "website": "https://discopanel.app/",
+  "license": "MIT License",
+  "description": "DiscoPanel is a lightweight self-hosted suite and web interface for deploying, configuring, and managing modded Minecraft servers.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "discopanel.png"
+}
