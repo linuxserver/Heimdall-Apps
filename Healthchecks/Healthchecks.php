@@ -18,6 +18,7 @@ class Healthchecks extends \App\SupportedApps implements \App\EnhancedApps
 
     public function livestats()
     {
+        $status = 'inactive';
         $data = [
             'up' => 0,
             'down' => 0,
@@ -26,30 +27,30 @@ class Healthchecks extends \App\SupportedApps implements \App\EnhancedApps
         // Single authenticated GET. execute() returns null on a failed
         // connection (it never throws), so guard before reading the body.
         $res = parent::execute($this->url('api/v3/checks/'), $this->getAttrs());
-        if ($res === null) {
-            return parent::getLiveStats('inactive', $data);
-        }
-
-        // Management API returns { "checks": [ ... ] }; each check has
-        // status of new, up, grace, down, or paused.
-        $body = json_decode($res->getBody());
-        $checks = is_object($body) ? $body->checks : [];
-        if (!is_array($checks)) {
-            return parent::getLiveStats('inactive', $data);
-        }
-
-        foreach ($checks as $check) {
-            if (!isset($check->status)) {
-                continue;
+        if ($res !== null) {
+            // Management API returns { "checks": [ ... ] }; each check has a
+            // status of new, up, grace, down, or paused. Errors (a bad API
+            // key returns 401 with { "error": ... }) carry no "checks" key,
+            // so coalesce to null rather than reading the property directly
+            // and leave the tile inactive in that case.
+            $body = json_decode($res->getBody());
+            $checks = $body->checks ?? null;
+            if (is_array($checks)) {
+                $status = 'active';
+                foreach ($checks as $check) {
+                    if (!isset($check->status)) {
+                        continue;
+                    }
+                    if ($check->status === 'up') {
+                        $data['up']++;
+                    } elseif ($check->status === 'down') {
+                        $data['down']++;
+                    }
+                }
             }
-            if ($check->status === 'up') {
-                $data['up']++;
-            } elseif ($check->status === 'down') {
-                $data['down']++;
-            }
         }
 
-        return parent::getLiveStats('inactive', $data);
+        return parent::getLiveStats($status, $data);
     }
 
     private function getAttrs()
