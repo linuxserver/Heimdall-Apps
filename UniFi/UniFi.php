@@ -23,9 +23,16 @@ class UniFi extends \App\SupportedApps
         $self_hosted = $this->getConfigValue("self_hosted", false);
 
         // Perform login request
+        try {
+            $loginAttributes = $this->getLoginAttributes();
+        } catch (\InvalidArgumentException $exception) {
+            echo "Failed: " . $exception->getMessage();
+            return;
+        }
+
         $loginRes = parent::execute(
             $this->url($urls['loginURL']),
-            $this->getLoginAttributes(),
+            $loginAttributes,
             null,
             'POST'
         );
@@ -41,6 +48,14 @@ class UniFi extends \App\SupportedApps
         // Check for explicit failure codes
         if ($statusCode === 401 || $statusCode === 403) {
             echo "Failed: Invalid credentials";
+            return;
+        }
+
+        if ($statusCode === 499) {
+            $message = empty($this->getConfigValue("totp_uri"))
+                ? "Two-factor authentication required"
+                : "Two-factor authentication failed";
+            echo "Failed: " . $message;
             return;
         }
 
@@ -94,9 +109,15 @@ class UniFi extends \App\SupportedApps
     {
         $status = "inactive";
         $urls = $this->getAPIURLs();
+        try {
+            $loginAttributes = $this->getLoginAttributes();
+        } catch (\InvalidArgumentException) {
+            return parent::getLiveStats($status, ['error' => true]);
+        }
+
         parent::execute(
             $this->url($urls['loginURL']),
-            $this->getLoginAttributes(),
+            $loginAttributes,
             null,
             'POST'
         );
@@ -183,6 +204,11 @@ class UniFi extends \App\SupportedApps
             "password" => $password,
         ];
 
+        $totpUri = $this->getConfigValue("totp_uri");
+        if (!empty($totpUri)) {
+            $body["token"] = self::generateTotpCode($totpUri);
+        }
+
         $attrs = [
             "body" => json_encode($body),
             "cookies" => $this->jar,
@@ -196,6 +222,69 @@ class UniFi extends \App\SupportedApps
         }
 
         return $attrs;
+    }
+
+    public static function generateTotpCode($uri, $timestamp = null)
+    {
+        $parts = parse_url($uri);
+        if (
+            $parts === false ||
+            strtolower($parts["scheme"] ?? "") !== "otpauth" ||
+            strtolower($parts["host"] ?? "") !== "totp"
+        ) {
+            throw new \InvalidArgumentException("The TOTP value must be an otpauth://totp URI");
+        }
+
+        parse_str($parts["query"] ?? "", $query);
+        $secret = self::base32Decode($query["secret"] ?? "");
+        $algorithm = strtolower($query["algorithm"] ?? "sha1");
+        $digits = (int) ($query["digits"] ?? 6);
+        $period = (int) ($query["period"] ?? 30);
+
+        if (!in_array($algorithm, ["sha1", "sha256", "sha512"], true)) {
+            throw new \InvalidArgumentException("Unsupported TOTP algorithm");
+        }
+        if ($digits < 6 || $digits > 8 || $period < 1) {
+            throw new \InvalidArgumentException("Invalid TOTP digits or period");
+        }
+
+        $counter = intdiv($timestamp ?? time(), $period);
+        $counterBytes = pack("N2", ($counter >> 32) & 0xffffffff, $counter & 0xffffffff);
+        $hash = hash_hmac($algorithm, $counterBytes, $secret, true);
+        $offset = ord($hash[strlen($hash) - 1]) & 0x0f;
+        $binary = unpack("N", substr($hash, $offset, 4))[1] & 0x7fffffff;
+
+        return str_pad((string) ($binary % (10 ** $digits)), $digits, "0", STR_PAD_LEFT);
+    }
+
+    private static function base32Decode($secret)
+    {
+        $secret = strtoupper(str_replace([" ", "-", "="], "", trim($secret)));
+        if ($secret === "") {
+            throw new \InvalidArgumentException("The TOTP URI is missing a secret");
+        }
+        if (!preg_match("/^[A-Z2-7]+$/", $secret)) {
+            throw new \InvalidArgumentException("Invalid base32 TOTP secret");
+        }
+
+        $alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+        $bits = "";
+        foreach (str_split($secret) as $character) {
+            $value = strpos($alphabet, $character);
+            if ($value === false) {
+                throw new \InvalidArgumentException("Invalid base32 TOTP secret");
+            }
+            $bits .= str_pad(decbin($value), 5, "0", STR_PAD_LEFT);
+        }
+
+        $decoded = "";
+        foreach (str_split($bits, 8) as $byte) {
+            if (strlen($byte) === 8) {
+                $decoded .= chr(bindec($byte));
+            }
+        }
+
+        return $decoded;
     }
 
     public function getAttributes()
