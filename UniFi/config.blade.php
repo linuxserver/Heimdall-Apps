@@ -31,7 +31,8 @@
         </div>
     </div>
     <div class="input">
-        <label>Self Hosted</label>
+        <label>Legacy UniFi Network application<br />
+        <small>Leave off for UniFi OS, including a self-hosted UniFi OS Server</small></label>
         <div class="toggleinput" style="margin-top: 26px; padding-left: 15px;">
             {!! Form::hidden('config[self_hosted]', 0, ['class' => 'config-item', 'data-config' => 'self_hosted']) !!}
             <label class="switch">
