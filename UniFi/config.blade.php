@@ -14,7 +14,7 @@
         {!! Form::input('password', 'config[password]', '', ['placeholder' => __('app.apps.password'), 'data-config' => 'password', 'class' => 'form-control config-item']) !!}
     </div>
     <div class="input">
-        <label>TOTP otpauth:// URI</label>
+        <label>TOTP otpauth:// URI ({{ __('app.optional') }})</label>
         {!! Form::input('password', 'config[totp_uri]', isset($item) && isset($item->getconfig()->totp_uri) ? $item->getconfig()->totp_uri : null, ['placeholder' => 'otpauth://totp/...', 'data-config' => 'totp_uri', 'class' => 'form-control config-item', 'autocomplete' => 'off']) !!}
     </div>
     <div class="input">
