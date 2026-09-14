@@ -2,6 +2,8 @@
 
 namespace App\SupportedApps\UniFi;
 
+use Illuminate\Support\Facades\Cache;
+
 /**
  * Implementation based on
  * https://ubntwiki.com/products/software/unifi-controller/api
@@ -45,17 +47,21 @@ class UniFi extends \App\SupportedApps
         $statusCode = $loginRes->getStatusCode();
         $body = json_decode($loginRes->getBody());
 
+        $hasTotp = !empty($this->getConfigValue("totp_uri"));
+
         // Check for explicit failure codes
+        // An incorrect or expired TOTP code is rejected here too, not with 499
         if ($statusCode === 401 || $statusCode === 403) {
-            echo "Failed: Invalid credentials";
+            echo $hasTotp
+                ? "Failed: Invalid credentials or TOTP code - each code works once, "
+                    . "so wait for the next one before retrying"
+                : "Failed: Invalid credentials";
             return;
         }
 
+        // UniFi OS asks for a second factor it has not been given
         if ($statusCode === 499) {
-            $message = empty($this->getConfigValue("totp_uri"))
-                ? "Two-factor authentication required"
-                : "Two-factor authentication failed";
-            echo "Failed: " . $message;
+            echo "Failed: Two-factor authentication required";
             return;
         }
 
@@ -109,6 +115,20 @@ class UniFi extends \App\SupportedApps
     {
         $status = "inactive";
         $urls = $this->getAPIURLs();
+        $totpUri = $this->getConfigValue("totp_uri");
+
+        // UniFi OS accepts each TOTP code once, so the dashboard refresh loop
+        // would fail every login that lands in an already-spent time step.
+        // Reusing the last result until the next code is due keeps one login
+        // per period; without TOTP configured nothing is cached.
+        $cacheKey = empty($totpUri) ? null : $this->totpCacheKey();
+        if ($cacheKey !== null) {
+            $cached = Cache::get($cacheKey);
+            if (is_array($cached)) {
+                return parent::getLiveStats($status, $cached);
+            }
+        }
+
         try {
             $loginAttributes = $this->getLoginAttributes();
         } catch (\InvalidArgumentException) {
@@ -128,6 +148,10 @@ class UniFi extends \App\SupportedApps
             null,
             'GET'
         );
+
+        if ($res === null) {
+            return parent::getLiveStats($status, ['error' => true]);
+        }
 
         $details = json_decode($res->getBody());
 
@@ -165,7 +189,31 @@ class UniFi extends \App\SupportedApps
             $data['error'] = true;
         }
 
+        // Cache successes only, so a transient failure retries on the next
+        // refresh instead of pinning an error tile for the rest of the period.
+        if ($cacheKey !== null && $data['error'] === false) {
+            Cache::put($cacheKey, $data, $this->secondsUntilNextTotpCode($totpUri));
+        }
+
         return parent::getLiveStats($status, $data);
+    }
+
+    private function totpCacheKey()
+    {
+        return 'unifi_livestats_' . sha1(
+            $this->config->url . '|' . $this->getConfigValue("username", '')
+        );
+    }
+
+    private function secondsUntilNextTotpCode($uri)
+    {
+        parse_str((string) parse_url($uri, PHP_URL_QUERY), $query);
+        $period = (int) ($query["period"] ?? 30);
+        if ($period < 1) {
+            $period = 30;
+        }
+
+        return $period - (time() % $period);
     }
 
     public function url($endpoint)
