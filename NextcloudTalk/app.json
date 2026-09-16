@@ -1,0 +1,10 @@
+{
+  "appid": "f87b547abd61176450fe7486038f8f2c42943bc6",
+  "name": "Nextcloud Talk",
+  "website": "https://nextcloud.com/talk/",
+  "license": "GNU Affero General Public License v3.0 only",
+  "description": "Nextcloud Talk is a fully self-hosted, open source audio, video and chat communication platform that runs on your own server, either standalone or alongside Nextcloud.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "nextcloudtalk.png"
+}
