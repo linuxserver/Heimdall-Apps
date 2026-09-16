@@ -3,7 +3,7 @@
   "name": "Dispatcharr",
   "website": "https://github.com/dispatcharr/dispatcharr",
   "license": "GNU Affero General Public License v3.0",
-  "description": "Dispatcharr (pronounced like \"dispatcher\") is an open-source powerhouse for managing IPTV streams, EPG data, and VOD content with elegance and control.\n\nDescription and logo sources:\nhttps://github.com/dispatcharr/dispatcharr#-what-is-dispatcharr\nhttps://raw.githubusercontent.com/Dispatcharr/Dispatcharr/refs/heads/main/frontend/src/images/logo.png",
+  "description": "Dispatcharr (pronounced like \"dispatcher\") is an open-source powerhouse for managing IPTV streams, EPG data, and VOD content with elegance and control.",
   "enhanced": false,
   "tile_background": "light",
   "icon": "dispatcharr.png"
