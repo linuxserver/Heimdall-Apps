@@ -1,0 +1,10 @@
+{
+  "appid": "3e1d9cc7f6619a55af217e3d4fcd59223c0051e3",
+  "name": "Aurral",
+  "website": "https://aurral.org/",
+  "license": "MIT License",
+  "description": "Aurral is a self-hosted app for music discovery and playback. It keeps a canonical index of Aurral-owned files and optional Lidarr library files, adds recommendations and requests, and downloads tracks for flows and imported playlists.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "aurral.svg"
+}
