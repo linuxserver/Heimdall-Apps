@@ -1,0 +1,10 @@
+{
+  "appid": "ec19893b57982731d953872ef92cdb5c680e62f4",
+  "name": "Rustatio",
+  "website": "https://takitsu21.github.io/rustatio-website/",
+  "license": "MIT License",
+  "description": "Rustatio is a modern, cross-platform BitTorrent ratio management tool that emulates popular torrent clients (qBittorrent, Transmission, Deluge, uTorrent, BitTorrent). It is written in Rust with a Tauri / Svelte UI and ships as a desktop app, a self-hosted Docker web UI, and a browser/WASM build.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "rustatio.png"
+}
