@@ -14,30 +14,75 @@ class UniFi extends \App\SupportedApps
 
     protected $method = 'POST';
 
+    // UniFi OS: UDM/UDR, Cloud Key, and the self-hosted UniFi OS Server
+    private const UNIFI_OS_URLS = [
+        "loginURL" => "/api/auth/login",
+        "statsURL" => "/proxy/network/api/s/default/stat/health",
+    ];
+
+    // The standalone UniFi Network application, which predates UniFi OS
+    private const LEGACY_URLS = [
+        "loginURL" => "/api/login",
+        "statsURL" => "/api/s/default/stat/health",
+    ];
+
     public function __construct()
     {
         $this->jar = new \GuzzleHttp\Cookie\CookieJar();
     }
 
+    /**
+     * Log in, correcting the endpoint family when the configured one is wrong.
+     *
+     * The config toggle selects an API, not a hosting model. Self-hosting is no
+     * longer the same thing as running the legacy Network application: a
+     * self-hosted UniFi OS Server speaks the UniFi OS API, and a UniFi OS
+     * device answers a legacy login path with a bare 401 without ever looking
+     * at the credentials. Retry once against the other pair and keep whichever
+     * one authenticates, so a misread toggle reports the real problem instead
+     * of a misleading "Invalid credentials".
+     *
+     * Only a refused login retries, so a working configuration is untouched.
+     * The same attributes are reused for the retry because the first request
+     * never reached authentication.
+     *
+     * @param array $urls Endpoints to use; replaced when the retry succeeds.
+     */
+    protected function authenticate(&$urls)
+    {
+        $attributes = $this->getLoginAttributes();
+        $res = parent::execute($this->url($urls['loginURL']), $attributes, null, 'POST');
+
+        if ($res === null || !in_array($res->getStatusCode(), [401, 403, 404], true)) {
+            return $res;
+        }
+
+        $alternate = $this->getAPIURLs($urls !== self::LEGACY_URLS);
+        $altRes = parent::execute($this->url($alternate['loginURL']), $attributes, null, 'POST');
+
+        // Anything other than the same flat refusal means this is the API the
+        // device actually implements, including a 499 asking for a second
+        // factor. Keep that answer so the caller can report the real reason.
+        if ($altRes !== null && !in_array($altRes->getStatusCode(), [401, 403, 404], true)) {
+            $urls = $alternate;
+            return $altRes;
+        }
+
+        return $res;
+    }
+
     public function test()
     {
         $urls = $this->getAPIURLs();
-        $self_hosted = $this->getConfigValue("self_hosted", false);
 
-        // Perform login request
+        // Perform login request; $urls is corrected if the other API answers
         try {
-            $loginAttributes = $this->getLoginAttributes();
+            $loginRes = $this->authenticate($urls);
         } catch (\InvalidArgumentException $exception) {
             echo "Failed: " . $exception->getMessage();
             return;
         }
-
-        $loginRes = parent::execute(
-            $this->url($urls['loginURL']),
-            $loginAttributes,
-            null,
-            'POST'
-        );
+        $self_hosted = $urls === self::LEGACY_URLS;
 
         if ($loginRes === null) {
             echo "Failed: Connection error";
@@ -130,17 +175,10 @@ class UniFi extends \App\SupportedApps
         }
 
         try {
-            $loginAttributes = $this->getLoginAttributes();
+            $this->authenticate($urls);
         } catch (\InvalidArgumentException) {
             return parent::getLiveStats($status, ['error' => true]);
         }
-
-        parent::execute(
-            $this->url($urls['loginURL']),
-            $loginAttributes,
-            null,
-            'POST'
-        );
 
         $res = parent::execute(
             $this->url($urls['statsURL']),
@@ -350,20 +388,12 @@ class UniFi extends \App\SupportedApps
         return $attrs;
     }
 
-    public function getAPIURLs() {
-        $self_hosted = $this->getConfigValue("self_hosted", false);
-        // Default to UDM URLs
-        $urls = [
-            "loginURL" => "/api/auth/login",
-            "statsURL" => "/proxy/network/api/s/default/stat/health",
-        ];
-        if ($self_hosted) {
-            // Self hosted URLs
-            $urls = [
-                "loginURL" => "/api/login",
-                "statsURL" => "/api/s/default/stat/health",
-            ];
+    public function getAPIURLs($legacy = null)
+    {
+        if ($legacy === null) {
+            $legacy = (bool) $this->getConfigValue("self_hosted", false);
         }
-        return $urls;
+
+        return $legacy ? self::LEGACY_URLS : self::UNIFI_OS_URLS;
     }
 }
