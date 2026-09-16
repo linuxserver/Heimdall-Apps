@@ -1,0 +1,10 @@
+{
+  "appid": "9d0f17acc4d034b4bf1bd958f633d0096be3e60c",
+  "name": "Infisical",
+  "website": "https://infisical.com",
+  "license": "MIT License",
+  "description": "Infisical is the open-source platform for secrets, certificates, and privileged access management. Teams use it to store, rotate, and audit application secrets across environments, automate internal PKI / X.509 certificate issuance, and replace standing credentials with short-lived, identity-based access. It can be self-hosted or used as Infisical Cloud.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "infisical.svg"
+}
