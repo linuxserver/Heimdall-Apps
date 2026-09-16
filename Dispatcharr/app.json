@@ -1,0 +1,10 @@
+{
+  "appid": "e2348236eff7d45bed8c77f3c1e9af82043be45d",
+  "name": "Dispatcharr",
+  "website": "https://github.com/dispatcharr/dispatcharr",
+  "license": "GNU Affero General Public License v3.0",
+  "description": "Dispatcharr (pronounced like \"dispatcher\") is an open-source powerhouse for managing IPTV streams, EPG data, and VOD content with elegance and control.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "dispatcharr.png"
+}
