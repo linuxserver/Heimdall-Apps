@@ -1,0 +1,10 @@
+{
+  "appid": "4defd493f891cb5bb8a6d8ea3d6fc7dc5a8ae91b",
+  "name": "akou",
+  "website": "https://geiserx.github.io/akou/",
+  "license": "GNU General Public License v3.0 or later",
+  "description": "Records your calls on your own Mac, transcribes them on the machine and answers questions about a call while it is still running. The same core runs as a server with a web library of your recordings. No bot in the meeting, no account, no cloud.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "akou.svg"
+}
