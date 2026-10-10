@@ -1,0 +1,10 @@
+{
+  "appid": "310ea1af498fa26f8abee9c0b6bbd2343bc186d8",
+  "name": "Pumperly",
+  "website": "https://pumperly.com",
+  "license": "GNU Affero General Public License v3.0 or later",
+  "description": "A map of fuel prices and EV chargers with a route planner on top. Pick a destination and it lists every station along the route with its price and the minutes a stop would add, then plans the cheapest places to fill up. Prices come from government and community sources in 22 countries, with no API key to set.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "pumperly.svg"
+}
