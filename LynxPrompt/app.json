@@ -1,0 +1,10 @@
+{
+  "appid": "d91b91eb75b68151957d93d3ff7ed69982e7c16b",
+  "name": "LynxPrompt",
+  "website": "https://lynxprompt.com",
+  "license": "GNU Affero General Public License v3.0 or later",
+  "description": "Self-hosted web app that turns one set of AI coding rules into the file each tool reads: AGENTS.md, CLAUDE.md, Cursor rules, Copilot instructions and 30 formats in all. Blueprints let a team share rules with variables, and a CLI and a VS Code extension put the files into every project.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "lynxprompt.svg"
+}
