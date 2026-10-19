@@ -1,0 +1,10 @@
+{
+  "appid": "9e9c7b7efea19802e46c84b3df551196515ffc6b",
+  "name": "Telegram Archive",
+  "website": "https://geiserx.github.io/Telegram-Archive/",
+  "license": "GNU General Public License v3.0 or later",
+  "description": "Backs up one or more Telegram accounts to a machine you host, saving messages, media, edits and deletions to SQLite or PostgreSQL on a schedule. A web viewer that never talks to Telegram lets you read and search what it saved.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "telegramarchive.svg"
+}
