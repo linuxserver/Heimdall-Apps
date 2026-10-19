@@ -1,0 +1,10 @@
+{
+  "appid": "fde400aa5aa198ae590a8b244df23fa5ef77aeb4",
+  "name": "Miro",
+  "website": "https://miro.com/",
+  "license": "Commercial/Proprietary",
+  "description": "AI-first visual collaboration platform and online workspace designed for distributed teams to brainstorm, plan, and execute projects in real time or asynchronously.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "miro.svg"
+}
