@@ -1,0 +1,10 @@
+{
+  "appid": "2f9cac6702c09481e02438b9033f0c1e67748efd",
+  "name": "Mainsail HT90",
+  "website": "https://docs.mainsail.xyz/",
+  "license": "Other",
+  "description": "This is the existing Mainsail app adapted for the Prusa HT90. The header was adjusted to match the Prusa design in both style and color scheme.\nThe App shows progress in %, ETA in 0h 00min. Nozzle, Bed and Chamber temperature.\n\n[MainsailHT90.zip](https://github.com/user-attachments/files/32312917/MainsailHT90.zip)",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "mainsailht90.svg"
+}
