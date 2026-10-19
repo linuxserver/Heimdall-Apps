@@ -1,0 +1,10 @@
+{
+  "appid": "50d96de55ac484d4dfbe5b3dadd539386e2665e1",
+  "name": "SuperMealPlanner",
+  "website": "https://github.com/GeiserX/SuperMealPlanner",
+  "license": "GNU Affero General Public License v3.0 or later",
+  "description": "Self-hosted meal planner for a household that eats the same food but needs different amounts. It plans four weeks around the cook's calendar, sizes every plate to each person's own targets, writes the shopping list for your supermarket and runs a Telegram bot for the family group.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "supermealplanner.png"
+}
