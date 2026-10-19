@@ -1,0 +1,10 @@
+{
+  "appid": "e4bcfcdd06200423cf46de1194f0d8374f9aa851",
+  "name": "Longevilab",
+  "website": "https://github.com/GeiserX/longevilab",
+  "license": "MIT License",
+  "description": "Self-hosted personal health monitoring. Upload blood test PDFs, extract the biomarkers with OCR and an LLM, and track your health metrics and biological age over time.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "longevilab.svg"
+}
