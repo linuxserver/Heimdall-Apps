@@ -1,0 +1,10 @@
+{
+  "appid": "66677874230ee54d5864254125cf7f6c4527be08",
+  "name": "Watchtower",
+  "website": "https://watchtower.nickfedor.com/",
+  "license": "Apache License 2.0",
+  "description": "Automate Docker container image updates\n\nWith watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry.\n\nWatchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
+  "enhanced": false,
+  "tile_background": "light",
+  "icon": "watchtower.png"
+}
