@@ -1,0 +1,10 @@
+{
+  "appid": "8cd24a534999cad2dccd971d700c7430e0bb15f2",
+  "name": "DeclaRenta",
+  "website": "https://declarenta.com",
+  "license": "GNU Affero General Public License v3.0 or later",
+  "description": "Free web app that reads the reports of a foreign broker and fills in the boxes of the Spanish income tax return (Modelo 100) using FIFO and the official ECB exchange rates. Runs at declarenta.com without sign-up, or on your own machine with Docker.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "declarenta.svg"
+}
