@@ -1,0 +1,10 @@
+{
+  "appid": "5ac374ee16585535d77299357a600e284a43799b",
+  "name": "Endurain",
+  "website": "https://endurain.com",
+  "license": "GNU Affero General Public License v3.0 or later",
+  "description": "Endurain is a self-hosted fitness tracking service, a privacy-first home for your activities, gear and health data. No lock-in, no data mining. Just your training history, on infrastructure you control.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "endurain.png"
+}
