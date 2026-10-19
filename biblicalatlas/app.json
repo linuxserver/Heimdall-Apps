@@ -1,0 +1,10 @@
+{
+  "appid": "95a4d02b710de882465fa81c003b9cc2f25aee55",
+  "name": "biblical-atlas",
+  "website": "https://biblical-atlas.geiser.cloud",
+  "license": "GNU General Public License v3.0 or later",
+  "description": "Map and timeline for studying the Bible as a family, with every person, place and event linked to its source. A static site you can self-host. Names and texts are in Spanish.",
+  "enhanced": false,
+  "tile_background": "dark",
+  "icon": "biblicalatlas.svg"
+}
