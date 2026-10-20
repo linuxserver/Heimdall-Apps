@@ -1,0 +1,10 @@
+{
+  "appid": "3f0af0d4dccdfd367e649a61d17291787e6a1aef",
+  "name": "FreeLLMAPI",
+  "website": "https://github.com/tashfeenahmed/freellmapi",
+  "license": "MIT License",
+  "description": "FreeLLMAPI aggregates free LLM providers behind one OpenAI-compatible API with automatic routing and failover.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "freellmapi.svg"
+}
