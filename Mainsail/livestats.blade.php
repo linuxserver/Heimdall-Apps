@@ -16,12 +16,18 @@
                 <span class="title">Complete</span>
                 <strong>{!! $completed_pct !!}</strong>
             </li>
-        @endif        
+        @endif
         @if (isset($estimated))
             <li class="right">
-                <span class="title">Finish</span>
+                <span class="title">ETA</span>
                 <strong>{!! $estimated !!}</strong>
             </li>
         @endif
+    @endif
+    @if (isset($chamber))
+        <li class="right">
+            <span class="title">Chamber</span>
+            <strong>{!! $chamber !!}</strong>
+        </li>
     @endif
 </ul>

@@ -2,8 +2,6 @@
 
 namespace App\SupportedApps\Mainsail;
 
-use Carbon\Carbon;
-
 class Mainsail extends \App\SupportedApps implements \App\EnhancedApps
 {
     public $config;
@@ -23,7 +21,9 @@ class Mainsail extends \App\SupportedApps implements \App\EnhancedApps
     {
         $status = "standby";
         //https://moonraker.readthedocs.io/en/latest/web_api/#query-printer-object-status
-        $res = parent::execute($this->url('/printer/objects/query?display_status&print_stats&virtual_sdcard'));
+        $res = parent::execute(
+            $this->url('/printer/objects/query?display_status&print_stats&virtual_sdcard&heaters=available_sensors')
+        );
         if (!$res) {
             return parent::getLiveStats($status, ["error" => "Connection"]);
         }
@@ -32,6 +32,12 @@ class Mainsail extends \App\SupportedApps implements \App\EnhancedApps
         $data = [];
 
         $status = $printer->print_stats->state ?? "standby";
+
+        // Only shown if the printer has a chamber sensor
+        $chamber = $this->chamberTemperature($printer->heaters->available_sensors ?? []);
+        if ($chamber !== null) {
+            $data["chamber"] = round($chamber) . '&deg;C';
+        }
 
         if ($status == 'printing') {
             // Moonraker reports progress as a fraction between 0.0 and 1.0.
@@ -68,17 +74,45 @@ class Mainsail extends \App\SupportedApps implements \App\EnhancedApps
 
             if ($remaining === null) {
                 $data["estimated"] = "N/A";
-            } elseif ($remaining <= 0) {
+            } elseif ($remaining < 60) {
                 $data["estimated"] = "Soon!";
             } else {
-                $data["estimated"] = Carbon::now()
-                    ->addSeconds((int) round($remaining))
-                    ->diffForHumans();
+                // Remaining time, e.g. "2h 05min"
+                $remaining = (int) round($remaining);
+                $data["estimated"] = sprintf('%dh %02dmin', intdiv($remaining, 3600), intdiv($remaining % 3600, 60));
             }
         } else {
             $data["state"] = ucwords($status);
         }
         return parent::getLiveStats($status, $data);
+    }
+
+    /**
+     * Temperature of the chamber sensor, or null if the printer doesn't have one.
+     * Klipper has no dedicated chamber object, so look for a heater or sensor
+     * with "chamber" in its name, e.g. [heater_generic chamber] or [temperature_sensor chamber].
+     * Some printers use their own object, e.g. heater_chamber on the Prusa Pro HT90.
+     */
+    private function chamberTemperature($sensors)
+    {
+        $chamber = null;
+        foreach (['heater_generic ', 'temperature_sensor ', 'temperature_fan ', ''] as $type) {
+            foreach ($sensors as $sensor) {
+                if (strpos($sensor, $type) === 0 && stripos($sensor, 'chamber') !== false) {
+                    $chamber = $sensor;
+                    break 2;
+                }
+            }
+        }
+        if ($chamber === null) {
+            return null;
+        }
+
+        $res = parent::execute($this->url('/printer/objects/query?' . rawurlencode($chamber) . '=temperature'));
+        if (!$res) {
+            return null;
+        }
+        return json_decode($res->getBody())->result->status->{$chamber}->temperature ?? null;
     }
 
     public function url($endpoint)
