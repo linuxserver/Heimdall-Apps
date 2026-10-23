@@ -1,0 +1,10 @@
+{
+  "appid": "422c6bf3a19cca6e7c2e59a393b1838cca9bb6e9",
+  "name": "Steerhouse",
+  "website": "https://github.com/HoneyBearTech/Steerhouse",
+  "license": "MIT License",
+  "description": "Self-hosted web UI and API for running Ansible playbooks, with per-project access control, isolated workers and a full audit trail.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "steerhouse.svg"
+}
