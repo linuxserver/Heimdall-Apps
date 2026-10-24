@@ -32,22 +32,22 @@ class evcc extends \App\SupportedApps implements \App\EnhancedApps // phpcs:igno
         $res = parent::execute($this->url('api/state'), $this->getAttrs());
         if ($res !== null) {
             $json = json_decode($res->getBody());
-            // The state payload is wrapped in a "result" object. Fields vary by
-            // configuration, so read each one defensively.
-            if ($json !== null && isset($json->result)) {
-                $result = $json->result;
+            // The evcc /api/state response is a flat JSON object - there is no
+            // "result" wrapper. Fields vary by configuration, so read each one
+            // defensively.
+            if ($json !== null && isset($json->apiReady) && $json->apiReady === true) {
                 $status = 'active';
 
                 // pvPower is only present when a PV meter is configured (grid-only
                 // setups omit it); default to 0 so the tile still renders.
-                $pvWatts = isset($result->pvPower) ? (float) $result->pvPower : 0.0;
+                $pvWatts = isset($json->pvPower) ? (float) $json->pvPower : 0.0;
                 $data['pv'] = $this->formatKw($pvWatts);
 
                 // Sum chargePower across all loadpoints - loadpoints is evcc's core
                 // config and effectively always present.
                 $chargeWatts = 0.0;
-                if (isset($result->loadpoints) && is_array($result->loadpoints)) {
-                    foreach ($result->loadpoints as $lp) {
+                if (isset($json->loadpoints) && is_array($json->loadpoints)) {
+                    foreach ($json->loadpoints as $lp) {
                         if (isset($lp->chargePower)) {
                             $chargeWatts += (float) $lp->chargePower;
                         }
