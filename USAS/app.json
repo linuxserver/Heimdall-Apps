@@ -1,0 +1,10 @@
+{
+    "appid": "a30b98c03a1facce720e0838722513881066a95f",
+    "name": "USAS",
+    "website": "https://github.com/HoneyBearTech/ubuntu-server-auto-setup",
+    "license": "MIT License",
+    "description": "USAS (Ubuntu Server Auto Setup) installs Ubuntu Server on new Proxmox VE VMs with nobody at the keyboard, loads the admin's GitHub SSH keys and applies a hardened baseline, from a web UI. The tile shows whether a run is going, how the last one ended, the cluster's running VMs and the servers still to install.",
+    "enhanced": true,
+    "tile_background": "dark",
+    "icon": "usas.svg"
+}
