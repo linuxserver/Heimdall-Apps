@@ -133,7 +133,7 @@ class OpenClaw extends \App\SupportedApps implements \App\EnhancedApps
     /**
      * @return array{status: string, message?: string, socket?: resource}
      */
-    private function connectAndAuthenticate(): array
+    private function connectAndAuthenticate(bool $forwardClientAddress = false): array
     {
         $url = parse_url(rtrim($this->config->url, '/'));
         $host = $url['host'] ?? null;
@@ -165,6 +165,20 @@ class OpenClaw extends \App\SupportedApps implements \App\EnhancedApps
         }
         stream_set_timeout($socket, 10);
 
+        // Only retry with attribution when the gateway explicitly identifies
+        // this host as a trusted proxy. Ordinary direct clients send no headers.
+        $clientAddressHeader = '';
+        if ($forwardClientAddress) {
+            $local = stream_socket_get_name($socket, false);
+            $ip = $local === false ? '' : trim(substr($local, 0, strrpos($local, ':')), '[]');
+            if (! filter_var($ip, FILTER_VALIDATE_IP) || $ip === '::1' || str_starts_with($ip, '127.')) {
+                fclose($socket);
+
+                return ['status' => 'error', 'message' => 'Could not determine a non-loopback client address'];
+            }
+            $clientAddressHeader = "X-Forwarded-For: $ip\r\n";
+        }
+
         $key = base64_encode(random_bytes(16));
         fwrite($socket, "GET $path HTTP/1.1\r\n"
             . "Host: $host:$port\r\n"
@@ -172,18 +186,32 @@ class OpenClaw extends \App\SupportedApps implements \App\EnhancedApps
             . "Connection: Upgrade\r\n"
             . "Sec-WebSocket-Key: $key\r\n"
             . "Sec-WebSocket-Version: 13\r\n"
+            . $clientAddressHeader
             . "\r\n");
 
         $statusLine = fgets($socket, 1024);
-        if ($statusLine === false || strpos($statusLine, '101') === false) {
-            fclose($socket);
-
-            return ['status' => 'error', 'message' => 'WebSocket upgrade failed'];
-        }
+        $contentLength = 0;
         while (($line = fgets($socket, 4096)) !== false) {
             if (trim($line) === '') {
                 break;
             }
+            if (preg_match('/^Content-Length:\s*(\d+)\s*$/i', trim($line), $matches)) {
+                $contentLength = (int) $matches[1];
+            }
+        }
+        if ($statusLine === false || ! preg_match('/^HTTP\/1\.[01] 101\b/', $statusLine)) {
+            $error = null;
+            if (is_string($statusLine) && preg_match('/^HTTP\/1\.[01] 403\b/', $statusLine)
+                && $contentLength > 0 && $contentLength <= 4096) {
+                $body = $this->readExact($socket, $contentLength);
+                $error = $body === null ? null : json_decode($body, true);
+            }
+            fclose($socket);
+            if (! $forwardClientAddress && ($error['error']['type'] ?? null) === 'proxy_attribution_required') {
+                return $this->connectAndAuthenticate(true);
+            }
+
+            return ['status' => 'error', 'message' => 'WebSocket upgrade failed'];
         }
 
         $challenge = $this->readJsonFrame($socket);
