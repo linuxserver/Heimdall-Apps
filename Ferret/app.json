@@ -1,0 +1,10 @@
+{
+  "appid": "03591b5e7be95d77a59b759df29592f510f4a3ac",
+  "name": "Ferret",
+  "website": "https://github.com/ferret-project/ferret",
+  "license": "MIT License",
+  "description": "Ferret is a self-hosted home inventory: everything you own, where it is, what it's worth, its warranties and maintenance, with an API and an MCP server.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "ferret.svg"
+}
