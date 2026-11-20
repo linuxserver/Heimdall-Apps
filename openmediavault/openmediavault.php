@@ -68,7 +68,27 @@ class openmediavault extends \App\SupportedApps implements \App\EnhancedApps // 
             "username" => $this->config->username,
             "password" => $this->config->password,
         ]);
-        return $result->authenticated;
+    
+        if (isset($result->status)) {
+            if ($result->status === "authenticated") {
+                return true;
+            }
+    
+            if ($result->status === "challengeRequired") {
+                throw new Exception(
+                    "OMV requires additional authentication"
+                );
+            }
+    
+            throw new Exception("OMV authentication failed");
+        }
+    
+        if (isset($result->authenticated)
+            && $result->authenticated === true) {
+            return true;
+        }
+    
+        throw new Exception("OMV authentication failed");
     }
 
     public function test()
