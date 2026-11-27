@@ -1,0 +1,10 @@
+{
+  "appid": "94565417e1447658a1ba383128c2263d251828ce",
+  "name": "Hermes Agent",
+  "website": "https://hermes-agent.nousresearch.com/",
+  "license": "MIT License",
+  "description": "Hermes Agent is a self-hosted AI agent with persistent memory, tools, and a web dashboard.",
+  "enhanced": true,
+  "tile_background": "dark",
+  "icon": "hermesagent.png"
+}
